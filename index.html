@@ -7,7 +7,7 @@
 
 <!-- ================= SEO ================= -->
 <title>沖縄県立高校入試ナビ｜日程・内申点計算・合格判定・学校別データ</title>
-<meta name="description" content="沖縄県立高校入試の情報サイト。新制度（特色選抜・一般選抜）を図解し、通知表の評定から内申点（165点満点）を自動計算。プレ入試追跡調査にもとづく学校別の合格基準・倍率・合否データで合格可能性を判定。入試日程のカウントダウン・学力検査の平均点・私立高校の基礎情報も。沖縄の学習塾 JUKEN CAMP 運営。">
+<meta name="description" content="沖縄県立高校入試の情報サイト。新制度（特色選抜・一般選抜）を図解し、通知表の評定から内申点（165点満点）を自動計算。プレ入試追跡調査にもとづく学校別の合格基準・倍率・合否データで合格可能性を判定。入試日程のカウントダウン・学力検査の平均点・私立高校の基礎情報も。JUKEN CAMP（受験キャンプ）運営。">
 <meta name="robots" content="index,follow">
 <!-- ★公開時にドメインへ差し替えてください -->
 <link rel="canonical" href="https://okinawa-nyushi.example.com/">
@@ -98,7 +98,7 @@
         {
           "@type": "Question",
           "name": "沖縄県立高校入試の日程はいつですか？",
-          "acceptedAnswer": { "@type": "Answer", "text": "学力検査は例年3月上旬の2日間で、面接もあわせて実施されます。令和8年度（2026年春）は3月4日・5日に学力検査、3月17日に合格発表でした。令和9年度（2027年春）の正式日程は、例年9月ごろに沖縄県教育委員会から発表されます。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "令和9年度（2027年春実施）は、学力検査・面接が3月3日（水）・4日（木）、一般選抜の合格発表が3月17日（水）、第2次募集の合格発表が3月27日（土）です。出願や志願変更の日程はページのカウントダウンと年間スケジュールで確認できます。" }
         },
         {
           "@type": "Question",
@@ -166,6 +166,9 @@
   --reef-tint:#e2f6ed;
   --line:#dde5ec;
   --pink-row:#fdf1f0;
+  --sakura:#d4537e;       /* アクセント：寒緋桜寄りの濃い桃色 */
+  --sakura-tint:#fde8ef;  /* 桜の淡いティント */
+  --sakura-deep:#993556;  /* ティント上の文字色 */
   --radius:16px;
   --shadow:0 2px 14px rgba(17,42,62,.07);
   --fd:'Zen Maru Gothic',sans-serif;
@@ -314,9 +317,11 @@ h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color
 .formula .fb b{display:block;font-family:var(--fm);font-weight:800;font-size:1.25rem;color:var(--sea-deep);line-height:1.4}
 .formula .fb.art b{color:#a86a12}
 .formula .op{align-self:center;font-family:var(--fm);font-weight:800;font-size:1.3rem;color:var(--ink-soft)}
-.formula .fb.total{background:var(--ink);border-color:var(--ink)}
-.formula .fb.total .t{color:#bcd0e0}
-.formula .fb.total b{color:#fff;font-size:1.45rem}
+.formula-out{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:4px 0 8px}
+.formula-out .fo-eq{font-family:var(--fm);font-weight:800;font-size:1.05rem;color:var(--sea-deep)}
+.formula-out .fb.total{flex:0 0 auto;background:#fff;border:2px solid var(--sea);border-radius:12px;padding:10px 26px;text-align:center;box-shadow:var(--shadow)}
+.formula-out .fb.total .t{display:block;font-size:.72rem;font-weight:700;color:var(--sea-deep)}
+.formula-out .fb.total b{display:block;font-family:var(--fm);font-weight:800;font-size:1.5rem;color:var(--sea-deep);line-height:1.4}
 .x15{display:inline-block;background:var(--coral);color:#fff;font-family:var(--fm);font-weight:800;font-size:.66rem;border-radius:6px;padding:1px 7px;vertical-align:2px}
 
 /* ---- 比重バー ---- */
@@ -336,22 +341,38 @@ h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color
 #schoolTable tbody tr.kx td:first-child{background:inherit}
 .tbl-count{font-size:.72rem;color:var(--ink-soft);margin:7px 2px 0;text-align:right}
 /* 通学区域チェッカー */
-.kuiki{background:#fff;border:1.5px solid var(--sea);border-radius:16px;padding:16px 15px;margin:0 0 22px}
+.kuiki{background:#fff;border:2px solid var(--sea);border-radius:14px;padding:16px;margin:-8px 0 24px;box-shadow:var(--shadow)}
 .kuiki h3{margin:0 0 4px;font-size:1rem}
 .kuiki .ksub{font-size:.78rem;color:var(--ink-soft);margin:0 0 11px}
-.kuiki input[type=search]{width:100%;font-size:1rem;padding:11px 13px;border:1.5px solid var(--line);border-radius:11px;font-family:inherit}
+.kuiki input[type=search]{width:100%;font-size:1rem;padding:11px 13px;border:1px solid var(--line);border-radius:12px;font-family:inherit;color:var(--ink)}
 .kuiki input[type=search]:focus{outline:none;border-color:var(--sea)}
 .ksug{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
-.ksug button{font:inherit;font-size:.82rem;padding:7px 13px;border:1px solid var(--sea);color:var(--sea-deep);background:#f2f9fd;border-radius:999px;cursor:pointer}
+.ksug button{font:inherit;font-size:.82rem;padding:7px 13px;border:1px solid var(--sea);color:var(--sea-deep);background:var(--sea-tint);border-radius:99px;cursor:pointer}
 .kres{margin-top:13px;border-top:1px dashed var(--line);padding-top:13px}
-.kres .badge-gk{display:inline-block;background:var(--sea-deep);color:#fff;font-weight:800;font-size:.82rem;padding:4px 13px;border-radius:999px;margin-right:7px}
+.kres .badge-gk{display:inline-block;background:var(--sea-deep);color:#fff;font-weight:800;font-size:.82rem;padding:4px 13px;border-radius:99px;margin-right:7px}
 .kres .kgrp{margin:11px 0 0}
 .kres .kgrp .kt{font-size:.74rem;font-weight:800;color:var(--ink-soft);display:block;margin-bottom:6px}
 .kchips{display:flex;flex-wrap:wrap;gap:6px}
-.kchips span{font-size:.82rem;font-weight:700;padding:5px 11px;border-radius:9px;background:#eef6ec;border:1px solid #cfe5cb;color:#1e6b3a}
-.kchips span.ex{background:#fdf4e7;border-color:#f0ddc0;color:#8a5a14}
-.kuiki select{font:inherit;font-size:.92rem;padding:9px 11px;border:1.5px solid var(--line);border-radius:10px;width:100%;margin-top:6px;background:#fff}
-.kall{background:#eef6ec;border:1px solid #cfe5cb;border-radius:11px;padding:10px 13px;font-size:.86rem;margin-top:11px}
+.kchips span{font-size:.82rem;font-weight:700;padding:5px 11px;border-radius:8px;background:var(--reef-tint);border:1px solid #bfe6d4;color:#0a7350}
+.kchips span.ex{background:var(--sun-tint);border-color:#f3dca8;color:#a66a12}
+.kuiki select{font:inherit;font-size:.92rem;padding:9px 11px;border:1px solid var(--line);border-radius:12px;width:100%;margin-top:6px;background:#fff;color:var(--ink)}
+.kall{background:var(--reef-tint);border:1px solid #bfe6d4;border-radius:12px;padding:10px 13px;font-size:.86rem;margin-top:11px}
+/* 2大模試 */
+.moshi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px 16px;box-shadow:var(--shadow)}
+.moshi-h{margin:0 0 4px;font-size:1.04rem}
+.moshi-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:4px 0 14px}
+@media(max-width:620px){.moshi-cards{grid-template-columns:1fr}}
+.moshi-card{border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:#fbfdfe;position:relative}
+.moshi-card h4{margin:7px 0 2px;font-size:.98rem}
+.moshi-card .moshi-by{margin:0 0 9px;font-size:.74rem;color:var(--ink-soft)}
+.moshi-card .check-list li{font-size:.82rem;line-height:1.75}
+.moshi-tag{display:inline-block;background:var(--sea-deep);color:#fff;font-size:.72rem;font-weight:800;padding:3px 11px;border-radius:99px}
+.moshi-tag.alt{background:var(--sun);color:#5a3c0a}
+.moshi-howto{background:var(--sea-tint);border:1px solid #b9dcec;border-radius:12px;padding:13px 15px}
+.moshi-howto .mh-t{margin:0 0 7px;font-weight:800;font-size:.92rem}
+.moshi-howto p{margin:0 0 8px;font-size:.84rem;line-height:1.85}
+.moshi-howto p:last-child{margin-bottom:0}
+.moshi-howto .mh-note{font-size:.78rem;color:var(--ink-soft);background:#fff;border-radius:10px;padding:9px 11px;margin-top:4px}
 .kclear{font:inherit;font-size:.74rem;background:none;border:none;color:var(--ink-soft);text-decoration:underline;cursor:pointer;padding:4px;margin-top:7px}
 table{border-collapse:collapse;width:100%;font-size:.85rem;min-width:540px}
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
@@ -443,6 +464,7 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
 .fld.full{grid-column:1/-1}
 .gauge-wrap{display:flex;flex-direction:column;align-items:center;padding:8px 0 0}
 .gauge-band{font-family:var(--fd);font-weight:900;font-size:1.3rem;margin-top:-8px}
+.gauge-band .band-sakura{color:var(--sakura);margin-right:7px;font-weight:400}
 .gauge-comment{font-size:.86rem;line-height:1.85;margin:14px 0 0;max-width:34em}
 .gap-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center}
 .gap-chips .gc{font-size:.76rem;font-weight:700;border-radius:99px;padding:7px 14px;background:var(--sea-tint);color:var(--sea-deep)}
@@ -562,11 +584,20 @@ table.avg tr.hl td{background:var(--sea-tint)}
 .share-strip p small{display:block;font-weight:500;color:var(--ink-soft);font-size:.74rem}
 
 /* ---- 日程・カウントダウン ---- */
-.cd-card{background:linear-gradient(135deg,var(--sea-deep),var(--sea));color:#fff;border-radius:var(--radius);padding:26px 20px;text-align:center}
-.cd-l{font-size:.74rem;font-weight:700;color:#bfe0f0;letter-spacing:.06em}
-.cd-num{font-family:var(--fm);font-weight:800;font-size:4rem;line-height:1.15;margin:2px 0;font-feature-settings:"tnum"}
-.cd-num small{font-size:1.1rem;font-weight:700;color:#bfe0f0;margin-left:5px}
-.cd-sub{font-size:.8rem;color:#d6ecf6;line-height:1.8;display:block;max-width:32em;margin:4px auto 0}
+.cd-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px;text-align:center;box-shadow:var(--shadow)}
+.hero .cd-card{margin:22px 0 4px}
+.cd-l{font-size:.74rem;font-weight:700;color:var(--sea-deep);letter-spacing:.06em}
+.cd-num{font-family:var(--fm);font-weight:800;font-size:4rem;line-height:1.15;margin:2px 0;color:var(--sea-deep);font-feature-settings:"tnum"}
+.cd-num small{font-size:1.1rem;font-weight:700;color:var(--ink-soft);margin-left:5px}
+.cd-sub{font-size:.82rem;color:var(--ink-soft);line-height:1.7;display:flex;flex-direction:column;align-items:center;gap:3px;max-width:34em;margin:8px auto 0}
+.cd-sub .cd-row{display:block;text-align:center}
+.cd-sub .cd-row b{color:var(--ink);font-weight:700}
+.cd-sub .cd-row .nd{white-space:nowrap}
+.cd-sub .cd-sakura{color:var(--sakura-deep);font-weight:700;font-size:.86rem;margin-top:5px}
+.cd-sub .cd-sakura::before{content:"❀";color:var(--sakura);margin-right:6px}
+.cd-today{border-top:1px solid var(--line);margin-top:16px;padding-top:13px;text-align:center}
+.cd-word{display:block;font-size:.95rem;font-weight:700;color:var(--ink);line-height:1.7;font-family:var(--fd)}
+.cd-season{display:block;font-size:.78rem;color:var(--sakura-deep);line-height:1.65;margin-top:8px}
 .sched{min-width:0}
 .sched td{font-size:.82rem;line-height:1.8}
 .sched td:first-child{white-space:nowrap;font-weight:700;font-size:.78rem;color:var(--ink-soft)}
@@ -590,7 +621,7 @@ table.avg tr.hl td{background:var(--sea-tint)}
 .tt tr.tt-break td{color:var(--ink-soft);font-size:.74rem;background:#fbfdfe}
 .kari{display:inline-block;background:var(--sun-tint);color:#7a5410;border:1px solid #f0ddb0;font-size:.62rem;font-weight:800;border-radius:99px;padding:2px 8px;margin-left:7px;vertical-align:1px}
 .kari-row td{color:#93a0ad}
-.sprof{background:#f7fafc;border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin:2px 0 12px}
+.sprof{background:#fbfdfe;border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin:2px 0 12px}
 .sprof p{margin:0;font-size:.8rem;line-height:1.9}
 .sprof a{font-weight:700}
 .sprof .sprof-note{margin-top:7px;font-size:.72rem;color:var(--ink-soft)}
@@ -651,6 +682,28 @@ body.has-cbar{padding-bottom:96px}
 .pv-list .pl{font-family:var(--fm);font-size:.68rem;color:var(--ink-soft);font-weight:700}
 .pv-list .mini-list{list-style:none;margin:9px 0;padding:0;display:grid;gap:6px}
 .pv-list .mini-list li{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:.8rem;line-height:1.8}
+.pv-list .pv-sys{margin-top:9px;background:#fbfdfe;border:1px dashed var(--line);border-radius:10px;padding:9px 11px}
+.pv-list .pv-sys p{margin:0;font-size:.79rem;line-height:1.8;color:var(--ink)}
+.pv-list .pv-sys .pv-mini{margin-top:6px;font-size:.74rem;color:var(--ink-soft)}
+.pv-list .pv-sys .pv-tag{display:inline-block;font-weight:800;font-size:.68rem;color:var(--sea-deep);background:var(--sea-tint);border-radius:99px;padding:2px 9px;margin-right:6px}
+.pv-list .pv-sys .pv-sub2{margin-top:7px;font-size:.79rem;line-height:1.8;color:var(--ink)}
+.pv-list .pv-sys .pv-tag2{display:inline-block;font-weight:800;font-size:.68rem;color:#a66a12;background:var(--sun-tint);border-radius:99px;padding:2px 9px;margin-right:6px}
+/* 通信制 各校カード */
+.tsushin-intro{background:var(--sea-tint);border:1px solid #b9dcec;border-radius:12px;padding:11px 13px;margin:2px 0 14px}
+.tsushin-intro p{margin:0;font-size:.82rem;line-height:1.85}
+.tsushin-cat{font-size:.86rem;margin:18px 0 8px;color:var(--sea-deep);border-left:4px solid var(--sea);padding-left:9px}
+.ts-cards{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+@media(max-width:600px){.ts-cards{grid-template-columns:1fr}}
+.ts-card{background:#fbfdfe;border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+.ts-name{margin:0 0 5px;font-weight:800;font-size:.9rem;line-height:1.4}
+.ts-name .ts-area{display:inline-block;font-weight:600;font-size:.7rem;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:1px 9px;margin-left:6px;vertical-align:2px;white-space:nowrap}
+.ts-desc{margin:0 0 7px;font-size:.8rem;line-height:1.75;color:var(--ink)}
+.ts-sys{margin:0;font-size:.78rem;line-height:1.75;color:var(--ink-soft);background:#fff;border-radius:9px;padding:8px 10px;border:1px dashed var(--line)}
+.ts-sys .ts-tag{display:inline-block;font-weight:800;font-size:.68rem;color:var(--sea-deep);background:var(--sea-tint);border-radius:99px;padding:2px 9px;margin-right:6px}
+.ts-sys b{color:var(--ink)}
+.tsushin-support{background:var(--sun-tint);border:1px solid #f3dca8;border-radius:12px;padding:12px 13px;margin-top:2px}
+.tsushin-support > p:first-child{margin:0 0 10px;font-size:.82rem;line-height:1.85}
+.tsushin-support .ts-card{background:#fff}
 
 /* ---- reveal ---- */
 .rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
@@ -687,9 +740,18 @@ body.has-cbar{padding-bottom:96px}
 <!-- ============ HERO ============ -->
 <div class="hero">
   <div class="wrap">
-    <span class="kicker">沖縄県立高校入試は、2025年春から新制度です</span>
     <h1><span class="accent">沖縄県立高校入試</span>が、<br>ここだけでぜんぶわかる。</h1>
-    <p class="sub">新しくなった沖縄県立高校入試（特色選抜・一般選抜）を、図とことばでやさしく。通知表の数字を入れるだけで、内申点と合格可能性がその場でわかります。中学生にも、保護者の方にも。</p>
+    <p class="sub">特色選抜・一般選抜のしくみを、図とことばでやさしく。通知表の数字を入れるだけで、内申点と合格可能性がその場でわかります。</p>
+
+    <div class="cd-card rv" id="cdCard">
+      <span class="cd-l" id="cdLabel">令和9年度 学力検査</span>
+      <div class="cd-num" id="cdNum"><span id="cdDays">—</span><small>日</small></div>
+      <span class="cd-sub" id="cdSub"></span>
+      <div class="cd-today">
+        <span class="cd-word" id="cdWord"></span>
+        <span class="cd-season" id="cdSeason"></span>
+      </div>
+    </div>
     <p class="steps-label">つかいかたは、3ステップ</p>
     <div class="hero-steps">
       <a class="step s1" href="#shikumi"><span class="no">1</span><span class="tx"><b>まず、仕組みを知る</b><small>合否の決まり方を図でつかむ</small></span><span class="ar">→</span></a>
@@ -709,12 +771,12 @@ body.has-cbar{padding-bottom:96px}
   <div class="wrap">
     <p class="toc-title">このページでわかること ─ ぜんぶで8つ（タップでジャンプ）</p>
     <div class="toc">
-      <a href="#beforeafter"><b><span class="tn">1</span>むかしとの違い</b><small>受験の常識アップデート</small></a>
+      <a href="#beforeafter"><b><span class="tn">1</span>以前との違い</b><small>受験の常識アップデート</small></a>
       <a href="#schedule"><b><span class="tn">2</span>日程</b><small>いつ？あと何日？・平均点</small></a>
       <a href="#shikumi"><b><span class="tn">3</span>仕組み</b><small>合否はこう決まる</small></a>
       <a href="#naishin"><b><span class="tn">4</span>内申点を計算</b><small>通知表をタップするだけ</small></a>
       <a href="#hantei"><b><span class="tn">5</span>合格判定</b><small>志望校とのキョリ</small></a>
-      <a href="#schools"><b><span class="tn">6</span>学校データ</b><small>66学科の基準と倍率</small></a>
+      <a href="#schools"><b><span class="tn">6</span>学校データ</b><small>158学科の基準と倍率</small></a>
       <a href="#shiritsu"><b><span class="tn">7</span>私立高校</b><small>高校から入れるのは実質3校</small></a>
       <a href="#faq"><b><span class="tn">8</span>よくある質問</b><small>ことばのミニ辞典つき</small></a>
     </div>
@@ -747,19 +809,19 @@ body.has-cbar{padding-bottom:96px}
   </div>
 </section>
 
-<!-- ============ むかしとの違い ============ -->
+<!-- ============ 以前との違い ============ -->
 <section id="beforeafter" style="background:#fff;border-block:1px solid var(--line)">
   <div class="wrap">
-    <span class="sec-label">1/8｜むかしとの違い</span>
+    <span class="sec-label">1/8｜以前との違い</span>
     <h2>受験の「常識」は、こんなに変わった。</h2>
-    <p class="lead">むかし受験をした人の「あたりまえ」は、いまは通用しないものが多くあります。まずは家族で、いまのルールにイメージを合わせるところから。</p>
+    <p class="lead">保護者の方が受験したころの「あたりまえ」は、いまは通用しないものが少なくありません。まずは家族で、いまのルールにイメージを合わせるところから。</p>
 
     <div class="tldr rv"><span class="tl">かんたんに言うと</span><p>一発勝負 → <b>3年間の積み重ね × チャンス最大3回</b> に変わりました。</p></div>
 
     <div class="card rv pv-cmp ba-cmp">
       <div class="tscroll">
         <table>
-          <thead><tr><th></th><th>むかし</th><th>いま</th></tr></thead>
+          <thead><tr><th></th><th>以前</th><th>いま</th></tr></thead>
           <tbody>
             <tr><td>推薦入試</td><td>中学校長の推薦が必要。一部の生徒だけの制度</td><td><b>「特色選抜」</b>に。推薦はいらない。だれでも出願できる（2025年春〜）</td></tr>
             <tr><td>チャンスの回数</td><td>実質、本番一発勝負</td><td>特色 → 一般 → 2次募集で<b>最大3回</b></td></tr>
@@ -786,13 +848,7 @@ body.has-cbar{padding-bottom:96px}
     <h2>入試はいつ？──日程とカウントダウン</h2>
     <p class="lead">焦らせるための数字ではなく、逆算するための数字です。「いま、なにをする時期か」がひと目でわかるように。</p>
 
-    <div class="tldr rv"><span class="tl">かんたんに言うと</span><p>本番は<b>3月上旬の2日間</b>。倍率を見てから動けるのは<b>一般選抜だけ</b>です。</p></div>
-
-    <div class="cd-card rv" id="cdCard">
-      <span class="cd-l" id="cdLabel">令和9年度 学力検査</span>
-      <div class="cd-num" id="cdNum"><span id="cdDays">—</span><small>日</small></div>
-      <span class="cd-sub" id="cdSub"></span>
-    </div>
+    <div class="tldr rv"><span class="tl">かんたんに言うと</span><p>本番は<b>3月3日（水）・4日（木）</b>の2日間。倍率を見てから動けるのは<b>一般選抜だけ</b>です。</p></div>
 
     <div class="card rv" style="margin-top:14px">
       <h3 style="margin:0 0 12px;font-size:.98rem">中3の1年間（年間スケジュール）</h3>
@@ -800,13 +856,13 @@ body.has-cbar{padding-bottom:96px}
         <li data-m="4,5,6,7,8"><span class="sw">夏まで（4〜8月）</span><p>学校説明会・体験入学のシーズン。<a href="https://www.pref.okinawa.jp/kyoiku/gakko/1008883/1008887/1039961.html" target="_blank" rel="noopener">令和8年度の一覧は県HPで公開済み</a>（5月26日掲載）。志望校を「見て」決める時期。</p></li>
         <li data-m="9,10"><span class="sw">秋（9〜10月）</span><p>実施要項と、特色選抜の校別の要項（求める生徒像・検査内容・募集枠）が公表され、<b>入試の正式日程もここで確定</b>します。配慮願いなどの事前申請も動き出す時期。</p></li>
         <li data-m="11,12"><span class="sw">11〜12月</span><p>三者面談で志望校をしぼる。プレ入試。私立はこの時期に出願が始まります。</p></li>
-        <li data-m="1"><span class="sw">1月</span><p>私立入試。県立はWeb出願の準備（令和8年度の出願は2月2日・3日でした）。</p></li>
-        <li data-m="2"><span class="sw">2月</span><p>県立の出願（特色＋一般をセットで）→ 志願状況の公表 → 志願変更（<b>一般選抜のみ</b>・特色選抜は変更不可）→ 最終志願状況の確定（令和8年度は2月17日公表）。</p></li>
-        <li data-m="3"><span class="sw">3月上旬</span><p><b>学力検査・面接（2日間）</b>。特色選抜の実技・学校独自検査などもこの期間に。</p></li>
-        <li data-m="3"><span class="sw">3月中旬</span><p>合格発表（特色・一般とも同じ日に発表）。</p></li>
-        <li data-m="3"><span class="sw">3月下旬</span><p>定員割れの学校で2次募集（出願 → 面接等 → 合格発表）。</p></li>
+        <li data-m="1"><span class="sw">1月</span><p>私立入試の本番。県立はWeb出願の準備期間。<b>1月中旬ごろには、校内の面談で出願校を最終決定</b>することが多い（時期は学校により前後します）。</p></li>
+        <li data-m="2"><span class="sw">2月</span><p>県立の出願（特色＋一般をセット）。<b>初回の志願状況（倍率）が2月上旬</b>に公表され、<b>志願変更（一般選抜のみ・特色は変更不可）</b>を経て、<b>最終志願状況が2月中旬</b>に確定します。<span class="small" style="color:var(--ink-soft)">（前年・令和8年度は出願2月2〜3日／最終志願状況の公表2月17日）</span></p></li>
+        <li data-m="3"><span class="sw">3月3日（水）・4日（木）</span><p><b>学力検査・面接（2日間）</b>。特色選抜の実技・学校独自検査も、この2日間に行われます。</p></li>
+        <li data-m="3"><span class="sw">3月17日（水）</span><p>合格発表（特色・一般とも同じ日）。Webは午前9時から見られます。</p></li>
+        <li data-m="3"><span class="sw">3月27日（土）</span><p>定員割れの学校で2次募集（出願→面接等）。この日に<b>合格発表</b>があり、入試はここで一区切りです。</p></li>
       </ol>
-      <p class="note" style="margin-top:10px">参考｜令和8年度（2026年春）の実績：出願 2月2日・3日 ／ 初回志願状況の公表 2月3日 ／ 志願変更（一般のみ）→ 最終志願状況 2月17日 ／ 学力検査・面接 3月4日・5日 ／ 合格発表 3月17日（Webは午前9時） ／ 2次募集 出願 3月18日〜19日・合格発表 3月27日。</p>
+      <p class="note" style="margin-top:10px">上の<b>3月の日付は令和9年度の確定日程</b>です。出願・志願変更など2月までの日程は、毎年秋に県教育委員会が発表します（カッコ内の前年・令和8年度は参考の目安）。最新の日程は必ず<a href="https://www.pref.okinawa.lg.jp/kyoiku/gakko/1008883/1008887/1035054.html" target="_blank" rel="noopener">県の入試情報ページ</a>でご確認ください。</p>
     </div>
 
     <div class="card rv" style="margin-top:14px">
@@ -899,14 +955,16 @@ body.has-cbar{padding-bottom:96px}
     <div class="block card rv">
       <h3>① 内申点 — 3年間の通知表が「持ち点」になる</h3>
       <p style="font-size:.88rem">内申点（調査書点）は、<strong>中1・中2・中3の通知表の評定（5段階）</strong>から計算されます。沖縄県の特徴は、音楽・美術・保健体育・技術家庭の<strong>実技4教科が1.5倍</strong>で計算されること。そして<strong>3学年すべてが同じ重み</strong>で合計されることです。</p>
-      <div class="formula" aria-label="内申点の計算式">
+      <div class="formula" aria-label="1学年あたりの内申点">
         <div class="fb"><span class="t">5教科 × 評定5</span><b>25点</b></div>
         <div class="op">＋</div>
         <div class="fb art"><span class="t">実技4教科 × 評定5 <span class="x15">×1.5</span></span><b>30点</b></div>
         <div class="op">＝</div>
         <div class="fb"><span class="t">1学年あたり</span><b>55点</b></div>
-        <div class="op">×3年</div>
-        <div class="fb total"><span class="t">内申点 満点</span><b>165点</b></div>
+      </div>
+      <div class="formula-out" aria-label="3年分の合計">
+        <span class="fo-eq">55点 × 3年分　＝</span>
+        <div class="fb total"><span class="t">内申点の満点</span><b>165点</b></div>
       </div>
       <p class="note">※評定がオール3なら99点、オール4なら132点、オール5なら165点。中1の成績も中3とまったく同じ重みで効きます。テストの点だけでなく、提出物や授業への取り組みも評定に反映されます。</p>
       <div class="tscroll" style="margin-top:12px"><table class="ab"><thead><tr><th>平均評定は おなじ4.0</th><th>Aさん<br><span class="small">5教科が得意</span></th><th>Bさん<br><span class="small">実技4教科が得意</span></th></tr></thead><tbody>
@@ -988,7 +1046,7 @@ body.has-cbar{padding-bottom:96px}
         <li><span class="dot" aria-hidden="true"></span><span class="when">〜12月</span><h4>志望校を決める</h4><p>三者面談で特色選抜・一般選抜それぞれの出願先を固めます。特色と一般は別の高校でもOK。</p></li>
         <li><span class="dot" aria-hidden="true"></span><span class="when">1月下旬〜2月上旬</span><h4>出願・志願変更</h4><p>特色選抜と一般選抜にそれぞれ出願（令和8年度は2月2日・3日）。志願状況（倍率）の発表後、<b>一般選抜だけ</b>取り下げ・再出願（志願変更）ができます。特色選抜は出願後の変更ができません。</p></li>
         <li><span class="dot" aria-hidden="true"></span><span class="when">2月</span><h4>志願状況の公表 → 最終倍率の確定</h4><p>出願後、志願状況が公表され、最終的な志願倍率が確定します（令和8年度は2月17日に最終志願状況を公表）。</p></li>
-        <li><span class="dot" aria-hidden="true"></span><span class="when">3月上旬</span><h4>学力検査・面接（2日間）</h4><p>全員が5教科と面接を受検します。特色選抜の実技・学校独自検査などもこの期間に実施（令和8年度は3月4日・5日）。この得点が、このあとの判定すべてに使われます。</p></li>
+        <li><span class="dot" aria-hidden="true"></span><span class="when">3月上旬</span><h4>学力検査・面接（2日間）</h4><p>全員が5教科と面接を受検します。特色選抜の実技・学校独自検査などもこの期間に実施（令和9年度は3月3日・4日）。この得点が、このあとの判定すべてに使われます。</p></li>
         <li class="judge j1"><span class="dot">1</span><h4>判定① 特色選抜</h4><div class="card-j"><span class="chance">CHANCE 1</span>調査書＋学力検査（250点換算）＋面接・実績などで判定。<b>合格すればここで決定！</b></div></li>
         <li class="judge j2"><span class="dot">2</span><h4>判定② 一般選抜</h4><div class="card-j"><span class="chance">CHANCE 2</span>特色で届かなくても、<b>同じ学力検査の得点で自動的にもう一度判定</b>。調査書と学力検査等を原則5:5で評価します。</div></li>
         <li><span class="dot" aria-hidden="true"></span><span class="when">3月中旬</span><h4>合格発表</h4><p>特色・一般の結果がまとめて発表されます。同じ日に、定員に空きが出た高校の2次募集情報も公開されます。</p></li>
@@ -1107,22 +1165,42 @@ body.has-cbar{padding-bottom:96px}
       <p id="judgeEmpty" class="small" style="margin:6px 0 0">内申点か偏差値のどちらかと、志望校を選ぶと判定が表示されます。</p>
     </div>
 
-    <details class="fold rv" style="margin-top:14px">
-      <summary>「偏差値」はどの模試のもの？──沖縄の模試は2つあります</summary>
-      <div class="fold-body">
-        <p style="font-size:.86rem;margin:0 0 10px">沖縄の中3が受ける県立入試向けの模試は、大きく2つです。学校の実力テストとは別物で、<b>県内全体の中での現在地（偏差値）</b>がわかります。</p>
-        <div class="tscroll"><table>
-          <thead><tr><th style="width:7em"></th><th>沖縄県統一プレ入試</th><th>おきなわ県模試</th></tr></thead>
-          <tbody>
-            <tr><td><b>通称</b></td><td>プレ入試</td><td>県模試</td></tr>
-            <tr><td><b>主催</b></td><td>誠伸社</td><td>教育開発出版</td></tr>
-            <tr><td><b>特徴</b></td><td>県内最大の母集団（受験者数）。30年以上の蓄積データ</td><td>県立入試と同じ形式の実戦型模試</td></tr>
-            <tr><td><b>受け方</b></td><td colspan="2">多くは塾・学校団体を通じて受験（塾によって採用している模試が異なります）。日程・申込方法は各主催元の最新案内で</td></tr>
-          </tbody>
-        </table></div>
-        <p class="note" style="margin-top:10px">本サイトの基準偏差値・合否データは<b>プレ入試の追跡調査</b>がもとなので、上の判定には<b>プレ入試の偏差値</b>がいちばん正確に合います。県模試の偏差値でもおおまかな目安にはなりますが、受験者の集団がちがうため数値がずれることがあります。どちらの模試も信頼できる定番で、まずは<b>どちらかを受けて現在地を知る</b>ことが第一歩です。</p>
+    <div class="moshi rv" style="margin-top:16px">
+      <h3 class="moshi-h">「偏差値」はどこで測る？──沖縄の2大模試</h3>
+      <p style="font-size:.86rem;margin:0 0 13px;color:var(--ink-soft)">学校の実力テストとは別に、<b>県内全体の中での現在地（偏差値）</b>がわかる模試があります。沖縄の中3向けには、大きく2つの定番模試があります。</p>
+
+      <div class="moshi-cards">
+        <div class="moshi-card">
+          <span class="moshi-tag">その1</span>
+          <h4>沖縄県統一プレ入試</h4>
+          <p class="moshi-by">主催：誠伸社（せいしんしゃ）｜通称「プレ入試」</p>
+          <ul class="check-list">
+            <li>30年をこえる蓄積データ。県内でも<b>最大級の母集団（受験者数）</b></li>
+            <li>本番は<b>秋〜冬を中心に複数回</b>（おおむね9月・12月・1月、2月初めに総仕上げの「ファイナル」）。春〜夏には腕試しの「チャレンジ」もあります</li>
+            <li><b>本サイトの合格基準・合否データは、このプレ入試の追跡調査がもと</b>。下の判定にいちばん正確に合います</li>
+          </ul>
+        </div>
+        <div class="moshi-card">
+          <span class="moshi-tag alt">その2</span>
+          <h4>おきなわ県模試</h4>
+          <p class="moshi-by">主催：教育開発出版｜通称「県模試」</p>
+          <ul class="check-list">
+            <li>こちらも受験者が多く、<b>受験生のおよそ3人に1人</b>が受けるとされる定番</li>
+            <li>本番は<b>夏から冬にかけて複数回</b>。1・2年範囲も計画的に出題され、入試と同じ形式（リスニングつき）で実戦練習できます</li>
+            <li>中部地区を中心に採用する塾が多い印象。プレ入試より平均点はやや低めの傾向といわれます</li>
+          </ul>
+        </div>
       </div>
-    </details>
+
+      <div class="moshi-howto">
+        <p class="mh-t">📍 どこで受ける？──まずは「お近くの塾」へ</p>
+        <p>どちらの模試も、申し込みの多くは<b>学習塾や学校を通じた団体受験</b>です。塾が窓口（代理店）となって、塾の生徒でなくても受けられる「外部受験」を受け付けていることがよくあります。</p>
+        <p>受けたい場合は、<b>お近くの学習塾に「外部受験できますか？どちらの模試を扱っていますか？」と問い合わせてみる</b>のがいちばん確実です。塾によって扱う模試（プレ入試／県模試）がちがうので、両方の取り扱いを聞いてみるとよいでしょう。最新の日程・申込方法・会場は、各模試の主催元や塾の案内で必ず確認してください。</p>
+        <p class="mh-note">※ このサイトは特定の塾をすすめるものではありません。どの塾・どちらの模試であっても、<b>早めに一度受けて「いまの現在地」を知ること</b>が、受験生にとっていちばんの第一歩です。</p>
+      </div>
+
+      <p class="note" style="margin-top:12px">本サイトの判定は<b>プレ入試の偏差値</b>に合わせて作っています。県模試の偏差値でもおおまかな目安になりますが、受験者の集団がちがうため数値が少しずれることがあります。どちらも信頼できる定番模試です。</p>
+    </div>
 
     <!-- 行ける高校 -->
     <div class="block rv" id="reachBlock" hidden>
@@ -1161,7 +1239,6 @@ body.has-cbar{padding-bottom:96px}
       </div></details>
     </div>
 
-    <div class="tldr rv"><span class="tl">つかいかた</span><p><b>行をタップ</b>すると、その学校のくわしいデータがひらきます。気になる学校は「＋比較に追加」で並べてくらべられます。</p></div>
 
     <div class="filterbar">
       <input type="search" id="schoolSearch" placeholder="学校名でさがす" aria-label="学校名検索">
@@ -1211,6 +1288,7 @@ body.has-cbar{padding-bottom:96px}
           <thead><tr><th></th><th>県立</th><th>私立</th></tr></thead>
           <tbody>
             <tr><td>入試の時期</td><td>3月上旬に学力検査・面接（特色・一般は同じ検査で判定）</td><td>12月に出願 → <b>1月を中心に入試</b>（学校・方式により2月実施も）</td></tr>
+            <tr><td>試験科目</td><td><b>5教科</b>（国・数・英・理・社）＋面接</td><td>多くが<b>3教科</b>（国・数・英）。沖縄尚学・興南・沖縄カトリックはいずれも3教科です（推薦や模試利用方式は科目が異なることも）</td></tr>
             <tr><td>出願のしかた</td><td>特色選抜＋一般選抜をセットで出願</td><td><b>専願／併願</b>を選んで出願。同じ学校を複数回受験できる方式を持つ学校も</td></tr>
             <tr><td>結果のタイミング</td><td>3月中旬に合格発表</td><td>県立の学力検査より<b>前に合否がわかる</b> → 私立を押さえてから県立に挑める</td></tr>
             <tr><td>学費</td><td>授業料は実質無償（2025年〜・所得制限なし）</td><td>2026年度から所得制限なしで<b>年45万7,200円まで就学支援金</b>（対象は授業料。入学金・施設費等は自己負担）。「私立＝高い」のイメージは変わりつつある。特待生制度を持つ学校も</td></tr>
@@ -1220,19 +1298,118 @@ body.has-cbar{padding-bottom:96px}
     </div>
 
     <ul class="pv-list rv">
-      <li><span class="nm">沖縄尚学高校</span><span class="pl">那覇市</span><br>5つのコース制。専願・併願のほかに「再受験」のしくみがあり、特待生制度（入学金・授業料の給付）もあります。</li>
-      <li><span class="nm">興南高校</span><span class="pl">那覇市</span><br>高校からの入学は特別進学・総合進学の2コース（フロンティアコースは中学入学のみ）。部活動が盛んなことでも知られます。</li>
-      <li><span class="nm">沖縄カトリック高校</span><span class="pl">宜野湾市</span><br>中高一貫の共学校。募集人数・日程などの詳細は学校の募集要項でご確認ください。</li>
+      <li><span class="nm">沖縄尚学高校</span><span class="pl">那覇市</span><br>国公立大・医学科や海外大を目指す進学校（中高一貫＋高校募集）。高校からは<b>5コース制</b>（難関大・国公立大医学科／尚学パイオニアα／尚学チャレンジャー／国際文化科学〔IB〕／尚学パイオニアβ〔旧体育〕）。
+        <div class="pv-sys">
+          <p><span class="pv-tag">入試のしくみ</span><b>推薦入試</b>（11月ごろ）と<b>一般入試</b>があり、一般入試はさらに<b>A方式</b>（12月ごろ）と<b>B方式</b>（1月ごろ・模試の成績を利用）に分かれます。一般は<b>専願</b>（合格したら入学）と<b>併願</b>（県立などと併願可）を選べます。Web出願。残念でも<b>「再受験」</b>のしくみあり。</p>
+          <p class="pv-sub2"><span class="pv-tag2">科目</span>推薦・一般A方式は<b>3教科（国語・数学・英語）</b>の筆記。県立の5教科とちがい3教科なのが特徴です。B方式は模試（プレ入試・県模試など）の成績を使います。面接の有無は方式・コースで異なるため募集要項で確認を。</p>
+          <p class="pv-mini">志望コースの基準に届かなくても、ほかのコースの基準に達していればそのコースで合格になる<b>スライド合格</b>あり。成績優秀者には入学金・授業料を給付する<b>奨学生（特待生）制度</b>も。最新の募集要項で必ず確認を。</p>
+        </div></li>
+      <li><span class="nm">興南高校</span><span class="pl">那覇市</span><br>甲子園春夏連覇でも知られる進学校（中高一貫＋高校募集）。高校からは<b>特別進学・総合進学</b>（2026年度は「スーパー特進」も新設）。フロンティアコースは中学入学のみ。
+        <div class="pv-sys">
+          <p><span class="pv-tag">入試のしくみ</span><b>推薦入試</b>と<b>一般入試</b>があり、専願・併願を選べます。一般入試は<b>前期・中期・後期</b>と複数回のチャンスがあり、前期が残念でも次の回に再チャレンジできます。特別進学は大学共通テスト受験を見すえたコース、総合進学は部活動との両立を重視するコースです。</p>
+          <p class="pv-sub2"><span class="pv-tag2">科目</span>前期・中期・後期は<b>3教科（国語・数学・英語）</b>の学力試験で、英語にはリスニングがあります（県立の5教科とちがい3教科）。<b>推薦入試は学力試験ではなく、調査書と保護者同伴の面接</b>が中心です。</p>
+          <p class="pv-mini">コースや回ごとに試験日・出願期間がちがいます。最新の高校募集要項で必ず確認を。</p>
+        </div></li>
+      <li><span class="nm">沖縄カトリック高校</span><span class="pl">宜野湾市</span><br>キリスト教精神にもとづく少人数の共学校（中高一貫＋高校募集）。
+        <div class="pv-sys">
+          <p><span class="pv-tag">入試のしくみ</span><b>推薦入試</b>（中学校長の推薦）と<b>一般入試</b>があり、専願・併願を選べます。一般入試は前期・後期など複数回のチャンスがあります。Web出願で、推薦書・調査書などを提出します。</p>
+          <p class="pv-sub2"><span class="pv-tag2">科目</span><b>3教科（国語・数学・英語）</b>の筆記です（県立の5教科とちがい3教科。英語に力を入れている学校で、GTECを全員受験します）。面接の有無は方式・年度で変わることがあるため、高校募集要項もあわせて確認を。</p>
+          <p class="pv-mini">募集人数・試験日・科目は年度で変わります。最新の高校募集要項で確認を。</p>
+        </div></li>
       <li><span class="nm">昭和薬科大学附属高校</span><span class="pl">浦添市</span><br>完全中高一貫校のため、<b>高校からの募集は行っていません</b>（入学は中学受験のみ）。</li>
       <li><span class="nm">通信制高校という選択肢</span><span class="pl">県内各地</span><br>通学日数やオンラインの度合いを選べる学校です。入学の時期・出願のしくみは県立全日制の入試とは別。
         <details class="fold" style="margin-top:9px"><summary>県内で選べる通信制の一覧（タップでひらく）</summary><div class="fold-body">
-        <ul class="mini-list">
-          <li><b>① 県立（通信制課程）</b>　泊高校（那覇市）／宜野湾高校（宜野湾市）</li>
-          <li><b>② 私立・県内に本校がある通信制高校</b>　N高等学校（うるま市）／つくば開成国際高校（那覇市）／ヒューマンキャンパス高校（名護市・那覇に学習センター）／八洲学園大学国際高校（本部町）／瑞穂MSC高校（石垣市）／エナジックスポーツ高等学院（名護市）</li>
-          <li><b>③ 県外に本校がある通信制高校の県内キャンパスなど</b>　飛鳥未来きずな高校 沖縄キャンパス（那覇市）／未来高校 沖縄学習センター（那覇市）／明誠高校 沖縄中央SHIP（沖縄市）　など</li>
-          <li><b>④ サポート校</b>（それ自体は高校ではなく、提携する通信制高校に在籍して卒業を目指す形態）　トライ式高等学院（那覇市内）／沖縄エンカレッジ高等学院（沖縄市）　など</li>
-        </ul>
-        <p class="note" style="margin:9px 0 0">③④は開校・移転が多いため「など」としています。学費・通学スタイル・卒業までの仕組みは学校ごとに大きくちがうので、必ず最新の募集案内で確認を。とくにサポート校は「在籍する高校（卒業証書を出す学校）はどこか」を確認するのが大切です。</p>
+
+        <div class="tsushin-intro">
+          <p><b>通信制の「入学」は、全日制とはかなりちがいます。</b>多くの学校は学力検査（5教科の点数勝負）ではなく、<b>書類選考や面接が中心</b>。「なぜこの学校で学びたいか」を見られることが多く、入学のチャンスは年に何回かあります（4月入学のほか、10月入学などを設ける学校も）。下に学校ごとの目安をまとめますが、<b>制度は毎年変わる</b>ので、最終的には必ず各校の募集要項で確認してください。</p>
+        </div>
+
+        <h4 class="tsushin-cat">① 県立（通信制課程）</h4>
+        <div class="ts-cards">
+          <div class="ts-card">
+            <p class="ts-name">泊高校 通信制課程<span class="ts-area">那覇市</span></p>
+            <p class="ts-desc">県立の通信制。レポート提出と、日曜などのスクーリング（登校授業）で単位を積み上げます。学費が公立水準でおさえられるのが大きな特徴。</p>
+            <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>県教育委員会の通信制課程 入学者選抜にそって出願します（全日制とは別日程・例年春に出願→選考）。出願書類のほか、状況により作文・面接など。秋に学校説明会があります。</p>
+          </div>
+          <div class="ts-card">
+            <p class="ts-name">宜野湾高校 通信制課程<span class="ts-area">宜野湾市</span></p>
+            <p class="ts-desc">中部の県立通信制。泊高校と同じく県の通信制課程として、レポートとスクーリングで学びます。</p>
+            <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>泊高校と同じ県の通信制課程 入学者選抜にそって出願・選考します。日程・方法は県教育委員会の発表で確認を。</p>
+          </div>
+        </div>
+
+        <h4 class="tsushin-cat">② 私立・県内に本校がある通信制高校</h4>
+        <div class="ts-cards">
+          <div class="ts-card">
+            <p class="ts-name">N高等学校<span class="ts-area">うるま市</span></p>
+            <p class="ts-desc">学校法人 角川ドワンゴ学園の通信制。ネット中心で学ぶ「ネットコース」と、キャンパスに通う「通学コース」などがあり、学び方を選べます。</p>
+            <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>Web出願。ネット中心のコースは<b>書類選考</b>、通学コースは<b>書類選考＋面接・筆記</b>など、コースで選考が変わります。新入学は4月のほか、出願の受付期が年に複数回あります。</p>
+          </div>
+          <div class="ts-card">
+            <p class="ts-name">つくば開成国際高校<span class="ts-area">那覇市</span></p>
+            <p class="ts-desc">那覇に本校を置く私立通信制。一人ひとりの学習計画に合わせて、登校日数を選びながら卒業を目指せるタイプ。</p>
+            <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>書類選考と面接が中心（学力試験で大きくふるい落とす形ではありません）。出願時期や必要書類は募集要項で確認を。</p>
+          </div>
+          <div class="ts-card">
+            <p class="ts-name">ヒューマンキャンパス高校<span class="ts-area">名護市（那覇に学習センター）</span></p>
+            <p class="ts-desc">本校は名護市。専門分野の学習（声優・イラスト・ビューティーなど）と高校卒業を両立できるコースが豊富。那覇にも通える拠点があります。</p>
+            <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>書類選考・面接が中心。希望コースによって出願の流れが異なるため、説明会・募集要項で確認を。</p>
+          </div>
+          <div class="ts-card">
+            <p class="ts-name">八洲学園大学国際高校<span class="ts-area">本部町</span></p>
+            <p class="ts-desc">本部町に本校を置く私立通信制。自分のペースで学べる単位制で、登校型・在宅型などを選べます。</p>
+            <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>書類選考・面接が中心。出願時期・方法は募集要項で確認を。</p>
+          </div>
+          <div class="ts-card">
+            <p class="ts-name">瑞穂MSC高校<span class="ts-area">石垣市</span></p>
+            <p class="ts-desc">石垣市に本校を置く私立通信制（2023年開校）。離島からも学びやすいオンライン活用型。</p>
+            <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>書類選考・面接が中心。新しい学校のため、最新の募集要項・問い合わせで確認を。</p>
+          </div>
+          <div class="ts-card">
+            <p class="ts-name">エナジックスポーツ高等学院<span class="ts-area">名護市</span></p>
+            <p class="ts-desc">スポーツに力を入れた学び方ができる通信制（広域通信制と連携）。競技と高校卒業の両立を目指す人向け。</p>
+            <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>書類選考・面接が中心。競技実績などを見る場合もあります。詳細は学院に問い合わせを。</p>
+          </div>
+        </div>
+
+        <h4 class="tsushin-cat">③ 県外に本校がある通信制高校の県内キャンパス</h4>
+        <div class="ts-cards">
+          <div class="ts-card">
+            <p class="ts-name">飛鳥未来きずな高校 沖縄キャンパス<span class="ts-area">那覇市</span></p>
+            <p class="ts-desc">三幸学園グループの広域通信制。登校日数を「週1〜5日」などから選べる自由度の高さが特徴。本校は宮城県。</p>
+            <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>書類選考・面接が中心。新入学は4月のほか転入・編入の受付もあります。出願時期は募集要項で確認を。</p>
+          </div>
+          <div class="ts-card">
+            <p class="ts-name">未来高校 沖縄学習センター<span class="ts-area">那覇市</span></p>
+            <p class="ts-desc">本校は高知県の広域通信制。沖縄の学習センターに通いながら、自分のペースで単位を取れます。</p>
+            <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>書類選考・面接が中心。出願時期・方法は学習センターや募集要項で確認を。</p>
+          </div>
+          <div class="ts-card">
+            <p class="ts-name">明誠高校 沖縄中央SHIP<span class="ts-area">沖縄市</span></p>
+            <p class="ts-desc">本校は山口県の広域通信制。沖縄市の拠点（SHIP）に通って学べます。</p>
+            <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>書類選考・面接が中心。出願時期・方法は拠点や募集要項で確認を。</p>
+          </div>
+        </div>
+        <p class="note" style="margin:2px 0 0">※このほかにも県内に拠点を設ける広域通信制があります。開校・移転が多いため、最新情報は各校サイトで確認してください。</p>
+
+        <h4 class="tsushin-cat">④ サポート校</h4>
+        <div class="tsushin-support">
+          <p><b>サポート校は、それ自体は「高校」ではありません。</b>提携する通信制高校に在籍しながら、勉強や生活面のサポートを受けて卒業を目指す“塾のような”存在です。卒業証書を出すのは、あくまで在籍する通信制高校になります。</p>
+          <div class="ts-cards">
+            <div class="ts-card">
+              <p class="ts-name">トライ式高等学院<span class="ts-area">那覇市内</span></p>
+              <p class="ts-desc">家庭教師のトライ系のサポート校。マンツーマン指導で、提携通信制高校の卒業を支えます。</p>
+              <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>面談・書類が中心。入学時期は柔軟。提携する通信制高校がどこかを必ず確認してください。</p>
+            </div>
+            <div class="ts-card">
+              <p class="ts-name">沖縄エンカレッジ高等学院<span class="ts-area">沖縄市</span></p>
+              <p class="ts-desc">沖縄市のサポート校。少人数で、提携通信制高校の卒業をサポートします。</p>
+              <p class="ts-sys"><span class="ts-tag">入学のしくみ</span>面談・書類が中心。入学時期は柔軟。卒業証書を出す通信制高校を確認してください。</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="note" style="margin:11px 0 0">学費・通学スタイル・卒業までの仕組みは学校ごとに大きくちがいます。<b>説明会や個別相談で、実際に話を聞いてから決める</b>のがおすすめです。とくにサポート校は「在籍する高校（卒業証書を出す学校）はどこか」を必ず確認してください。ここに書いた入学のしくみは目安で、年度によって変わります。
         </div></details></li>
     </ul>
 
@@ -1250,7 +1427,7 @@ body.has-cbar{padding-bottom:96px}
     <div class="rv">
       <details class="fold"><summary>面接は「全員」にある</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">沖縄県立高校入試は、一般選抜でも全員が面接を受けます（学力検査と同じ2日間で実施）。重み・扱いは学校ごとに異なり、校別の基準では「個人面接・1人5分程度」「観点は応答内容・態度・言葉遣いなど」と公表する学校もあります。型どおりの練習よりも、「なぜこの学校か」を自分の言葉にしておくことが本体です。</p></div></details>
       <details class="fold"><summary>特色選抜は、学校ごとに「別物」</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">各校が「求める生徒像」「重視する観点」を公表し、出願要件・検査内容（面接・作文・実技など）・募集枠の割合まで学校ごとに違います（<a href="#shikumi">3校の実例</a>）。毎年秋に県教委から一覧が出ますが、「この学校では、なにが・どれくらい効くのか」の読み込みは、かなり個別的な作業です。</p></div></details>
-      <details class="fold"><summary>内申の「つくられ方」が変わった</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">通知表はいま、3つの観点（知識・技能／思考・判断・表現／主体的に学習に取り組む態度）で評価されます。提出物・授業での取り組み・振り返り・小テストの積み重ねが評定に直結。県内では定期テストを廃止・縮小して単元テストに切り替える中学校も出てきており、「テスト前だけ頑張る」型は通用しにくくなっています。むかしのイメージのままだと、対策がずれます。</p></div></details>
+      <details class="fold"><summary>内申の「つくられ方」が変わった</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">通知表はいま、3つの観点（知識・技能／思考・判断・表現／主体的に学習に取り組む態度）で評価されます。提出物・授業での取り組み・振り返り・小テストの積み重ねが評定に直結。県内では定期テストを廃止・縮小して単元テストに切り替える中学校も出てきており、「テスト前だけ頑張る」型は通用しにくくなっています。以前のイメージのままだと、対策がずれてしまいます。</p></div></details>
       <details class="fold"><summary>欠席が多い・学校に行きづらい</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">受験できなくなるわけではありません。調査書の扱いや選抜での配慮は状況・学校によって異なるため、中学校と志望校への早めの相談が大切です。全日制のほかに定時制・通信制も含めて進路を設計する、という選択肢もあります（<a href="#shiritsu">県内の通信制の一覧</a>）。</p></div></details>
       <details class="fold"><summary>発達障害などの特性がある</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">沖縄県には「学力検査等の配慮願い」という事前申請の制度があり、在籍する中学校を通して手続きします。申請の時期・書類が決まっているので、夏〜秋のうちに動いておくと安心です。</p></div></details>
       <details class="fold"><summary>英検などの検定</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">「持っていれば必ず加点」という全県一律のルールはありません。特色選抜の評価観点や私立入試で活きる場合があり、効果は志望校しだい。「どの級を・いつまでに・何のために」を逆算して決めるのが大切です。</p></div></details>
@@ -1301,7 +1478,7 @@ body.has-cbar{padding-bottom:96px}
       <details><summary><span class="q">Q14</span>英検を持っていると加点される？</summary><div class="a"><p>「持っていれば必ず加点」という全県一律の仕組みはありません。特色選抜の評価観点や私立入試で活きる場合があり、効果は志望校しだいです。「どの級を・いつまでに・何のために取るか」を志望校から逆算して決めましょう。</p></div></details>
       <details><summary><span class="q">Q15</span>学区（通学区域）はあるの？</summary><div class="a"><p>普通科には通学区域があり、区域外の高校へは<b>定員の10%以内</b>の枠で入学できます。専門学科・総合学科は県内のどこからでも受験可能です。詳しくは県の「通学区域に関する規則」をご確認ください。</p></div></details>
       <details><summary><span class="q">Q16</span>学力検査の平均点はどれくらい？</summary><div class="a"><p>5教科合計（300点満点）で、例年<b>おおむね140〜160点台</b>です（2025年3月実施は162.5点）。教科ごとの平均は<a href="#schedule">日程・配点のセクション</a>に年度別でまとめています。半分とれれば、ほぼ真ん中という規模感です。</p></div></details>
-      <details><summary><span class="q">Q17</span>入試の日程はいつ？</summary><div class="a"><p>学力検査は<b>例年3月上旬の2日間</b>（面接もこの2日間で実施）。令和8年度（2026年春）は3月4日・5日に学力検査、3月17日に合格発表でした。令和9年度（2027年春）の正式日程は<b>例年9月ごろ</b>に県教育委員会から発表されます。<a href="#schedule">カウントダウンと年間スケジュール</a>で「いま何をする時期か」も確認できます。</p></div></details>
+      <details><summary><span class="q">Q17</span>入試の日程はいつ？</summary><div class="a"><p><b>令和9年度（2027年春実施）</b>は、学力検査・面接が<b>3月3日（水）・4日（木）</b>、一般選抜の合格発表が<b>3月17日（水）</b>、第2次募集の合格発表が<b>3月27日（土）</b>です。<a href="#top">ページ先頭のカウントダウン</a>と<a href="#schedule">年間スケジュール</a>で「いま何をする時期か」も確認できます。</p></div></details>
       <details><summary><span class="q">Q18</span>当日の持ち物は？</summary><div class="a"><p>HB以上の濃さの<b>黒鉛筆またはシャープペンシル</b>（和歌・格言などが印刷されたものは不可）、<b>プラスチック製の消しゴム</b>、<b>定規（三角定規も可）とコンパス</b>。分度器・分度器機能つき定規・三角スケールは使えません。時計は机に置けますが、通信機能のある端末類は不可。くわしい一覧は<a href="#schedule">日程のセクション</a>にまとめています（令和8年度実績）。</p></div></details>
       <details><summary><span class="q">Q19</span>全日制のほかに、通信制という選択肢はある？</summary><div class="a"><p>あります。県立では<b>泊高校（那覇市）と宜野湾高校に通信制課程</b>があり、私立では<b>県内に本校を置く通信制高校が6校</b>（N高等学校・つくば開成国際・ヒューマンキャンパス・八洲学園大学国際・瑞穂MSC・エナジックスポーツ高等学院）あります。県外に本校がある学校のキャンパスも那覇市などに（例：飛鳥未来きずな高校 沖縄キャンパス）。入学の時期・出願のしくみは県立全日制の入試とは別です。<a href="#shiritsu">私立高校のセクション</a>に一覧をまとめています。</p></div></details>
     </div>
@@ -1354,7 +1531,7 @@ body.has-cbar{padding-bottom:96px}
       <a href="#naishin">内申点計算</a>
       <a href="#hantei">合格判定</a>
       <a href="#schools">学校データ</a>
-      <a href="#beforeafter">むかしとの違い</a>
+      <a href="#beforeafter">以前との違い</a>
       <a href="#schedule">入試日程</a>
       <a href="#shiritsu">私立高校</a>
       <a href="#koushiki">公式リンク集</a>
@@ -1362,7 +1539,7 @@ body.has-cbar{padding-bottom:96px}
     </div>
     <p>当サイトの判定・データは独自の集計にもとづく参考情報です。入試制度・日程・募集要項は変更される場合があるため、必ず沖縄県教育委員会および各高校の最新の公式発表をご確認ください。</p>
     <p>最終更新：2026年6月13日<!-- ★内容を更新したら、この日付も更新 --></p>
-    <p>運営・お問い合わせ：<a href="https://www.juken-camp.online/" target="_blank" rel="noopener">JUKEN CAMP（沖縄の学習塾）</a>　— データの誤り・リンク切れのご指摘も、こちらのリンク先から。</p>
+    <p>運営・お問い合わせ：<a href="https://www.juken-camp.online/" target="_blank" rel="noopener">JUKEN CAMP（受験キャンプ）</a>　— データの誤り・リンク切れのご指摘も、こちらのリンク先から。</p>
     <p>© <span id="yy"></span> JUKEN CAMP — 沖縄県立高校入試ナビ</p>
   </div>
 </footer>
@@ -2184,6 +2361,7 @@ function judge(){
   arc.style.strokeDashoffset = GAUGE_LEN * (1 - p/100);
   $("#gaugeNum").textContent = p + "%";
   const gb = $("#gaugeBand"); gb.textContent = band.label; gb.style.color = band.text;
+  if (p >= 80) gb.insertAdjacentHTML("afterbegin", '<span class="band-sakura" aria-hidden="true">❀</span>');
 
   let cm = band.msg;
   if (d.rT >= 2)  cm += ` なお特色選抜の倍率は${fmtRate(d.rT)}倍と高めです。一般選抜での得点づくりも前提に準備しておくと安心です。`;
@@ -2568,20 +2746,18 @@ $("#cbClear").addEventListener("click", () => {
 /* =====================================================================
    SCHEDULE｜日程・カウントダウン
    ---------------------------------------------------------------------
-   ★ 令和9年度の正式日程は未発表（2026年6月12日時点で確認済み）。
-     例年9月ごろに県教育委員会から発表されます。確認先：
-     https://www.pref.okinawa.jp/kyoiku/gakko/1008883/1008887/1039961.html
-     発表されたら confirmed:true にして days / announce を正式日程に
-     差し替えるだけで、表示が「見込み」→「確定」に切り替わります。
-     ※confirmed:false の間は days / announce を「見込み」として表示します
-       （根拠：令和7・8年度はいずれも3月4日・5日に学力検査、
-         令和8年度の合格発表は3月17日）。
+   ★ 令和9年度（2027年春実施）の県教委発表にもとづく確定日程。
+     翌年度に更新する際は label / days / announce / announce2 を
+     新年度の発表値に差し替える（confirmed は通常 true のまま）。
+     正式発表前に前倒しで置く場合のみ confirmed:false にすると
+     「見込み」表示に切り替わる。
    ===================================================================== */
 const EXAM = {
   label: "令和9年度（2027年春入学）",
-  confirmed: false,                     // ★正式発表が出たら true に
-  days: ["2027-03-04","2027-03-05"],    // confirmed:false の間は「見込み」表示
-  announce: "2027-03-17"                // 〃
+  confirmed: true,                      // 令和9年度＝2027年春実施・県教委発表の確定日程
+  days: ["2027-03-03","2027-03-04"],    // 学力検査・面接（確定）
+  announce: "2027-03-17",               // 一般選抜 合格発表（確定）
+  announce2: "2027-03-27"               // 第2次募集 合格発表（確定）
 };
 
 function fmtJD(iso){
@@ -2590,11 +2766,47 @@ function fmtJD(iso){
   const w = ["日","月","火","水","木","金","土"][new Date(Date.UTC(y, m-1, d)).getUTCDay()];
   return `${y}年${m}月${d}日（${w}）`;
 }
+function fmtMD(iso){ const [y,m,d]=iso.split("-").map(Number); const w=["日","月","火","水","木","金","土"][new Date(Date.UTC(y,m-1,d)).getUTCDay()]; return `${m}月${d}日（${w}）`; }
+function fmtD(iso){ const [y,m,d]=iso.split("-").map(Number); const w=["日","月","火","水","木","金","土"][new Date(Date.UTC(y,m-1,d)).getUTCDay()]; return `${d}日（${w}）`; }
+
+/* ===== きょうのひとこと（日付シードで日替わり＋季節。サーバー不要） ===== */
+const TODAY_WORDS = [
+  "わからないことが見つかるのは、前に進んでいる印。",
+  "比べる相手は、昨日まで。",
+  "できないことは、伸びしろのこと。",
+  "焦りの多くは、情報が足りないことから来る。",
+  "受験は、最後まで動かせる。",
+  "結果が出るのは最後。いまは、積み重ねるとき。",
+  "睡眠時間は、学力の一部。",
+  "完璧でなくても、続いていればいい。",
+  "迷ったら、まず公式の情報から。",
+  "小さな一歩でも、止まらなければ進む。",
+  "知ることは、不安をへらす近道。",
+  "今日できることを、ひとつ。"
+];
+const TODAY_SEASON = {
+  spring:"桜の季節。合否が出そろうころ。",
+  tsuyu:"沖縄は梅雨。外が静かな日は、基礎固めに向く。",
+  summer:"夏は、もっとも伸びやすい時期。",
+  autumn:"秋は模試の季節。いまの位置を知る好機。",
+  winter:"冬。直前期は、手を広げるより総点検。"
+};
+function nowJST(){ return new Date(Date.now()+9*3600000); }
+function renderToday(){
+  const j=nowJST();
+  const m=j.getUTCMonth()+1;
+  const sk = (m>=3&&m<=4)?"spring":(m>=5&&m<=6)?"tsuyu":(m>=7&&m<=8)?"summer":(m>=9&&m<=11)?"autumn":"winter";
+  const serial=Math.floor(Date.UTC(j.getUTCFullYear(),j.getUTCMonth(),j.getUTCDate())/86400000);
+  const n=TODAY_WORDS.length, idx=((serial%n)+n)%n;
+  const w=$("#cdWord"), s2=$("#cdSeason");
+  if(w) w.textContent=TODAY_WORDS[idx];
+  if(s2) s2.textContent=TODAY_SEASON[sk];
+}
 
 function renderSchedule(){
   const card = $("#cdCard"); if (!card) return;
   const est = !EXAM.confirmed;
-  $("#cdLabel").textContent = EXAM.label + "　学力検査まで" + (est ? "（見込み）" : "");
+  $("#cdLabel").textContent = EXAM.label + "　学力検査まで";
   const numBox = $("#cdNum"), sub = $("#cdSub");
 
   if (EXAM.days && EXAM.days.length){
@@ -2602,20 +2814,26 @@ function renderSchedule(){
     const end   = new Date((EXAM.days[1] || EXAM.days[0]) + "T23:59:59+09:00");
     const now   = new Date();
     const diff  = Math.ceil((start - now) / 86400000);
-    const tag   = est ? '<span class="est-tag">見込み</span>' : "";
+    const tag   = est ? ' <span class="est-tag">見込み</span>' : '';
     if (!est && now >= start && now <= end){
       numBox.hidden = true;
-      sub.innerHTML = `<b>学力検査 実施中</b>（${fmtJD(EXAM.days[0])}〜）。最後まで、いつもどおりに。`;
+      sub.innerHTML = `<b>学力検査 実施中</b>（${fmtMD(EXAM.days[0])}〜）。最後まで、いつもどおりに。<span class="cd-row cd-sakura">あなたの春が、もうそこに。</span>`;
     } else if (diff > 0){
       numBox.hidden = false;
       $("#cdDays").textContent = diff;
-      sub.innerHTML = `検査日${tag}：${EXAM.days.map(fmtJD).join("・")}` +
-        (EXAM.announce ? `　／　合格発表${tag}：${fmtJD(EXAM.announce)}` : "") +
-        (est ? `<br>※令和7・8年度はいずれも3月4日・5日に実施されており、それをもとにした見込みです。正式な日程は例年9月ごろに県教育委員会から発表されます（発表後、ここは確定表示に切り替わります）。` : "");
+      const exDates = EXAM.days.map((d,i) =>
+        `<span class="nd">${i===0 ? fmtJD(d) : (d.slice(0,7)===EXAM.days[0].slice(0,7) ? fmtD(d) : fmtJD(d))}</span>`
+      ).join("・");
+      sub.innerHTML =
+        `<span class="cd-row"><b>学力検査</b>${tag}：${exDates}</span>` +
+        (EXAM.announce ? `<span class="cd-row"><b>合格発表</b>：<span class="nd">${fmtMD(EXAM.announce)}</span></span>` : "") +
+        (EXAM.announce2 ? `<span class="cd-row">第2次募集の合格発表：<span class="nd">${fmtMD(EXAM.announce2)}</span></span>` : "") +
+        (diff <= 60 ? '<span class="cd-row cd-sakura">桜咲くまで、あと少し。</span>' : "");
     } else if (!est){
       numBox.hidden = true;
       sub.innerHTML = `${EXAM.label}の学力検査は終了しました。` +
-        (EXAM.announce ? `合格発表：${fmtJD(EXAM.announce)}。` : "") +
+        (EXAM.announce ? `合格発表：${fmtMD(EXAM.announce)}。` : "") +
+        (EXAM.announce2 ? `第2次募集の合格発表：${fmtMD(EXAM.announce2)}。` : "") +
         `次年度の日程は、発表され次第ここに反映します。`;
     } else {
       numBox.hidden = true;
@@ -2725,6 +2943,7 @@ renderGradebook();
 calcNaishin();
 renderTable();
 renderSchedule();
+renderToday();
 </script>
 </body>
 </html>
