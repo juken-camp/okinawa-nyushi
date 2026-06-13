@@ -306,22 +306,19 @@ h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color
 .pt h3{margin:6px 0 8px;font-size:1.02rem;color:var(--ink)}
 .pt p{margin:0;font-size:.84rem;color:var(--ink-soft);line-height:1.8}
 
-/* ---- 内申の式 figure ---- */
-.formula{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin:18px 0 8px}
-.formula .fb{
-  flex:1 1 130px;background:var(--sea-tint);border:1.5px solid #bcdcec;border-radius:12px;
-  padding:12px 10px;text-align:center;min-width:128px;
-}
-.formula .fb.art{background:var(--sun-tint);border-color:#f0d9a8}
-.formula .fb .t{font-size:.72rem;font-weight:700;color:var(--ink-soft)}
-.formula .fb b{display:block;font-family:var(--fm);font-weight:800;font-size:1.25rem;color:var(--sea-deep);line-height:1.4}
-.formula .fb.art b{color:#a86a12}
-.formula .op{align-self:center;font-family:var(--fm);font-weight:800;font-size:1.3rem;color:var(--ink-soft)}
-.formula-out{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:4px 0 8px}
-.formula-out .fo-eq{font-family:var(--fm);font-weight:800;font-size:1.05rem;color:var(--sea-deep)}
-.formula-out .fb.total{flex:0 0 auto;background:#fff;border:2px solid var(--sea);border-radius:12px;padding:10px 26px;text-align:center;box-shadow:var(--shadow)}
-.formula-out .fb.total .t{display:block;font-size:.72rem;font-weight:700;color:var(--sea-deep)}
-.formula-out .fb.total b{display:block;font-family:var(--fm);font-weight:800;font-size:1.5rem;color:var(--sea-deep);line-height:1.4}
+/* ---- 内申点の計算 figure（計算明細・レジャー型） ---- */
+.nfig{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:2px 20px;margin:18px 0 8px;position:relative;overflow:hidden}
+.nfig::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--sea)}
+.nfig-row{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.nfig-row:first-child{border-top:none}
+.nfig-l{font-size:.88rem;font-weight:700;color:var(--ink-soft);line-height:1.5}
+.nfig-v{font-family:var(--fm);font-weight:800;font-size:1.35rem;color:var(--sea-deep);white-space:nowrap}
+.nfig-v i{font-style:normal;font-size:.56em;font-weight:700;color:var(--ink-soft);margin-left:2px}
+.nfig-sub .nfig-l{color:var(--ink);font-weight:800}
+.nfig-mul{text-align:right;font-family:var(--fm);font-weight:800;font-size:.78rem;color:var(--ink-soft);padding:7px 0 0}
+.nfig-total{border-top:2px solid var(--sea);margin-top:2px}
+.nfig-total .nfig-l{color:var(--ink);font-weight:800;font-size:.95rem}
+.nfig-total .nfig-v{font-size:2rem}
 .x15{display:inline-block;background:var(--coral);color:#fff;font-family:var(--fm);font-weight:800;font-size:.66rem;border-radius:6px;padding:1px 7px;vertical-align:2px}
 
 /* ---- 比重バー ---- */
@@ -955,16 +952,12 @@ body.has-cbar{padding-bottom:96px}
     <div class="block card rv">
       <h3>① 内申点 — 3年間の通知表が「持ち点」になる</h3>
       <p style="font-size:.88rem">内申点（調査書点）は、<strong>中1・中2・中3の通知表の評定（5段階）</strong>から計算されます。沖縄県の特徴は、音楽・美術・保健体育・技術家庭の<strong>実技4教科が1.5倍</strong>で計算されること。そして<strong>3学年すべてが同じ重み</strong>で合計されることです。</p>
-      <div class="formula" aria-label="1学年あたりの内申点">
-        <div class="fb"><span class="t">5教科 × 評定5</span><b>25点</b></div>
-        <div class="op">＋</div>
-        <div class="fb art"><span class="t">実技4教科 × 評定5 <span class="x15">×1.5</span></span><b>30点</b></div>
-        <div class="op">＝</div>
-        <div class="fb"><span class="t">1学年あたり</span><b>55点</b></div>
-      </div>
-      <div class="formula-out" aria-label="3年分の合計">
-        <span class="fo-eq">55点 × 3年分　＝</span>
-        <div class="fb total"><span class="t">内申点の満点</span><b>165点</b></div>
+      <div class="nfig" aria-label="内申点の計算（評定がすべて5の場合）">
+        <div class="nfig-row"><span class="nfig-l">5教科 × 評定5</span><span class="nfig-v">25<i>点</i></span></div>
+        <div class="nfig-row"><span class="nfig-l">実技4教科 × 評定5 <span class="x15">×1.5</span></span><span class="nfig-v">30<i>点</i></span></div>
+        <div class="nfig-row nfig-sub"><span class="nfig-l">1学年あたり</span><span class="nfig-v">55<i>点</i></span></div>
+        <div class="nfig-mul">× 3年分</div>
+        <div class="nfig-row nfig-total"><span class="nfig-l">内申点の満点</span><span class="nfig-v">165<i>点</i></span></div>
       </div>
       <p class="note">※評定がオール3なら99点、オール4なら132点、オール5なら165点。中1の成績も中3とまったく同じ重みで効きます。テストの点だけでなく、提出物や授業への取り組みも評定に反映されます。</p>
       <div class="tscroll" style="margin-top:12px"><table class="ab"><thead><tr><th>平均評定は おなじ4.0</th><th>Aさん<br><span class="small">5教科が得意</span></th><th>Bさん<br><span class="small">実技4教科が得意</span></th></tr></thead><tbody>
