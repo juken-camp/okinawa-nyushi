@@ -134,6 +134,11 @@
           "@type": "Question",
           "name": "沖縄県に通信制高校はありますか？",
           "acceptedAnswer": { "@type": "Answer", "text": "あります。県立では泊高校（那覇市）と宜野湾高校に通信制課程があり、私立では県内に本校を置く通信制高校が6校あります（N高等学校・つくば開成国際高校・ヒューマンキャンパス高校・八洲学園大学国際高校・瑞穂MSC高校・エナジックスポーツ高等学院）。このほか県外に本校がある通信制高校のキャンパス・サポート校も那覇市などにあります。入学の時期・出願方法は、県立全日制の入試とは別の仕組みです。" }
+        },
+        {
+          "@type": "Question",
+          "name": "沖縄県立高校入試で自分の学力検査の点数はわかりますか？自己採点はしたほうがいいですか？",
+          "acceptedAnswer": { "@type": "Answer", "text": "学力検査の点数は本人には知らされず、発表されるのは合格・不合格だけです。そのため本番中に自分の答えを問題用紙に控え、試験後に新聞や塾の解答速報で出る問題と正答と照らし合わせて自己採点しておくのがおすすめです。とくに2次募集は学力検査をやり直さず、3月の学力検査の得点に面接・調査書を合わせて選抜するため、自分の点数の見当がついていないとどの学校を受けるか選べません。合格発表（3月17日）までに自己採点しておくと2次募集（3月27日合格発表）にすぐ動けます。点数を正式に知りたい場合は沖縄県個人情報保護条例にもとづく開示請求の制度がありますが、可否や手続きは中学校・県教育委員会に確認してください。" }
         }
       ]
     }
@@ -262,7 +267,7 @@ strong{color:var(--sea-deep)}
 .src-list a{font-weight:700;font-size:.88rem}
 .src-list small{display:block;font-size:.72rem;color:var(--ink-soft);margin-top:2px}
 .hero-fact{
-  margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
+  margin-top:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
 }
 .hero-fact .f{
   background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center;box-shadow:var(--shadow);
@@ -738,7 +743,7 @@ body.has-cbar{padding-bottom:96px}
 <div class="hero">
   <div class="wrap">
     <h1><span class="accent">沖縄県立高校入試</span>が、<br>ここだけでぜんぶわかる。</h1>
-    <p class="sub">特色選抜・一般選抜のしくみを、図とことばでやさしく。通知表の数字を入れるだけで、内申点と合格可能性がその場でわかります。</p>
+    <p class="sub">特色選抜・一般選抜のしくみを、図とことばでやさしく。通知表の数字から内申点を、模試の偏差値を足せば合格可能性まで、その場で。</p>
 
     <div class="cd-card rv" id="cdCard">
       <span class="cd-l" id="cdLabel">令和9年度 学力検査</span>
@@ -755,6 +760,7 @@ body.has-cbar{padding-bottom:96px}
       <a class="step s2" href="#naishin"><span class="no">2</span><span class="tx"><b>内申点を計算する</b><small>通知表の数字をタップするだけ</small></span><span class="ar">→</span></a>
       <a class="step s3" href="#hantei"><span class="no">3</span><span class="tx"><b>合格可能性をみる</b><small>志望校とのキョリがわかる</small></span><span class="ar">→</span></a>
     </div>
+    <p class="steps-label">大事な数字は、3つ</p>
     <div class="hero-fact">
       <div class="f"><b>165<small style="font-size:.7em">点</small></b><span>内申点の満点</span></div>
       <div class="f"><b>300<small style="font-size:.7em">点</small></b><span>学力検査の満点</span></div>
@@ -769,7 +775,7 @@ body.has-cbar{padding-bottom:96px}
     <p class="toc-title">このページでわかること ─ ぜんぶで8つ（タップでジャンプ）</p>
     <div class="toc">
       <a href="#beforeafter"><b><span class="tn">1</span>以前との違い</b><small>受験の常識アップデート</small></a>
-      <a href="#schedule"><b><span class="tn">2</span>日程</b><small>いつ？あと何日？・平均点</small></a>
+      <a href="#schedule"><b><span class="tn">2</span>日程</b><small>本番の日・1年の流れ・平均点</small></a>
       <a href="#shikumi"><b><span class="tn">3</span>仕組み</b><small>合否はこう決まる</small></a>
       <a href="#naishin"><b><span class="tn">4</span>内申点を計算</b><small>通知表をタップするだけ</small></a>
       <a href="#hantei"><b><span class="tn">5</span>合格判定</b><small>志望校とのキョリ</small></a>
@@ -821,6 +827,7 @@ body.has-cbar{padding-bottom:96px}
           <thead><tr><th></th><th>以前</th><th>いま</th></tr></thead>
           <tbody>
             <tr><td>推薦入試</td><td>中学校長の推薦が必要。一部の生徒だけの制度</td><td><b>「特色選抜」</b>に。推薦はいらない。だれでも出願できる（2025年春〜）</td></tr>
+            <tr><td>早期合格の有無</td><td>あった。推薦なら本番（学力検査）より前・1月末ごろに合否が出て、受かれば学力検査を受けずに進路が確定した</td><td><b>なくなった</b>。特色選抜も全員が3月の学力検査を受け、合否は一般選抜と<b>同じ3月17日に発表</b>。学力検査の点数も合否に使われるため、本番より先に合格を決めて回避することはできない</td></tr>
             <tr><td>チャンスの回数</td><td>実質、本番一発勝負</td><td>特色 → 一般 → 2次募集で<b>最大3回</b></td></tr>
             <tr><td>通知表のつき方</td><td>相対評価。「5」はクラスで決まった人数だけ</td><td><b>絶対評価</b>。提出物・小テスト・授業の取り組みが評定に直結</td></tr>
             <tr><td>テスト</td><td>中間・期末の一発勝負</td><td><b>単元テスト</b>に切り替える中学校も。ふだんの積み重ねが内申に</td></tr>
@@ -842,8 +849,8 @@ body.has-cbar{padding-bottom:96px}
 <section id="schedule">
   <div class="wrap">
     <span class="sec-label">2/8｜日程</span>
-    <h2>入試はいつ？──日程とカウントダウン</h2>
-    <p class="lead">焦らせるための数字ではなく、逆算するための数字です。「いま、なにをする時期か」がひと目でわかるように。</p>
+    <h2>入試はいつ？──日程と1年間の流れ</h2>
+    <p class="lead">本番の日付と、そこから逆算した1年間の流れです。「いま、なにをする時期か」がひと目でわかるように。（残り日数は、ページ上部のカウントダウンに出ています。）</p>
 
     <div class="tldr rv"><span class="tl">かんたんに言うと</span><p>本番は<b>3月3日（水）・4日（木）</b>の2日間。倍率を見てから動けるのは<b>一般選抜だけ</b>です。</p></div>
 
@@ -916,13 +923,6 @@ body.has-cbar{padding-bottom:96px}
           <p class="note" style="margin-top:10px">各教科60点満点。2025年3月から「全員が学力検査を受ける」制度になり受検者の層が広がったため、前の年度との単純な比較には注意。出典：<a href="https://www.e-seishin.jp/pure-data/index.html" target="_blank" rel="noopener">誠伸社（県立高校入試平均点）</a>。令和8年度（2026年3月実施）は集計中です。</p>
         </div>
       </details>
-    </div>
-
-    <div class="card rv" style="margin-top:14px">
-      <h3 style="margin:0 0 8px;font-size:.98rem">検査が終わったら——「自己採点」で得点の見当をつけておく</h3>
-      <p style="font-size:.88rem;line-height:1.85">学力検査の点数は、合否のように本人へ知らされるわけではありません（発表されるのは「合格／不合格」だけ）。自分の得点を知るいちばんの方法は<b>自己採点</b>です。試験中に<b>自分の答えを問題用紙に控えておき</b>、試験のあとに新聞（沖縄タイムス・琉球新報）や塾の解答速報などで出る<b>問題と正答</b>と照らし合わせれば、おおよその点数がわかります。</p>
-      <p style="font-size:.88rem;line-height:1.85;margin-top:8px">これが効いてくるのが<b>2次募集</b>です。万が一、第1志望に届かなかったとき、2次募集は<b>学力検査をやり直しません</b>。3月に受けた<b>学力検査の得点に、面接・調査書を合わせて</b>選抜されます。自分の得点の見当がついていないと、「2次募集でどの学校なら届きそうか」を選べません。<b>合格発表（3月17日）を待つあいだに自己採点</b>しておくと、2次募集（〜3月27日）にすぐ動けます。</p>
-      <p class="note" style="margin-top:10px">学力検査の得点そのものを正式に知りたい場合は、沖縄県個人情報保護条例にもとづく開示請求の制度があり、本人が請求できます。可否・請求先・時期・費用などの手続きは、在籍する中学校や県教育委員会で確認してください。</p>
     </div>
 
     <h3 style="margin:26px 0 12px;font-size:1rem">いま、なにをする？（学年別）</h3>
@@ -1065,7 +1065,7 @@ body.has-cbar{padding-bottom:96px}
           <tbody>
             <tr><td><b>特別な選抜</b></td><td>推薦入試<br><span class="small">中学校長の推薦が必要</span></td><td><b>特色選抜</b><br><span class="small">自己推薦。本人の意思で出願</span></td></tr>
             <tr><td><b>学力検査</b></td><td>推薦合格者は受けない</td><td><b>全員が受ける</b></td></tr>
-            <tr><td><b>合格が決まる時期</b></td><td>推薦は1〜2月に早期内定</td><td>特色・一般とも<b>3月17日に発表</b></td></tr>
+            <tr><td><b>合格が決まる時期</b></td><td>推薦は1月末ごろに早期内定</td><td>特色・一般とも<b>3月17日に発表</b></td></tr>
             <tr><td><b>落ちた場合</b></td><td>推薦不合格→一般入試を受け直す</td><td>特色不合格→<b>同じ得点で一般選抜の判定へ自動移行</b></td></tr>
             <tr><td><b>出願先</b></td><td>—</td><td>特色と一般で<b>別の高校に出願してもよい</b></td></tr>
           </tbody>
@@ -1128,7 +1128,7 @@ body.has-cbar{padding-bottom:96px}
   <div class="wrap">
     <span class="sec-label">5/8｜合格判定</span>
     <h2>志望校 合格判定</h2>
-    <p class="lead">内申点（上のツールから自動で引き継ぎます）と、わかれば模試の偏差値を入れて、志望校を選ぶだけ。偏差値がわからなければ内申点だけでも判定できます。</p>
+    <p class="lead">内申点（上のツールから自動で引き継ぎます）と、わかれば模試の偏差値を入れて、志望校を選ぶだけ。模試の偏差値を入れると合格可能性（%）が出ます。偏差値がなくても、前年の実合格率や合格者の内申で位置をつかめます。</p>
 
     <div class="card tool" style="border-top-color:var(--coral)">
       <div class="judge-inputs">
@@ -1147,7 +1147,7 @@ body.has-cbar{padding-bottom:96px}
       </div>
 
       <div id="judgeOut" hidden>
-        <div class="gauge-wrap">
+        <div class="gauge-wrap" id="gaugeWrap">
           <svg id="gauge" width="240" height="140" viewBox="0 0 240 140" role="img" aria-label="合格可能性メーター">
             <path d="M 24 124 A 96 96 0 0 1 216 124" fill="none" stroke="#e8edf2" stroke-width="17" stroke-linecap="round"/>
             <path id="gaugeArc" d="M 24 124 A 96 96 0 0 1 216 124" fill="none" stroke="var(--sea)" stroke-width="17" stroke-linecap="round"/>
@@ -1158,6 +1158,7 @@ body.has-cbar{padding-bottom:96px}
           <p class="gauge-comment" id="gaugeComment"></p>
           <div class="gap-chips" id="gapChips"></div>
         </div>
+        <div id="noDevBox" hidden></div>
         <div class="school-mini" id="schoolMini"></div>
         <div class="tscroll" id="recordsWrap" style="margin-top:14px"></div>
         <p class="note" id="judgeNote" style="margin-top:10px"></p>
@@ -1206,6 +1207,7 @@ body.has-cbar{padding-bottom:96px}
     <div class="block rv" id="reachBlock" hidden>
       <h3>いまの成績で狙える高校</h3>
       <p class="small" style="margin-top:-4px">入力された内申点・偏差値から自動で一覧化。タップすると上の判定に反映されます。</p>
+      <p class="small" id="reachNote" hidden style="margin-top:-4px;color:var(--ink-soft)">※模試なし（内申だけ）のときは、内申が各校の基準ラインに対してどの位置かで分類しています（合格可能性%ではありません）。</p>
       <div class="reach-group"><h4><span class="b" style="background:var(--reef)"></span>安全圏（合格可能性 高め）</h4><div class="reach-list" id="reachSafe"></div></div>
       <div class="reach-group"><h4><span class="b" style="background:var(--sun)"></span>実力相応（しっかり対策を）</h4><div class="reach-list" id="reachFit"></div></div>
       <div class="reach-group"><h4><span class="b" style="background:var(--coral)"></span>挑戦圏（ここから逆転）</h4><div class="reach-list" id="reachTry"></div></div>
@@ -1478,9 +1480,10 @@ body.has-cbar{padding-bottom:96px}
       <details><summary><span class="q">Q14</span>英検を持っていると加点される？</summary><div class="a"><p>「持っていれば必ず加点」という全県一律の仕組みはありません。特色選抜の評価観点や私立入試で活きる場合があり、効果は志望校しだいです。「どの級を・いつまでに・何のために取るか」を志望校から逆算して決めましょう。</p></div></details>
       <details><summary><span class="q">Q15</span>学区（通学区域）はあるの？</summary><div class="a"><p>普通科には通学区域があり、区域外の高校へは<b>定員の10%以内</b>の枠で入学できます。専門学科・総合学科は県内のどこからでも受験可能です。詳しくは県の「通学区域に関する規則」をご確認ください。</p></div></details>
       <details><summary><span class="q">Q16</span>学力検査の平均点はどれくらい？</summary><div class="a"><p>5教科合計（300点満点）で、例年<b>おおむね140〜160点台</b>です（2025年3月実施は162.5点）。教科ごとの平均は<a href="#schedule">日程・配点のセクション</a>に年度別でまとめています。半分とれれば、ほぼ真ん中という規模感です。</p></div></details>
-      <details><summary><span class="q">Q17</span>入試の日程はいつ？</summary><div class="a"><p><b>令和9年度（2027年春実施）</b>は、学力検査・面接が<b>3月3日（水）・4日（木）</b>、一般選抜の合格発表が<b>3月17日（水）</b>、第2次募集の合格発表が<b>3月27日（土）</b>です。<a href="#top">ページ先頭のカウントダウン</a>と<a href="#schedule">年間スケジュール</a>で「いま何をする時期か」も確認できます。</p></div></details>
-      <details><summary><span class="q">Q18</span>当日の持ち物は？</summary><div class="a"><p>HB以上の濃さの<b>黒鉛筆またはシャープペンシル</b>（和歌・格言などが印刷されたものは不可）、<b>プラスチック製の消しゴム</b>、<b>定規（三角定規も可）とコンパス</b>。分度器・分度器機能つき定規・三角スケールは使えません。時計は机に置けますが、通信機能のある端末類は不可。くわしい一覧は<a href="#schedule">日程のセクション</a>にまとめています（令和8年度実績）。</p></div></details>
-      <details><summary><span class="q">Q19</span>全日制のほかに、通信制という選択肢はある？</summary><div class="a"><p>あります。県立では<b>泊高校（那覇市）と宜野湾高校に通信制課程</b>があり、私立では<b>県内に本校を置く通信制高校が6校</b>（N高等学校・つくば開成国際・ヒューマンキャンパス・八洲学園大学国際・瑞穂MSC・エナジックスポーツ高等学院）あります。県外に本校がある学校のキャンパスも那覇市などに（例：飛鳥未来きずな高校 沖縄キャンパス）。入学の時期・出願のしくみは県立全日制の入試とは別です。<a href="#shiritsu">私立高校のセクション</a>に一覧をまとめています。</p></div></details>
+      <details><summary><span class="q">Q17</span>自分の点数は、あとでわかる？ 自己採点はしたほうがいい？</summary><div class="a"><p>学力検査の点数は、本人には知らされません（発表されるのは「合格・不合格」だけ）。そのため、本番中に<b>自分の答えを問題用紙に控えておき</b>、試験のあとに新聞（沖縄タイムス・琉球新報）や塾の解答速報などで出る<b>問題と正答</b>と照らし合わせて、自分で採点しておくのがおすすめです。これは特に<b>2次募集</b>で効いてきます。2次募集は学力検査をやり直さず、3月に受けた<b>得点に面接・調査書を合わせて</b>選抜するため、自分の点数の見当がついていないと「どの学校なら届きそうか」を選べません。<b>合格発表（3月17日）を待つあいだに自己採点</b>しておくと、2次募集（〜3月27日）にすぐ動けます。なお、点数を正式に知りたい場合は<b>沖縄県個人情報保護条例にもとづく開示請求</b>の制度がありますが、可否や手続きは在籍する中学校・県教育委員会で確認してください。</p></div></details>
+      <details><summary><span class="q">Q18</span>入試の日程はいつ？</summary><div class="a"><p><b>令和9年度（2027年春実施）</b>は、学力検査・面接が<b>3月3日（水）・4日（木）</b>、一般選抜の合格発表が<b>3月17日（水）</b>、第2次募集の合格発表が<b>3月27日（土）</b>です。<a href="#top">ページ先頭のカウントダウン</a>と<a href="#schedule">年間スケジュール</a>で「いま何をする時期か」も確認できます。</p></div></details>
+      <details><summary><span class="q">Q19</span>当日の持ち物は？</summary><div class="a"><p>HB以上の濃さの<b>黒鉛筆またはシャープペンシル</b>（和歌・格言などが印刷されたものは不可）、<b>プラスチック製の消しゴム</b>、<b>定規（三角定規も可）とコンパス</b>。分度器・分度器機能つき定規・三角スケールは使えません。時計は机に置けますが、通信機能のある端末類は不可。くわしい一覧は<a href="#schedule">日程のセクション</a>にまとめています（令和8年度実績）。</p></div></details>
+      <details><summary><span class="q">Q20</span>全日制のほかに、通信制という選択肢はある？</summary><div class="a"><p>あります。県立では<b>泊高校（那覇市）と宜野湾高校に通信制課程</b>があり、私立では<b>県内に本校を置く通信制高校が6校</b>（N高等学校・つくば開成国際・ヒューマンキャンパス・八洲学園大学国際・瑞穂MSC・エナジックスポーツ高等学院）あります。県外に本校がある学校のキャンパスも那覇市などに（例：飛鳥未来きずな高校 沖縄キャンパス）。入学の時期・出願のしくみは県立全日制の入試とは別です。<a href="#shiritsu">私立高校のセクション</a>に一覧をまとめています。</p></div></details>
     </div>
     <div class="share-strip rv">
       <p>このサイト、役に立ちましたか？<small>受験の情報は「知っているかどうか」で差がつきます。同級生や家の人、先生にもシェアしてもらえたらうれしいです。</small></p>
@@ -2291,21 +2294,51 @@ document.querySelector(".quick").addEventListener("click", e => {
    ロジスティック曲線を較正：p = 100 / (1 + e^-(0.5c + ln4))
    c は基準との距離（偏差値換算）。内申は2.4点≒偏差値1として合成。
    ===================================================================== */
-const SLOPE = 0.5;
-const OFFSET = Math.log(4);            // c=0 → 80%
-const DEV_PER_NAISHIN = 2.4;           // 内申2.4点 ≒ 偏差値1
+const DEV_PER_NAISHIN = 2.4;            // 内申2.4点 ≒ 偏差値1
+const Z80 = 0.8416212;                  // Φ⁻¹(0.80)：80%ラインの標準正規z
+const Z65 = 0.3853205;                  // Φ⁻¹(0.65)
+const BORDER_GAP = 4;                   // 「50%ライン」は「80%ライン」の約4偏差値下（追跡データの目安）
+const SIGMA = BORDER_GAP / Z80;         // ≒4.75：当日点のばらつき（偏差値単位）
 const TARGET_P = 65;
-const TARGET_C = (Math.log(TARGET_P/(100-TARGET_P)) - OFFSET) / SLOPE; // ≒ -1.53
+const TARGET_C = SIGMA * (Z65 - Z80);   // 65%ラインの合成位置（≒ -2.17）
 
+/* 標準正規の累積分布（erf近似：Abramowitz & Stegun 7.1.26） */
+function erf(x){
+  const sg = x < 0 ? -1 : 1; x = Math.abs(x);
+  const t = 1/(1 + 0.3275911*x);
+  const y = 1 - (((((1.061405429*t - 1.453152027)*t) + 1.421413741)*t - 0.284496736)*t + 0.254829592)*t*Math.exp(-x*x);
+  return sg*y;
+}
+const ncdf = z => 0.5*(1 + erf(z/Math.SQRT2));
+
+/* その学校の一般選抜の比重（調査書:学力検査）→ 重み */
+function weights(s){
+  const raw = (typeof TOKU!=="undefined" && TOKU[s.id] && TOKU[s.id][3]) || "5:5";
+  const a = String(raw).split(":").map(Number);
+  let wn = a[0], wd = a[1];
+  if (!(wn>0) || !(wd>0)){ wn = 5; wd = 5; }
+  const sum = wn + wd;
+  return { wNai: wn/sum, wDev: wd/sum };
+}
+
+/* 合成位置 m（偏差値スケール）。基準（80%ライン）を 0 とする。 */
 function combinedDiff(dev, nai, s){
-  const d = cur(s);
+  const d = cur(s), w = weights(s);
   const hasD = dev !== null, hasN = nai !== null;
-  if (hasD && hasN) return 0.5*(dev - d.dev) + 0.5*((nai - d.nai)/DEV_PER_NAISHIN);
-  if (hasD) return dev - d.dev;
-  if (hasN) return (nai - d.nai)/DEV_PER_NAISHIN;
+  if (hasD && hasN) return w.wDev*(dev - d.dev) + w.wNai*((nai - d.nai)/DEV_PER_NAISHIN);
+  if (hasD) return (dev - d.dev);
+  if (hasN) return (nai - d.nai)/DEV_PER_NAISHIN;   // ※並べ替え用。確率には使わない
   return null;
 }
-const passProb = c => Math.max(2, Math.min(98, Math.round(100/(1+Math.exp(-(SLOPE*c+OFFSET))))));
+/* 分布モデル：当日点のばらつきを見込んだ合格確率（基準で80%） */
+const passProb = m => Math.max(2, Math.min(98, Math.round(100*ncdf(m/SIGMA + Z80))));
+
+/* 前年の志願倍率からの実合格率（応募者全体・%） */
+function admitRate(rate){
+  if (rate===null || rate===undefined) return null;
+  if (rate < 1) return 100;
+  return Math.round(100/rate);
+}
 
 const BANDS = [
   {min:80, label:"S判定｜合格圏",  color:"var(--reef)",  text:"#0b7a55",
@@ -2351,33 +2384,82 @@ function judge(){
   empty.hidden = true; out.hidden = false;
 
   const yr = latestYear(s), d = s.y[yr];
-  const c = combinedDiff(dev, nai, s);
-  const p = passProb(c);
-  const band = BANDS.find(b => p >= b.min);
+  const gw = $("#gaugeWrap"), nd = $("#noDevBox");
+  const hiju = (typeof TOKU!=="undefined" && TOKU[s.id] && TOKU[s.id][3]) || "5:5";
 
-  const arc = $("#gaugeArc");
-  arc.setAttribute("stroke", band.color);
-  arc.style.strokeDasharray = GAUGE_LEN;
-  arc.style.strokeDashoffset = GAUGE_LEN * (1 - p/100);
-  $("#gaugeNum").textContent = p + "%";
-  const gb = $("#gaugeBand"); gb.textContent = band.label; gb.style.color = band.text;
-  if (p >= 80) gb.insertAdjacentHTML("afterbegin", '<span class="band-sakura" aria-hidden="true">❀</span>');
+  if (dev !== null){
+    /* ===== 偏差値あり：分布モデルで合格可能性% ===== */
+    gw.hidden = false; nd.hidden = true;
+    const c = combinedDiff(dev, nai, s);
+    const p = passProb(c);
+    const band = BANDS.find(b => p >= b.min);
 
-  let cm = band.msg;
-  if (d.rT >= 2)  cm += ` なお特色選抜の倍率は${fmtRate(d.rT)}倍と高めです。一般選抜での得点づくりも前提に準備しておくと安心です。`;
-  if (d.rI < 1)   cm += ` 一般選抜の倍率は${fmtRate(d.rI)}倍（1倍未満）でした。`;
-  $("#gaugeComment").innerHTML = cm;
+    const arc = $("#gaugeArc");
+    arc.setAttribute("stroke", band.color);
+    arc.style.strokeDasharray = GAUGE_LEN;
+    arc.style.strokeDashoffset = GAUGE_LEN * (1 - p/100);
+    $("#gaugeNum").textContent = p + "%";
+    const gb = $("#gaugeBand"); gb.textContent = band.label; gb.style.color = band.text;
+    if (p >= 80) gb.insertAdjacentHTML("afterbegin", '<span class="band-sakura" aria-hidden="true">❀</span>');
 
-  const chips = $("#gapChips"); chips.innerHTML = "";
-  if (c !== null && p < TARGET_P){
-    const need = TARGET_C - c;                       // 65%ラインまでの距離（偏差値換算）
-    const factor = (dev!==null && nai!==null) ? 2 : 1;
-    if (dev !== null) chips.insertAdjacentHTML("beforeend",
-      `<span class="gc">偏差値 あと＋${(Math.ceil(need*factor*10)/10).toFixed(1)} で65%ライン</span>`);
-    if (nai !== null) chips.insertAdjacentHTML("beforeend",
-      `<span class="gc">内申 あと＋${Math.ceil(need*factor*DEV_PER_NAISHIN)}点 で65%ライン</span>`);
+    let cm = (nai === null)
+      ? "内申点が空欄です。内申も入れると、この学校の比重（調査書：学力検査）で合わせた、より実態に近い判定になります。"
+      : band.msg;
+    if (nai !== null) cm = band.msg;
+    if (d.rT >= 2)  cm += ` なお特色選抜の倍率は${fmtRate(d.rT)}倍と高めです。一般選抜での得点づくりも前提に準備しておくと安心です。`;
+    if (d.rI < 1)   cm += ` 一般選抜の倍率は${fmtRate(d.rI)}倍（1倍未満）でした。`;
+    $("#gaugeComment").innerHTML = cm;
+
+    const chips = $("#gapChips"); chips.innerHTML = "";
+    if (c !== null && p < TARGET_P){
+      const w = weights(s);
+      const need = TARGET_C - c;                       // 65%ラインまでに必要な合成位置
+      const dDev = need / (nai!==null ? w.wDev : 1);
+      chips.insertAdjacentHTML("beforeend",
+        `<span class="gc">偏差値 あと＋${(Math.ceil(dDev*10)/10).toFixed(1)} で65%ライン</span>`);
+      if (nai !== null){
+        const dNai = need / w.wNai * DEV_PER_NAISHIN;
+        chips.insertAdjacentHTML("beforeend",
+          `<span class="gc">内申 あと＋${Math.ceil(dNai)}点 で65%ライン</span>`);
+      }
+    }
+    $("#judgeNote").innerHTML =
+      `※合格可能性は、<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）を基準に、当日の学力検査のばらつきを見込んで算出した「めやす」です。内申と偏差値は、この学校の比重（調査書：学力検査＝<b>${hiju}</b>）で合成しています。合否を保証するものではありません。` +
+      (d.dummy ? `<br><b>※この学科の基準値は追跡調査データ未取得のため「仮の目安」です。</b>実データが届きしだい差し替えます。` : "");
+
+  } else {
+    /* ===== 偏差値なし（内申だけ）：%は出さず、実合格率＋実例 ===== */
+    gw.hidden = true; nd.hidden = false;
+    const rate = admitRate(d.rI);
+    let rateLine;
+    if (d.rI===null || d.rI===undefined) rateLine = "前年の一般選抜の倍率は未集計です。";
+    else if (d.rI < 1) rateLine = `前年の一般選抜は <b>${fmtRate(d.rI)}倍</b>＝<b>定員割れ</b>（志願者が定員より少ない）。実質ほぼ全員が合格し、空き定員で2次募集も行われました。`;
+    else rateLine = `前年の一般選抜は <b>${fmtRate(d.rI)}倍</b>。<b>応募者のうち約${rate}%</b>が合格した計算です（だれが受かるかは内申＋当日点の順位で決まるので、これは「平均的な応募者」の目安）。`;
+
+    let naiLine = "";
+    if (nai !== null){
+      const diff = nai - d.nai, sign = diff>=0 ? "+" : "";
+      naiLine = `あなたの見込み内申 <b>${nai}点</b>は、合格可能性80%ライン <b>${d.nai}点</b>を${diff>=0?"上回って":"下回って"}います（<b>${sign}${diff}点</b>）。`;
+      const pr = (d.rec||[]).filter(r => r.res==="合格" && typeof r.nai==="number");
+      if (pr.length){
+        const avg = Math.round(pr.reduce((a,r)=>a+r.nai,0)/pr.length*10)/10;
+        naiLine += ` 参考までに、前年の合格者の内申は平均 <b>${avg}点</b>でした。`;
+      }
+    }
+
+    nd.innerHTML =
+      `<div style="background:var(--sea-tint);border:1px solid var(--line);border-radius:14px;padding:15px 16px;font-size:.9rem;line-height:1.85">
+        <p style="font-weight:700;margin:0 0 9px;color:var(--sea-deep)">模試（偏差値）がないため、合格可能性%はあえて出していません。</p>
+        <p style="margin:0 0 8px">${rateLine}</p>
+        ${naiLine ? `<p style="margin:0 0 8px">${naiLine}</p>` : ""}
+        <p style="margin:10px 0 0;font-size:.85rem;color:var(--ink-soft)">模試の偏差値を入れると、内申と合わせた合格可能性（%）が出ます。沖縄の模試は<b>内申点も加味</b>して合否を判定してくれます（下の「沖縄の2大模試」を参照）。</p>
+      </div>`;
+    $("#judgeNote").innerHTML =
+      `※上の実合格率は<b>前年（${yr}年度）の志願倍率</b>から計算した、応募者全体での合格割合です。<b>あなた個人の合格可能性ではありません。</b>個人の合格可能性を出すには、模試の偏差値が必要です。` +
+      (d.dummy ? `<br><b>※この学科の基準値・倍率は一部が「仮の目安」です。</b>実データが届きしだい差し替えます。` : "");
   }
 
+  /* ===== 共通：志望校の基準値・倍率／前年の合否データ ===== */
   $("#schoolMini").innerHTML =
     `<span class="lbl">志望校</span><b>${esc(s.name)}高校・${esc(s.dept)}</b>
      <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:9px">
@@ -2388,29 +2470,38 @@ function judge(){
        <span><span class="lbl">データ年度</span><b>${yr}</b></span>
      </div>`;
   $("#recordsWrap").innerHTML = recordsTable(d.rec);
-  $("#judgeNote").innerHTML =
-    `※基準の偏差値・内申は、沖縄県統一プレ入試 ${yr}年度 追跡調査にもとづく<b>合格可能性80%ライン</b>です。判定はそこからの距離で計算した「めやす」であり、合否を保証するものではありません。` +
-    (d.dummy ? `<br><b>※この学科の基準値は追跡調査データ未取得のため「仮の目安」です。</b>実データが届きしだい差し替えます。学校・地域の先生の感覚ともあわせて判断してください。` : "");
 }
 
 function renderReach(nai, dev){
   const blk = $("#reachBlock");
   if (nai===null && dev===null){ blk.hidden = true; return; }
   blk.hidden = false;
+  const hasDev = dev !== null;
+  const note = $("#reachNote"); if (note) note.hidden = hasDev;
   const safe=[], fit=[], chal=[];
   SCHOOLS.forEach(s => {
-    if (cur(s).dummy) return; // 仮データの学科は「狙える高校」候補から除外
-    const p = passProb(combinedDiff(dev, nai, s));
-    if (p >= 78) safe.push([s,p]);
-    else if (p >= 60) fit.push([s,p]);
-    else if (p >= 38) chal.push([s,p]);
+    if (cur(s).dummy) return; // 仮データの学科は候補から除外
+    if (hasDev){
+      const p = passProb(combinedDiff(dev, nai, s));
+      if (p >= 78) safe.push([s,p]);
+      else if (p >= 60) fit.push([s,p]);
+      else if (p >= 38) chal.push([s,p]);
+    } else {
+      // 内申だけ：基準内申との差で分類（%は出さない）
+      const diff = nai - cur(s).nai;
+      if (diff >= 0) safe.push([s,diff]);
+      else if (diff >= -10) fit.push([s,diff]);
+      else if (diff >= -25) chal.push([s,diff]);
+    }
   });
   const fill = (id, arr) => {
     const el = $("#"+id);
     arr.sort((a,b)=>b[1]-a[1]);
     el.innerHTML = arr.length
-      ? arr.slice(0,12).map(([s,p]) =>
-          `<button type="button" data-id="${s.id}">${esc(s.name)}・${esc(s.dept)}<small>${p}%</small></button>`).join("")
+      ? arr.slice(0,12).map(([s,v]) => {
+          const tag = hasDev ? `${v}%` : `基準内申 ${cur(s).nai}`;
+          return `<button type="button" data-id="${s.id}">${esc(s.name)}・${esc(s.dept)}<small>${tag}</small></button>`;
+        }).join("")
       : `<span class="small" style="color:var(--ink-soft)">該当なし</span>`;
     el.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
       $("#inSchool").value = b.dataset.id; judge();
