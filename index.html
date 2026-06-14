@@ -301,6 +301,28 @@ strong{color:var(--sea-deep)}
 .hero-keys .key span{display:block;font-size:.66rem;color:var(--ink-soft);font-weight:700;margin-top:5px;line-height:1.5}
 .hero-keys .key .new-tag{position:absolute;top:-8px;right:8px;display:inline-block;margin:0;background:var(--coral);color:#fff;font-family:var(--fb);font-size:.56rem;font-weight:700;letter-spacing:.02em;padding:2px 7px;border-radius:999px;box-shadow:0 1px 3px rgba(11,42,58,.18);white-space:nowrap}
 
+/* ---- まとめ（受験のキホン）：番号つき・タップで該当セクションへ ---- */
+.kihon-list{list-style:none;margin:0;padding:0;counter-reset:kihon;display:grid;gap:10px}
+.kihon-list li{counter-increment:kihon}
+.kihon-list a{
+  display:flex;align-items:center;gap:13px;
+  background:#fff;border:1.5px solid var(--line);border-radius:14px;
+  padding:14px;text-decoration:none;color:var(--ink);
+  box-shadow:var(--shadow);transition:transform .12s ease,border-color .12s ease;
+}
+.kihon-list a:active{transform:scale(.99)}
+.kihon-list a:hover{border-color:var(--sea)}
+.kihon-list a::before{
+  content:counter(kihon);flex:0 0 auto;
+  width:30px;height:30px;border-radius:99px;
+  background:var(--sea-tint);color:var(--sea-deep);
+  font-family:var(--fm);font-weight:800;font-size:.95rem;
+  display:grid;place-items:center;
+}
+.kihon-list .tx{flex:1;line-height:1.55;font-size:.92rem}
+.kihon-list .tx b{color:var(--sea-deep)}
+.kihon-list .ar{flex:0 0 auto;color:var(--sea);font-weight:800;font-size:1.05rem}
+
 /* ---- buttons ---- */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
@@ -1496,18 +1518,16 @@ body.has-cbar{padding-bottom:96px}
 <section id="kihon">
   <div class="wrap">
     <span class="sec-label">まとめ</span>
-    <h2>これだけは──受験のキホン6つ</h2>
-    <p class="lead">時間がない人向けの早わかり。くわしくは、それぞれのセクションへ。</p>
-    <div class="card rv">
-      <ul class="check-list">
-        <li><b>内申は中1から</b>。3年分の合計で、実技4教科は×1.5（<a href="#naishin">計算する</a>）。</li>
-        <li><b>全員が学力検査</b>を受ける。推薦による免除はなくなった。</li>
-        <li>内申と当日点は<b>原則5:5</b>（一部の高校は4:6＝学力重視）。</li>
-        <li>チャンスは<b>最大3回</b>。特色 → 一般 → 2次募集の順に判定される。</li>
-        <li><b>特色選抜は出願後に変更できない</b>（志願変更ができるのは一般だけ）。</li>
-        <li><b>定員割れでも不合格はある</b>（定員内不合格）。最低限の準備は必要。</li>
-      </ul>
-    </div>
+    <h2>これだけは──受験のキホン</h2>
+    <ol class="kihon-list rv">
+      <li><a href="#naishin"><span class="tx"><b>内申は中1から</b>。3年分の合計で、実技4教科は×1.5。</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="#hantei"><span class="tx"><b>模試で「現在地」を知る</b>。偏差値で県内全体の中の位置がわかる（早めの受験が第一歩）。</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="#beforeafter"><span class="tx"><b>全員が学力検査</b>を受ける。推薦による免除はなくなった。</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="#shikumi"><span class="tx">内申と当日点は<b>原則5:5</b>（一部の高校は4:6＝学力重視）。</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="#shikumi"><span class="tx">チャンスは<b>最大3回</b>。特色 → 一般 → 2次募集の順に判定される。</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="#faq-selfscore"><span class="tx"><b>点数は本人に知らされない</b>。自己採点しておくと2次募集でとくに効く。</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="#schools"><span class="tx"><b>定員割れでも不合格はある</b>（定員内不合格）。最低限の準備は必要。</span><span class="ar" aria-hidden="true">→</span></a></li>
+    </ol>
   </div>
 </section>
 
@@ -1550,7 +1570,7 @@ body.has-cbar{padding-bottom:96px}
       <details><summary><span class="q">Q14</span>英検を持っていると加点される？</summary><div class="a"><p>「持っていれば必ず加点」という全県一律の仕組みはありません。特色選抜の評価観点や私立入試で活きる場合があり、効果は志望校しだいです。「どの級を・いつまでに・何のために取るか」を志望校から逆算して決めましょう。</p></div></details>
       <details><summary><span class="q">Q15</span>学区（通学区域）はあるの？</summary><div class="a"><p>普通科には通学区域があり、区域外の高校へは<b>定員の10%以内</b>の枠で入学できます。専門学科・総合学科は県内のどこからでも受験可能です。詳しくは県の「通学区域に関する規則」をご確認ください。</p></div></details>
       <details><summary><span class="q">Q16</span>学力検査の平均点はどれくらい？</summary><div class="a"><p>5教科合計（300点満点）で、例年<b>おおむね140〜160点台</b>です（2025年3月実施は162.5点）。教科ごとの平均は<a href="#schedule">日程・配点のセクション</a>に年度別でまとめています。半分とれれば、ほぼ真ん中という規模感です。</p></div></details>
-      <details><summary><span class="q">Q17</span>自分の点数は、あとでわかる？ 自己採点はしたほうがいい？</summary><div class="a"><p><b>点数は本人に知らされません。だから自己採点がおすすめ（とくに2次募集で効きます）。</b></p><p>学力検査の点数は、本人には知らされません（発表されるのは「合格・不合格」だけ）。そのため、本番中に<b>自分の答えを問題用紙に控えておき</b>、試験のあとに新聞（沖縄タイムス・琉球新報）や塾の解答速報などで出る<b>問題と正答</b>と照らし合わせて、自分で採点しておくのがおすすめです。これは特に<b>2次募集</b>で効いてきます。2次募集は学力検査をやり直さず、3月に受けた<b>得点に面接・調査書を合わせて</b>選抜するため、自分の点数の見当がついていないと「どの学校なら届きそうか」を選べません。<b>合格発表（3月17日）を待つあいだに自己採点</b>しておくと、2次募集（〜3月27日）にすぐ動けます。なお、点数を正式に知りたい場合は<b>沖縄県個人情報保護条例にもとづく開示請求</b>の制度がありますが、可否や手続きは在籍する中学校・県教育委員会で確認してください。</p></div></details>
+      <details id="faq-selfscore"><summary><span class="q">Q17</span>自分の点数は、あとでわかる？ 自己採点はしたほうがいい？</summary><div class="a"><p><b>点数は本人に知らされません。だから自己採点がおすすめ（とくに2次募集で効きます）。</b></p><p>学力検査の点数は、本人には知らされません（発表されるのは「合格・不合格」だけ）。そのため、本番中に<b>自分の答えを問題用紙に控えておき</b>、試験のあとに新聞（沖縄タイムス・琉球新報）や塾の解答速報などで出る<b>問題と正答</b>と照らし合わせて、自分で採点しておくのがおすすめです。これは特に<b>2次募集</b>で効いてきます。2次募集は学力検査をやり直さず、3月に受けた<b>得点に面接・調査書を合わせて</b>選抜するため、自分の点数の見当がついていないと「どの学校なら届きそうか」を選べません。<b>合格発表（3月17日）を待つあいだに自己採点</b>しておくと、2次募集（〜3月27日）にすぐ動けます。なお、点数を正式に知りたい場合は<b>沖縄県個人情報保護条例にもとづく開示請求</b>の制度がありますが、可否や手続きは在籍する中学校・県教育委員会で確認してください。</p></div></details>
       <details><summary><span class="q">Q18</span>入試の日程はいつ？</summary><div class="a"><p><b>令和9年度（2027年春実施）</b>は、学力検査・面接が<b>3月3日（水）・4日（木）</b>、一般選抜の合格発表が<b>3月17日（水）</b>、第2次募集の合格発表が<b>3月27日（土）</b>です。<a href="#top">ページ先頭のカウントダウン</a>と<a href="#schedule">年間スケジュール</a>で「いま何をする時期か」も確認できます。</p></div></details>
       <details><summary><span class="q">Q19</span>当日の持ち物は？</summary><div class="a"><p>HB以上の濃さの<b>黒鉛筆またはシャープペンシル</b>（和歌・格言などが印刷されたものは不可）、<b>プラスチック製の消しゴム</b>、<b>定規（三角定規も可）とコンパス</b>。分度器・分度器機能つき定規・三角スケールは使えません。時計は机に置けますが、通信機能のある端末類は不可。くわしい一覧は<a href="#schedule">日程のセクション</a>にまとめています（令和8年度実績）。</p></div></details>
       <details><summary><span class="q">Q20</span>全日制のほかに、通信制という選択肢はある？</summary><div class="a"><p>あります。県立では<b>泊高校（那覇市）と宜野湾高校に通信制課程</b>があり、私立では<b>県内に本校を置く通信制高校が6校</b>（N高等学校・つくば開成国際・ヒューマンキャンパス・八洲学園大学国際・瑞穂MSC・エナジックスポーツ高等学院）あります。県外に本校がある学校のキャンパスも那覇市などに（例：飛鳥未来きずな高校 沖縄キャンパス）。入学の時期・出願のしくみは県立全日制の入試とは別です。<a href="#shiritsu">私立高校のセクション</a>に一覧をまとめています。</p></div></details>
