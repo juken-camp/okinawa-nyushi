@@ -3074,10 +3074,18 @@ if (gnavEl){
 const shareBtn = $("#shareBtn");
 if (shareBtn) shareBtn.addEventListener("click", async () => {
   const url = (location && location.href) || "";
-  if (navigator.share){
-    try { await navigator.share({ title: document.title, text: "沖縄県立高校入試の日程・内申点計算・合格判定がこれ1つで。", url }); } catch(e){}
-    return;
+  const data = { title: document.title, text: "沖縄県立高校入試の日程・内申点計算・合格判定がこれ1つで。", url };
+  // スマホなど：OSのネイティブ共有シート（LINE・SMS・メールなどが並ぶ画面）を開く
+  if (navigator.share && (!navigator.canShare || navigator.canShare(data))){
+    try {
+      await navigator.share(data);
+      return;                                   // 共有シートを開けた（送信・キャンセル問わず終了）
+    } catch (e){
+      if (e && e.name === "AbortError") return;  // ユーザーが共有シートを閉じただけ → 何もしない
+      // それ以外の失敗時は、下のリンクコピーにフォールバック
+    }
   }
+  // 共有シートが使えない環境（PCなど）：リンクをクリップボードにコピー
   let ok = false;
   try { await navigator.clipboard.writeText(url); ok = true; } catch(e){}
   if (!ok){
