@@ -240,6 +240,9 @@ strong{color:var(--sea-deep)}
 .brand{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;text-decoration:none;color:var(--ink);white-space:nowrap}
 .brand .mark{font-family:var(--fd);font-weight:900;font-size:1.3rem;color:var(--sea-deep);line-height:1.15}
 .brand-by{font-size:.78rem;font-weight:700;color:var(--ink-soft);letter-spacing:.06em;line-height:1.1}
+.brand .mark .ch{display:inline-block}
+.brand .mark .ch.hop{animation:brandhop .5s ease}
+@keyframes brandhop{0%{transform:translateY(0)}30%{transform:translateY(-8px)}55%{transform:translateY(2px)}80%,100%{transform:translateY(0)}}
 .gnav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-left:auto;position:relative}
 .gnav::-webkit-scrollbar{display:none}
 .gnav a{
@@ -3340,6 +3343,32 @@ document.addEventListener("click", (e) => {
   const a = e.target.closest && e.target.closest('a[href^="#"]');
   if (a && headEl){ headEl.classList.remove("head-hidden"); headLock = Date.now() + 800; }
 }, true);
+/* 左上タイトル：タップでなめらかにトップへ戻る＋文字がぴょこっと波打つ */
+(function(){
+  var brand = document.querySelector(".brand");
+  if(!brand) return;
+  var mark = brand.querySelector(".mark");
+  if(mark){
+    var t = mark.textContent, h = "";
+    for(var i=0;i<t.length;i++){ h += '<span class="ch">'+t[i]+'</span>'; }
+    mark.innerHTML = h;
+    brand.setAttribute("aria-label", t + "（ホームへ戻る）");
+  }
+  brand.addEventListener("click", function(e){
+    e.preventDefault();
+    if(mark){
+      var chs = mark.querySelectorAll(".ch");
+      for(var k=0;k<chs.length;k++){
+        chs[k].classList.remove("hop");
+        void chs[k].offsetWidth;            /* アニメ再生のリフロー */
+        chs[k].style.animationDelay = (k*40)+"ms";
+        chs[k].classList.add("hop");
+      }
+    }
+    try { window.scrollTo({top:0,behavior:"smooth"}); } catch(_){ window.scrollTo(0,0); }
+    if(window.history && history.replaceState) history.replaceState(null,"","#top");
+  });
+})();
 
 /* ---- タブナビ：右に続きがあるときだけフェード表示 ---- */
 const gnavEl = document.getElementById("gnav");
