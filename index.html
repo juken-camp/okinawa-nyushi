@@ -130,7 +130,7 @@
         {
           "@type": "Question",
           "name": "英検を持っていると沖縄県立高校入試で加点されますか？",
-          "acceptedAnswer": { "@type": "Answer", "text": "「持っていれば必ず加点」という全県一律の仕組みはありません。特色選抜の評価観点や私立入試で活きる場合があり、効果は志望校によって異なります。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "県内すべての高校に共通する「英検◯級＝何点加点」という仕組みはありません。ただし効果がないわけではなく、多くの県立高校が特色選抜の「選抜方法」や「実績ランク表」で、英検・漢検・数検などの扱いを級ごとに公表しています（上の級ほど高いランク＝実績点になります）。表は学校ごとに違い、一般選抜では原則として実績点はつかず評定＝内申点で見るため、資格が効くのは主に特色選抜と私立入試です。志望校の選抜方法から逆算して、どの級をいつまでに取るかを決めましょう。" }
         },
         {
           "@type": "Question",
@@ -489,6 +489,26 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
 .flow li.judge.j3 .card-j{background:var(--coral-tint);border:1.5px solid #f5c7bd}
 .chance{display:inline-block;font-family:var(--fm);font-weight:800;font-size:.64rem;color:#fff;border-radius:6px;padding:2px 8px;margin-right:6px;vertical-align:1px}
 .j1 .chance{background:var(--reef)} .j2 .chance{background:var(--sun);color:#5d3c05} .j3 .chance{background:var(--coral)}
+
+/* ---- 特色選抜の計算（共通フロー） ---- */
+.cflow{margin-top:18px}
+.cflow-sum{display:flex;flex-direction:column;gap:0}
+.cf-item{display:flex;align-items:flex-start;gap:12px;background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:13px 15px}
+.cf-item.cf-hi{border-color:#f0c6bb;background:var(--coral-tint)}
+.cf-ic{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--sea-tint);color:var(--sea-deep);font-family:var(--fm);font-weight:800;font-size:.82rem;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.cf-item.cf-hi .cf-ic{background:var(--coral);color:#fff}
+.cf-tx{display:flex;flex-direction:column;gap:2px;line-height:1.5}
+.cf-tx b{font-size:.92rem}
+.cf-tx span{font-size:.8rem;color:var(--ink-soft);line-height:1.7}
+.cf-badge{display:inline-block;font-size:.66rem;font-weight:800;color:#fff;background:var(--coral);border-radius:99px;padding:2px 9px;margin-left:4px;vertical-align:1px;letter-spacing:.02em}
+.cf-plus{font-family:var(--fd);font-weight:900;color:var(--ink-soft);text-align:center;font-size:1.05rem;line-height:1;padding:5px 0;opacity:.5}
+.cf-eq{display:flex;align-items:flex-start;gap:9px;margin:14px 0 0;font-size:.86rem;font-weight:700;color:var(--sea-deep);line-height:1.65}
+.cf-arrow{flex:0 0 auto;font-family:var(--fd);font-weight:900;font-size:1.1rem;color:var(--sea);line-height:1.35}
+.cf-ippan{margin-top:20px;border:1.5px solid var(--line);border-left:4px solid var(--ink-soft);border-radius:12px;background:var(--paper);padding:14px 16px}
+.cf-ippan-h{margin:0 0 8px}
+.cf-tag-ng{display:inline-block;font-family:var(--fd);font-weight:800;font-size:.84rem;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:3px 13px}
+.cf-ippan-b{margin:0;font-size:.86rem;line-height:1.8}
+.cf-warn{color:var(--coral)}
 
 /* ---- 内申シミュレーター ---- */
 .tool{border-top:4px solid var(--sea)}
@@ -1149,6 +1169,42 @@ body.has-cbar{padding-bottom:96px}
       </div>
     </div>
 
+    <!-- 特色選抜の計算（共通フロー） -->
+    <div class="block rv">
+      <h3>特色選抜は、なにを合計している？</h3>
+      <p style="font-size:.88rem;color:var(--ink-soft)">満点や比重は学校ごとに違いますが、<strong>合計に使う「材料」は共通</strong>です。次の4つを、各校が公表する「選抜方法」の重みで合算します。</p>
+      <div class="cflow">
+        <div class="cflow-sum">
+          <div class="cf-item">
+            <span class="cf-ic">①</span>
+            <div class="cf-tx"><b>学力検査</b><span>5教科。記述式を除いた<b class="mono">50点×5＝250点</b>満点で見る。学校により倍率・傾斜あり</span></div>
+          </div>
+          <div class="cf-plus" aria-hidden="true">＋</div>
+          <div class="cf-item">
+            <span class="cf-ic">②</span>
+            <div class="cf-tx"><b>調査書（評定）</b><span>通知表の評定からの内申点。<a href="#naishin">中1〜中3の合計165点</a>が土台</span></div>
+          </div>
+          <div class="cf-plus" aria-hidden="true">＋</div>
+          <div class="cf-item cf-hi">
+            <span class="cf-ic">③</span>
+            <div class="cf-tx"><b>実績点<span class="cf-badge">英検などはここ</span></b><span>部活・文化・生徒会・資格検定などを「実績ランク表」でランク化。<strong>表は学校ごとに違う</strong></span></div>
+          </div>
+          <div class="cf-plus" aria-hidden="true">＋</div>
+          <div class="cf-item">
+            <span class="cf-ic">④</span>
+            <div class="cf-tx"><b>面接・学校独自検査・実技 など</b><span>作文・小論文・実技を課す学校も。配点に含めない学校もある</span></div>
+          </div>
+        </div>
+        <p class="cf-eq"><span class="cf-arrow" aria-hidden="true">＝</span><span>合計の出し方（満点・比重）は<b>学校ごと</b>。だから同じ資格・実績でも、効き方は志望校しだいになります。</span></p>
+      </div>
+
+      <div class="cf-ippan">
+        <p class="cf-ippan-h"><span class="cf-tag-ng">いっぽう一般選抜は</span></p>
+        <p class="cf-ippan-b"><b>調査書（評定＝内申点）＋ 学力検査（<b class="mono">60点×5＝300点</b>）＋ 面接</b>を、原則 <b>5:5</b>（4:6〜6:4の学校もあり）で評価します。<br><strong class="cf-warn">英検などの資格は、ここには加わりません。</strong>一般選抜で点になるのは「評定（内申点）」と「学力検査」だけ。実績点（ランク表）は<b>特色選抜のためのしくみ</b>です。</p>
+      </div>
+      <p class="note" style="margin-top:12px">※特色で届かなくても、同じ得点でそのまま一般選抜の判定に進みます。<b>資格・実績を活かしたいなら特色選抜、評定と当日点で勝負するのが一般選抜</b>、という関係です。</p>
+    </div>
+
     <!-- 校別の実例 -->
     <div class="block card rv">
       <h3>おなじ「特色選抜」でも、学校ごとにここまで違う</h3>
@@ -1633,45 +1689,6 @@ body.has-cbar{padding-bottom:96px}
   </div>
 </section>
 
-<!-- ============ 数字にならない要素 ============ -->
-<section id="kobetsu" style="background:#fff;border-block:1px solid var(--line)">
-  <div class="wrap">
-    <span class="sec-label">補足</span>
-    <h2>数字にならない、合否を分ける要素</h2>
-    <p class="lead">判定は、志望校との「距離」を測る道具。最後を分けるのは、数字にならない個別の要素です。気になるものだけ、タップでひらいて読めます。</p>
-
-    <div class="rv">
-      <details class="fold"><summary>面接は「全員」にある</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">沖縄県立高校入試は、一般選抜でも全員が面接を受けます（学力検査と同じ2日間で実施）。重み・扱いは学校ごとに異なり、校別の基準では「個人面接・1人5分程度」「観点は応答内容・態度・言葉遣いなど」と公表する学校もあります。型どおりの練習よりも、「なぜこの学校か」を自分の言葉にしておくことが本体です。</p></div></details>
-      <details class="fold"><summary>特色選抜は、学校ごとに「別物」</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">各校が「求める生徒像」「重視する観点」を公表し、出願要件・検査内容（面接・作文・実技など）・募集枠の割合まで学校ごとに違います（<a href="#shikumi">3校の実例</a>）。毎年秋に県教委から一覧が出ますが、「この学校では、なにが・どれくらい効くのか」の読み込みは、かなり個別的な作業です。</p></div></details>
-      <details class="fold"><summary>内申の「つくられ方」が変わった</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">通知表はいま、3つの観点（知識・技能／思考・判断・表現／主体的に学習に取り組む態度）で評価されます。提出物・授業での取り組み・振り返り・小テストの積み重ねが評定に直結。県内では定期テストを廃止・縮小して単元テストに切り替える中学校も出てきており、「テスト前だけ頑張る」型は通用しにくくなっています。以前のイメージのままだと、対策がずれてしまいます。</p></div></details>
-      <details class="fold"><summary>欠席が多い・学校に行きづらい</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">受験できなくなるわけではありません。調査書の扱いや選抜での配慮は状況・学校によって異なるため、中学校と志望校への早めの相談が大切です。全日制のほかに定時制・通信制も含めて進路を設計する、という選択肢もあります（<a href="#shiritsu">県内の通信制の一覧</a>）。</p></div></details>
-      <details class="fold"><summary>発達障害などの特性がある</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">沖縄県には「学力検査等の配慮願い」という事前申請の制度があり、在籍する中学校を通して手続きします。申請の時期・書類が決まっているので、夏〜秋のうちに動いておくと安心です。</p></div></details>
-      <details class="fold"><summary>英検などの検定</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">「持っていれば必ず加点」という全県一律のルールはありません。特色選抜の評価観点や私立入試で活きる場合があり、効果は志望校しだい。「どの級を・いつまでに・何のために」を逆算して決めるのが大切です。</p></div></details>
-    </div>
-
-    <p class="note" style="margin-top:18px">ここから先は、一般論では答えが出ません。学年・状況・学校がひとつ違えば最適解も変わるので、中学校の先生など、状況をよく知る人に早めに相談してください。</p>
-
-    <p class="note" style="margin-top:14px">※制度・運用は年度で変わることがあります。出願・申請の最終確認は、必ず県教育委員会・中学校・各高校の最新の案内で。</p>
-  </div>
-</section>
-
-<!-- ============ これだけは ============ -->
-<section id="kihon">
-  <div class="wrap">
-    <span class="sec-label">まとめ</span>
-    <h2>これだけは──受験のキホン</h2>
-    <ol class="kihon-list rv">
-      <li><a href="#naishin"><span class="tx"><b>内申は中1から</b>。3年分の合計で、実技4教科は×1.5。</span><span class="ar" aria-hidden="true">→</span></a></li>
-      <li><a href="#hantei"><span class="tx"><b>模試で「現在地」を知る</b>。偏差値で県内全体の中の位置がわかる（早めの受験が第一歩）。</span><span class="ar" aria-hidden="true">→</span></a></li>
-      <li><a href="#beforeafter"><span class="tx"><b>全員が学力検査</b>を受ける。推薦による免除はなくなった。</span><span class="ar" aria-hidden="true">→</span></a></li>
-      <li><a href="#shikumi"><span class="tx">内申と当日点は<b>原則5:5</b>（一部の高校は4:6＝学力重視）。</span><span class="ar" aria-hidden="true">→</span></a></li>
-      <li><a href="#shikumi"><span class="tx">チャンスは<b>最大3回</b>。特色 → 一般 → 2次募集の順に判定される。</span><span class="ar" aria-hidden="true">→</span></a></li>
-      <li><a href="#faq-selfscore"><span class="tx"><b>点数は本人に知らされない</b>。自己採点しておくと2次募集でとくに効く。</span><span class="ar" aria-hidden="true">→</span></a></li>
-      <li><a href="#schools"><span class="tx"><b>定員割れでも不合格はある</b>（定員内不合格）。最低限の準備は必要。</span><span class="ar" aria-hidden="true">→</span></a></li>
-    </ol>
-  </div>
-</section>
-
 <!-- ============ FAQ ============ -->
 <section id="faq" style="background:#fff;border-block:1px solid var(--line)">
   <div class="wrap">
@@ -1708,7 +1725,7 @@ body.has-cbar{padding-bottom:96px}
       <details><summary><span class="q">Q11</span>私立高校は受けたほうがいい？</summary><div class="a"><p>沖縄の全日制私立で高校から入学できるのは実質3校（沖縄尚学・興南・沖縄カトリック。昭和薬科大附属は高校からの募集なし）。入試は県立より早く、専願・併願を選べます。県立の学力検査より前に結果が出るため、「私立を押さえてから県立に挑む」という組み立てができます。くわしくは<a href="#shiritsu">私立高校の解説</a>へ。</p></div></details>
       <details><summary><span class="q">Q12</span>欠席日数が多くても県立高校は受験できる？</summary><div class="a"><p>受験そのものは可能です。調査書の扱いや選抜での配慮は状況・学校によって異なるため、中学校の先生と志望校への<b>早めの相談</b>が大切です。全日制のほかに定時制・通信制という進路もあります（<a href="#shiritsu">県内の一覧</a>）。ひとりで抱えず、第三者を交えて作戦を立てるのがおすすめです。</p></div></details>
       <details><summary><span class="q">Q13</span>発達障害など特性がある場合、検査で配慮してもらえる？</summary><div class="a"><p>沖縄県には<b>「学力検査等の配慮願い」</b>という事前申請の制度があり、在籍する中学校を通して手続きします。申請の時期・必要書類が決まっているため、夏〜秋のうちに学校へ相談しておくと安心です。</p></div></details>
-      <details><summary><span class="q">Q14</span>英検を持っていると加点される？</summary><div class="a"><p>「持っていれば必ず加点」という全県一律の仕組みはありません。特色選抜の評価観点や私立入試で活きる場合があり、効果は志望校しだいです。「どの級を・いつまでに・何のために取るか」を志望校から逆算して決めましょう。</p></div></details>
+      <details><summary><span class="q">Q14</span>英検を持っていると加点される？</summary><div class="a"><p><strong>県内ぜんぶの高校に共通する「英検◯級＝何点加点」という仕組みはありません。</strong>ただし「効果がない」のではなく、多くの県立高校が特色選抜の「選抜方法」や「実績ランク表」で、英検・漢検・数検などの扱いを<strong>級ごとに公表</strong>しています（上の級ほど高いランク＝実績点になります）。注意したいのは2点。①<strong>表は学校ごとに違う</strong>（同じ級でも評価が変わる）。②<strong>一般選抜では原則として実績点はつかない</strong>（評定＝内申点で見る）ので、資格が効くのは主に<strong>特色選抜と私立入試</strong>です。「どの級を・いつまでに・何のために取るか」を、志望校の選抜方法から逆算して決めましょう。</p></div></details>
       <details><summary><span class="q">Q15</span>学区（通学区域）はあるの？</summary><div class="a"><p>普通科には通学区域があり、区域外の高校へは<b>定員の10%以内</b>の枠で入学できます。専門学科・総合学科は県内のどこからでも受験可能です。詳しくは県の「通学区域に関する規則」をご確認ください。</p></div></details>
       <details><summary><span class="q">Q16</span>学力検査の平均点はどれくらい？</summary><div class="a"><p>5教科合計（300点満点）で、例年<b>おおむね140〜160点台</b>です（2025年3月実施は162.5点）。教科ごとの平均は<a href="#schedule">日程・配点のセクション</a>に年度別でまとめています。半分とれれば、ほぼ真ん中という規模感です。</p></div></details>
       <details id="faq-selfscore"><summary><span class="q">Q17</span>自分の点数は、あとでわかる？ 自己採点はしたほうがいい？</summary><div class="a"><p><b>点数は本人に知らされません。だから自己採点がおすすめ（とくに2次募集で効きます）。</b></p><p>学力検査の点数は、本人には知らされません（発表されるのは「合格・不合格」だけ）。そのため、本番中に<b>自分の答えを問題用紙に控えておき</b>、試験のあとに新聞（沖縄タイムス・琉球新報）や塾の解答速報などで出る<b>問題と正答</b>と照らし合わせて、自分で採点しておくのがおすすめです。これは特に<b>2次募集</b>で効いてきます。2次募集は学力検査をやり直さず、3月に受けた<b>得点に面接・調査書を合わせて</b>選抜するため、自分の点数の見当がついていないと「どの学校なら届きそうか」を選べません。<b>合格発表（3月17日）を待つあいだに自己採点</b>しておくと、2次募集（〜3月27日）にすぐ動けます。なお、点数を正式に知りたい場合は<b>沖縄県個人情報保護条例にもとづく開示請求</b>の制度がありますが、可否や手続きは在籍する中学校・県教育委員会で確認してください。</p></div></details>
@@ -1717,6 +1734,46 @@ body.has-cbar{padding-bottom:96px}
       <details><summary><span class="q">Q20</span>全日制のほかに、通信制という選択肢はある？</summary><div class="a"><p>あります。県立では<b>泊高校（那覇市）と宜野湾高校に通信制課程</b>があり、私立では<b>県内に本校を置く通信制高校が6校</b>（N高等学校・つくば開成国際・ヒューマンキャンパス・八洲学園大学国際・瑞穂MSC・エナジックスポーツ高等学院）あります。県外に本校がある学校のキャンパスも那覇市などに（例：飛鳥未来きずな高校 沖縄キャンパス）。入学の時期・出願のしくみは県立全日制の入試とは別です。<a href="#shiritsu">私立高校のセクション</a>に一覧をまとめています。</p></div></details>
       <details><summary><span class="q">Q21</span>過去問はどこで手に入る？ いつから解けばいい？</summary><div class="a"><p>県立入試の<b>過去問題集</b>は、複数の出版社・団体から発売され、県内の書店で手に入ります。<b>発売の時期は出版社によってまちまち</b>なので、最新年度版が出たら早めに確保しておくと安心です。選ぶときに、いちばん差が出るのは<b>解説のくわしさ</b>です。答えだけが載っているものより、<b>「なぜその答えになるのか」「この問題のポイントは」「一緒に覚えるべき用語や公式」まで書かれているもの</b>を選ぶと、ひとりで解き直すときの伸びがちがいます。書店で中身を見くらべて選ぶのがおすすめです。手に入れたら<b>本番と同じ時間を計って</b>解くと、出題の形式・分量・時間配分に慣れられます。新聞（沖縄タイムス・琉球新報）や塾の解答速報は、本番後の自己採点に役立ちます（くわしくはQ17）。</p></div></details>
     </div>
+  </div>
+</section>
+
+<!-- ============ 数字にならない要素 ============ -->
+<section id="kobetsu" style="background:#fff;border-block:1px solid var(--line)">
+  <div class="wrap">
+    <span class="sec-label">補足</span>
+    <h2>数字にならない、合否を分ける要素</h2>
+    <p class="lead">判定は、志望校との「距離」を測る道具。最後を分けるのは、数字にならない個別の要素です。気になるものだけ、タップでひらいて読めます。</p>
+
+    <div class="rv">
+      <details class="fold"><summary>面接は「全員」にある</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">沖縄県立高校入試は、一般選抜でも全員が面接を受けます（学力検査と同じ2日間で実施）。重み・扱いは学校ごとに異なり、校別の基準では「個人面接・1人5分程度」「観点は応答内容・態度・言葉遣いなど」と公表する学校もあります。型どおりの練習よりも、「なぜこの学校か」を自分の言葉にしておくことが本体です。</p></div></details>
+      <details class="fold"><summary>特色選抜は、学校ごとに「別物」</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">各校が「求める生徒像」「重視する観点」を公表し、出願要件・検査内容（面接・作文・実技など）・募集枠の割合まで学校ごとに違います（<a href="#shikumi">3校の実例</a>）。毎年秋に県教委から一覧が出ますが、「この学校では、なにが・どれくらい効くのか」の読み込みは、かなり個別的な作業です。</p></div></details>
+      <details class="fold"><summary>内申の「つくられ方」が変わった</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">通知表はいま、3つの観点（知識・技能／思考・判断・表現／主体的に学習に取り組む態度）で評価されます。提出物・授業での取り組み・振り返り・小テストの積み重ねが評定に直結。県内では定期テストを廃止・縮小して単元テストに切り替える中学校も出てきており、「テスト前だけ頑張る」型は通用しにくくなっています。以前のイメージのままだと、対策がずれてしまいます。</p></div></details>
+      <details class="fold"><summary>欠席が多い・学校に行きづらい</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">受験できなくなるわけではありません。調査書の扱いや選抜での配慮は状況・学校によって異なるため、中学校と志望校への早めの相談が大切です。全日制のほかに定時制・通信制も含めて進路を設計する、という選択肢もあります（<a href="#shiritsu">県内の通信制の一覧</a>）。</p></div></details>
+      <details class="fold"><summary>発達障害などの特性がある</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">沖縄県には「学力検査等の配慮願い」という事前申請の制度があり、在籍する中学校を通して手続きします。申請の時期・書類が決まっているので、夏〜秋のうちに動いておくと安心です。</p></div></details>
+      <details class="fold"><summary>英検などの検定</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">県内ぜんぶの高校で「英検◯級＝何点」と同じ、という決まりはありません。ただし「効果があいまい」なのではなく、<strong>多くの県立高校が特色選抜の「選抜方法」や「実績ランク表」で、英検・漢検・数検などの扱いを級ごとに公表</strong>しています（たとえば、2級・準2級・3級…と上の級ほど高いランク＝実績点になる、という形）。<strong>表は学校ごとに違い</strong>、一般選抜では原則として実績点はつかない（評定＝内申点で見る）ので、資格が効くのは主に特色選抜と私立入試です。「どの級を・いつまでに・何のために取るか」を、志望校の選抜方法から逆算して決めましょう。</p>
+      <p style="font-size:.86rem;margin:12px 0 0;padding-top:12px;border-top:1px dashed var(--line)"><b>級が同じなら、取りやすい検定を選ぶ</b>のも一つの手です。実績ランク表が「英検・漢検・数検の同じ級＝同じランク」としている学校なら、得点上の価値は同じ。英語は4技能（読む・聞く・書く・話す）が問われるのに対し、漢検は日本語、数検は数学と、得意な1分野で級を取りにいける分、<strong>同じ級でも到達しやすい</strong>と感じる人もいます。ただし注意点として、<strong>英検の勉強は学力検査の英語にもそのまま効く</strong>（実績点と当日点の両取り）のに対し、漢検・数検は学力検査に直結しにくい。「ランクの取りやすさ」と「受験勉強にそのまま効くか」の両方で選ぶのがおすすめです。</p></div></details>
+    </div>
+
+    <p class="note" style="margin-top:18px">ここから先は、一般論では答えが出ません。学年・状況・学校がひとつ違えば最適解も変わるので、中学校の先生など、状況をよく知る人に早めに相談してください。</p>
+
+    <p class="note" style="margin-top:14px">※制度・運用は年度で変わることがあります。出願・申請の最終確認は、必ず県教育委員会・中学校・各高校の最新の案内で。</p>
+  </div>
+</section>
+
+<!-- ============ これだけは ============ -->
+<section id="kihon">
+  <div class="wrap">
+    <span class="sec-label">まとめ</span>
+    <h2>これだけは──受験のキホン</h2>
+    <ol class="kihon-list rv">
+      <li><a href="#naishin"><span class="tx"><b>内申は中1から</b>。3年分の合計で、実技4教科は×1.5。</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="#hantei"><span class="tx"><b>模試で「現在地」を知る</b>。偏差値で県内全体の中の位置がわかる（早めの受験が第一歩）。</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="#beforeafter"><span class="tx"><b>全員が学力検査</b>を受ける。推薦による免除はなくなった。</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="#shikumi"><span class="tx">内申と当日点は<b>原則5:5</b>（一部の高校は4:6＝学力重視）。</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="#shikumi"><span class="tx">チャンスは<b>最大3回</b>。特色 → 一般 → 2次募集の順に判定される。</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="#faq-selfscore"><span class="tx"><b>点数は本人に知らされない</b>。自己採点しておくと2次募集でとくに効く。</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="#schools"><span class="tx"><b>定員割れでも不合格はある</b>（定員内不合格）。最低限の準備は必要。</span><span class="ar" aria-hidden="true">→</span></a></li>
+    </ol>
     <div class="share-strip rv">
       <p>このサイト、役に立ちましたか？<small>受験の情報は「知っているかどうか」で差がつきます。同級生や家の人、先生にもシェアしてもらえたらうれしいです。</small></p>
       <button type="button" class="btn btn-sea sm" id="shareBtn">このサイトを共有する</button>
