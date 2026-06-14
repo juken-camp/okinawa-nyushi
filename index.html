@@ -250,10 +250,10 @@ strong{color:var(--sea-deep)}
   radial-gradient(1100px 380px at 85% -60px, #d9eef8 0%, rgba(217,238,248,0) 60%),
   linear-gradient(180deg,#fdfefe,var(--paper));}
 .hero .kicker{
-  display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-weight:700;color:var(--sea-deep);
-  background:var(--sea-tint);border:1px solid #c8e2ef;border-radius:99px;padding:5px 14px;margin-bottom:18px;
+  display:inline-flex;align-items:center;gap:7px;font-size:.72rem;font-weight:700;color:var(--ink-soft);
+  letter-spacing:.02em;margin-bottom:10px;
 }
-.hero .kicker .kdot{width:7px;height:7px;border-radius:50%;background:var(--sakura);flex:0 0 auto}
+.hero .kicker .kdot{width:6px;height:6px;border-radius:50%;background:var(--sakura);flex:0 0 auto}
 .hero h1{font-family:var(--fd);font-weight:900;font-size:clamp(1.65rem,5.6vw,2.5rem);line-height:1.42;margin:0 0 6px;letter-spacing:.01em}
 .hero h1 .accent{color:var(--sea);}
 .hero .sub{color:var(--ink-soft);font-size:.92rem;margin:14px 0 0;max-width:42em;word-break:auto-phrase}
@@ -275,6 +275,23 @@ strong{color:var(--sea-deep)}
 .hero-steps .tx b{display:block;font-size:.95rem}
 .hero-steps .tx small{display:block;font-size:.72rem;color:var(--ink-soft);font-weight:500;margin-top:2px}
 .hero-steps .ar{margin-left:auto;color:var(--sea);font-weight:800}
+
+/* ---- 今どこ？（学年×今月の現在地） ---- */
+.nowwhere{background:var(--sea-tint);border-block:1px solid #cfe6f1;padding:22px 0}
+.nowwhere .nw-head{font-family:var(--fd);font-weight:700;font-size:1rem;color:var(--sea-deep);margin:0;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.nowwhere .nw-month{font-family:var(--fm);font-weight:700;font-size:.72rem;color:#fff;background:var(--coral);border-radius:99px;padding:2px 10px;letter-spacing:.02em}
+.nowwhere .nw-q{font-size:.8rem;color:var(--ink-soft);margin:6px 0 12px;font-weight:700}
+.nw-tabs{display:flex;gap:8px;margin-bottom:12px}
+.nw-tabs button{flex:1;background:#fff;border:1.5px solid #cfe6f1;border-radius:99px;padding:10px 6px;font-family:var(--fd);font-weight:700;font-size:.9rem;color:var(--sea-deep);cursor:pointer;transition:background .12s,color .12s,border-color .12s,transform .12s}
+.nw-tabs button:active{transform:scale(.97)}
+.nw-tabs button.on{background:var(--sea);color:#fff;border-color:var(--sea)}
+.nw-body{background:#fff;border:1px solid #cfe6f1;border-radius:14px;padding:15px 16px}
+.nw-now{font-size:.72rem;font-weight:800;color:var(--coral);letter-spacing:.05em;margin:0 0 5px}
+.nw-msg{font-size:.9rem;line-height:1.7;margin:0 0 12px}
+.nw-msg b{color:var(--sea-deep)}
+.nw-go{display:inline-flex;align-items:center;gap:7px;background:var(--sea);color:#fff;font-family:var(--fb);font-weight:700;font-size:.84rem;text-decoration:none;border-radius:99px;padding:9px 16px;transition:transform .12s}
+.nw-go:active{transform:scale(.98)}
+.nw-go .ar{font-weight:800}
 
 /* ---- 目次グリッド ---- */
 .toc-wrap{background:#fff;border-block:1px solid var(--line);padding:20px 0 24px}
@@ -383,9 +400,17 @@ h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color
 .ratio-bar small{font-weight:500;font-size:.66rem;opacity:.9}
 
 /* ---- 比較表・汎用テーブル ---- */
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--line);background:#fff}
+.tscroll{
+  overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--line);
+  background:
+    linear-gradient(to right,#fff 28%,rgba(255,255,255,0)) left center / 36px 100% no-repeat local,
+    linear-gradient(to left,#fff 28%,rgba(255,255,255,0)) right center / 36px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%,rgba(11,42,62,.16),rgba(11,42,62,0)) left center / 15px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%,rgba(11,42,62,.16),rgba(11,42,62,0)) right center / 15px 100% no-repeat scroll;
+  background-color:#fff;
+}
 /* 学校一覧: 表の中だけ縦スクロールにして、見出し行とスクロールしても付いてくるようにする */
-.tscroll.tall{max-height:min(74vh,640px);overflow:auto;overscroll-behavior:contain}
+.tscroll.tall{max-height:min(74vh,640px);overflow:auto;overscroll-behavior:contain;background:#fff}
 .tscroll.tall thead th{position:sticky;top:0;z-index:4;box-shadow:0 1px 0 var(--line)}
 #schoolTable thead th:first-child{position:sticky;left:0;z-index:5}
 #schoolTable tbody tr:not(.detail-row) td:first-child{position:sticky;left:0;z-index:1;background:#fff;box-shadow:1px 0 0 var(--line)}
@@ -808,6 +833,20 @@ body.has-cbar{padding-bottom:96px}
   </div>
 </div>
 
+<!-- ============ 今どこ？（学年×今月の現在地） ============ -->
+<div class="nowwhere" id="nowwhere">
+  <div class="wrap">
+    <p class="nw-head">受験生の「いま」<span class="nw-month" id="nwMonth"></span></p>
+    <p class="nw-q">あなたは、いま何年生？（タップで切り替え）</p>
+    <div class="nw-tabs" id="nwTabs">
+      <button type="button" data-g="1">中1</button>
+      <button type="button" data-g="2">中2</button>
+      <button type="button" data-g="3" class="on">中3</button>
+    </div>
+    <div class="nw-body" id="nwBody"><!-- JSで生成 --></div>
+  </div>
+</div>
+
 <!-- ============ 目次 ============ -->
 <nav class="toc-wrap" aria-label="このページの目次">
   <div class="wrap">
@@ -1014,7 +1053,8 @@ body.has-cbar{padding-bottom:96px}
         <div class="a">調査書（内申165点）<small>3年間の積み重ね</small></div>
         <div class="b">学力検査等（300点）<small>当日の得点＋面接</small></div>
       </div>
-      <p style="font-size:.88rem;margin-top:10px">同じ5:5でも、満点は内申165点・当日点300点です。<b>重みが同じなら、満点の小さい内申のほうが1点は大きく効きます——内申1点は、当日点のおよそ1.8点ぶん</b>（300÷165≒1.8）。内申は中1から先に積んでおける得点なので、高いほど、必要な当日点が下がります。</p>
+      <p style="font-size:.88rem;margin-top:10px"><b>同じ重み（5:5）でも、内申のほうが1点は大きく効く。内申1点 ≒ 当日点1.8点ぶんです。</b></p>
+      <p style="font-size:.88rem;margin-top:4px">満点は内申165点・当日点300点です。重みが同じでも満点の小さい内申のほうが1点は大きく効き、内申1点はおよそ当日点1.8点ぶん（300÷165≒1.8）。内申は中1から先に積んでおける得点なので、高いほど、必要な当日点が下がります。</p>
       <p class="note">※一部の高校は <b>4:6（学力重視）</b> など比重を変えています（この場合、内申1点は当日点およそ1.2点ぶん）。比重の一覧は例年9月ごろ、県教育委員会が学校ごとに公表します。理数系学科などでは特定教科の得点を高く扱う「傾斜配点」を行う場合もあります。</p>
     </div>
 
@@ -3141,6 +3181,42 @@ calcNaishin();
 renderTable();
 renderSchedule();
 renderToday();
+
+/* ---- 今どこ？（学年×今月の現在地） ---- */
+function renderNowWhere(){
+  const tabs = document.getElementById("nwTabs");
+  const body = document.getElementById("nwBody");
+  const monthEl = document.getElementById("nwMonth");
+  if(!tabs || !body) return;
+  const m = new Date().getMonth() + 1;
+  if(monthEl) monthEl.textContent = "いまは" + m + "月";
+
+  function phase3(){
+    if(m>=4 && m<=8)   return {now:"いまの時期：夏まで（〜8月）", msg:"<b>説明会・体験入学で、志望校を「見て」決める時期。</b>気になる高校に足を運び、模試で「現在地（偏差値）」も知っておくと、夏からの対策が定まります。", href:"#hantei", label:"合格判定で距離を測る"};
+    if(m>=9 && m<=10)  return {now:"いまの時期：秋（9〜10月）", msg:"<b>特色選抜の校別要項（求める生徒像・検査・募集枠）をチェック。</b>入試の正式日程もこの時期に確定。配慮願いなどの事前申請も動き出します。", href:"#schools", label:"学校データ・倍率を見る"};
+    if(m>=11 && m<=12) return {now:"いまの時期：11〜12月", msg:"<b>三者面談で志望校をしぼる時期。</b>プレ入試で総仕上げ。私立はこの時期に出願が始まります（延納・返還の有無も確認を）。", href:"#shiritsu", label:"私立の選択肢を見る"};
+    if(m===1)          return {now:"いまの時期：1月", msg:"<b>私立入試の本番。県立はWeb出願の準備期間。</b>校内の面談で、出願校を最終決定することが多い時期です。", href:"#schools", label:"学校データを見る"};
+    if(m===2)          return {now:"いまの時期：2月", msg:"<b>県立の出願。初回倍率を見て、志願変更（一般選抜のみ）。</b>変更できるのは倍率1.0超の学科からだけ。動けるのは1回です。", href:"#shikumi", label:"仕組み・志願変更を確認"};
+    return {now:"いまの時期：3月（本番）", msg:"<b>学力検査は3/3・4。自己採点をしておくと2次募集で効きます。</b>合格発表は3/17、2次募集の発表は3/27。最後まで動けます。", href:"#faq-selfscore", label:"自己採点について見る"};
+  }
+  const G = {
+    "1": {now:"中1のいま", msg:"<b>内申は中1から3年分の合計。いまの通知表が、もう入試の持ち点です。</b>提出物・小テスト・実技4教科（評定×1.5）をていねいに。早く積むほど、あとがラクになります。", href:"#naishin", label:"内申点を計算してみる"},
+    "2": {now:"中2のいま", msg:"<b>内申は中1・中2・中3すべて同じ重み。中2の評定も、そのまま入試の持ち点です。</b>授業の取り組みや提出物も評定に直結。いちど内申を計算して、現在地を知っておきましょう。", href:"#naishin", label:"内申点を計算してみる"}
+  };
+  function paint(g){
+    const d = (g === "3") ? phase3() : G[g];
+    body.innerHTML =
+      '<p class="nw-now">' + d.now + '</p>' +
+      '<p class="nw-msg">' + d.msg + '</p>' +
+      '<a class="nw-go" href="' + d.href + '">' + d.label + '<span class="ar" aria-hidden="true">→</span></a>';
+    tabs.querySelectorAll("button").forEach(function(b){ if(b.getAttribute("data-g") === g){ b.classList.add("on"); } else { b.classList.remove("on"); } });
+  }
+  tabs.querySelectorAll("button").forEach(function(b){
+    b.addEventListener("click", function(){ paint(b.getAttribute("data-g")); });
+  });
+  paint("3");
+}
+renderNowWhere();
 </script>
 </body>
 </html>
