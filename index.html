@@ -233,9 +233,12 @@ strong{color:var(--sea-deep)}
 }
 .hero h1{font-family:var(--fd);font-weight:900;font-size:clamp(1.65rem,5.6vw,2.5rem);line-height:1.42;margin:0 0 6px;letter-spacing:.01em}
 .hero h1 .accent{color:var(--sea);}
-.hero .sub{color:var(--ink-soft);font-size:.92rem;margin:14px 0 0;max-width:36em}
+.hero .sub{color:var(--ink-soft);font-size:.92rem;margin:14px 0 0;max-width:42em;word-break:auto-phrase}
+.nb{white-space:nowrap}
+.pc-br{display:none}
+@media(min-width:680px){.pc-br{display:inline}}
 .steps-label{margin:26px 0 8px;font-size:.74rem;font-weight:700;color:var(--ink-soft);letter-spacing:.06em}
-.hero-steps{display:grid;gap:8px;max-width:30em}
+.hero-steps{display:grid;gap:8px}
 .hero-steps .step{
   display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--line);
   border-radius:14px;padding:12px 14px;text-decoration:none;color:var(--ink);
@@ -266,7 +269,7 @@ strong{color:var(--sea-deep)}
 .src-list li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;line-height:1.6}
 .src-list a{font-weight:700;font-size:.88rem}
 .src-list small{display:block;font-size:.72rem;color:var(--ink-soft);margin-top:2px}
-.hero-keys{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:34em}
+.hero-keys{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .hero-keys .key{
   background:var(--card);border:1px solid var(--line);border-radius:12px;
   padding:13px 9px;text-align:center;box-shadow:var(--shadow);
@@ -295,9 +298,9 @@ section{padding:56px 0}
   display:inline-block;font-family:var(--fm);font-weight:700;font-size:.68rem;letter-spacing:.18em;
   color:var(--sea);border:1px solid #bcdcec;background:#fff;border-radius:6px;padding:3px 10px;margin-bottom:12px;
 }
-h2{font-family:var(--fd);font-weight:900;font-size:clamp(1.35rem,4.6vw,1.8rem);line-height:1.5;margin:0 0 10px}
-h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color:var(--sea-deep)}
-.lead{color:var(--ink-soft);font-size:.92rem;margin:0 0 26px;max-width:38em}
+h2{font-family:var(--fd);font-weight:900;font-size:clamp(1.35rem,4.6vw,1.8rem);line-height:1.5;margin:0 0 10px;word-break:auto-phrase}
+h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color:var(--sea-deep);word-break:auto-phrase}
+.lead{color:var(--ink-soft);font-size:.92rem;margin:0 0 26px;max-width:38em;word-break:auto-phrase}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 20px}
 .block{margin-top:30px}
 
@@ -731,7 +734,7 @@ body.has-cbar{padding-bottom:96px}
 <div class="hero">
   <div class="wrap">
     <h1><span class="accent">沖縄県立高校入試</span>が、<br>ここだけでぜんぶわかる。</h1>
-    <p class="sub">特色選抜・一般選抜のしくみを、図とことばでやさしく。通知表の数字から内申点を、模試の偏差値を足せば合格可能性まで、その場で。</p>
+    <p class="sub"><span class="nb">特色選抜</span>・<span class="nb">一般選抜</span>のしくみを、図とことばでやさしく。<br class="pc-br">通知表の数字から<span class="nb">内申点</span>を、模試の<span class="nb">偏差値</span>を足せば<span class="nb">合格可能性</span>まで、その場で。</p>
 
     <div class="cd-card rv" id="cdCard">
       <span class="cd-l" id="cdLabel">令和9年度 学力検査</span>
