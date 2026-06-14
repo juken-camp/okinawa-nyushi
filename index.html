@@ -84,7 +84,7 @@
         {
           "@type": "Question",
           "name": "沖縄県立高校入試の志願倍率はいつわかりますか？志願変更はできますか？",
-          "acceptedAnswer": { "@type": "Answer", "text": "出願締切後（例年2月上旬）に初回の志願状況（倍率）が公表され、その後に取り下げ・再出願（志願変更）の期間があります。ただし志願変更ができるのは一般選抜のみで、特色選抜は出願後の変更ができません。令和8年度の最終志願状況は2月17日に公表されました。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "出願締切後（例年2月上旬）に初回の志願状況（倍率）が公表され、その後に志願変更（取り下げ・再出願）の期間があります。実施要項では、志願変更できるのは出願した学科の志願者数が募集定員を超えた（倍率1.0超）人に限られ、抜けても定員を下回らない範囲とされています。出願先が定員ちょうど・定員割れの場合は、原則ほかの学校・学科へ志願変更できません（第2志望の取消・追加は倍率に関わらず可能）。志願変更は一般選抜のみで、特色選抜は出願後の変更ができません。令和8年度の最終志願状況は2月17日に公表されました。" }
         },
         {
           "@type": "Question",
@@ -983,7 +983,7 @@ body.has-cbar{padding-bottom:96px}
           <thead><tr><th style="width:7.5em"></th><th>特色選抜</th><th>一般選抜</th></tr></thead>
           <tbody>
             <tr><td><b>出願</b></td><td>本人の意思で出願（校長推薦は不要）。<span class="tag">出願要件あり</span><br><span class="small">高校ごとに平均評定・出席状況などの要件を設定</span></td><td>だれでも出願可。同一校の他学科に<b>第2志望</b>も出せる</td></tr>
-            <tr><td><b>志願変更</b></td><td><b>できない</b><br><span class="small">出願後の取り下げ・変更は不可</span></td><td><b>できる</b><br><span class="small">志願状況（倍率）の公表後に、取り下げ・再出願の期間あり</span></td></tr>
+            <tr><td><b>志願変更</b></td><td><b>できない</b><br><span class="small">出願後の取り下げ・変更は不可</span></td><td><b>条件つきでできる</b><br><span class="small">倍率1.0超の学科からのみ（定員ちょうど・定員割れは不可）。第2志望の変更は倍率に関わらず可</span></td></tr>
             <tr><td><b>募集枠</b></td><td>定員の一部（学校・学科ごとに設定。<span class="small">例：那覇高校 普通科は20%以内＋特別枠5%</span>）</td><td>定員の残りすべて</td></tr>
             <tr><td><b>検査内容</b></td><td>学力検査（必須）＋ 面接・実技・学校独自検査など<span class="small">（学校による。例：開邦高校は特色選抜で数学などの独自問題＋面接）</span><br><span class="small">部活動・生徒会・資格などの実績も評価対象</span></td><td>学力検査（5教科300点）＋ 面接 ＋ 調査書</td></tr>
             <tr><td><b>学力検査の扱い</b></td><td>各教科60点のうち記述式（思考力）問題を除いた<b>50点×5教科＝250点満点</b>で評価</td><td><b>60点×5教科＝300点満点</b>で評価</td></tr>
@@ -1252,7 +1252,7 @@ body.has-cbar{padding-bottom:96px}
     </div>
     <p class="tbl-count" id="tblCount"></p>
     <details class="fold" style="margin-top:10px"><summary>このデータの出典と注意点</summary><div class="fold-body">
-      <p class="note" id="dataNote" style="margin:0">基準の偏差値・内申点は<b>合格可能性80%ライン</b>、合否データは受験者の平均値です（出典：沖縄県統一プレ入試 2025年度〈令和7年度〉追跡調査結果）。得点は特色＝250点満点（記述式を除く）・一般＝300点満点、「—」は集計なし。<b>「仮」マークの学科</b>は追跡調査データが未取得のため、基準値は仮の目安です（実データが届きしだい差し替えます）。各学科の定員・特色選抜の募集枠・一般選抜の比重は、県教育委員会の公表一覧（令和7年度・2025年春実施分）にもとづく実データです。年度推移で<b>「（仮）」</b>と表示された年度はプレビュー用の仮の数値で、実データに順次差し替えます。学校・学科を優劣や序列で分類する意図はなく、志望校選択の参考として整理しています。出願にあたっては必ず県教育委員会・各校の最新の公式発表をご確認ください。</p>
+      <p class="note" id="dataNote" style="margin:0">基準の偏差値・内申点は<b>合格可能性80%ライン</b>、合否データは受験者の平均値です（出典：沖縄県統一プレ入試 2025年度〈令和7年度〉追跡調査結果）。得点は特色＝250点満点（記述式を除く）・一般＝300点満点、「—」は集計なし。<b>「準備中」の学科</b>は追跡調査データが未取得のため、基準値・倍率を「—」で表示しています（実データが届きしだい掲載します）。各学科の定員・特色選抜の募集枠・一般選抜の比重は、県教育委員会の公表一覧（令和7年度・2025年春実施分）にもとづく実データです。学校・学科を優劣や序列で分類する意図はなく、志望校選択の参考として整理しています。出願にあたっては必ず県教育委員会・各校の最新の公式発表をご確認ください。</p>
     </div></details>
 
     <!-- 学校くらべ（比較結果の表示先） -->
@@ -1298,7 +1298,7 @@ body.has-cbar{padding-bottom:96px}
       <li><span class="nm">興南高校</span><span class="pl">那覇市</span><br>甲子園春夏連覇でも知られる進学校（中高一貫＋高校募集）。高校からは<b>特別進学・総合進学</b>（2026年度は「スーパー特進」も新設）。フロンティアコースは中学入学のみ。
         <div class="pv-sys">
           <p><span class="pv-tag">入試のしくみ</span><b>推薦入試</b>と<b>一般入試</b>があり、専願・併願を選べます。一般入試は<b>前期・中期・後期</b>と複数回のチャンスがあり、前期が残念でも次の回に再チャレンジできます。特別進学は大学共通テスト受験を見すえたコース、総合進学は部活動との両立を重視するコースです。</p>
-          <p class="pv-sub2"><span class="pv-tag2">科目</span>前期・中期・後期は<b>3教科（国語・数学・英語）</b>の学力試験で、英語にはリスニングがあります（県立の5教科とちがい3教科）。<b>推薦入試は学力試験ではなく、調査書と保護者同伴の面接</b>が中心です。</p>
+          <p class="pv-sub2"><span class="pv-tag2">科目</span>前期・中期・後期は<b>3教科（国語・数学・英語）</b>の学力試験で、英語にはリスニングがあります（県立の5教科とちがい3教科）。<b>推薦入試は学力試験ではなく、調査書と面接による選考</b>が中心です。</p>
           <p class="pv-mini">コースや回ごとに試験日・出願期間がちがいます。最新の高校募集要項で必ず確認を。</p>
         </div></li>
       <li><span class="nm">沖縄カトリック高校</span><span class="pl">宜野湾市</span><br>キリスト教精神にもとづく少人数の共学校（中高一貫＋高校募集）。
@@ -1460,7 +1460,7 @@ body.has-cbar{padding-bottom:96px}
       <details><summary><span class="q">Q5</span>特色と一般で、別の高校に出してもいい？ 第2志望は？</summary><div class="a"><p>出せます。たとえば「特色選抜はA高校、一般選抜はB高校」という出願が可能です。さらに一般選抜では、<b>同じ高校に学科が複数ある場合、別の学科を「第2志望」にできます</b>（第1志望の学科が不合格でも、第2志望の学科で合否を判定）。ただし第2志望にできるのは<b>同じ高校の中の学科だけ</b>。別の高校を第2志望にすることはできません。</p></div></details>
       <details><summary><span class="q">Q6</span>内申点と当日点、どっちが大事？</summary><div class="a"><p>一般選抜では<b>原則5:5</b>。どちらも同じくらい大事です。ただし一部の高校は4:6（学力重視）などに変更しており、学校ごとの比重一覧が毎年県教育委員会から公表されます。内申は3年間の積み重ねなので、早く始めるほど有利です。</p></div></details>
       <details><summary><span class="q">Q7</span>中1・中2の成績って関係あるの？</summary><div class="a"><p>大いに関係あります。沖縄県は<b>3学年すべて同じ重み</b>で内申点を計算するので、中1の評定も中3とまったく同じ価値。逆にいえば、中1・中2で思うように取れていなくても、残りの学年と当日点でじゅうぶん巻き返せる設計です。</p></div></details>
-      <details><summary><span class="q">Q8</span>倍率はいつわかる？ 志願変更はできる？</summary><div class="a"><p>出願締切後（例年2月上旬）に初回の志願状況（倍率）が公表され、その後に<b>取り下げ・再出願（志願変更）の期間</b>があります（令和8年度の最終志願状況は2月17日公表）。ただし志願変更ができるのは<b>一般選抜だけ</b>で、特色選抜は出願後の変更ができません。動けるのは<b>初回倍率を見たこの1回だけ</b>。<b>最終倍率が出たあとは変更できない</b>ので、「倍率を見てから動く」なら初回公表の直後に判断します。</p></div></details>
+      <details><summary><span class="q">Q8</span>倍率はいつわかる？ 志願変更はできる？</summary><div class="a"><p>出願締切後（例年2月上旬）に初回の志願状況（倍率）が公表され、その後に<b>志願変更（取り下げ・再出願）の期間</b>があります（令和8年度の最終志願状況は2月17日公表）。ただし志願変更には条件があります。県の実施要項では、<b>志願変更できるのは「出願した学科の志願者数が募集定員を超えた（倍率1.0超）」人</b>で、しかも抜けても定員を下回らない範囲に限られます。つまり<b>出願先が定員ちょうど・定員割れだと、原則ほかの学校・学科へは志願変更できません</b>。「人気が集中して漏れそうな人が、より入りやすい学科へ移る」ための制度だからです。例外として、<b>第2志望（同じ高校の別学科）の取消・追加は倍率に関わらず</b>できます。志願変更は一般選抜のみ（特色選抜は不可）、動けるのは初回倍率を見たこの1回だけです。</p></div></details>
       <details><summary><span class="q">Q9</span>定員割れの高校はどうなる？ 定員割れなら必ず受かる？</summary><div class="a"><p><b>定員割れ（倍率1.0未満）でも、必ず合格とはかぎりません。</b>各高校・学科には合格の最低基準があり、それを大きく下回ると（当日点が極端に低い、調査書に重大な問題がある など）、定員割れでも不合格になることがあります（「定員内不合格」）。だからこそ、合格者が定員に満たなかった高校・学科では<b>2次募集</b>が行われます。実施校は合格発表の日に公表され、出願→面接等→合格発表という流れです。令和9年度の合格発表は<b>3月27日（土）</b>。令和8年度は<b>38校・88学科</b>で実施されました。定員割れは合格の可能性がぐっと上がるのは確かですが、最低限の準備は必要です。</p></div></details>
       <details><summary><span class="q">Q10</span>このサイトの判定は当たるの？</summary><div class="a"><p>判定はあくまで<b>過去データにもとづく「めやす」</b>です。実際の合否は当日の得点・面接・各校の選抜方法など多くの要素で決まります。学校や塾の進路指導とあわせてご活用ください。</p></div></details>
       <details><summary><span class="q">Q11</span>私立高校は受けたほうがいい？</summary><div class="a"><p>沖縄の全日制私立で高校から入学できるのは実質3校（沖縄尚学・興南・沖縄カトリック。昭和薬科大附属は高校からの募集なし）。入試は県立より早く、専願・併願を選べます。県立の学力検査より前に結果が出るため、「私立を押さえてから県立に挑む」という組み立てができます。くわしくは<a href="#shiritsu">私立高校の解説</a>へ。</p></div></details>
@@ -2102,7 +2102,7 @@ function schoolProfile(s, d){
   if (SCHOOL_MEMO[s.id]) h += `<br>${SCHOOL_MEMO[s.id]}`;
   h += `</p>`;
   if (d.dummy){
-    h += `<p class="sprof-note">この学科の倍率・合否データは集計中（「—」表示）。基準の偏差値・内申は<b>仮の目安</b>です。定員・特色枠・比重は県教委の公表一覧にもとづく実データです。</p>`;
+    h += `<p class="sprof-note">この学科の基準（偏差値・内申）・倍率・合否データは、追跡調査の集計中のため未掲載（「—」表示）です。定員・特色枠・比重は県教委の公表一覧にもとづく実データです。実データが届きしだい掲載します。</p>`;
   } else if (t){
     h += `<p class="sprof-note">定員・特色枠・比重の出典：${TOKU_SRC}。校別の出願要件・配点は毎年秋に各校が公表する要項で必ず確認を。</p>`;
   }
@@ -2119,7 +2119,7 @@ function schoolProfile(s, d){
      実データを y に追加すれば（例 "2024":{...}）、その学科の仮生成は
      行われません。全学科の実データが揃ったらこの配列を [] にしてください。
    ===================================================================== */
-const DUMMY_PAST_YEARS = [2024];
+const DUMMY_PAST_YEARS = [];
 function hashStr(t){ let h=0; for(let i=0;i<t.length;i++){ h=(h*31+t.charCodeAt(i))|0; } return Math.abs(h); }
 function synthDummyYears(){
   SCHOOLS.forEach(s => {
@@ -2516,11 +2516,12 @@ function buildSelect(){
     const og = document.createElement("optgroup");
     og.label = AREA_LABEL[area];
     items.forEach(s => {
+      if (cur(s).dummy) return; // 基準データ準備中の学科は判定対象に含めない
       const o = document.createElement("option");
-      o.value = s.id; o.textContent = `${s.name}高校・${s.dept}` + (cur(s).dummy ? "（仮）" : "");
+      o.value = s.id; o.textContent = `${s.name}高校・${s.dept}`;
       og.appendChild(o);
     });
-    sel.appendChild(og);
+    if (og.children.length) sel.appendChild(og);
   }
 }
 
@@ -2660,6 +2661,9 @@ $("#kuikiInput").addEventListener("input", kuikiSuggest);
 let tblArea = "", tblQuery = "", openId = null, detailYearSel = null;
 let sortKey = null, sortDir = 1;
 
+// 仮データ（追跡調査データ未取得）の学科は、基準偏差値・内申を「—」表示にする
+const dval = (o, k) => (o && o.dummy ? "—" : o[k]);
+
 function detailRow(s){
   const years = yearsOf(s);
   const ySel = (detailYearSel && s.y[detailYearSel]) ? detailYearSel : latestYear(s);
@@ -2670,24 +2674,26 @@ function detailRow(s){
   let h = schoolProfile(s, d);
   if (years.length > 1){
     h += `<div class="ychips">` + years.slice().reverse().map(y =>
-      `<button type="button" data-yc="${y}" class="${y===ySel?"on":""}">${y}年度${s.y[y].dummy?"（仮）":""}</button>`).join("") + `</div>`;
+      `<button type="button" data-yc="${y}" class="${y===ySel?"on":""}">${y}年度</button>`).join("") + `</div>`;
   }
-  h += `<div class="small" style="margin-bottom:9px"><b>${ySel}年度</b>${d.dummy?'<span class="kari">仮データ</span>':''}　基準偏差値 <b class="mono">${d.dev}</b> ／ 基準内申 <b class="mono">${d.nai}</b>　　倍率：特色 <b class="${rateCls(d.rT)}">${fmtRate(d.rT)}</b> ／ 一般 <b class="${rateCls(d.rI)}">${fmtRate(d.rI)}</b></div>`;
+  h += `<div class="small" style="margin-bottom:9px"><b>${ySel}年度</b>${d.dummy?'<span class="kari">準備中</span>':''}　基準偏差値 <b class="mono">${dval(d,'dev')}</b> ／ 基準内申 <b class="mono">${dval(d,'nai')}</b>　　倍率：特色 <b class="${rateCls(d.rT)}">${fmtRate(d.rT)}</b> ／ 一般 <b class="${rateCls(d.rI)}">${fmtRate(d.rI)}</b></div>`;
   h += `<div class="tscroll">${recordsTable(d.rec)}</div>`;
   h += `<div class="trend tscroll" style="margin-top:12px"><table><thead><tr><th>年度</th><th>基準偏差値</th><th>基準内申</th><th>倍率 特色</th><th>倍率 一般</th></tr></thead><tbody>`;
   years.slice().reverse().forEach(y => {
     const yd = s.y[y];
-    h += `<tr${yd.dummy?' class="kari-row"':''}><td>${y}${yd.dummy?"（仮）":""}</td><td>${yd.dev}</td><td>${yd.nai}</td><td class="${rateCls(yd.rT)}">${fmtRate(yd.rT)}</td><td class="${rateCls(yd.rI)}">${fmtRate(yd.rI)}</td></tr>`;
+    h += `<tr${yd.dummy?' class="kari-row"':''}><td>${y}</td><td>${dval(yd,'dev')}</td><td>${dval(yd,'nai')}</td><td class="${rateCls(yd.rT)}">${fmtRate(yd.rT)}</td><td class="${rateCls(yd.rI)}">${fmtRate(yd.rI)}</td></tr>`;
   });
   h += `</tbody></table></div>`;
   if (years.some(y => s.y[y].dummy)){
-    h += `<p class="small" style="margin:7px 0 0;color:var(--ink-soft)">※「（仮）」の年度はプレビュー用の仮の数値です。実データが届きしだい差し替えます。</p>`;
+    h += `<p class="small" style="margin:7px 0 0;color:var(--ink-soft)">※この学科の基準（偏差値・内申）・倍率・合否データは、追跡調査の集計中のため未掲載（「—」）です。実データが届きしだい掲載します。</p>`;
   } else if (years.length === 1){
     h += `<p class="small" style="margin:7px 0 0;color:var(--ink-soft)">過去年度のデータは順次追加予定です。追加されると、この表で年度ごとの推移を確認できます。</p>`;
   }
   const inCmp = cmpIds.includes(s.id);
   h += `<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:13px;align-items:center">
-          <button type="button" class="btn btn-coral sm" data-judge>この学校で合格判定する</button>
+          ${d.dummy
+            ? `<span class="small" style="color:var(--ink-soft)">基準データ準備中のため、この学科は合格判定できません。実データが届きしだい対応します。</span>`
+            : `<button type="button" class="btn btn-coral sm" data-judge>この学校で合格判定する</button>`}
           <button type="button" class="btn-mini" data-cmp ${inCmp?"disabled":""}>${inCmp?"比較に追加済み ✓":"＋ 比較に追加"}</button>
         </div>`;
 
@@ -2702,7 +2708,8 @@ function detailRow(s){
   td.querySelectorAll("[data-yc]").forEach(b => b.addEventListener("click", () => {
     detailYearSel = Number(b.dataset.yc); renderTable();
   }));
-  td.querySelector("[data-judge]").addEventListener("click", () => {
+  const judgeBtn = td.querySelector("[data-judge]");
+  if (judgeBtn) judgeBtn.addEventListener("click", () => {
     $("#inSchool").value = s.id; judge();
     const t = $("#judgeOut").hidden ? $("#hantei") : $("#judgeOut");
     t.scrollIntoView({behavior:"smooth", block:"center"});
@@ -2733,8 +2740,8 @@ function renderTable(){
     const d = cur(s);
     const tr = document.createElement("tr");
     tr.innerHTML =
-      `<td><b>${esc(s.name)}</b> ${esc(s.dept)}${d.dummy?' <span class="kari">仮</span>':''}<br><span style="color:var(--ink-soft);font-size:.68rem">${AREA_LABEL[s.area]||s.area}</span></td>
-       <td class="num">${d.dev}</td><td class="num">${d.nai}</td>
+      `<td><b>${esc(s.name)}</b> ${esc(s.dept)}${d.dummy?' <span class="kari">準備中</span>':''}<br><span style="color:var(--ink-soft);font-size:.68rem">${AREA_LABEL[s.area]||s.area}</span></td>
+       <td class="num">${dval(d,'dev')}</td><td class="num">${dval(d,'nai')}</td>
        <td class="num">${TOKU[s.id] ? TOKU[s.id][1] + "%" : "—"}</td>
        <td class="num ${rateCls(d.rT)}">${fmtRate(d.rT)}</td>
        <td class="num ${rateCls(d.rI)}">${fmtRate(d.rI)}</td>`;
