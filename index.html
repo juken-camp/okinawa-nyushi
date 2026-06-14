@@ -501,7 +501,7 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
 .cf-tx{display:flex;flex-direction:column;gap:2px;line-height:1.5}
 .cf-tx b{font-size:.92rem}
 .cf-tx span{font-size:.8rem;color:var(--ink-soft);line-height:1.7}
-.cf-badge{display:inline-block;font-size:.7rem;font-weight:800;color:#fff;background:var(--coral-deep);border-radius:99px;padding:2px 10px;margin-left:4px;vertical-align:1px;letter-spacing:.02em}
+.cf-tx .cf-badge{display:inline-block;font-size:.7rem;font-weight:800;color:#fff;background:var(--coral-deep);border-radius:99px;padding:2px 10px;margin-left:4px;vertical-align:1px;letter-spacing:.02em}
 .cf-plus{font-family:var(--fd);font-weight:900;color:var(--ink-soft);text-align:center;font-size:1.05rem;line-height:1;padding:5px 0;opacity:.5}
 .cf-eq{display:flex;align-items:flex-start;gap:9px;margin:14px 0 0;font-size:.86rem;font-weight:700;color:var(--sea-deep);line-height:1.65}
 .cf-arrow{flex:0 0 auto;font-family:var(--fd);font-weight:900;font-size:1.1rem;color:var(--sea);line-height:1.35}
@@ -730,9 +730,11 @@ table.avg tr.hl td{background:var(--sea-tint)}
 .stack li.ng .sw{background:var(--coral-tint);color:var(--coral)}
 .tt-grid{display:grid;gap:10px}
 @media(min-width:560px){.tt-grid{grid-template-columns:1fr 1fr}}
+.tt{table-layout:fixed}
 .tt thead th{background:#eef4f8;font-size:.76rem}
 .tt td{font-size:.82rem}
-.tt td:last-child{font-family:var(--fm);white-space:nowrap}
+.tt td:first-child{width:38%;white-space:normal}
+.tt td:last-child{font-family:var(--fm)}
 .tt tr.tt-break td{color:var(--ink-soft);font-size:.74rem;background:#fbfdfe}
 .kari{display:inline-block;background:var(--sun-tint);color:#7a5410;border:1px solid #f0ddb0;font-size:.62rem;font-weight:800;border-radius:99px;padding:2px 8px;margin-left:7px;vertical-align:1px}
 .kari-row td{color:#93a0ad}
