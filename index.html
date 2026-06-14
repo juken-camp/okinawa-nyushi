@@ -638,6 +638,13 @@ details.fold>summary::-webkit-details-marker{display:none}
 details.fold>summary::after{content:"＋";font-family:var(--fm);font-weight:800;font-size:1rem;color:var(--sea);flex-shrink:0}
 details.fold[open]>summary::after{content:"−"}
 details.fold>.fold-body{padding:2px 16px 16px}
+/* 軽量フォールド（枠なし・私立の入試詳細など）。開くと中の点線ボックスだけが出る */
+.pv-fold{margin-top:10px}
+.pv-fold>summary{list-style:none;cursor:pointer;font-weight:700;font-size:.78rem;color:var(--sea-deep)}
+.pv-fold>summary::-webkit-details-marker{display:none}
+.pv-fold>summary::after{content:"＋";font-family:var(--fm);font-weight:800;font-size:.9rem;color:var(--sea);margin-left:6px}
+.pv-fold[open]>summary::after{content:"−"}
+.pv-fold .pv-sys{margin-top:8px}
 
 /* ---- 小型テーブル ---- */
 table.words,table.belong,table.ab{min-width:0}
@@ -1196,7 +1203,7 @@ body.has-cbar{padding-bottom:96px}
     <!-- 旧制度との違い -->
     <div class="block rv">
       <h3>⑤ 前の制度と、なにが変わった？</h3>
-      <details class="fold"><summary>比較表をひらく（旧 → 新）</summary><div class="fold-body">
+      <details class="fold"><summary>比較表（旧 → 新）</summary><div class="fold-body">
       <div class="tscroll">
         <table>
           <thead><tr><th></th><th>〜2024年春（旧）</th><th>2025年春〜（新）</th></tr></thead>
@@ -1467,26 +1474,26 @@ body.has-cbar{padding-bottom:96px}
 
     <ul class="pv-list rv">
       <li><span class="nm">沖縄尚学高校</span><span class="pl">那覇市</span><br>国公立大・医学科や海外大を目指す進学校（中高一貫＋高校募集）。高校からは<b>5コース制</b>（難関大・国公立大医学科／尚学パイオニアα／尚学チャレンジャー／国際文化科学〔IB〕／尚学パイオニアβ〔旧体育〕）。
-        <div class="pv-sys">
+        <details class="pv-fold"><summary>入試のしくみ・科目</summary><div class="pv-sys">
           <p><span class="pv-tag">入試のしくみ</span><b>推薦入試</b>（11月ごろ）と<b>一般入試</b>があり、一般入試はさらに<b>A方式</b>（12月ごろ）と<b>B方式</b>（1月ごろ・模試の成績を利用）に分かれます。一般は<b>専願</b>（合格したら入学）と<b>併願</b>（県立などと併願可）を選べます。Web出願。残念でも<b>「再受験」</b>のしくみあり。</p>
           <p class="pv-sub2"><span class="pv-tag2">科目</span>推薦・一般A方式は<b>3教科（国語・数学・英語）</b>の筆記。県立の5教科とちがい3教科なのが特徴です。B方式は模試（プレ入試・県模試など）の成績を使います。面接の有無は方式・コースで異なるため募集要項で確認を。</p>
           <p class="pv-mini">志望コースの基準に届かなくても、ほかのコースの基準に達していればそのコースで合格になる<b>スライド合格</b>あり。成績優秀者には入学金・授業料を給付する<b>奨学生（特待生）制度</b>も。最新の募集要項で必ず確認を。</p>
-        </div></li>
+        </div></details></li>
       <li><span class="nm">興南高校</span><span class="pl">那覇市</span><br>甲子園春夏連覇でも知られる進学校（中高一貫＋高校募集）。高校からは<b>特別進学・総合進学</b>（2026年度は「スーパー特進」も新設）。フロンティアコースは中学入学のみ。
-        <div class="pv-sys">
+        <details class="pv-fold"><summary>入試のしくみ・科目</summary><div class="pv-sys">
           <p><span class="pv-tag">入試のしくみ</span><b>推薦入試</b>と<b>一般入試</b>があり、専願・併願を選べます。一般入試は<b>前期・中期・後期</b>と複数回のチャンスがあり、前期が残念でも次の回に再チャレンジできます。特別進学は大学共通テスト受験を見すえたコース、総合進学は部活動との両立を重視するコースです。</p>
           <p class="pv-sub2"><span class="pv-tag2">科目</span>前期・中期・後期は<b>3教科（国語・数学・英語）</b>の学力試験で、英語にはリスニングがあります（県立の5教科とちがい3教科）。<b>推薦入試は学力試験ではなく、調査書と面接による選考</b>が中心です。</p>
           <p class="pv-mini">コースや回ごとに試験日・出願期間がちがいます。最新の高校募集要項で必ず確認を。</p>
-        </div></li>
+        </div></details></li>
       <li><span class="nm">沖縄カトリック高校</span><span class="pl">宜野湾市</span><br>キリスト教精神にもとづく少人数の共学校（中高一貫＋高校募集）。
-        <div class="pv-sys">
+        <details class="pv-fold"><summary>入試のしくみ・科目</summary><div class="pv-sys">
           <p><span class="pv-tag">入試のしくみ</span><b>推薦入試</b>（中学校長の推薦）と<b>一般入試</b>があり、専願・併願を選べます。一般入試は前期・後期など複数回のチャンスがあります。Web出願で、推薦書・調査書などを提出します。</p>
           <p class="pv-sub2"><span class="pv-tag2">科目</span><b>3教科（国語・数学・英語）</b>の筆記です（県立の5教科とちがい3教科。英語に力を入れている学校で、GTECを全員受験します）。面接の有無は方式・年度で変わることがあるため、高校募集要項もあわせて確認を。</p>
           <p class="pv-mini">募集人数・試験日・科目は年度で変わります。最新の高校募集要項で確認を。</p>
-        </div></li>
+        </div></details></li>
       <li><span class="nm">昭和薬科大学附属高校</span><span class="pl">浦添市</span><br>完全中高一貫校のため、<b>高校からの募集は行っていません</b>（入学は中学受験のみ）。</li>
       <li id="tsushin"><span class="nm">通信制高校という選択肢</span><span class="pl">県内各地</span><br>通学日数やオンラインの度合いを選べる学校です。入学の時期・出願のしくみは県立全日制の入試とは別。
-        <details class="fold" style="margin-top:9px"><summary>県内で選べる通信制の一覧（タップでひらく）</summary><div class="fold-body">
+        <details class="fold" style="margin-top:9px"><summary>県内で選べる通信制の一覧</summary><div class="fold-body">
 
         <div class="tsushin-intro">
           <p><b>通信制の「入学」は、全日制とはかなりちがいます。</b>多くの学校は学力検査（5教科の点数勝負）ではなく、<b>書類選考や面接が中心</b>。「なぜこの学校で学びたいか」を見られることが多く、入学のチャンスは年に何回かあります（4月入学のほか、10月入学などを設ける学校も）。下に学校ごとの目安をまとめますが、<b>制度は毎年変わる</b>ので、最終的には必ず各校の募集要項で確認してください。</p>
@@ -1594,20 +1601,25 @@ body.has-cbar{padding-bottom:96px}
 
     <div class="tldr rv"><span class="tl">かんたんに言うと</span><p>授業料は<b>実質無償</b>。でも<b>制服・教科書・端末</b>などは自己負担。低所得世帯には<b>返さなくていい給付金</b>もあります。</p></div>
 
-    <div class="block card rv">
-      <h3>① 授業料は「実質無償」（2026年度〜・所得制限なし）</h3>
+    <details class="fold">
+      <summary>① 授業料は「実質無償」（2026年度〜・所得制限なし）</summary>
+      <div class="fold-body">
       <p style="font-size:.88rem">2026年4月から所得制限が撤廃され、世帯の年収にかかわらず授業料ぶんの<b>就学支援金</b>が出ます。上限は<b>公立 年11万8,800円・私立 年45万7,200円</b>。支援金は学校が受け取って授業料に充てるため、原則として家庭の立て替えはありません。</p>
       <p class="note">※対象は<b>授業料のみ</b>。入学金・教材費・制服代などは含まれません。私立で上限を超える授業料の学校では、差額は自己負担です。受けるには<b>申請が必要</b>（学校から案内があります）。出典：文部科学省「高等学校等就学支援金制度」。</p>
-    </div>
+      </div>
+    </details>
 
-    <div class="block card rv">
-      <h3>② 授業料が無償でも、入学時にかかるお金</h3>
+    <details class="fold">
+      <summary>② 授業料が無償でも、入学時にかかるお金</summary>
+      <div class="fold-body">
       <p style="font-size:.88rem">授業料が0円でも、入学のタイミングでまとまった実費がかかります。おもなものは <b>制服・体操服／教科書・副教材／学用品／タブレット端末（学習用PC）</b> など。とくに<b>学習用の端末は、各家庭で用意・購入する学校が増えています</b>。</p>
       <p class="note">金額は学校によって大きく異なります。具体額は<b>合格後の説明会や入学案内</b>で必ず確認を。費用の見通しが立てづらいときは、下の給付金や、市町村・各校の支援制度も調べてみてください。</p>
-    </div>
+      </div>
+    </details>
 
-    <div class="block card rv" style="border-top-color:var(--reef)">
-      <h3 id="kyufu">③ 返さなくていいお金「高校生等奨学給付金」</h3>
+    <details class="fold" id="kyufu">
+      <summary>③ 返さなくていいお金「高校生等奨学給付金」</summary>
+      <div class="fold-body">
       <p style="font-size:.88rem"><b>住民税が非課税の世帯・生活保護の世帯など</b>を対象に、<b>授業料以外の教育費</b>（教科書・教材・学用品・通学用品・PTA会費・入学時の学用品 など）に使える、<b>返済不要の給付金</b>です。沖縄県の制度で、あとで返す「奨学金（貸与）」とはちがい、返す必要はありません。</p>
       <ul class="check-list">
         <li>金額は<b>世帯の区分・公私・全日／定時／通信・子どもの人数</b>で変わります（国公立・全日制で年33,500円を基本に、世帯によってはこれより大きくなります）。</li>
@@ -1615,7 +1627,8 @@ body.has-cbar{padding-bottom:96px}
         <li>授業料の<b>就学支援金（①）とは別の制度</b>で、両方を受けられます。</li>
       </ul>
       <p class="note">対象の細かい条件・金額・申請方法は年度で変わります。最新は<a href="https://www.pref.okinawa.jp/kyoiku/edu/1008819/1008843/1008848.html" target="_blank" rel="noopener">沖縄県「奨学のための給付金（高校生等奨学給付金）」</a>で確認してください。</p>
-    </div>
+      </div>
+    </details>
 
   </div>
 </section>
@@ -1667,7 +1680,7 @@ body.has-cbar{padding-bottom:96px}
     <p class="lead">生徒本人からも、家の人からも、よくいただく質問をまとめました。</p>
 
     <details class="fold rv" style="margin:0 0 16px">
-      <summary>さきに「ことばの意味」をかんたんに（タップでひらく）</summary>
+      <summary>さきに「ことばの意味」をかんたんに</summary>
       <div class="fold-body">
         <div class="tscroll"><table class="words"><tbody>
           <tr><td>内申点</td><td>通知表の成績を点数にしたもの。沖縄は3年分で165点満点</td></tr>
@@ -3394,7 +3407,7 @@ renderNowWhere();
     closePanel();
     setTimeout(function(){
       var el=document.querySelector(h);
-      if(el){ el.scrollIntoView({behavior:"smooth",block:"start"}); if(window.history&&history.replaceState) history.replaceState(null,"",h); }
+      if(el){ var d=el.closest("details"); if(d) d.open=true; el.scrollIntoView({behavior:"smooth",block:"start"}); if(window.history&&history.replaceState) history.replaceState(null,"",h); }
     }, 80);
   }
   function openPanel(){
@@ -3414,6 +3427,19 @@ renderNowWhere();
   overlay.addEventListener("click", closePanel);
   document.addEventListener("keydown", function(e){ if((e.key==="Escape"||e.keyCode===27) && !panel.hidden) closePanel(); });
   input.addEventListener("input", function(){ render(input.value); });
+})();
+
+/* ハッシュ（#kyufu 等）が折りたたみ内を指すときは、その折りたたみを開く */
+(function(){
+  function openHashDetails(){
+    if(!location.hash || location.hash.length < 2) return;
+    try{
+      var el=document.querySelector(location.hash);
+      if(el){ var d=el.closest("details"); if(d){ d.open=true; el.scrollIntoView({behavior:"smooth",block:"start"}); } }
+    }catch(e){}
+  }
+  window.addEventListener("hashchange", openHashDetails);
+  if(location.hash) setTimeout(openHashDetails, 60);
 })();
 </script>
 </body>
