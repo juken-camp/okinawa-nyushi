@@ -413,6 +413,8 @@ h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color
 /* 学校一覧: 表の中だけ縦スクロールにして、見出し行とスクロールしても付いてくるようにする */
 .tscroll.tall{max-height:min(74vh,640px);overflow:auto;overscroll-behavior:contain;background:#fff}
 .tscroll.tall thead th{position:sticky;top:0;z-index:4;box-shadow:0 1px 0 var(--line)}
+/* カードの中に入った表は、カードの枠と二重にならないよう内側の枠を消す（スクロール影は残す） */
+.card .tscroll{border:0;border-radius:0}
 #schoolTable thead th:first-child{position:sticky;left:0;z-index:5}
 #schoolTable tbody tr:not(.detail-row) td:first-child{position:sticky;left:0;z-index:1;background:#fff;box-shadow:1px 0 0 var(--line)}
 #schoolTable tbody tr.kx td:first-child{background:inherit}
