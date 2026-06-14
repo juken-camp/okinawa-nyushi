@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b6e99">
 
+<!-- favicon（タブのロゴ）：SVGはインライン埋め込み、PNG/ICOはフォールバック -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwYjZlOTkiLz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMiAzMykiPgogICAgPGcgZmlsbD0iI2ZmZmZmZiI+CiAgICAgIDxlbGxpcHNlIGN4PSIwIiBjeT0iLTEyIiByeD0iOC42IiByeT0iMTIiLz4KICAgICAgPGVsbGlwc2UgY3g9IjAiIGN5PSItMTIiIHJ4PSI4LjYiIHJ5PSIxMiIgdHJhbnNmb3JtPSJyb3RhdGUoNzIpIi8+CiAgICAgIDxlbGxpcHNlIGN4PSIwIiBjeT0iLTEyIiByeD0iOC42IiByeT0iMTIiIHRyYW5zZm9ybT0icm90YXRlKDE0NCkiLz4KICAgICAgPGVsbGlwc2UgY3g9IjAiIGN5PSItMTIiIHJ4PSI4LjYiIHJ5PSIxMiIgdHJhbnNmb3JtPSJyb3RhdGUoMjE2KSIvPgogICAgICA8ZWxsaXBzZSBjeD0iMCIgY3k9Ii0xMiIgcng9IjguNiIgcnk9IjEyIiB0cmFuc2Zvcm09InJvdGF0ZSgyODgpIi8+CiAgICA8L2c+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iNS42IiBmaWxsPSIjMGI2ZTk5Ii8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iMCIgcj0iMyIgZmlsbD0iI2ZmZDZlNiIvPgogIDwvZz4KPC9zdmc+Cg==">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
 <!-- ================= SEO ================= -->
 <title>沖縄県立高校入試ナビ｜日程・内申点計算・合格判定・学校別データ</title>
 <meta name="description" content="沖縄県立高校入試の情報サイト。新制度（特色選抜・一般選抜）を図解し、通知表の評定から内申点（165点満点）を自動計算。プレ入試追跡調査にもとづく学校別の合格基準・倍率・合否データで合格可能性を判定。入試日程のカウントダウン・学力検査の平均点・私立高校の基礎情報も。JUKEN CAMP（受験キャンプ）運営。">
@@ -83,7 +89,7 @@
         {
           "@type": "Question",
           "name": "定員割れの沖縄県立高校はどうなりますか？",
-          "acceptedAnswer": { "@type": "Answer", "text": "合格者が定員に満たなかった高校・学科は2次募集を行います。実施校は合格発表の日に公表され、出願、面接等、合格発表という流れです。令和9年度の合格発表は3月27日（土）です。令和8年度は38校・88学科で実施されました。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "定員割れ（倍率1.0未満）でも必ず合格とはかぎりません。各高校・学科に合格の最低基準があり、それを大きく下回ると（当日点が極端に低い、調査書に重大な問題があるなど）定員割れでも不合格になることがあります（定員内不合格）。合格者が定員に満たなかった高校・学科は2次募集を行います。実施校は合格発表の日に公表され、出願、面接等、合格発表という流れです。令和9年度の合格発表は3月27日（土）です。令和8年度は38校・88学科で実施されました。" }
         },
         {
           "@type": "Question",
@@ -300,7 +306,7 @@ section{padding:56px 0}
 }
 h2{font-family:var(--fd);font-weight:900;font-size:clamp(1.35rem,4.6vw,1.8rem);line-height:1.5;margin:0 0 10px;word-break:auto-phrase}
 h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color:var(--sea-deep);word-break:auto-phrase}
-.lead{color:var(--ink-soft);font-size:.92rem;margin:0 0 26px;max-width:38em;word-break:auto-phrase}
+.lead{color:var(--ink-soft);font-size:.92rem;margin:0 0 26px;word-break:auto-phrase}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 20px}
 .block{margin-top:30px}
 
@@ -1451,11 +1457,11 @@ body.has-cbar{padding-bottom:96px}
       <details><summary><span class="q">Q2</span>新制度はいつから？ なにが変わったの？</summary><div class="a"><p>2025年春の入試（2025年度入学者選抜）からです。いちばん大きな変化は、推薦入試が<b>「特色選抜」</b>に変わったこと。校長推薦が不要になり、全員が学力検査を受けるようになりました。詳しくは<a href="#shikumi">仕組みの解説</a>へ。</p></div></details>
       <details><summary><span class="q">Q3</span>特色選抜は誰でも出願できる？</summary><div class="a"><p>校長推薦は不要で、本人の意思で出願できます。ただし高校・学科ごとに<b>平均評定や出席状況などの出願要件</b>が設定されている場合があります。志望校の募集要項（毎年秋に公表）を必ず確認しましょう。なお特色選抜だけの受験はできず、一般選抜とセットで出願します。</p></div></details>
       <details><summary><span class="q">Q4</span>特色選抜で落ちたら終わり？</summary><div class="a"><p>終わりではありません。特色選抜で不合格でも、<b>同じ学力検査の得点で一般選抜の判定に自動的に回ります</b>。さらに定員に空きが出た学校では2次募集も行われるため、チャンスは最大3回あります。</p></div></details>
-      <details><summary><span class="q">Q5</span>特色と一般で、別の高校に出してもいい？</summary><div class="a"><p>出せます。たとえば「特色選抜はA高校、一般選抜はB高校」という出願が可能です。また一般選抜では、同じ高校の別の学科を第2志望にすることもできます。</p></div></details>
+      <details><summary><span class="q">Q5</span>特色と一般で、別の高校に出してもいい？ 第2志望は？</summary><div class="a"><p>出せます。たとえば「特色選抜はA高校、一般選抜はB高校」という出願が可能です。さらに一般選抜では、<b>同じ高校に学科が複数ある場合、別の学科を「第2志望」にできます</b>（第1志望の学科が不合格でも、第2志望の学科で合否を判定）。ただし第2志望にできるのは<b>同じ高校の中の学科だけ</b>。別の高校を第2志望にすることはできません。</p></div></details>
       <details><summary><span class="q">Q6</span>内申点と当日点、どっちが大事？</summary><div class="a"><p>一般選抜では<b>原則5:5</b>。どちらも同じくらい大事です。ただし一部の高校は4:6（学力重視）などに変更しており、学校ごとの比重一覧が毎年県教育委員会から公表されます。内申は3年間の積み重ねなので、早く始めるほど有利です。</p></div></details>
       <details><summary><span class="q">Q7</span>中1・中2の成績って関係あるの？</summary><div class="a"><p>大いに関係あります。沖縄県は<b>3学年すべて同じ重み</b>で内申点を計算するので、中1の評定も中3とまったく同じ価値。逆にいえば、中1・中2で思うように取れていなくても、残りの学年と当日点でじゅうぶん巻き返せる設計です。</p></div></details>
-      <details><summary><span class="q">Q8</span>倍率はいつわかる？ 志願変更はできる？</summary><div class="a"><p>出願締切後（例年2月上旬）に初回の志願状況（倍率）が公表され、その後に<b>取り下げ・再出願（志願変更）の期間</b>があります（令和8年度の最終志願状況は2月17日公表）。ただし志願変更ができるのは<b>一般選抜だけ</b>。特色選抜は出願後の変更ができないため、「倍率を見てから動く」戦略が使えるのは一般側です。</p></div></details>
-      <details><summary><span class="q">Q9</span>定員割れの高校はどうなる？</summary><div class="a"><p>合格者が定員に満たなかった高校・学科は<b>2次募集</b>を行います。実施校は合格発表の日に公表され、出願→面接等→合格発表という流れです。令和9年度の合格発表は<b>3月27日（土）</b>です。令和8年度は<b>38校・88学科</b>で実施されました。</p></div></details>
+      <details><summary><span class="q">Q8</span>倍率はいつわかる？ 志願変更はできる？</summary><div class="a"><p>出願締切後（例年2月上旬）に初回の志願状況（倍率）が公表され、その後に<b>取り下げ・再出願（志願変更）の期間</b>があります（令和8年度の最終志願状況は2月17日公表）。ただし志願変更ができるのは<b>一般選抜だけ</b>で、特色選抜は出願後の変更ができません。動けるのは<b>初回倍率を見たこの1回だけ</b>。<b>最終倍率が出たあとは変更できない</b>ので、「倍率を見てから動く」なら初回公表の直後に判断します。</p></div></details>
+      <details><summary><span class="q">Q9</span>定員割れの高校はどうなる？ 定員割れなら必ず受かる？</summary><div class="a"><p><b>定員割れ（倍率1.0未満）でも、必ず合格とはかぎりません。</b>各高校・学科には合格の最低基準があり、それを大きく下回ると（当日点が極端に低い、調査書に重大な問題がある など）、定員割れでも不合格になることがあります（「定員内不合格」）。だからこそ、合格者が定員に満たなかった高校・学科では<b>2次募集</b>が行われます。実施校は合格発表の日に公表され、出願→面接等→合格発表という流れです。令和9年度の合格発表は<b>3月27日（土）</b>。令和8年度は<b>38校・88学科</b>で実施されました。定員割れは合格の可能性がぐっと上がるのは確かですが、最低限の準備は必要です。</p></div></details>
       <details><summary><span class="q">Q10</span>このサイトの判定は当たるの？</summary><div class="a"><p>判定はあくまで<b>過去データにもとづく「めやす」</b>です。実際の合否は当日の得点・面接・各校の選抜方法など多くの要素で決まります。学校や塾の進路指導とあわせてご活用ください。</p></div></details>
       <details><summary><span class="q">Q11</span>私立高校は受けたほうがいい？</summary><div class="a"><p>沖縄の全日制私立で高校から入学できるのは実質3校（沖縄尚学・興南・沖縄カトリック。昭和薬科大附属は高校からの募集なし）。入試は県立より早く、専願・併願を選べます。県立の学力検査より前に結果が出るため、「私立を押さえてから県立に挑む」という組み立てができます。くわしくは<a href="#shiritsu">私立高校の解説</a>へ。</p></div></details>
       <details><summary><span class="q">Q12</span>欠席日数が多くても県立高校は受験できる？</summary><div class="a"><p>受験そのものは可能です。調査書の扱いや選抜での配慮は状況・学校によって異なるため、中学校の先生と志望校への<b>早めの相談</b>が大切です。全日制のほかに定時制・通信制という進路もあります（<a href="#shiritsu">県内の一覧</a>）。ひとりで抱えず、第三者を交えて作戦を立てるのがおすすめです。</p></div></details>
@@ -1524,8 +1530,7 @@ body.has-cbar{padding-bottom:96px}
       <a href="https://www.pref.okinawa.jp/kyoiku/gakko/1008883/index.html" target="_blank" rel="noopener">沖縄県教育委員会（公式）</a>
     </div>
     <p>当サイトの判定・データは独自の集計にもとづく参考情報です。入試制度・日程・募集要項は変更される場合があるため、必ず沖縄県教育委員会および各高校の最新の公式発表をご確認ください。</p>
-    <p>最終更新：2026年6月13日<!-- ★内容を更新したら、この日付も更新 --></p>
-    <p>運営・お問い合わせ：<a href="https://www.juken-camp.online/" target="_blank" rel="noopener">JUKEN CAMP（受験キャンプ）</a>　— データの誤り・リンク切れのご指摘も、こちらのリンク先から。</p>
+    <p>運営・お問い合わせ：<a href="https://www.juken-camp.online/" target="_blank" rel="noopener">JUKEN CAMP（受験キャンプ）</a></p>
     <p>© <span id="yy"></span> JUKEN CAMP — 沖縄県立高校入試ナビ</p>
   </div>
 </footer>
