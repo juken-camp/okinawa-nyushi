@@ -282,11 +282,13 @@ strong{color:var(--sea-deep)}
 .src-list small{display:block;font-size:.72rem;color:var(--ink-soft);margin-top:2px}
 .hero-keys{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .hero-keys .key{
+  position:relative;
   background:var(--card);border:1px solid var(--line);border-radius:12px;
   padding:13px 9px;text-align:center;box-shadow:var(--shadow);
 }
 .hero-keys .key b{display:block;font-family:var(--fd);font-weight:700;font-size:clamp(.98rem,4vw,1.22rem);color:var(--sea-deep);line-height:1.25}
 .hero-keys .key span{display:block;font-size:.66rem;color:var(--ink-soft);font-weight:700;margin-top:5px;line-height:1.5}
+.hero-keys .key .new-tag{position:absolute;top:-8px;right:8px;display:inline-block;margin:0;background:var(--coral);color:#fff;font-family:var(--fb);font-size:.56rem;font-weight:700;letter-spacing:.02em;padding:2px 7px;border-radius:999px;box-shadow:0 1px 3px rgba(11,42,58,.18);white-space:nowrap}
 
 /* ---- buttons ---- */
 .btn{
@@ -478,6 +480,7 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
 .fld input:focus,.fld select:focus{outline:2px solid var(--sea);border-color:var(--sea)}
 .fld.full{grid-column:1/-1}
 .gauge-wrap{display:flex;flex-direction:column;align-items:center;padding:8px 0 0}
+.gauge-wrap[hidden]{display:none}
 .gauge-band{font-family:var(--fd);font-weight:900;font-size:1.3rem;margin-top:-8px}
 .gauge-band .band-sakura{color:var(--sakura);margin-right:7px;font-weight:400}
 .gauge-comment{font-size:.86rem;line-height:1.85;margin:14px 0 0;max-width:34em}
@@ -764,7 +767,7 @@ body.has-cbar{padding-bottom:96px}
     <p class="steps-label">大事なのは、この3つ</p>
     <div class="hero-keys">
       <div class="key"><b>中1から</b><span>内申点は3年間の<br>合計。技能教科は<br>1.5倍で計算</span></div>
-      <div class="key"><b>全員が受験</b><span>推薦入試の廃止で<br>学力検査の<br>免除なし</span></div>
+      <div class="key"><span class="new-tag">2025年〜</span><b>全員が受験</b><span>推薦入試の廃止で<br>学力検査の<br>免除なし</span></div>
       <div class="key"><b>原則5:5</b><span>内申点と<br>学力検査の比重を<br>原則5:5で評価</span></div>
     </div>
   </div>
