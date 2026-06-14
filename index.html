@@ -204,7 +204,7 @@
   --fm:'JetBrains Mono',ui-monospace,monospace;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;scroll-padding-top:64px}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
 body{
   margin:0;background:var(--paper);color:var(--ink);
   font-family:var(--fb);font-size:16px;line-height:1.85;
@@ -227,7 +227,7 @@ strong{color:var(--sea-deep)}
 .site-head .inner{
   position:relative;
   width:min(92%,980px);margin-inline:auto;display:flex;align-items:center;gap:12px;
-  height:62px;
+  height:72px;
 }
 .site-head .inner::after{
   content:"";position:absolute;top:0;bottom:0;right:0;width:28px;
@@ -236,8 +236,8 @@ strong{color:var(--sea-deep)}
 }
 .site-head.can-scroll .inner::after{opacity:1}
 .brand{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;text-decoration:none;color:var(--ink);white-space:nowrap}
-.brand .mark{font-family:var(--fd);font-weight:900;font-size:1.02rem;color:var(--sea-deep);line-height:1.15}
-.brand-by{font-size:.58rem;font-weight:700;color:var(--ink-soft);letter-spacing:.07em;line-height:1.1}
+.brand .mark{font-family:var(--fd);font-weight:900;font-size:1.3rem;color:var(--sea-deep);line-height:1.15}
+.brand-by{font-size:.78rem;font-weight:700;color:var(--ink-soft);letter-spacing:.06em;line-height:1.1}
 .gnav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-left:auto;position:relative}
 .gnav::-webkit-scrollbar{display:none}
 .gnav a{
@@ -643,7 +643,7 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
 .faq .a p{margin:0 0 8px}
 
 /* ---- footer ---- */
-footer{padding:40px 0 60px;color:var(--ink-soft);font-size:.76rem}
+footer{padding:8px 0 60px;color:var(--ink-soft);font-size:.76rem}
 footer .links{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:14px}
 footer a{color:var(--ink-soft)}
 
@@ -788,7 +788,7 @@ body.find-open #findFab{opacity:0;pointer-events:none}
 .find-item:hover{border-color:var(--sea)}
 .find-item:active{background:var(--sea-tint)}
 .find-item .ft{flex:1;font-size:.9rem;font-weight:700;line-height:1.4}
-.find-item .fsec{flex:0 0 auto;font-size:.64rem;font-weight:700;color:var(--sea-deep);background:var(--sea-tint);border-radius:6px;padding:2px 7px;white-space:nowrap}
+.find-item .fsec{flex:0 0 auto;font-size:.66rem;font-weight:800;color:var(--sea-deep);background:var(--sea-tint);border-radius:6px;padding:2px 7px;min-width:1.6em;text-align:center;white-space:nowrap}
 .find-item .far{flex:0 0 auto;color:var(--sea);font-weight:800}
 .find-empty{padding:26px 16px;text-align:center;color:var(--ink-soft);font-size:.86rem}
 @media(min-width:680px){
@@ -1206,6 +1206,8 @@ body.has-cbar{padding-bottom:96px}
         <p class="cf-ippan-b"><b>調査書（評定＝内申点）＋ 学力検査（<b class="mono">60点×5＝300点</b>）＋ 面接</b>を、原則 <b>5:5</b>（4:6〜6:4の学校もあり）で評価します。<br><strong class="cf-warn">英検などの資格は、ここには加わりません。</strong>一般選抜で点になるのは「評定（内申点）」と「学力検査」だけ。実績点（ランク表）は<b>特色選抜のためのしくみ</b>です。</p>
       </div>
       <p class="note" style="margin-top:12px">※特色で届かなくても、同じ得点でそのまま一般選抜の判定に進みます。<b>資格・実績を活かしたいなら特色選抜、評定と当日点で勝負するのが一般選抜</b>、という関係です。</p>
+      <details class="fold" style="margin-top:14px"><summary>英検・漢検などの資格は、どう点になる？</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">資格・検定は、上の③「実績点」として<strong>点になります</strong>。ただし<strong>県内ぜんぶの高校で「英検◯級＝何点」と同じ、という決まりはありません</strong>。多くの県立高校が特色選抜の「選抜方法」や「実績ランク表」で、英検・漢検・数検などの扱いを級ごとに公表しています（たとえば、2級・準2級・3級…と上の級ほど高いランク＝実績点になる、という形）。<strong>表は学校ごとに違い</strong>、一般選抜では原則として実績点はつかない（評定＝内申点で見る）ので、資格が効くのは主に特色選抜と私立入試です。「どの級を・いつまでに・何のために取るか」を、志望校の選抜方法から逆算して決めましょう。</p>
+      <p style="font-size:.86rem;margin:12px 0 0;padding-top:12px;border-top:1px dashed var(--line)"><b>級が同じなら、取りやすい検定を選ぶ</b>のも一つの手です。実績ランク表が「英検・漢検・数検の同じ級＝同じランク」としている学校なら、得点上の価値は同じ。英語は4技能（読む・聞く・書く・話す）が問われるのに対し、漢検は日本語、数検は数学と、得意な1分野で級を取りにいける分、<strong>同じ級でも到達しやすい</strong>と感じる人もいます。ただし注意点として、<strong>英検の勉強は学力検査の英語にもそのまま効く</strong>（実績点と当日点の両取り）のに対し、漢検・数検は学力検査に直結しにくい。「ランクの取りやすさ」と「受験勉強にそのまま効くか」の両方で選ぶのがおすすめです。</p></div></details>
     </div>
 
     <!-- 校別の実例 -->
@@ -1753,8 +1755,6 @@ body.has-cbar{padding-bottom:96px}
       <details class="fold"><summary>内申の「つくられ方」が変わった</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">通知表はいま、3つの観点（知識・技能／思考・判断・表現／主体的に学習に取り組む態度）で評価されます。提出物・授業での取り組み・振り返り・小テストの積み重ねが評定に直結。県内では定期テストを廃止・縮小して単元テストに切り替える中学校も出てきており、「テスト前だけ頑張る」型は通用しにくくなっています。以前のイメージのままだと、対策がずれてしまいます。</p></div></details>
       <details class="fold"><summary>欠席が多い・学校に行きづらい</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">受験できなくなるわけではありません。調査書の扱いや選抜での配慮は状況・学校によって異なるため、中学校と志望校への早めの相談が大切です。全日制のほかに定時制・通信制も含めて進路を設計する、という選択肢もあります（<a href="#shiritsu">県内の通信制の一覧</a>）。</p></div></details>
       <details class="fold"><summary>発達障害などの特性がある</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">沖縄県には「学力検査等の配慮願い」という事前申請の制度があり、在籍する中学校を通して手続きします。申請の時期・書類が決まっているので、夏〜秋のうちに動いておくと安心です。</p></div></details>
-      <details class="fold"><summary>英検などの検定</summary><div class="fold-body"><p style="font-size:.86rem;margin:0">県内ぜんぶの高校で「英検◯級＝何点」と同じ、という決まりはありません。ただし「効果があいまい」なのではなく、<strong>多くの県立高校が特色選抜の「選抜方法」や「実績ランク表」で、英検・漢検・数検などの扱いを級ごとに公表</strong>しています（たとえば、2級・準2級・3級…と上の級ほど高いランク＝実績点になる、という形）。<strong>表は学校ごとに違い</strong>、一般選抜では原則として実績点はつかない（評定＝内申点で見る）ので、資格が効くのは主に特色選抜と私立入試です。「どの級を・いつまでに・何のために取るか」を、志望校の選抜方法から逆算して決めましょう。</p>
-      <p style="font-size:.86rem;margin:12px 0 0;padding-top:12px;border-top:1px dashed var(--line)"><b>級が同じなら、取りやすい検定を選ぶ</b>のも一つの手です。実績ランク表が「英検・漢検・数検の同じ級＝同じランク」としている学校なら、得点上の価値は同じ。英語は4技能（読む・聞く・書く・話す）が問われるのに対し、漢検は日本語、数検は数学と、得意な1分野で級を取りにいける分、<strong>同じ級でも到達しやすい</strong>と感じる人もいます。ただし注意点として、<strong>英検の勉強は学力検査の英語にもそのまま効く</strong>（実績点と当日点の両取り）のに対し、漢検・数検は学力検査に直結しにくい。「ランクの取りやすさ」と「受験勉強にそのまま効くか」の両方で選ぶのがおすすめです。</p></div></details>
     </div>
 
     <p class="note" style="margin-top:18px">ここから先は、一般論では答えが出ません。学年・状況・学校がひとつ違えば最適解も変わるので、中学校の先生など、状況をよく知る人に早めに相談してください。</p>
@@ -1768,6 +1768,7 @@ body.has-cbar{padding-bottom:96px}
   <div class="wrap">
     <span class="sec-label">まとめ</span>
     <h2>これだけは──受験のキホン</h2>
+    <p class="lead">このページの要点を、ぎゅっと。項目をタップすると、それぞれのくわしい説明へジャンプできます。</p>
     <ol class="kihon-list rv">
       <li><a href="#naishin"><span class="tx"><b>内申は中1から</b>。3年分の合計で、実技4教科は×1.5。</span><span class="ar" aria-hidden="true">→</span></a></li>
       <li><a href="#hantei"><span class="tx"><b>模試で「現在地」を知る</b>。偏差値で県内全体の中の位置がわかる（早めの受験が第一歩）。</span><span class="ar" aria-hidden="true">→</span></a></li>
@@ -3423,25 +3424,25 @@ renderNowWhere();
       closeBtn=document.getElementById("findClose");
   if(!fab||!panel||!listEl) return;
   var NAV=[
-    {t:"以前との違い",sec:"",h:"#beforeafter",kw:"ちがい 違い 変わった 旧制度 むかし 昔 推薦 常識 過去"},
-    {t:"入試の日程・スケジュール",sec:"",h:"#schedule",kw:"日程 いつ 日にち 日付 カレンダー 出願 願書 流れ スケジュール 中3"},
-    {t:"当日の持ち物",sec:"日程",h:"#mochimono",kw:"持ち物 鉛筆 シャープ 定規 コンパス 時計 消しゴム 持っていく だめ 分度器"},
-    {t:"学力検査の平均点",sec:"日程",h:"#heikinten",kw:"平均点 何点 点数 300点 162 半分 とれれば"},
-    {t:"合否の仕組み（5:5・特色と一般）",sec:"",h:"#shikumi",kw:"仕組み 合否 決まり方 比重 特色選抜 一般選抜 流れ チャンス"},
-    {t:"内申点を計算する",sec:"",h:"#naishin",kw:"内申 計算 通知表 評定 シミュレーター 165 実技 1.5倍 持ち点"},
-    {t:"合格判定（偏差値で見る）",sec:"",h:"#hantei",kw:"判定 合格 可能性 偏差値 模試 ライン 80%"},
-    {t:"沖縄の2大模試（プレ入試・県模試）",sec:"合格判定",h:"#moshi",kw:"模試 プレ入試 県模試 誠伸社 偏差値 受ける どこ 外部受験"},
-    {t:"学校データ・倍率一覧",sec:"",h:"#schools",kw:"学校 データ 倍率 偏差値 基準 高校 一覧 定員割れ 比較 くらべ"},
-    {t:"校区（通学区域）チェッカー",sec:"学校データ",h:"#kuikiBlock",kw:"校区 学区 通学区域 住所 市町村 普通科 区域外"},
-    {t:"私立高校（沖尚・興南・カトリック）",sec:"",h:"#shiritsu",kw:"私立 沖縄尚学 興南 カトリック 昭和薬科 専願 併願 3教科"},
-    {t:"通信制という選択肢",sec:"私立",h:"#tsushin",kw:"通信制 N高 泊高校 サポート校 不登校 単位制 在宅"},
-    {t:"お金・学費・使える支援",sec:"",h:"#okane",kw:"お金 学費 無償 無償化 就学支援金 給付金 費用 制服 端末 タブレット"},
-    {t:"返さなくていい給付金（奨学給付金）",sec:"お金",h:"#kyufu",kw:"給付金 奨学 返済不要 非課税 生活保護 授業料以外 もらえる"},
-    {t:"数字にならない要素（面接・欠席など）",sec:"",h:"#kobetsu",kw:"面接 欠席 不登校 発達障害 配慮 英検 検定 特性 個別"},
-    {t:"自己採点のすすめ（2次募集で効く）",sec:"Q&A",h:"#faq-selfscore",kw:"自己採点 点数 知らされない 2次募集 解答速報 採点"},
-    {t:"受験のキホン（まとめ）",sec:"",h:"#kihon",kw:"まとめ キホン 基本 これだけ 早わかり"},
-    {t:"よくある質問（Q&A）",sec:"",h:"#faq",kw:"質問 FAQ 疑問 Q&A 過去問 用語"},
-    {t:"公式・一次情報リンク集",sec:"",h:"#koushiki",kw:"公式 リンク 一次情報 出典 県教育委員会 ソース"}
+    {t:"以前との違い",sec:"1",h:"#beforeafter",kw:"ちがい 違い 変わった 旧制度 むかし 昔 推薦 常識 過去"},
+    {t:"入試の日程・スケジュール",sec:"2",h:"#schedule",kw:"日程 いつ 日にち 日付 カレンダー 出願 願書 流れ スケジュール 中3"},
+    {t:"当日の持ち物",sec:"2",h:"#mochimono",kw:"日程 持ち物 鉛筆 シャープ 定規 コンパス 時計 消しゴム 持っていく だめ 分度器"},
+    {t:"学力検査の平均点",sec:"2",h:"#heikinten",kw:"日程 平均点 何点 点数 300点 162 半分 とれれば"},
+    {t:"合否の仕組み（特色・一般・実績点）",sec:"3",h:"#shikumi",kw:"仕組み 合否 決まり方 比重 特色選抜 一般選抜 流れ チャンス 実績点 英検 漢検 数検 検定 資格"},
+    {t:"内申点を計算する",sec:"4",h:"#naishin",kw:"内申 計算 通知表 評定 シミュレーター 165 実技 1.5倍 持ち点"},
+    {t:"合格判定（偏差値で見る）",sec:"5",h:"#hantei",kw:"判定 合格 可能性 偏差値 模試 ライン 80%"},
+    {t:"沖縄の2大模試（プレ入試・県模試）",sec:"5",h:"#moshi",kw:"判定 模試 プレ入試 県模試 誠伸社 偏差値 受ける どこ 外部受験"},
+    {t:"学校データ・倍率一覧",sec:"6",h:"#schools",kw:"学校 データ 倍率 偏差値 基準 高校 一覧 定員割れ 比較 くらべ"},
+    {t:"校区（通学区域）チェッカー",sec:"6",h:"#kuikiBlock",kw:"学校データ 校区 学区 通学区域 住所 市町村 普通科 区域外"},
+    {t:"私立高校（沖尚・興南・カトリック）",sec:"7",h:"#shiritsu",kw:"私立 沖縄尚学 興南 カトリック 昭和薬科 専願 併願 3教科"},
+    {t:"通信制という選択肢",sec:"7",h:"#tsushin",kw:"私立 通信制 N高 泊高校 サポート校 不登校 単位制 在宅"},
+    {t:"お金・学費・使える支援",sec:"8",h:"#okane",kw:"お金 学費 無償 無償化 就学支援金 給付金 費用 制服 端末 タブレット"},
+    {t:"返さなくていい給付金（奨学給付金）",sec:"8",h:"#kyufu",kw:"お金 給付金 奨学 返済不要 非課税 生活保護 授業料以外 もらえる"},
+    {t:"よくある質問（Q&A）",sec:"9",h:"#faq",kw:"質問 FAQ 疑問 Q&A 過去問 用語"},
+    {t:"自己採点のすすめ（2次募集で効く）",sec:"9",h:"#faq-selfscore",kw:"質問 Q&A 自己採点 点数 知らされない 2次募集 解答速報 採点"},
+    {t:"数字にならない要素（面接・欠席など）",sec:"補足",h:"#kobetsu",kw:"補足 面接 欠席 不登校 発達障害 配慮 特性 個別"},
+    {t:"受験のキホン（まとめ）",sec:"まとめ",h:"#kihon",kw:"まとめ キホン 基本 これだけ 早わかり"},
+    {t:"公式・一次情報リンク集",sec:"公式",h:"#koushiki",kw:"公式 リンク 一次情報 出典 県教育委員会 ソース"}
   ];
   function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
   function render(q){
