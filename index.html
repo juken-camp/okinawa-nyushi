@@ -223,7 +223,9 @@ strong{color:var(--sea-deep)}
 .site-head{
   position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  transition:transform .3s ease;will-change:transform;
 }
+.site-head.head-hidden{transform:translateY(-100%)}
 .site-head .inner{
   position:relative;
   width:min(92%,980px);margin-inline:auto;display:flex;align-items:center;gap:12px;
@@ -3317,12 +3319,27 @@ function spy(){
   }
 }
 const toTop = $("#toTop");
+const headEl = document.querySelector(".site-head");
+let lastHeadY = window.scrollY || 0, headLock = 0;
 const raf = window.requestAnimationFrame ? window.requestAnimationFrame.bind(window) : (f => setTimeout(f, 16));
 window.addEventListener("scroll", () => {
   if (!spyTick){ spyTick = true; raf(spy); }
-  toTop.hidden = (window.scrollY || 0) < 600;
+  const y = window.scrollY || 0;
+  toTop.hidden = y < 600;
+  /* ヘッダー自動ひっこめ：先頭付近は常時表示／読み進める（下へ）と隠れ／戻す（上へ）と出る */
+  if (headEl && Date.now() >= headLock){
+    if (y < 80) headEl.classList.remove("head-hidden");
+    else if (y > lastHeadY + 6) headEl.classList.add("head-hidden");
+    else if (y < lastHeadY - 6) headEl.classList.remove("head-hidden");
+  }
+  lastHeadY = y;
 }, { passive: true });
 toTop.addEventListener("click", () => { try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch(e){ location.hash = "#top"; } });
+/* 内部リンクへ飛んだ直後はヘッダーを出したまま固定（飛び先がヘッダー下に正しく収まるように） */
+document.addEventListener("click", (e) => {
+  const a = e.target.closest && e.target.closest('a[href^="#"]');
+  if (a && headEl){ headEl.classList.remove("head-hidden"); headLock = Date.now() + 800; }
+}, true);
 
 /* ---- タブナビ：右に続きがあるときだけフェード表示 ---- */
 const gnavEl = document.getElementById("gnav");
