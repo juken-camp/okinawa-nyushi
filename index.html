@@ -236,7 +236,7 @@ strong{color:var(--sea-deep)}
 .site-head.can-scroll .inner::after{opacity:1}
 .brand{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--ink);white-space:nowrap}
 .brand .mark{font-family:var(--fd);font-weight:900;font-size:1.02rem;color:var(--sea-deep)}
-.gnav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.gnav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-left:auto;position:relative}
 .gnav::-webkit-scrollbar{display:none}
 .gnav a{
   flex:0 0 auto;text-decoration:none;color:var(--ink-soft);font-size:.76rem;font-weight:700;
@@ -3174,7 +3174,8 @@ function spy(){
   if (active && navLinks[active]){
     const a = navLinks[active];
     a.classList.add("act");
-    const left = a.offsetLeft - (nav.clientWidth - a.offsetWidth)/2;
+    const ar = a.getBoundingClientRect(), nr = nav.getBoundingClientRect();
+    const left = nav.scrollLeft + (ar.left + ar.width/2) - (nr.left + nr.width/2);
     if (typeof nav.scrollTo === "function") nav.scrollTo({ left, behavior: "smooth" });
     else nav.scrollLeft = left;
   }
