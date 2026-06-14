@@ -187,6 +187,7 @@
   --sea-tint:#e2f1f8;
   --coral:#e2503a;
   --coral-tint:#fdebe7;
+  --coral-deep:#b8401f;   /* ティント上で白文字を読ませる濃いコーラル */
   --sun:#eda53a;
   --sun-tint:#fdf3df;
   --reef:#0e9f6e;
@@ -434,7 +435,7 @@ h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color
 .kchips{display:flex;flex-wrap:wrap;gap:6px}
 .kchips span{font-size:.82rem;font-weight:700;padding:5px 11px;border-radius:8px;background:var(--reef-tint);border:1px solid #bfe6d4;color:#0a7350}
 .kchips span.ex{background:var(--sun-tint);border-color:#f3dca8;color:#a66a12}
-.kuiki select{font:inherit;font-size:.92rem;padding:9px 11px;border:1px solid var(--line);border-radius:12px;width:100%;margin-top:6px;background:#fff;color:var(--ink)}
+.kuiki select{font:inherit;font-size:1rem;padding:9px 11px;border:1px solid var(--line);border-radius:12px;width:100%;margin-top:6px;background:#fff;color:var(--ink)}
 .kall{background:var(--reef-tint);border:1px solid #bfe6d4;border-radius:12px;padding:10px 13px;font-size:.86rem;margin-top:11px}
 /* 2大模試 */
 .moshi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px 16px;box-shadow:var(--shadow)}
@@ -496,11 +497,11 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
 .cf-item{display:flex;align-items:flex-start;gap:12px;background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:13px 15px}
 .cf-item.cf-hi{border-color:#f0c6bb;background:var(--coral-tint)}
 .cf-ic{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--sea-tint);color:var(--sea-deep);font-family:var(--fm);font-weight:800;font-size:.82rem;display:flex;align-items:center;justify-content:center;margin-top:1px}
-.cf-item.cf-hi .cf-ic{background:var(--coral);color:#fff}
+.cf-item.cf-hi .cf-ic{background:var(--coral-deep);color:#fff}
 .cf-tx{display:flex;flex-direction:column;gap:2px;line-height:1.5}
 .cf-tx b{font-size:.92rem}
 .cf-tx span{font-size:.8rem;color:var(--ink-soft);line-height:1.7}
-.cf-badge{display:inline-block;font-size:.66rem;font-weight:800;color:#fff;background:var(--coral);border-radius:99px;padding:2px 9px;margin-left:4px;vertical-align:1px;letter-spacing:.02em}
+.cf-badge{display:inline-block;font-size:.7rem;font-weight:800;color:#fff;background:var(--coral-deep);border-radius:99px;padding:2px 10px;margin-left:4px;vertical-align:1px;letter-spacing:.02em}
 .cf-plus{font-family:var(--fd);font-weight:900;color:var(--ink-soft);text-align:center;font-size:1.05rem;line-height:1;padding:5px 0;opacity:.5}
 .cf-eq{display:flex;align-items:flex-start;gap:9px;margin:14px 0 0;font-size:.86rem;font-weight:700;color:var(--sea-deep);line-height:1.65}
 .cf-arrow{flex:0 0 auto;font-family:var(--fd);font-weight:900;font-size:1.1rem;color:var(--sea);line-height:1.35}
@@ -608,7 +609,7 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
 /* ---- 学校データ ---- */
 .filterbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;align-items:center}
 .filterbar input[type=search]{
-  flex:1 1 160px;font-family:var(--fb);font-size:.9rem;padding:10px 13px;border-radius:99px;border:1.5px solid var(--line);
+  flex:1 1 160px;font-family:var(--fb);font-size:1rem;padding:10px 13px;border-radius:99px;border:1.5px solid var(--line);
 }
 .filterbar .chip{
   font-family:var(--fb);font-size:.76rem;font-weight:700;border-radius:99px;padding:8px 14px;cursor:pointer;
@@ -776,7 +777,7 @@ body.find-open #findFab{opacity:0;pointer-events:none}
 .find-panel.show{transform:translateY(0)}
 .find-panel[hidden]{display:none}
 .find-head{display:flex;align-items:center;gap:8px;padding:14px;border-bottom:1px solid var(--line);background:#fff;border-radius:18px 18px 0 0}
-.find-head input{flex:1;font-family:var(--fb);font-size:.95rem;padding:11px 13px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);-webkit-appearance:none}
+.find-head input{flex:1;font-family:var(--fb);font-size:1rem;padding:11px 13px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);-webkit-appearance:none}
 .find-head input:focus{outline:none;border-color:var(--sea);background:#fff}
 .find-x{flex:0 0 auto;width:40px;height:40px;border:0;background:var(--paper);border-radius:11px;color:var(--ink-soft);font-size:1.05rem;cursor:pointer}
 .find-x:active{background:var(--line)}
