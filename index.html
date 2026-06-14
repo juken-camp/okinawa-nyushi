@@ -204,11 +204,12 @@
   --fm:'JetBrains Mono',ui-monospace,monospace;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;scroll-padding-top:74px}
+html{scroll-behavior:smooth;scroll-padding-top:74px;touch-action:manipulation}
 body{
   margin:0;background:var(--paper);color:var(--ink);
   font-family:var(--fb);font-size:16px;line-height:1.85;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  touch-action:manipulation;
 }
 img,svg{max-width:100%}
 a{color:var(--sea);text-underline-offset:3px}
@@ -408,7 +409,7 @@ h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color
 
 /* ---- 比較表・汎用テーブル ---- */
 .tscroll{
-  overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--line);
+  overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--line);touch-action:manipulation;
   background:
     linear-gradient(to right,#fff 28%,rgba(255,255,255,0)) left center / 36px 100% no-repeat local,
     linear-gradient(to left,#fff 28%,rgba(255,255,255,0)) right center / 36px 100% no-repeat local,
@@ -459,7 +460,7 @@ h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color
 .moshi-howto p:last-child{margin-bottom:0}
 .moshi-howto .mh-note{font-size:.78rem;color:var(--ink-soft);background:#fff;border-radius:10px;padding:9px 11px;margin-top:4px}
 .kclear{font:inherit;font-size:.74rem;background:none;border:none;color:var(--ink-soft);text-decoration:underline;cursor:pointer;padding:4px;margin-top:7px}
-table{border-collapse:collapse;width:100%;font-size:.85rem;min-width:540px}
+table{border-collapse:collapse;width:100%;font-size:.85rem;min-width:540px;touch-action:manipulation}
 th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 thead th{background:#f2f6f9;font-size:.76rem;color:var(--ink-soft);white-space:nowrap}
 tbody tr:last-child td{border-bottom:none}
