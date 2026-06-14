@@ -699,9 +699,52 @@ table.avg tr.hl td{background:var(--sea-tint)}
 .act-grid{display:grid;gap:10px}
 @media(min-width:680px){.act-grid{grid-template-columns:repeat(3,1fr)}}
 .act{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px}
-#toTop{position:fixed;right:14px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:55;width:42px;height:42px;border-radius:50%;border:0;background:var(--sea-deep);color:#fff;font-size:1.05rem;font-weight:800;box-shadow:0 6px 18px rgba(8,40,60,.32);cursor:pointer}
+#toTop{position:fixed;right:14px;bottom:calc(72px + env(safe-area-inset-bottom));z-index:55;width:42px;height:42px;border-radius:50%;border:0;background:var(--sea-deep);color:#fff;font-size:1.05rem;font-weight:800;box-shadow:0 6px 18px rgba(8,40,60,.32);cursor:pointer}
 #toTop[hidden]{display:none}
-body.has-cbar #toTop{bottom:calc(102px + env(safe-area-inset-bottom))}
+body.has-cbar #toTop{bottom:calc(156px + env(safe-area-inset-bottom))}
+
+/* ---- さがす・目次（フローティング） ---- */
+#findFab{
+  position:fixed;right:14px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:56;
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--sea-deep);color:#fff;border:0;border-radius:99px;padding:11px 17px 11px 15px;
+  font-family:var(--fd);font-weight:700;font-size:.86rem;cursor:pointer;box-shadow:0 6px 18px rgba(8,40,60,.32);
+  transition:opacity .18s,transform .12s;
+}
+#findFab:active{transform:scale(.97)}
+#findFab svg{width:17px;height:17px;flex:0 0 auto}
+body.has-cbar #findFab{bottom:calc(102px + env(safe-area-inset-bottom))}
+body.find-open #findFab{opacity:0;pointer-events:none}
+
+.find-overlay{position:fixed;inset:0;background:rgba(17,42,62,.42);z-index:60;opacity:0;transition:opacity .2s}
+.find-overlay.show{opacity:1}
+.find-overlay[hidden]{display:none}
+.find-panel{
+  position:fixed;z-index:61;background:#fff;display:flex;flex-direction:column;
+  box-shadow:0 -8px 30px rgba(8,40,60,.22);
+  left:0;right:0;bottom:0;max-height:82vh;border-radius:18px 18px 0 0;
+  transform:translateY(100%);transition:transform .26s cubic-bezier(.22,.61,.36,1);
+}
+.find-panel.show{transform:translateY(0)}
+.find-panel[hidden]{display:none}
+.find-head{display:flex;align-items:center;gap:8px;padding:14px;border-bottom:1px solid var(--line);background:#fff;border-radius:18px 18px 0 0}
+.find-head input{flex:1;font-family:var(--fb);font-size:.95rem;padding:11px 13px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);-webkit-appearance:none}
+.find-head input:focus{outline:none;border-color:var(--sea);background:#fff}
+.find-x{flex:0 0 auto;width:40px;height:40px;border:0;background:var(--paper);border-radius:11px;color:var(--ink-soft);font-size:1.05rem;cursor:pointer}
+.find-x:active{background:var(--line)}
+.find-list{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:10px 12px calc(16px + env(safe-area-inset-bottom))}
+.find-item{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:7px;text-decoration:none;color:var(--ink);cursor:pointer}
+.find-item:hover{border-color:var(--sea)}
+.find-item:active{background:var(--sea-tint)}
+.find-item .ft{flex:1;font-size:.9rem;font-weight:700;line-height:1.4}
+.find-item .fsec{flex:0 0 auto;font-size:.64rem;font-weight:700;color:var(--sea-deep);background:var(--sea-tint);border-radius:6px;padding:2px 7px;white-space:nowrap}
+.find-item .far{flex:0 0 auto;color:var(--sea);font-weight:800}
+.find-empty{padding:26px 16px;text-align:center;color:var(--ink-soft);font-size:.86rem}
+@media(min-width:680px){
+  .find-panel{left:auto;right:14px;bottom:calc(72px + env(safe-area-inset-bottom));width:384px;max-height:68vh;border-radius:16px;transform:translateY(14px);opacity:0;transition:transform .2s,opacity .2s}
+  .find-panel.show{transform:none;opacity:1}
+  .find-head{border-radius:16px 16px 0 0}
+}
 .act .ag{display:inline-block;background:var(--sea-deep);color:#fff;font-size:.68rem;font-weight:800;border-radius:99px;padding:4px 12px;margin-bottom:9px}
 .act p{margin:0 0 10px;font-size:.8rem;line-height:1.85}
 .act a{font-size:.78rem;font-weight:700;color:var(--sea-deep)}
@@ -966,7 +1009,7 @@ body.has-cbar{padding-bottom:96px}
       </div>
       <p class="note" style="margin-top:10px">各教科50分。面接の時間・進め方は学校によって異なり、特色選抜の実技・学校独自検査などもこの2日間に実施されます。会場は原則として志願先の高校（広域の学校は委託・出張検査場あり）。</p>
 
-      <h3 style="margin:18px 0 12px;font-size:.98rem">当日の持ち物<span style="font-weight:500;font-size:.78rem;color:var(--ink-soft)">（令和8年度実績）</span></h3>
+      <h3 id="mochimono" style="margin:18px 0 12px;font-size:.98rem">当日の持ち物<span style="font-weight:500;font-size:.78rem;color:var(--ink-soft)">（令和8年度実績）</span></h3>
       <ul class="stack">
         <li class="ok"><span class="sw">持っていく</span><p>HB以上の濃さの黒えんぴつ か シャープペンシル（和歌・格言が印刷されたものはダメ）／プラスチック製の消しゴム／定規（三角定規もOK）／コンパス</p></li>
         <li class="cau"><span class="sw">机に置ける</span><p>えんぴつキャップ・えんぴつ削り（電動・大型・ナイフ型はダメ）／時計（辞書・電卓・通信機能つき端末・ウェアラブル端末・キッチンタイマー・大きいものはダメ）／メガネ／ハンカチ（無地のタオル）／目薬／ティッシュ（袋・箱から中身だけ出す）</p></li>
@@ -979,7 +1022,7 @@ body.has-cbar{padding-bottom:96px}
       <p style="font-size:.86rem;margin-top:8px">そして、<b>特色選抜は記述式を除いた250点</b>、<b>一般選抜は記述式を含む300点</b>で評価されます。記述の出来が「一般選抜でだけ」効いてくる構造です。</p>
       <p class="note" style="margin-top:10px">記述式の配点は令和8年度実績（各教科10点）。出題箇所は年度ごとに変わるため、最新の発表をご確認ください。</p>
 
-      <h3 style="margin:18px 0 12px;font-size:.98rem">平均点はどれくらい？<span style="font-weight:500;font-size:.78rem;color:var(--ink-soft)">（5教科合計300点満点）</span></h3>
+      <h3 id="heikinten" style="margin:18px 0 12px;font-size:.98rem">平均点はどれくらい？<span style="font-weight:500;font-size:.78rem;color:var(--ink-soft)">（5教科合計300点満点）</span></h3>
       <p style="font-size:.92rem;margin:0 0 6px"><b>平均は、だいたい150点くらい。「半分とれたら、まんなか」</b>です。満点を取る試験ではありません——直近5年の最高点でも<b>284〜288点</b>です。</p>
       <details class="fold" style="margin-top:12px">
         <summary>教科ごとの平均点を、年度別に見る</summary>
@@ -1240,7 +1283,7 @@ body.has-cbar{padding-bottom:96px}
     </div>
 
     <div class="moshi rv" style="margin-top:16px">
-      <h3 class="moshi-h">「偏差値」はどこで測る？──沖縄の2大模試</h3>
+      <h3 class="moshi-h" id="moshi">「偏差値」はどこで測る？──沖縄の2大模試</h3>
       <p style="font-size:.86rem;margin:0 0 13px;color:var(--ink-soft)">学校の実力テストとは別に、<b>県内全体の中での現在地（偏差値）</b>がわかる模試があります。沖縄の中3向けには、大きく2つの定番模試があります。</p>
 
       <div class="moshi-cards">
@@ -1399,7 +1442,7 @@ body.has-cbar{padding-bottom:96px}
           <p class="pv-mini">募集人数・試験日・科目は年度で変わります。最新の高校募集要項で確認を。</p>
         </div></li>
       <li><span class="nm">昭和薬科大学附属高校</span><span class="pl">浦添市</span><br>完全中高一貫校のため、<b>高校からの募集は行っていません</b>（入学は中学受験のみ）。</li>
-      <li><span class="nm">通信制高校という選択肢</span><span class="pl">県内各地</span><br>通学日数やオンラインの度合いを選べる学校です。入学の時期・出願のしくみは県立全日制の入試とは別。
+      <li id="tsushin"><span class="nm">通信制高校という選択肢</span><span class="pl">県内各地</span><br>通学日数やオンラインの度合いを選べる学校です。入学の時期・出願のしくみは県立全日制の入試とは別。
         <details class="fold" style="margin-top:9px"><summary>県内で選べる通信制の一覧（タップでひらく）</summary><div class="fold-body">
 
         <div class="tsushin-intro">
@@ -1521,7 +1564,7 @@ body.has-cbar{padding-bottom:96px}
     </div>
 
     <div class="block card rv" style="border-top-color:var(--reef)">
-      <h3>③ 返さなくていいお金「高校生等奨学給付金」</h3>
+      <h3 id="kyufu">③ 返さなくていいお金「高校生等奨学給付金」</h3>
       <p style="font-size:.88rem"><b>住民税が非課税の世帯・生活保護の世帯など</b>を対象に、<b>授業料以外の教育費</b>（教科書・教材・学用品・通学用品・PTA会費・入学時の学用品 など）に使える、<b>返済不要の給付金</b>です。沖縄県の制度で、あとで返す「奨学金（貸与）」とはちがい、返す必要はありません。</p>
       <ul class="check-list">
         <li>金額は<b>世帯の区分・公私・全日／定時／通信・子どもの人数</b>で変わります（国公立・全日制で年33,500円を基本に、世帯によってはこれより大きくなります）。</li>
@@ -1648,6 +1691,21 @@ body.has-cbar{padding-bottom:96px}
 </main>
 
 <button type="button" id="toTop" hidden aria-label="ページの先頭へもどる">↑</button>
+
+<!-- ============ さがす・目次（フローティング） ============ -->
+<button type="button" id="findFab" aria-label="さがす・目次をひらく">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#fff" stroke-width="2.2"/><line x1="16.3" y1="16.3" x2="21" y2="21" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+  さがす
+</button>
+<div class="find-overlay" id="findOverlay" hidden></div>
+<div class="find-panel" id="findPanel" hidden role="dialog" aria-modal="true" aria-label="さがす・目次">
+  <div class="find-head">
+    <input type="search" id="findInput" placeholder="キーワードでさがす（例：内申、倍率、お金）" autocomplete="off" enterkeyhint="search">
+    <button type="button" class="find-x" id="findClose" aria-label="閉じる">✕</button>
+  </div>
+  <div class="find-list" id="findList"></div>
+  <p class="find-empty" id="findEmpty" hidden>見つかりませんでした。別のことばでお試しください。</p>
+</div>
 
 <!-- 学校くらべバー -->
 <div id="compareBar" hidden>
@@ -3217,6 +3275,83 @@ function renderNowWhere(){
   paint("3");
 }
 renderNowWhere();
+
+/* ---- さがす・目次 ---- */
+(function(){
+  var fab=document.getElementById("findFab"),
+      overlay=document.getElementById("findOverlay"),
+      panel=document.getElementById("findPanel"),
+      input=document.getElementById("findInput"),
+      listEl=document.getElementById("findList"),
+      emptyEl=document.getElementById("findEmpty"),
+      closeBtn=document.getElementById("findClose");
+  if(!fab||!panel||!listEl) return;
+  var NAV=[
+    {t:"以前との違い",sec:"",h:"#beforeafter",kw:"ちがい 違い 変わった 旧制度 むかし 昔 推薦 常識 過去"},
+    {t:"入試の日程・スケジュール",sec:"",h:"#schedule",kw:"日程 いつ 日にち 日付 カレンダー 出願 願書 流れ スケジュール 中3"},
+    {t:"当日の持ち物",sec:"日程",h:"#mochimono",kw:"持ち物 鉛筆 シャープ 定規 コンパス 時計 消しゴム 持っていく だめ 分度器"},
+    {t:"学力検査の平均点",sec:"日程",h:"#heikinten",kw:"平均点 何点 点数 300点 162 半分 とれれば"},
+    {t:"合否の仕組み（5:5・特色と一般）",sec:"",h:"#shikumi",kw:"仕組み 合否 決まり方 比重 特色選抜 一般選抜 流れ チャンス"},
+    {t:"内申点を計算する",sec:"",h:"#naishin",kw:"内申 計算 通知表 評定 シミュレーター 165 実技 1.5倍 持ち点"},
+    {t:"合格判定（偏差値で見る）",sec:"",h:"#hantei",kw:"判定 合格 可能性 偏差値 模試 ライン 80%"},
+    {t:"沖縄の2大模試（プレ入試・県模試）",sec:"合格判定",h:"#moshi",kw:"模試 プレ入試 県模試 誠伸社 偏差値 受ける どこ 外部受験"},
+    {t:"学校データ・倍率一覧",sec:"",h:"#schools",kw:"学校 データ 倍率 偏差値 基準 高校 一覧 定員割れ 比較 くらべ"},
+    {t:"校区（通学区域）チェッカー",sec:"学校データ",h:"#kuikiBlock",kw:"校区 学区 通学区域 住所 市町村 普通科 区域外"},
+    {t:"私立高校（沖尚・興南・カトリック）",sec:"",h:"#shiritsu",kw:"私立 沖縄尚学 興南 カトリック 昭和薬科 専願 併願 3教科"},
+    {t:"通信制という選択肢",sec:"私立",h:"#tsushin",kw:"通信制 N高 泊高校 サポート校 不登校 単位制 在宅"},
+    {t:"お金・学費・使える支援",sec:"",h:"#okane",kw:"お金 学費 無償 無償化 就学支援金 給付金 費用 制服 端末 タブレット"},
+    {t:"返さなくていい給付金（奨学給付金）",sec:"お金",h:"#kyufu",kw:"給付金 奨学 返済不要 非課税 生活保護 授業料以外 もらえる"},
+    {t:"数字にならない要素（面接・欠席など）",sec:"",h:"#kobetsu",kw:"面接 欠席 不登校 発達障害 配慮 英検 検定 特性 個別"},
+    {t:"自己採点のすすめ（2次募集で効く）",sec:"Q&A",h:"#faq-selfscore",kw:"自己採点 点数 知らされない 2次募集 解答速報 採点"},
+    {t:"受験のキホン（まとめ）",sec:"",h:"#kihon",kw:"まとめ キホン 基本 これだけ 早わかり"},
+    {t:"よくある質問（Q&A）",sec:"",h:"#faq",kw:"質問 FAQ 疑問 Q&A 過去問 用語"},
+    {t:"公式・一次情報リンク集",sec:"",h:"#koushiki",kw:"公式 リンク 一次情報 出典 県教育委員会 ソース"}
+  ];
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+  function render(q){
+    q=(q||"").trim().toLowerCase();
+    var html="",shown=0;
+    for(var i=0;i<NAV.length;i++){
+      var it=NAV[i];
+      var hay=(it.t+" "+(it.kw||"")+" "+(it.sec||"")).toLowerCase();
+      if(q && hay.indexOf(q)===-1) continue;
+      shown++;
+      html+='<a class="find-item" href="'+it.h+'" data-h="'+it.h+'">'+
+        (it.sec?'<span class="fsec">'+esc(it.sec)+'</span>':'')+
+        '<span class="ft">'+esc(it.t)+'</span><span class="far" aria-hidden="true">→</span></a>';
+    }
+    listEl.innerHTML=html;
+    emptyEl.hidden = shown>0;
+    var items=listEl.querySelectorAll(".find-item");
+    for(var j=0;j<items.length;j++){ items[j].addEventListener("click", onItemClick); }
+  }
+  function onItemClick(e){
+    e.preventDefault();
+    var h=this.getAttribute("data-h");
+    closePanel();
+    setTimeout(function(){
+      var el=document.querySelector(h);
+      if(el){ el.scrollIntoView({behavior:"smooth",block:"start"}); if(window.history&&history.replaceState) history.replaceState(null,"",h); }
+    }, 80);
+  }
+  function openPanel(){
+    input.value="";
+    overlay.hidden=false; panel.hidden=false;
+    document.body.classList.add("find-open"); document.body.style.overflow="hidden";
+    render("");
+    requestAnimationFrame(function(){ overlay.classList.add("show"); panel.classList.add("show"); });
+    setTimeout(function(){ try{ input.focus(); }catch(e){} }, 160);
+  }
+  function closePanel(){
+    overlay.classList.remove("show"); panel.classList.remove("show"); document.body.style.overflow="";
+    setTimeout(function(){ overlay.hidden=true; panel.hidden=true; document.body.classList.remove("find-open"); }, 280);
+  }
+  fab.addEventListener("click", openPanel);
+  closeBtn.addEventListener("click", closePanel);
+  overlay.addEventListener("click", closePanel);
+  document.addEventListener("keydown", function(e){ if((e.key==="Escape"||e.keyCode===27) && !panel.hidden) closePanel(); });
+  input.addEventListener("input", function(){ render(input.value); });
+})();
 </script>
 </body>
 </html>
