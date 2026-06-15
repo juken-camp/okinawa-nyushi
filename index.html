@@ -278,7 +278,7 @@ strong{color:var(--sea-deep)}
 .gnav a.act{background:var(--sea);color:#fff}
 
 /* ---- hero ---- */
-.hero{padding:54px 0 40px;background:
+.hero{padding:54px 0 60px;background:
   radial-gradient(1100px 380px at 85% -60px, #d9eef8 0%, rgba(217,238,248,0) 60%),
   linear-gradient(180deg,#fdfefe,var(--paper));}
 .hero .kicker{
@@ -288,15 +288,16 @@ strong{color:var(--sea-deep)}
 .hero .kicker .kdot{width:6px;height:6px;border-radius:50%;background:var(--sakura);flex:0 0 auto}
 .hero h1{font-family:var(--fd);font-weight:900;font-size:clamp(1.65rem,5.6vw,2.5rem);line-height:1.42;margin:0 0 6px;letter-spacing:.01em}
 .hero h1 .accent{color:var(--sea);}
-.hero .sub{color:var(--ink-soft);font-size:.92rem;margin:14px 0 0;max-width:42em;word-break:auto-phrase}
+.hero .sub{color:var(--ink-soft);font-size:.92rem;margin:18px 0 0;max-width:42em;word-break:auto-phrase}
 .nb{white-space:nowrap}
 .pc-br{display:none}
 @media(min-width:680px){.pc-br{display:inline}}
-.steps-label{margin:26px 0 8px;font-size:.74rem;font-weight:700;color:var(--ink-soft);letter-spacing:.06em}
-.hero-steps{display:grid;gap:8px}
+.steps-label{margin:44px 0 13px;font-size:.8rem;font-weight:800;color:var(--ink);letter-spacing:.03em;display:flex;align-items:center}
+.steps-label::before{content:"";width:16px;height:3px;border-radius:2px;background:var(--sea);margin-right:9px;flex:0 0 auto}
+.hero-steps{display:grid;gap:10px}
 .hero-steps .step{
   display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--line);
-  border-radius:14px;padding:12px 14px;text-decoration:none;color:var(--ink);
+  border-radius:14px;padding:14px 15px;text-decoration:none;color:var(--ink);
   box-shadow:var(--shadow);transition:transform .12s ease;
 }
 .hero-steps .step:active{transform:scale(.98)}
@@ -344,11 +345,11 @@ strong{color:var(--sea-deep)}
 .src-list li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;line-height:1.6}
 .src-list a{font-weight:700;font-size:.88rem}
 .src-list small{display:block;font-size:.72rem;color:var(--ink-soft);margin-top:2px}
-.hero-keys{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.hero-keys{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
 .hero-keys .key{
   position:relative;
   background:var(--card);border:1px solid var(--line);border-radius:12px;
-  padding:13px 9px;text-align:center;box-shadow:var(--shadow);
+  padding:17px 10px;text-align:center;box-shadow:var(--shadow);
 }
 .hero-keys .key b{display:block;font-family:var(--fd);font-weight:700;font-size:clamp(.98rem,4vw,1.22rem);color:var(--sea-deep);line-height:1.25}
 .hero-keys .key span{display:block;font-size:.66rem;color:var(--ink-soft);font-weight:700;margin-top:5px;line-height:1.5}
@@ -734,7 +735,7 @@ table.avg tr.hl td{background:var(--sea-tint)}
 
 /* ---- 日程・カウントダウン ---- */
 .cd-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px;text-align:center;box-shadow:var(--shadow)}
-.hero .cd-card{margin:22px 0 4px}
+.hero .cd-card{margin:34px 0 6px}
 .cd-l{font-size:.74rem;font-weight:700;color:var(--sea-deep);letter-spacing:.06em}
 .cd-num{font-family:var(--fm);font-weight:800;font-size:4rem;line-height:1.15;margin:2px 0;color:var(--sea-deep);font-feature-settings:"tnum"}
 .cd-num small{font-size:1.1rem;font-weight:700;color:var(--ink-soft);margin-left:5px}
