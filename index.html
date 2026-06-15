@@ -328,13 +328,16 @@ strong{color:var(--sea-deep)}
 /* ---- 目次グリッド ---- */
 .toc-wrap{background:#fff;border-block:1px solid var(--line);padding:20px 0 24px}
 .toc-title{margin:0 0 10px;font-size:.74rem;font-weight:700;color:var(--ink-soft);letter-spacing:.06em}
-.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-@media(min-width:640px){.toc{grid-template-columns:repeat(4,1fr)}}
-.toc a{display:block;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink);line-height:1.45}
-.toc a b{display:block;font-size:.86rem;color:var(--sea-deep)}
-.toc a small{display:block;font-size:.68rem;color:var(--ink-soft);margin-top:2px}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:640px){.toc{grid-template-columns:repeat(3,1fr)}}
+.toc a{position:relative;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:13px 13px 12px;text-decoration:none;color:var(--ink);line-height:1.4;min-height:98px}
 .toc a:active{background:var(--sea-tint)}
-.toc .tn{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:99px;background:var(--sea-tint);color:var(--sea-deep);font-family:var(--fm);font-weight:800;font-size:.64rem;margin-right:6px;vertical-align:1px}
+@media(hover:hover){.toc a:hover{border-color:var(--sea);background:#fff}}
+.toc .ti{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid var(--line);color:var(--sea-deep);margin-bottom:8px}
+.toc .ti .ic{width:21px;height:21px}
+.toc a b{font-size:.92rem;color:var(--sea-deep);font-weight:700}
+.toc a small{font-size:.69rem;color:var(--ink-soft);margin-top:2px;line-height:1.45}
+.toc .tn{position:absolute;top:10px;right:12px;font-family:var(--fm);font-weight:800;font-size:.66rem;color:var(--sea);opacity:.5}
 
 /* ---- 公式リンク集 ---- */
 .src-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
@@ -825,6 +828,8 @@ body.find-open #findFab{opacity:0;pointer-events:none}
   .find-x{background:var(--paper)}
   .find-item{background:#fff}
 }
+.find-item .fi{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;color:var(--sea-deep)}
+.find-item .fi .ic{width:20px;height:20px}
 .find-item .ft{flex:1;font-size:.9rem;font-weight:700;line-height:1.4}
 .find-item .fsec{flex:0 0 auto;font-size:.66rem;font-weight:800;color:var(--sea-deep);background:var(--sea-tint);border-radius:6px;padding:2px 7px;min-width:1.6em;text-align:center;white-space:nowrap}
 .find-item .far{flex:0 0 auto;color:var(--sea);font-weight:800}
@@ -911,6 +916,71 @@ body.has-cbar{padding-bottom:96px}
   html{scroll-behavior:auto}
 }
 :focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+/* ============ 直感ナビUI（アイコン／コールアウト／数字タイル） ============ */
+.ic{display:inline-block;flex:0 0 auto;vertical-align:middle}
+/* セクション見出しアイコン */
+.sec-ico{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:13px;background:var(--sea-tint);color:var(--sea-deep);margin-bottom:9px}
+.sec-ico .ic{width:25px;height:25px}
+.sec-ico.c-sun{background:var(--sun-tint);color:#9a6912}
+.sec-ico.c-coral{background:var(--coral-tint);color:var(--coral-deep)}
+.sec-ico.c-reef{background:var(--reef-tint);color:#0a7a54}
+.sec-ico.c-sakura{background:var(--sakura-tint);color:var(--sakura-deep)}
+
+/* コールアウト：ポイント（青）／注意（赤）／やること（緑） */
+.cal{display:flex;gap:11px;align-items:flex-start;border-radius:13px;padding:13px 15px;margin:18px 0;border:1px solid var(--line);background:#fff}
+.cal .cal-i{flex:0 0 auto;width:27px;height:27px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;margin-top:1px;color:#fff}
+.cal .cal-i .ic{width:18px;height:18px}
+.cal .cal-b{margin:0;font-size:.88rem;color:var(--ink);line-height:1.8}
+.cal .cal-b b.lbl{font-weight:800;margin-right:5px}
+.cal.point{background:var(--sea-tint);border-color:#bfe0ee}
+.cal.point .cal-i{background:var(--sea)}
+.cal.point .cal-b b.lbl{color:var(--sea-deep)}
+.cal.warn{background:var(--coral-tint);border-color:#f4cdc1}
+.cal.warn .cal-i{background:var(--coral)}
+.cal.warn .cal-b b.lbl{color:var(--coral-deep)}
+.cal.do{background:var(--reef-tint);border-color:#bfe8d6}
+.cal.do .cal-i{background:var(--reef)}
+.cal.do .cal-b b.lbl{color:#0a7a54}
+
+/* 数字タイル */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
+.stats.s2{grid-template-columns:repeat(2,1fr)}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 8px;text-align:center;box-shadow:var(--shadow)}
+.stat b{display:block;font-family:var(--fd);font-weight:900;font-size:clamp(1.15rem,5.4vw,1.55rem);color:var(--sea-deep);line-height:1.12}
+.stat b small{font-size:.56em;font-weight:800}
+.stat span{display:block;font-size:.67rem;color:var(--ink-soft);font-weight:700;margin-top:6px;line-height:1.45}
+
+/* 詰まり緩和：ブロック間の余白を少し広げる */
+.block{margin-top:36px}
+/* ===== 悩み別の入口（ペルソナ・ルーター） ===== */
+.route-wrap{padding:20px 0 4px}
+.route{background:linear-gradient(180deg,var(--sea-tint),#fff);border:1px solid #cfe6f1;border-radius:18px;padding:17px 15px 15px}
+.route-h{display:flex;align-items:center;gap:9px;margin:0 0 12px}
+.route-h .rih{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:11px;background:#fff;border:1px solid #cfe6f1;color:var(--sea-deep)}
+.route-h .rih .ic{width:21px;height:21px}
+.route-h b{font-family:var(--fd);font-weight:900;font-size:1.04rem;color:var(--sea-deep);line-height:1.2}
+.route-h b small{display:block;font-family:var(--fb);font-size:.68rem;font-weight:700;color:var(--ink-soft);margin-top:1px}
+.route-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+@media(min-width:640px){.route-grid{grid-template-columns:repeat(3,1fr)}}
+.route-grid a{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:11px 11px;text-decoration:none;color:var(--ink);line-height:1.3}
+.route-grid a:active{background:var(--sea-tint)}
+@media(hover:hover){.route-grid a:hover{border-color:var(--sea)}}
+.route-grid a .ri{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:33px;height:33px;border-radius:9px;background:var(--sea-tint);color:var(--sea-deep)}
+.route-grid a .ri .ic{width:20px;height:20px}
+.route-grid a .rt{flex:1;font-size:.83rem;font-weight:700}
+.route-grid a .rt small{display:block;font-size:.65rem;font-weight:800;color:var(--sea);margin-top:2px}
+
+/* ===== セクション末「次はこれ →」 ===== */
+.nextsec{display:flex;align-items:center;gap:10px;width:min(92%,760px);margin:34px auto 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 15px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow)}
+.nextsec:active{background:var(--sea-tint)}
+@media(hover:hover){.nextsec:hover{border-color:var(--sea)}}
+.nextsec .nl{flex:0 0 auto;font-size:.7rem;font-weight:800;color:var(--ink-soft);letter-spacing:.04em}
+.nextsec b{flex:1;font-size:.96rem;color:var(--sea-deep);font-weight:700}
+.nextsec .na{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:31px;height:31px;border-radius:50%;background:var(--sea-tint);color:var(--sea-deep)}
+.nextsec .na .ic{width:18px;height:18px}
+
+/* ===== gnav（追従タブ）アイコン ===== */
+.gnav a .ic{width:14px;height:14px;margin-right:4px;vertical-align:-2px}
 </style>
 </head>
 <body>
@@ -922,14 +992,15 @@ body.has-cbar{padding-bottom:96px}
       <span class="brand-by">Presented by JUKEN CAMP</span>
     </a>
     <nav class="gnav" id="gnav" aria-label="ページ内メニュー">
-      <a href="#beforeafter">昔と今</a>
-      <a href="#schedule">日程</a>
-      <a href="#shikumi">仕組み</a>
-      <a href="#naishin">内申</a>
-      <a href="#hantei">判定</a>
-      <a href="#schools">学校データ</a>
-      <a href="#shiritsu">私立</a>
-      <a href="#faq">Q&amp;A</a>
+      <a href="#beforeafter"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9a8 8 0 0 1 13.7-3.3L20 8M20 4.2V8h-3.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 15a8 8 0 0 1-13.7 3.3L4 16M4 19.8V16h3.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>昔と今</a>
+      <a href="#schedule"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M3.5 9.5h17M8 3.3v3.4M16 3.3v3.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="8.3" cy="13.6" r="1.25" fill="currentColor"/><circle cx="12" cy="13.6" r="1.25" fill="currentColor"/><circle cx="15.7" cy="13.6" r="1.25" fill="currentColor"/></svg>日程</a>
+      <a href="#shikumi"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4.6v15M7.5 19.6h9M4.7 8.2h14.6" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/><path d="M4.7 8.2 2.4 13a2.8 2.8 0 0 0 4.6 0L4.7 8.2zM19.3 8.2 17 13a2.8 2.8 0 0 0 4.6 0l-2.3-4.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="4.6" r="1.5" fill="currentColor"/></svg>仕組み</a>
+      <a href="#naishin"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="8" y="6" width="8" height="3.2" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 13h.02M12 13h.02M15 13h.02M9 16.6h.02M12 16.6h.02M15 16.6h.02" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>内申</a>
+      <a href="#hantei"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>判定</a>
+      <a href="#schools"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.5 6.2h11.5M8.5 12h11.5M8.5 17.8h11.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="4.3" cy="6.2" r="1.35" fill="currentColor"/><circle cx="4.3" cy="12" r="1.35" fill="currentColor"/><circle cx="4.3" cy="17.8" r="1.35" fill="currentColor"/></svg>学校データ</a>
+      <a href="#shiritsu"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V6.6L12 3l8 3.6V21" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linejoin="round"/><path d="M2.5 21h19" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/><rect x="9.6" y="14" width="4.8" height="7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="8.3" r="1.5" fill="currentColor"/></svg>私立</a>
+      <a href="#okane"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.3" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.8 9.4 11.4h5.2L12 7.8zm0 3.6V16.2M9.6 13.6h4.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>お金</a>
+      <a href="#faq"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6A1.8 1.8 0 0 1 5.8 4.2h12.4A1.8 1.8 0 0 1 20 6v8.4a1.8 1.8 0 0 1-1.8 1.8H9.6L5.4 20v-3.8A1.8 1.8 0 0 1 4 14.4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.7 8.7a2.4 2.4 0 0 1 4.2 1.5c0 1.6-2 1.7-2.1 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="11.75" cy="14" r="1" fill="currentColor"/></svg>Q&amp;A</a>
     </nav>
   </div>
 </header>
@@ -985,18 +1056,32 @@ body.has-cbar{padding-bottom:96px}
   <div class="wrap">
     <p class="toc-title">このページでわかること ─ ぜんぶで9つ（タップでジャンプ）</p>
     <div class="toc">
-      <a href="#beforeafter"><b><span class="tn">1</span>昔と今</b><small>受験の常識アップデート</small></a>
-      <a href="#schedule"><b><span class="tn">2</span>日程</b><small>本番の日・1年の流れ・平均点</small></a>
-      <a href="#shikumi"><b><span class="tn">3</span>仕組み</b><small>合否はこう決まる</small></a>
-      <a href="#naishin"><b><span class="tn">4</span>内申点を計算</b><small>通知表をタップするだけ</small></a>
-      <a href="#hantei"><b><span class="tn">5</span>合格判定</b><small>志望校とのキョリ</small></a>
-      <a href="#schools"><b><span class="tn">6</span>学校データ</b><small>158学科の基準と倍率</small></a>
-      <a href="#shiritsu"><b><span class="tn">7</span>私立高校</b><small>高校から入れるのは実質3校</small></a>
-      <a href="#okane"><b><span class="tn">8</span>お金のこと</b><small>学費・無償化・使える支援</small></a>
-      <a href="#faq"><b><span class="tn">9</span>よくある質問</b><small>ことばのミニ辞典つき</small></a>
+      <a href="#beforeafter"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9a8 8 0 0 1 13.7-3.3L20 8M20 4.2V8h-3.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 15a8 8 0 0 1-13.7 3.3L4 16M4 19.8V16h3.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tn">1</span><b>昔と今</b><small>受験の常識アップデート</small></a>
+      <a href="#schedule"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M3.5 9.5h17M8 3.3v3.4M16 3.3v3.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="8.3" cy="13.6" r="1.25" fill="currentColor"/><circle cx="12" cy="13.6" r="1.25" fill="currentColor"/><circle cx="15.7" cy="13.6" r="1.25" fill="currentColor"/></svg></span><span class="tn">2</span><b>日程</b><small>本番の日・1年の流れ・平均点</small></a>
+      <a href="#shikumi"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4.6v15M7.5 19.6h9M4.7 8.2h14.6" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/><path d="M4.7 8.2 2.4 13a2.8 2.8 0 0 0 4.6 0L4.7 8.2zM19.3 8.2 17 13a2.8 2.8 0 0 0 4.6 0l-2.3-4.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="4.6" r="1.5" fill="currentColor"/></svg></span><span class="tn">3</span><b>仕組み</b><small>合否はこう決まる</small></a>
+      <a href="#naishin"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="8" y="6" width="8" height="3.2" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 13h.02M12 13h.02M15 13h.02M9 16.6h.02M12 16.6h.02M15 16.6h.02" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span><span class="tn">4</span><b>内申点を計算</b><small>通知表をタップするだけ</small></a>
+      <a href="#hantei"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span><span class="tn">5</span><b>合格判定</b><small>志望校とのキョリ</small></a>
+      <a href="#schools"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.5 6.2h11.5M8.5 12h11.5M8.5 17.8h11.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="4.3" cy="6.2" r="1.35" fill="currentColor"/><circle cx="4.3" cy="12" r="1.35" fill="currentColor"/><circle cx="4.3" cy="17.8" r="1.35" fill="currentColor"/></svg></span><span class="tn">6</span><b>学校データ</b><small>158学科の基準と倍率</small></a>
+      <a href="#shiritsu"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V6.6L12 3l8 3.6V21" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linejoin="round"/><path d="M2.5 21h19" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/><rect x="9.6" y="14" width="4.8" height="7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="8.3" r="1.5" fill="currentColor"/></svg></span><span class="tn">7</span><b>私立高校</b><small>高校から入れるのは実質3校</small></a>
+      <a href="#okane"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.3" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.8 9.4 11.4h5.2L12 7.8zm0 3.6V16.2M9.6 13.6h4.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tn">8</span><b>お金のこと</b><small>学費・無償化・使える支援</small></a>
+      <a href="#faq"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6A1.8 1.8 0 0 1 5.8 4.2h12.4A1.8 1.8 0 0 1 20 6v8.4a1.8 1.8 0 0 1-1.8 1.8H9.6L5.4 20v-3.8A1.8 1.8 0 0 1 4 14.4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.7 8.7a2.4 2.4 0 0 1 4.2 1.5c0 1.6-2 1.7-2.1 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="11.75" cy="14" r="1" fill="currentColor"/></svg></span><span class="tn">9</span><b>よくある質問</b><small>ことばのミニ辞典つき</small></a>
     </div>
   </div>
 </nav>
+
+<div class="route-wrap"><div class="wrap">
+  <div class="route">
+    <div class="route-h"><span class="rih"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span><b>迷ったら、ここから<small>あなたの状況から、近道で。</small></b></div>
+    <div class="route-grid">
+      <a href="#hantei"><span class="ri"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span><span class="rt">志望校を決めたい<small>合格判定へ →</small></span></a>
+      <a href="#naishin"><span class="ri"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="8" y="6" width="8" height="3.2" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 13h.02M12 13h.02M15 13h.02M9 16.6h.02M12 16.6h.02M15 16.6h.02" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span><span class="rt">内申点を知りたい<small>内申点計算へ →</small></span></a>
+      <a href="#okane"><span class="ri"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.3" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.8 9.4 11.4h5.2L12 7.8zm0 3.6V16.2M9.6 13.6h4.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="rt">お金・学費が心配<small>お金のことへ →</small></span></a>
+      <a href="#shiritsu"><span class="ri"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V6.6L12 3l8 3.6V21" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linejoin="round"/><path d="M2.5 21h19" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/><rect x="9.6" y="14" width="4.8" height="7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="8.3" r="1.5" fill="currentColor"/></svg></span><span class="rt">私立も考えたい<small>私立高校へ →</small></span></a>
+      <a href="#schools"><span class="ri"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.5 6.2h11.5M8.5 12h11.5M8.5 17.8h11.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="4.3" cy="6.2" r="1.35" fill="currentColor"/><circle cx="4.3" cy="12" r="1.35" fill="currentColor"/><circle cx="4.3" cy="17.8" r="1.35" fill="currentColor"/></svg></span><span class="rt">学校・倍率を比べたい<small>学校データへ →</small></span></a>
+      <a href="#kobetsu"><span class="ri"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 3.5H14L19 8.4v9.1A2 2 0 0 1 17 19.5H6.6A2 2 0 0 1 4.6 17.5v-12A2 2 0 0 1 6.6 3.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13.6 3.6V8.6h5M8.4 12.6h7M8.4 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="rt">欠席・配慮が心配<small>補足へ →</small></span></a>
+    </div>
+  </div>
+</div></div>
 
 <!-- ============ 3 POINTS ============ -->
 <section id="point3">
@@ -1027,6 +1112,7 @@ body.has-cbar{padding-bottom:96px}
 <!-- ============ 昔と今 ============ -->
 <section id="beforeafter" style="background:#fff;border-block:1px solid var(--line)">
   <div class="wrap">
+    <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9a8 8 0 0 1 13.7-3.3L20 8M20 4.2V8h-3.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 15a8 8 0 0 1-13.7 3.3L4 16M4 19.8V16h3.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <span class="sec-label">1/9｜昔と今</span>
     <h2>受験の「常識」は、こんなに変わった。</h2>
     <p class="lead">保護者の方が受験したころの「あたりまえ」は、いまは通用しないものが少なくありません。まずは家族で、いまのルールにイメージを合わせるところから。</p>
@@ -1060,11 +1146,13 @@ body.has-cbar{padding-bottom:96px}
       <a class="btn btn-sea" href="#naishin">さっそく内申点を計算してみる</a>
     </div>
   </div>
+    <a class="nextsec" href="#schedule"><span class="nl">次はこれ</span><b>日程</b><span class="na"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M3.5 9.5h17M8 3.3v3.4M16 3.3v3.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="8.3" cy="13.6" r="1.25" fill="currentColor"/><circle cx="12" cy="13.6" r="1.25" fill="currentColor"/><circle cx="15.7" cy="13.6" r="1.25" fill="currentColor"/></svg></span></a>
 </section>
 
 <!-- ============ 日程・カウントダウン ============ -->
 <section id="schedule">
   <div class="wrap">
+    <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M3.5 9.5h17M8 3.3v3.4M16 3.3v3.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="8.3" cy="13.6" r="1.25" fill="currentColor"/><circle cx="12" cy="13.6" r="1.25" fill="currentColor"/><circle cx="15.7" cy="13.6" r="1.25" fill="currentColor"/></svg></span>
     <span class="sec-label">2/9｜日程</span>
     <h2>入試はいつ？──日程と1年間の流れ</h2>
     <p class="lead">本番の日付と、そこから逆算した1年間の流れです。「いま、なにをする時期か」がひと目でわかるように。</p>
@@ -1103,7 +1191,8 @@ body.has-cbar{padding-bottom:96px}
           <tr><td>面接</td><td>13:15〜<span style="font-size:.74em;color:var(--ink-soft)">　時間は学校で異なる</span></td></tr>
         </tbody></table></div>
       </div>
-      <p class="note" style="margin-top:10px">各教科50分。面接の時間・進め方は学校によって異なります。会場は原則として志願先の高校（広域の学校は委託・出張検査場あり）。<b>特色選抜の面接・実技・学校独自検査は、この学力検査の日ではなく、2月ごろ・学校が定めた日に別途実施されます</b>（時期は各校の要項で確認を）。</p>
+      <p class="note" style="margin-top:10px">各教科50分。面接の時間・進め方は学校によって異なります。会場は原則として志願先の高校（広域の学校は委託・出張検査場あり）。</p>
+      <div class="cal warn"><span class="cal-i"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4.6 21 19.6H3z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M12 10v4.3" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="12" cy="17.1" r="1.05" fill="currentColor"/></svg></span><p class="cal-b"><b class="lbl">注意</b>特色選抜の面接・実技・学校独自検査は、<b>この学力検査の日ではありません</b>。2月ごろ・学校が定めた日に別途あります（時期は各校の要項で確認を）。</p></div>
 
       <h3 id="mochimono" style="margin:18px 0 12px;font-size:.98rem">当日の持ち物<span style="font-weight:500;font-size:.78rem;color:var(--ink-soft)">（令和8年度実績）</span></h3>
       <ul class="stack">
@@ -1120,6 +1209,7 @@ body.has-cbar{padding-bottom:96px}
 
       <h3 id="heikinten" style="margin:18px 0 12px;font-size:.98rem">平均点はどれくらい？<span style="font-weight:500;font-size:.78rem;color:var(--ink-soft)">（5教科合計300点満点）</span></h3>
       <p style="font-size:.92rem;margin:0 0 6px"><b>平均は、だいたい150点くらい。「半分とれたら、まんなか」</b>です。満点を取る試験ではありません——直近5年の最高点でも<b>284〜288点</b>です。</p>
+      <div class="stats rv"><div class="stat"><b><small>約</small>150<small>点</small></b><span>5教科の平均点</span></div><div class="stat"><b>300<small>点</small></b><span>5教科の満点</span></div><div class="stat"><b>288<small>点</small></b><span>直近5年の最高点</span></div></div>
       <details class="fold" style="margin-top:12px">
         <summary>教科ごとの平均点を、年度別に見る</summary>
         <div class="fold-body">
@@ -1154,16 +1244,19 @@ body.has-cbar{padding-bottom:96px}
       </div>
     </div>
   </div>
+    <a class="nextsec" href="#shikumi"><span class="nl">次はこれ</span><b>仕組み</b><span class="na"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4.6v15M7.5 19.6h9M4.7 8.2h14.6" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/><path d="M4.7 8.2 2.4 13a2.8 2.8 0 0 0 4.6 0L4.7 8.2zM19.3 8.2 17 13a2.8 2.8 0 0 0 4.6 0l-2.3-4.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="4.6" r="1.5" fill="currentColor"/></svg></span></a>
 </section>
 
 <!-- ============ 仕組み ============ -->
 <section id="shikumi" style="background:#fff;border-block:1px solid var(--line)">
   <div class="wrap">
+    <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4.6v15M7.5 19.6h9M4.7 8.2h14.6" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/><path d="M4.7 8.2 2.4 13a2.8 2.8 0 0 0 4.6 0L4.7 8.2zM19.3 8.2 17 13a2.8 2.8 0 0 0 4.6 0l-2.3-4.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="4.6" r="1.5" fill="currentColor"/></svg></span>
     <span class="sec-label">3/9｜仕組み</span>
     <h2>合否はこう決まる。</h2>
     <p class="lead">沖縄県立高校入試の合否は、大きく「調査書（内申点）」と「当日の学力検査」の2本柱です。</p>
 
     <div class="tldr rv"><span class="tl">かんたんに言うと</span><p>持ち点は2つだけ。<b>内申165点</b>（3年分の通知表）＋ <b>当日300点</b>（5教科）。</p></div>
+    <div class="stats rv"><div class="stat"><b>165<small>点</small></b><span>内申点<br>（3年分の通知表）</span></div><div class="stat"><b>300<small>点</small></b><span>当日の学力検査<br>（5教科）</span></div><div class="stat"><b>5:5</b><span>内申：当日<br>の比重（原則）</span></div></div>
 
     <!-- 内申点とは -->
     <div class="block card rv">
@@ -1180,7 +1273,7 @@ body.has-cbar{padding-bottom:96px}
       <div class="tscroll" style="margin-top:12px"><table class="ab"><thead><tr><th>平均評定は おなじ4.0</th><th>Aさん<br><span class="small">5教科が得意</span></th><th>Bさん<br><span class="small">実技4教科が得意</span></th></tr></thead><tbody>
         <tr><td>内申点（3年合計）</td><td>130.5点</td><td><b>135.5点</b></td></tr>
       </tbody></table></div>
-      <p class="note" style="margin-top:8px">おなじ「平均4.0」でも、実技4教科の×1.5で<b>5点の差</b>。実技をおろそかにしない——沖縄の内申の鉄則です。</p>
+      <div class="cal point"><span class="cal-i"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.3 18h5.4M10 21h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 3a6.5 6.5 0 0 0-4 11.7c.7.6 1 1.1 1 2.1h6c0-1 .3-1.5 1-2.1A6.5 6.5 0 0 0 12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><p class="cal-b"><b class="lbl">ポイント</b>おなじ「平均4.0」でも、実技4教科の×1.5で<b>5点の差</b>。実技をおろそかにしない——沖縄の内申の鉄則です。</p></div>
       <div style="margin-top:14px"><a class="btn btn-sea sm" href="#naishin">自分の内申点を計算してみる →</a></div>
     </div>
 
@@ -1192,7 +1285,7 @@ body.has-cbar{padding-bottom:96px}
         <div class="a">調査書（内申165点）<small>3年間の積み重ね</small></div>
         <div class="b">学力検査等（300点）<small>当日の得点＋面接</small></div>
       </div>
-      <p style="font-size:.88rem;margin-top:10px"><b>同じ重み（5:5）でも、内申のほうが1点は大きく効く。内申1点 ≒ 当日点1.8点ぶんです。</b></p>
+      <div class="cal point"><span class="cal-i"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.3 18h5.4M10 21h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 3a6.5 6.5 0 0 0-4 11.7c.7.6 1 1.1 1 2.1h6c0-1 .3-1.5 1-2.1A6.5 6.5 0 0 0 12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><p class="cal-b"><b class="lbl">ポイント</b>同じ重み（5:5）でも、<b>内申のほうが1点は大きく効きます</b>。内申1点 ≒ 当日点1.8点ぶん。</p></div>
       <p style="font-size:.88rem;margin-top:4px">満点は内申165点・当日点300点です。重みが同じでも満点の小さい内申のほうが1点は大きく効き、内申1点はおよそ当日点1.8点ぶん（300÷165≒1.8）。内申は中1から先に積んでおける得点なので、高いほど、必要な当日点が下がります。</p>
       <p class="note">※一部の高校は <b>4:6（学力重視）</b> など比重を変えています（この場合、内申1点は当日点およそ1.2点ぶん）。比重の一覧は例年9月ごろ、県教育委員会が学校ごとに公表します。理数系学科などでは特定教科の得点を高く扱う「傾斜配点」を行う場合もあります。</p>
     </div>
@@ -1281,11 +1374,11 @@ body.has-cbar{padding-bottom:96px}
       <h3>数字でみる、直近の入試（令和8年度・2026年春）</h3>
       <div class="stat-grid">
         <div class="stat"><b>1.18<small>倍</small></b><span>特色選抜の志願倍率<br>（志願4,857人÷募集4,101人）</span></div>
-        <div class="stat"><b>0.95<small>倍</small></b><span>一般選抜の志願倍率<br>（志願13,750人÷募集14,484人）</span></div>
+        <div class="stat"><b>0.94<small>倍</small></b><span>一般選抜の最終志願倍率<br>（志願13,684人÷募集14,484人）</span></div>
         <div class="stat"><b>約2割</b><span>合格者にしめる特色選抜<br>（2,608人／12,660人）</span></div>
         <div class="stat"><b>38<small>校</small>88<small>学科</small></b><span>2次募集を行った<br>学校・学科</span></div>
       </div>
-      <p class="note" style="margin-top:12px">倍率＝志願者数÷募集人員。平均では1倍を下回り、「全員がふるい落とされる試験」ではありません。学校・学科ごとの倍率は<a href="#schools">学校データ</a>へ。※一般の志願者数は特色との併願をふくむ。出典：県教委の公表・県内報道（2026年2〜3月）。</p>
+      <p class="note" style="margin-top:12px">倍率＝志願者数÷募集人員。平均では1倍を下回り、「全員がふるい落とされる試験」ではありません。学校・学科ごとの倍率は<a href="#schools">学校データ</a>へ。※一般の志願者数は特色との併願をふくむ。一般は<b>志願変更後の最終倍率</b>（変更前の初回は0.95倍）。出典：県教委の公表・県内報道（2026年2〜3月）。</p>
     </div>
 
     <!-- 流れ -->
@@ -1326,14 +1419,18 @@ body.has-cbar{padding-bottom:96px}
     </div>
 
   </div>
+    <a class="nextsec" href="#naishin"><span class="nl">次はこれ</span><b>内申点計算</b><span class="na"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="8" y="6" width="8" height="3.2" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 13h.02M12 13h.02M15 13h.02M9 16.6h.02M12 16.6h.02M15 16.6h.02" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></a>
 </section>
 
 <!-- ============ 内申点シミュレーター ============ -->
 <section id="naishin">
   <div class="wrap">
+    <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="8" y="6" width="8" height="3.2" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 13h.02M12 13h.02M15 13h.02M9 16.6h.02M12 16.6h.02M15 16.6h.02" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span>
     <span class="sec-label">4/9｜内申点計算</span>
     <h2>内申点シミュレーター</h2>
     <p class="lead">通知表の評定（5段階）をタップするだけ。まだ評定が出ていない学年は空欄でOK——入力した分から見込み点を自動計算します。途中の学年でも、一部の教科だけでも大丈夫。</p>
+
+    <div class="tldr rv"><span class="tl">かんたんに言うと</span><p>内申点は<b>3年間の通知表</b>から計算。技能4教科は<b>1.5倍</b>で、合計<b>165点満点</b>です。</p></div>
 
     <div class="card tool">
       <div class="nmode" id="nmode">
@@ -1392,14 +1489,18 @@ body.has-cbar{padding-bottom:96px}
       <div style="margin-top:14px"><a class="btn btn-coral" href="#hantei">この内申点で合格判定へ →</a></div>
     </div>
   </div>
+    <a class="nextsec" href="#hantei"><span class="nl">次はこれ</span><b>合格判定</b><span class="na"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span></a>
 </section>
 
 <!-- ============ 合格判定 ============ -->
 <section id="hantei" style="background:#fff;border-block:1px solid var(--line)">
   <div class="wrap">
+    <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span>
     <span class="sec-label">5/9｜合格判定</span>
     <h2>志望校 合格判定</h2>
-    <p class="lead">内申点（上のツールから自動で引き継ぎます）と、わかれば模試の偏差値を入れて、志望校を選ぶだけ。模試の偏差値を入れると合格可能性（%）が出ます。偏差値がなくても、前年の実合格率や合格者の内申で位置をつかめます。</p>
+    <p class="lead">内申点（上のツールから自動で引き継ぎます）と、わかれば模試の偏差値（＝全体の中での位置を示す数字）を入れて、志望校を選ぶだけ。模試の偏差値を入れると合格可能性（%）が出ます。偏差値がなくても、前年の実合格率や合格者の内申で位置をつかめます。</p>
+
+    <div class="tldr rv"><span class="tl">かんたんに言うと</span><p><b>内申＋（あれば）偏差値</b>を入れるだけで、志望校の<b>合格可能性（%）</b>が出ます。偏差値がなくても位置はつかめます。</p></div>
 
     <div class="card tool" style="border-top-color:var(--coral)">
       <div class="judge-inputs">
@@ -1484,11 +1585,13 @@ body.has-cbar{padding-bottom:96px}
       <div class="reach-group"><h4><span class="b" style="background:var(--coral)"></span>挑戦圏（ここから逆転）</h4><div class="reach-list" id="reachTry"></div></div>
     </div>
   </div>
+    <a class="nextsec" href="#schools"><span class="nl">次はこれ</span><b>学校データ</b><span class="na"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.5 6.2h11.5M8.5 12h11.5M8.5 17.8h11.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="4.3" cy="6.2" r="1.35" fill="currentColor"/><circle cx="4.3" cy="12" r="1.35" fill="currentColor"/><circle cx="4.3" cy="17.8" r="1.35" fill="currentColor"/></svg></span></a>
 </section>
 
 <!-- ============ 学校データ ============ -->
 <section id="schools">
   <div class="wrap">
+    <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.5 6.2h11.5M8.5 12h11.5M8.5 17.8h11.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="4.3" cy="6.2" r="1.35" fill="currentColor"/><circle cx="4.3" cy="12" r="1.35" fill="currentColor"/><circle cx="4.3" cy="17.8" r="1.35" fill="currentColor"/></svg></span>
     <span class="sec-label">6/9｜学校データ</span>
     <h2>県立高校データ一覧</h2>
     <p class="lead">合格基準（80%合格ライン）の偏差値・内申点と、志願倍率の一覧です。</p>
@@ -1546,16 +1649,20 @@ body.has-cbar{padding-bottom:96px}
       <p class="note" style="margin-top:8px">数値は2025年度（出典は上記と同じ）。「—」はデータなし。</p>
     </div>
   </div>
+    <a class="nextsec" href="#shiritsu"><span class="nl">次はこれ</span><b>私立高校</b><span class="na"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V6.6L12 3l8 3.6V21" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linejoin="round"/><path d="M2.5 21h19" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/><rect x="9.6" y="14" width="4.8" height="7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="8.3" r="1.5" fill="currentColor"/></svg></span></a>
 </section>
 
 <!-- ============ 私立 ============ -->
 <section id="shiritsu">
   <div class="wrap">
+    <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V6.6L12 3l8 3.6V21" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linejoin="round"/><path d="M2.5 21h19" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/><rect x="9.6" y="14" width="4.8" height="7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="8.3" r="1.5" fill="currentColor"/></svg></span>
     <span class="sec-label">7/9｜私立高校</span>
     <h2>私立高校という選択肢</h2>
     <p class="lead">沖縄の高校受験は県立が中心ですが、私立を組み合わせると受験の設計が変わります。基礎だけを、正確に。</p>
 
     <div class="tldr rv"><span class="tl">かんたんに言うと</span><p>高校から入れる私立は<b>実質3校</b>。県立より<b>先に</b>結果が出ます。</p></div>
+
+    <div class="stats rv"><div class="stat"><b>3<small>校</small></b><span>高校から入れる私立</span></div><div class="stat"><b>3<small>教科</small></b><span>多くの入試科目<br>（国・数・英）</span></div><div class="stat"><b>1<small>月</small></b><span>入試の中心時期</span></div></div>
 
     <div class="card rv pv-cmp">
       <div class="tscroll">
@@ -1695,11 +1802,13 @@ body.has-cbar{padding-bottom:96px}
 
     <p class="note" style="margin-top:14px">※私立は倍率・合格基準のまとまった公表が少ないため、本サイトのデータベース（合格判定・学校一覧）は県立のみを対象にしています。日程・募集内容は年度で変わります。必ず各校の最新の募集要項をご確認ください。</p>
   </div>
+    <a class="nextsec" href="#okane"><span class="nl">次はこれ</span><b>お金のこと</b><span class="na"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.3" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.8 9.4 11.4h5.2L12 7.8zm0 3.6V16.2M9.6 13.6h4.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
 </section>
 
 <!-- ============ お金 ============ -->
 <section id="okane">
   <div class="wrap">
+    <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.3" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.8 9.4 11.4h5.2L12 7.8zm0 3.6V16.2M9.6 13.6h4.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <span class="sec-label">8/9｜お金のこと</span>
     <h2>お金のこと──学費と、使える支援</h2>
     <p class="lead">「無償化」で授業料の負担は大きく減りました。でも、入学のときにかかるお金は別。知らないと損をする支援制度もあわせて、正確に。</p>
@@ -1736,11 +1845,13 @@ body.has-cbar{padding-bottom:96px}
     </details>
 
   </div>
+    <a class="nextsec" href="#faq"><span class="nl">次はこれ</span><b>よくある質問</b><span class="na"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6A1.8 1.8 0 0 1 5.8 4.2h12.4A1.8 1.8 0 0 1 20 6v8.4a1.8 1.8 0 0 1-1.8 1.8H9.6L5.4 20v-3.8A1.8 1.8 0 0 1 4 14.4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.7 8.7a2.4 2.4 0 0 1 4.2 1.5c0 1.6-2 1.7-2.1 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="11.75" cy="14" r="1" fill="currentColor"/></svg></span></a>
 </section>
 
 <!-- ============ FAQ ============ -->
 <section id="faq" style="background:#fff;border-block:1px solid var(--line)">
   <div class="wrap">
+    <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6A1.8 1.8 0 0 1 5.8 4.2h12.4A1.8 1.8 0 0 1 20 6v8.4a1.8 1.8 0 0 1-1.8 1.8H9.6L5.4 20v-3.8A1.8 1.8 0 0 1 4 14.4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.7 8.7a2.4 2.4 0 0 1 4.2 1.5c0 1.6-2 1.7-2.1 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="11.75" cy="14" r="1" fill="currentColor"/></svg></span>
     <span class="sec-label">9/9｜よくある質問</span>
     <h2>よくある質問</h2>
     <p class="lead">生徒本人からも、家の人からも、よくいただく質問をまとめました。</p>
@@ -1762,25 +1873,26 @@ body.has-cbar{padding-bottom:96px}
     </details>
     <div class="faq">
       <details><summary><span class="q">Q1</span>内申点は何点満点？ どう計算するの？</summary><div class="a"><p><b>165点満点</b>です。9教科の5段階評定のうち、実技4教科（音楽・美術・保健体育・技術家庭）を1.5倍して計算します。1学年あたり「5教科25点＋実技30点＝55点」、これが中1〜中3の3年分で165点。<a href="#naishin">内申点シミュレーター</a>で評定から自動計算できます。</p></div></details>
-      <details><summary><span class="q">Q2</span>新制度はいつから？ なにが変わったの？</summary><div class="a"><p>2025年春の入試（2025年度入学者選抜）からです。いちばん大きな変化は、推薦入試が<b>「特色選抜」</b>に変わったこと。校長推薦が不要になり、全員が学力検査を受けるようになりました。詳しくは<a href="#shikumi">仕組みの解説</a>へ。</p></div></details>
-      <details><summary><span class="q">Q3</span>特色選抜は誰でも出願できる？</summary><div class="a"><p>校長推薦は不要で、本人の意思で出願できます。ただし高校・学科ごとに<b>平均評定や出席状況などの出願要件</b>が設定されている場合があります。志望校の募集要項（毎年秋に公表）を必ず確認しましょう。なお特色選抜だけの受験はできず、一般選抜とセットで出願します。</p></div></details>
-      <details><summary><span class="q">Q4</span>特色選抜で落ちたら終わり？</summary><div class="a"><p>終わりではありません。特色選抜で不合格でも、<b>同じ学力検査の得点で一般選抜の判定に自動的に回ります</b>。さらに定員に空きが出た学校では2次募集も行われるため、チャンスは最大3回あります。</p></div></details>
-      <details><summary><span class="q">Q5</span>特色と一般で、別の高校に出してもいい？ 第2志望は？</summary><div class="a"><p>出せます。たとえば「特色選抜はA高校、一般選抜はB高校」という出願が可能です。さらに一般選抜では、<b>同じ高校に学科が複数ある場合、別の学科を「第2志望」にできます</b>（第1志望の学科が不合格でも、第2志望の学科で合否を判定）。ただし第2志望にできるのは<b>同じ高校の中の学科だけ</b>。別の高校を第2志望にすることはできません。</p></div></details>
+      <details><summary><span class="q">Q2</span>新制度はいつから？ なにが変わったの？</summary><div class="a"><p><b>2025年春の入試（2025年度入学者選抜）からです。</b>いちばん大きな変化は、推薦入試が<b>「特色選抜」</b>に変わったこと。校長推薦が不要になり、全員が学力検査を受けるようになりました。詳しくは<a href="#shikumi">仕組みの解説</a>へ。</p></div></details>
+      <details><summary><span class="q">Q3</span>特色選抜は誰でも出願できる？</summary><div class="a"><p><b>校長推薦は不要で、本人の意思で出願できます。</b>ただし高校・学科ごとに<b>平均評定や出席状況などの出願要件</b>が設定されている場合があります。志望校の募集要項（毎年秋に公表）を必ず確認しましょう。なお特色選抜だけの受験はできず、一般選抜とセットで出願します。</p></div></details>
+      <details><summary><span class="q">Q4</span>特色選抜で落ちたら終わり？</summary><div class="a"><p><b>終わりではありません。</b>特色選抜で不合格でも、<b>同じ学力検査の得点で一般選抜の判定に自動的に回ります</b>。さらに定員に空きが出た学校では2次募集も行われるため、チャンスは最大3回あります。</p></div></details>
+      <details><summary><span class="q">Q5</span>特色と一般で、別の高校に出してもいい？ 第2志望は？</summary><div class="a"><p><b>出せます。</b>たとえば「特色選抜はA高校、一般選抜はB高校」という出願が可能です。さらに一般選抜では、<b>同じ高校に学科が複数ある場合、別の学科を「第2志望」にできます</b>（第1志望の学科が不合格でも、第2志望の学科で合否を判定）。ただし第2志望にできるのは<b>同じ高校の中の学科だけ</b>。別の高校を第2志望にすることはできません。</p></div></details>
       <details><summary><span class="q">Q6</span>内申点と当日点、どっちが大事？</summary><div class="a"><p>一般選抜では<b>原則5:5</b>。どちらも同じくらい大事です。ただし一部の高校は4:6（学力重視）などに変更しており、学校ごとの比重一覧が毎年県教育委員会から公表されます。内申は3年間の積み重ねなので、早く始めるほど有利です。</p></div></details>
-      <details><summary><span class="q">Q7</span>中1・中2の成績って関係あるの？</summary><div class="a"><p>大いに関係あります。沖縄県は<b>3学年すべて同じ重み</b>で内申点を計算するので、中1の評定も中3とまったく同じ価値。逆にいえば、中1・中2で思うように取れていなくても、残りの学年と当日点でじゅうぶん巻き返せる設計です。</p></div></details>
+      <details><summary><span class="q">Q7</span>中1・中2の成績って関係あるの？</summary><div class="a"><p><b>大いに関係あります。</b>沖縄県は<b>3学年すべて同じ重み</b>で内申点を計算するので、中1の評定も中3とまったく同じ価値。逆にいえば、中1・中2で思うように取れていなくても、残りの学年と当日点でじゅうぶん巻き返せる設計です。</p></div></details>
       <details><summary><span class="q">Q8</span>倍率はいつわかる？ 志願変更はできる？</summary><div class="a"><p><b>倍率1.0を超えた学科の人だけ・1回だけ動けます。</b></p><p>出願締切後（例年2月上旬）に初回の志願状況（倍率）が公表され、その後に<b>志願変更（取り下げ・再出願）の期間</b>があります（令和8年度の最終志願状況は2月17日公表）。ただし志願変更には条件があります。県の実施要項では、<b>志願変更できるのは「出願した学科の志願者数が募集定員を超えた（倍率1.0超）」人</b>で、しかも抜けても定員を下回らない範囲に限られます。つまり<b>出願先が定員ちょうど・定員割れだと、原則ほかの学校・学科へは志願変更できません</b>。「人気が集中して漏れそうな人が、より入りやすい学科へ移る」ための制度だからです。例外として、<b>第2志望（同じ高校の別学科）の取消・追加は倍率に関わらず</b>できます。志願変更は一般選抜のみ（特色選抜は不可）、動けるのは初回倍率を見たこの1回だけです。</p></div></details>
       <details id="faq-teiinware"><summary><span class="q">Q9</span>定員割れの高校はどうなる？ 定員割れなら必ず受かる？</summary><div class="a"><p><b>定員割れ（倍率1.0未満）でも、必ず合格とはかぎりません。</b>各高校・学科には合格の最低基準があり、それを大きく下回ると（当日点が極端に低い、調査書に重大な問題がある など）、定員割れでも不合格になることがあります（「定員内不合格」）。だからこそ、合格者が定員に満たなかった高校・学科では<b>2次募集</b>が行われます。実施校は合格発表の日に公表され、出願→面接等→合格発表という流れです。令和9年度の合格発表は<b>3月27日（土）</b>。令和8年度は<b>38校・88学科</b>で実施されました。定員割れは合格の可能性がぐっと上がるのは確かですが、最低限の準備は必要です。</p></div></details>
       <details><summary><span class="q">Q10</span>このサイトの判定は当たるの？</summary><div class="a"><p>判定はあくまで<b>過去データにもとづく「めやす」</b>です。実際の合否は当日の得点・面接・各校の選抜方法など多くの要素で決まります。学校や塾の進路指導とあわせてご活用ください。</p></div></details>
-      <details><summary><span class="q">Q11</span>私立高校は受けたほうがいい？</summary><div class="a"><p>沖縄の全日制私立で高校から入学できるのは実質3校（沖縄尚学・興南・沖縄カトリック。昭和薬科大附属は高校からの募集なし）。入試は県立より早く、専願・併願を選べます。県立の学力検査より前に結果が出るため、「私立を押さえてから県立に挑む」という組み立てができます。くわしくは<a href="#shiritsu">私立高校の解説</a>へ。</p></div></details>
-      <details><summary><span class="q">Q12</span>欠席日数が多くても県立高校は受験できる？</summary><div class="a"><p>受験そのものは可能です。調査書の扱いや選抜での配慮は状況・学校によって異なるため、中学校の先生と志望校への<b>早めの相談</b>が大切です。全日制のほかに定時制・通信制という進路もあります（<a href="#shiritsu">県内の一覧</a>）。ひとりで抱えず、第三者を交えて作戦を立てるのがおすすめです。</p></div></details>
+      <details><summary><span class="q">Q11</span>私立高校は受けたほうがいい？</summary><div class="a"><p><b>沖縄の全日制私立で高校から入学できるのは実質3校</b>（沖縄尚学・興南・沖縄カトリック。昭和薬科大附属は高校からの募集なし）。入試は県立より早く、専願・併願を選べます。県立の学力検査より前に結果が出るため、「私立を押さえてから県立に挑む」という組み立てができます。くわしくは<a href="#shiritsu">私立高校の解説</a>へ。</p></div></details>
+      <details><summary><span class="q">Q12</span>欠席日数が多くても県立高校は受験できる？</summary><div class="a"><p><b>受験そのものは可能です。</b>調査書の扱いや選抜での配慮は状況・学校によって異なるため、中学校の先生と志望校への<b>早めの相談</b>が大切です。全日制のほかに定時制・通信制という進路もあります（<a href="#shiritsu">県内の一覧</a>）。ひとりで抱えず、第三者を交えて作戦を立てるのがおすすめです。</p></div></details>
       <details><summary><span class="q">Q13</span>発達障害など特性がある場合、検査で配慮してもらえる？</summary><div class="a"><p>沖縄県には<b>「学力検査等の配慮願い」</b>という事前申請の制度があり、在籍する中学校を通して手続きします。申請の時期・必要書類が決まっているため、夏〜秋のうちに学校へ相談しておくと安心です。</p></div></details>
       <details><summary><span class="q">Q14</span>英検を持っていると加点される？</summary><div class="a"><p><strong>県内ぜんぶの高校に共通する「英検◯級＝何点加点」という仕組みはありません。</strong>ただし「効果がない」のではなく、多くの県立高校が特色選抜の「選抜方法」や「実績ランク表」で、英検・漢検・数検などの扱いを<strong>級ごとに公表</strong>しています（上の級ほど高いランク＝実績点になります）。注意したいのは2点。①<strong>表は学校ごとに違う</strong>（同じ級でも評価が変わる）。②<strong>一般選抜では原則として実績点はつかない</strong>（評定＝内申点で見る）ので、資格が効くのは主に<strong>特色選抜と私立入試</strong>です。「どの級を・いつまでに・何のために取るか」を、志望校の選抜方法から逆算して決めましょう。</p></div></details>
       <details><summary><span class="q">Q15</span>学区（通学区域）はあるの？</summary><div class="a"><p>普通科には通学区域があり、区域外の高校へは<b>定員の10%以内</b>の枠で入学できます。専門学科・総合学科は県内のどこからでも受験可能です。詳しくは県の「通学区域に関する規則」をご確認ください。</p></div></details>
       <details><summary><span class="q">Q16</span>学力検査の平均点はどれくらい？</summary><div class="a"><p>5教科合計（300点満点）で、例年<b>おおむね140〜160点台</b>です（2025年3月実施は162.5点）。教科ごとの平均は<a href="#schedule">日程・配点のセクション</a>に年度別でまとめています。半分とれれば、ほぼ真ん中という規模感です。</p></div></details>
-      <details id="faq-selfscore"><summary><span class="q">Q17</span>自分の点数は、あとでわかる？ 自己採点はしたほうがいい？</summary><div class="a"><p><b>点数は本人に知らされません。だから自己採点がおすすめ（とくに2次募集で効きます）。</b></p><p>学力検査の点数は、本人には知らされません（発表されるのは「合格・不合格」だけ）。そのため、本番中に<b>自分の答えを問題用紙に控えておき</b>、試験のあとに新聞（沖縄タイムス・琉球新報）や塾の解答速報などで出る<b>問題と正答</b>と照らし合わせて、自分で採点しておくのがおすすめです。これは特に<b>2次募集</b>で効いてきます。2次募集は学力検査をやり直さず、3月に受けた<b>得点に面接・調査書を合わせて</b>選抜するため、自分の点数の見当がついていないと「どの学校なら届きそうか」を選べません。<b>合格発表（3月17日）を待つあいだに自己採点</b>しておくと、2次募集（〜3月27日）にすぐ動けます。なお、点数を正式に知りたい場合は<b>沖縄県個人情報保護条例にもとづく開示請求</b>の制度がありますが、可否や手続きは在籍する中学校・県教育委員会で確認してください。</p></div></details>
+      <details id="faq-selfscore"><summary><span class="q">Q17</span>自分の点数は、あとでわかる？ 自己採点はしたほうがいい？</summary><div class="a"><p><b>点数は本人に知らされません。だから自己採点がおすすめ（とくに2次募集で効きます）。</b></p>
+      <div class="cal do"><span class="cal-i"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m10.2 8.3 3.6 3.7-3.6 3.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p class="cal-b"><b class="lbl">やること</b>①本番中に<b>自分の答えを問題用紙に控える</b> → ②試験後、新聞・塾の<b>解答速報で照合</b> → ③発表を待つ間に<b>2次募集の作戦</b>を立てる。</p></div><p>学力検査の点数は、本人には知らされません（発表されるのは「合格・不合格」だけ）。そのため、本番中に<b>自分の答えを問題用紙に控えておき</b>、試験のあとに新聞（沖縄タイムス・琉球新報）や塾の解答速報などで出る<b>問題と正答</b>と照らし合わせて、自分で採点しておくのがおすすめです。これは特に<b>2次募集</b>で効いてきます。2次募集は学力検査をやり直さず、3月に受けた<b>得点に面接・調査書を合わせて</b>選抜するため、自分の点数の見当がついていないと「どの学校なら届きそうか」を選べません。<b>合格発表（3月17日）を待つあいだに自己採点</b>しておくと、2次募集（〜3月27日）にすぐ動けます。なお、点数を正式に知りたい場合は<b>沖縄県個人情報保護条例にもとづく開示請求</b>の制度がありますが、可否や手続きは在籍する中学校・県教育委員会で確認してください。</p></div></details>
       <details><summary><span class="q">Q18</span>入試の日程はいつ？</summary><div class="a"><p><b>令和9年度（2027年春実施）</b>は、学力検査・面接が<b>3月3日（水）・4日（木）</b>、一般選抜の合格発表が<b>3月17日（水・Webは午前9時から）</b>、第2次募集の合格発表が<b>3月27日（土）</b>です。なお<b>特色選抜の面接・実技・学校独自検査</b>は、この学力検査の日ではなく、2月ごろ・学校が定めた日に別途行われます。<a href="#top">ページ先頭のカウントダウン</a>と<a href="#schedule">年間スケジュール</a>で「いま何をする時期か」も確認できます。</p></div></details>
       <details><summary><span class="q">Q19</span>当日の持ち物は？</summary><div class="a"><p>HB以上の濃さの<b>黒鉛筆またはシャープペンシル</b>（和歌・格言などが印刷されたものは不可）、<b>プラスチック製の消しゴム</b>、<b>定規（三角定規も可）とコンパス</b>。分度器・分度器機能つき定規・三角スケールは使えません。時計は机に置けますが、通信機能のある端末類は不可。くわしい一覧は<a href="#schedule">日程のセクション</a>にまとめています（令和8年度実績）。</p></div></details>
-      <details><summary><span class="q">Q20</span>全日制のほかに、通信制という選択肢はある？</summary><div class="a"><p>あります。県立では<b>泊高校（那覇市）と宜野湾高校に通信制課程</b>があり、私立では<b>県内に本校を置く通信制高校が6校</b>（N高等学校・つくば開成国際・ヒューマンキャンパス・八洲学園大学国際・瑞穂MSC・エナジックスポーツ高等学院）あります。県外に本校がある学校のキャンパスも那覇市などに（例：飛鳥未来きずな高校 沖縄キャンパス）。入学の時期・出願のしくみは県立全日制の入試とは別です。<a href="#shiritsu">私立高校のセクション</a>に一覧をまとめています。</p></div></details>
+      <details><summary><span class="q">Q20</span>全日制のほかに、通信制という選択肢はある？</summary><div class="a"><p><b>あります。</b>県立では<b>泊高校（那覇市）と宜野湾高校に通信制課程</b>があり、私立では<b>県内に本校を置く通信制高校が6校</b>（N高等学校・つくば開成国際・ヒューマンキャンパス・八洲学園大学国際・瑞穂MSC・エナジックスポーツ高等学院）あります。県外に本校がある学校のキャンパスも那覇市などに（例：飛鳥未来きずな高校 沖縄キャンパス）。入学の時期・出願のしくみは県立全日制の入試とは別です。<a href="#shiritsu">私立高校のセクション</a>に一覧をまとめています。</p></div></details>
       <details id="faq-kakomon"><summary><span class="q">Q21</span>過去問はどこで手に入る？ いつから解けばいい？</summary><div class="a"><p>県立入試の<b>過去問題集</b>は、複数の出版社・団体から発売され、県内の書店で手に入ります。<b>発売の時期は出版社によってまちまち</b>なので、最新年度版が出たら早めに確保しておくと安心です。選ぶときに、いちばん差が出るのは<b>解説のくわしさ</b>です。答えだけが載っているものより、<b>「なぜその答えになるのか」「この問題のポイントは」「一緒に覚えるべき用語や公式」まで書かれているもの</b>を選ぶと、ひとりで解き直すときの伸びがちがいます。書店で中身を見くらべて選ぶのがおすすめです。手に入れたら<b>本番と同じ時間を計って</b>解くと、出題の形式・分量・時間配分に慣れられます。新聞（沖縄タイムス・琉球新報）や塾の解答速報は、本番後の自己採点に役立ちます（くわしくはQ17）。</p></div></details>
       <details id="faq-nandai"><summary><span class="q">Q22</span>沖縄県立高校入試は、どんな問題？ 難しい？</summary><div class="a"><p><b>「落とすための試験」ではなく、「ここで学ぶ力・適性があるかを見る試験」です。</b>県の実施要項も、選抜の方針を<b>「各高校・学科などで学ぶための能力や適性等を適切に判定して入学者を選抜する」</b>としています。出題は<b>中学校の学習内容（学習指導要領）の範囲</b>からで、私立のような奇問・難問でひっかける作りではありません。<b>ただし、やさしいわけではありません。</b>5教科の平均は<b>150点前後（300点満点の半分くらい）</b>。問題量が多くて時間配分がシビアなうえ、各教科に<b>思考力を問う記述式</b>も入ります。教科書レベルとはいえ範囲は広く、基礎の取りこぼしや苦手分野がそのまま差になります。<b>「意地悪ではないが、しっかり対策しないと届かない」</b>——ここを正しくイメージしておくのが大事です（→<a href="#heikinten">平均点</a>）。</p><p>そのうえで、県立は「受け入れる」のが基本。<b>令和8年度の一般選抜は、募集14,484人に対して志願13,684人＝全体0.94倍</b>で、県全体では席のほうが多い状況です。落ちるのは主に<b>人気が集中して倍率が1倍を超えた学校・学科</b>。<b>自分の現在地に合った志望校を選び、必要な対策を積めば</b>、過度に恐れる必要はありません（このサイトの判定や模試は、その「現在地合わせ」のためにあります）。</p><p>注意点は2つ。①人気校・人気学科は倍率が上がります（特色選抜は那覇国際で4倍を超える年も）。②<b>定員割れでも、最低限の基準を下回れば不合格になることがあります</b>（→Q9）。</p></div></details>
       <details id="faq-sakubun"><summary><span class="q">Q23</span>国語の「作文」って、どんな問題？ 配点は？</summary><div class="a"><p><b>資料や文章を読んで、自分の考えを書く「条件作文」が例年出ます。</b>令和8年度（2026年3月）は<b>二段落構成・150〜180字程度</b>という指定でした（字数や条件は年度で変わります）。テーマについて「自分の意見・その理由・具体例」などを、決められた字数と段落でまとめる力が問われます。沖縄県の国語は<b>作文の比重が比較的高め</b>で、読解がふつうの出来でも、作文しだいで差がつきやすいのが特徴です。</p><p>配点について。学力検査は各教科60点で、<b>令和8年度の作文は6点</b>でした。各教科にある「思考力を問う記述式の問題」（各教科10点ぶん）は<b>一般選抜でだけ得点に入る</b>しくみで、作文もその記述式の一部です（特色選抜は記述式を除いた250点で評価。くわしくは<a href="#shikumi">仕組み</a>）。点数そのものは大きくありませんが、<b>白紙だと丸ごと0点</b>になるので、まず<b>字数と段落の条件を守って最後まで書き切る</b>ことが大事。日ごろから、短い字数で「結論→理由→例」を書く練習をしておくと安定します。</p></div></details>
@@ -1788,11 +1900,13 @@ body.has-cbar{padding-bottom:96px}
       <details id="faq-mensetsu"><summary><span class="q">Q25</span>面接って、何分くらいで何を聞かれるの？</summary><div class="a"><p><b>一般選抜では全員に面接があり、学力検査の2日目（令和9年度は3月4日）に行われます。</b>形式（個人面接か集団面接か）や時間は<b>学校によって異なり</b>、1人あたり数分〜10分程度が目安です。聞かれるのは特別なことではなく、<b>志望理由／中学校でがんばったこと／高校でやりたいこと／将来の夢</b>などが定番。「この高校で学びたい」という気持ちが自分の言葉で具体的に伝わるかが見られます。奇をてらった答えより、ふだんどおり落ち着いて話すのがいちばんです。</p><p>なお<b>特色選抜の面接・実技・学校独自検査</b>は、この一般選抜の面接とは別に、<b>2月ごろ・学校が定めた日</b>に行われます（学力検査より前）。特色で出願した学校の「求める生徒像」に沿って、より突っ込んだことを聞かれることもあります。面接を何点ぶんに見るか（配点）は学校ごとに大きく違うので、志望校の<b>選抜方法</b>で確認しましょう。</p></div></details>
     </div>
   </div>
+    <a class="nextsec" href="#kihon"><span class="nl">次はこれ</span><b>受験のキホン（まとめ）</b><span class="na"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4.6" y="4" width="14.8" height="17" rx="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.6 4V2.9h6.8V4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8.3 12.4 2.4 2.4 4.9-4.9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
 </section>
 
 <!-- ============ 数字にならない要素 ============ -->
 <section id="kobetsu" style="background:#fff;border-block:1px solid var(--line)">
   <div class="wrap">
+    <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 3.5H14L19 8.4v9.1A2 2 0 0 1 17 19.5H6.6A2 2 0 0 1 4.6 17.5v-12A2 2 0 0 1 6.6 3.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13.6 3.6V8.6h5M8.4 12.6h7M8.4 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <span class="sec-label">補足</span>
     <h2>数字にならない、合否を分ける要素</h2>
     <p class="lead">判定は、志望校との「距離」を測る道具。最後を分けるのは、数字にならない個別の要素です。気になるものだけ、タップでひらいて読めます。</p>
@@ -1814,6 +1928,7 @@ body.has-cbar{padding-bottom:96px}
 <!-- ============ これだけは ============ -->
 <section id="kihon">
   <div class="wrap">
+    <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4.6" y="4" width="14.8" height="17" rx="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.6 4V2.9h6.8V4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8.3 12.4 2.4 2.4 4.9-4.9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <span class="sec-label">まとめ</span>
     <h2>これだけは──受験のキホン</h2>
     <p class="lead">このページの要点を、ぎゅっと。項目をタップすると、それぞれのくわしい説明へジャンプできます。</p>
@@ -1836,6 +1951,7 @@ body.has-cbar{padding-bottom:96px}
 <!-- ============ 公式リンク集 ============ -->
 <section id="koushiki">
   <div class="wrap">
+    <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13.6 4.8h5.6v5.6M19.2 4.8 11 13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 13.4v4.8A2 2 0 0 1 16 20.2H5.8A2 2 0 0 1 3.8 18.2V8A2 2 0 0 1 5.8 6h4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <span class="sec-label">OFFICIAL LINKS</span>
     <h2>公式・一次情報リンク集</h2>
     <p class="lead">このサイトは、公式発表やデータを「わかりやすく」まとめ直した参照サイトです。出願・手続きの最終確認は、かならず一次情報で。</p>
@@ -3339,7 +3455,7 @@ const io = ("IntersectionObserver" in window)
 document.querySelectorAll(".rv").forEach(el => io ? io.observe(el) : el.classList.add("in"));
 
 /* ---- タブナビ：現在地ハイライト ＆ トップへ戻る ---- */
-const NAV_SECTIONS = ["beforeafter","schedule","shikumi","naishin","hantei","schools","shiritsu","faq"];
+const NAV_SECTIONS = ["beforeafter","schedule","shikumi","naishin","hantei","schools","shiritsu","okane","faq"];
 const navLinks = {};
 document.querySelectorAll("#gnav a").forEach(a => { navLinks[a.getAttribute("href").slice(1)] = a; });
 let spyCurrent = null, spyTick = false;
@@ -3512,6 +3628,8 @@ renderNowWhere();
       emptyEl=document.getElementById("findEmpty"),
       closeBtn=document.getElementById("findClose");
   if(!fab||!panel||!listEl) return;
+  var FICONS={"ic-before": "<path d=\"M4 9a8 8 0 0 1 13.7-3.3L20 8M20 4.2V8h-3.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M20 15a8 8 0 0 1-13.7 3.3L4 16M4 19.8V16h3.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "ic-calendar": "<rect x=\"3.5\" y=\"5\" width=\"17\" height=\"15.5\" rx=\"2.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\"/><path d=\"M3.5 9.5h17M8 3.3v3.4M16 3.3v3.4\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\"/><circle cx=\"8.3\" cy=\"13.6\" r=\"1.25\" fill=\"currentColor\"/><circle cx=\"12\" cy=\"13.6\" r=\"1.25\" fill=\"currentColor\"/><circle cx=\"15.7\" cy=\"13.6\" r=\"1.25\" fill=\"currentColor\"/>", "ic-flow": "<path d=\"M12 4.6v15M7.5 19.6h9M4.7 8.2h14.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.85\" stroke-linecap=\"round\"/><path d=\"M4.7 8.2 2.4 13a2.8 2.8 0 0 0 4.6 0L4.7 8.2zM19.3 8.2 17 13a2.8 2.8 0 0 0 4.6 0l-2.3-4.8z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><circle cx=\"12\" cy=\"4.6\" r=\"1.5\" fill=\"currentColor\"/>", "ic-calc": "<rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"2.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\"/><rect x=\"8\" y=\"6\" width=\"8\" height=\"3.2\" rx=\"1\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M9 13h.02M12 13h.02M15 13h.02M9 16.6h.02M12 16.6h.02M15 16.6h.02\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\"/>", "ic-target": "<circle cx=\"12\" cy=\"12\" r=\"8.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\"/><circle cx=\"12\" cy=\"12\" r=\"4.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"/><circle cx=\"12\" cy=\"12\" r=\"1.5\" fill=\"currentColor\"/>", "ic-list": "<path d=\"M8.5 6.2h11.5M8.5 12h11.5M8.5 17.8h11.5\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\"/><circle cx=\"4.3\" cy=\"6.2\" r=\"1.35\" fill=\"currentColor\"/><circle cx=\"4.3\" cy=\"12\" r=\"1.35\" fill=\"currentColor\"/><circle cx=\"4.3\" cy=\"17.8\" r=\"1.35\" fill=\"currentColor\"/>", "ic-building": "<path d=\"M4 21V6.6L12 3l8 3.6V21\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.85\" stroke-linejoin=\"round\"/><path d=\"M2.5 21h19\" stroke=\"currentColor\" stroke-width=\"1.85\" stroke-linecap=\"round\"/><rect x=\"9.6\" y=\"14\" width=\"4.8\" height=\"7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"12\" cy=\"8.3\" r=\"1.5\" fill=\"currentColor\"/>", "ic-coin": "<circle cx=\"12\" cy=\"12\" r=\"8.3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\"/><path d=\"M12 7.8 9.4 11.4h5.2L12 7.8zm0 3.6V16.2M9.6 13.6h4.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "ic-qa": "<path d=\"M4 6A1.8 1.8 0 0 1 5.8 4.2h12.4A1.8 1.8 0 0 1 20 6v8.4a1.8 1.8 0 0 1-1.8 1.8H9.6L5.4 20v-3.8A1.8 1.8 0 0 1 4 14.4z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/><path d=\"M9.7 8.7a2.4 2.4 0 0 1 4.2 1.5c0 1.6-2 1.7-2.1 3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\"/><circle cx=\"11.75\" cy=\"14\" r=\"1\" fill=\"currentColor\"/>", "ic-note": "<path d=\"M6.6 3.5H14L19 8.4v9.1A2 2 0 0 1 17 19.5H6.6A2 2 0 0 1 4.6 17.5v-12A2 2 0 0 1 6.6 3.5z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/><path d=\"M13.6 3.6V8.6h5M8.4 12.6h7M8.4 16h5\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "ic-check": "<rect x=\"4.6\" y=\"4\" width=\"14.8\" height=\"17\" rx=\"2.3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><path d=\"M8.6 4V2.9h6.8V4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linejoin=\"round\"/><path d=\"m8.3 12.4 2.4 2.4 4.9-4.9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>", "ic-link": "<path d=\"M13.6 4.8h5.6v5.6M19.2 4.8 11 13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M18 13.4v4.8A2 2 0 0 1 16 20.2H5.8A2 2 0 0 1 3.8 18.2V8A2 2 0 0 1 5.8 6h4.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>"};
+  var SEC_ICON={"1":"ic-before","2":"ic-calendar","3":"ic-flow","4":"ic-calc","5":"ic-target","6":"ic-list","7":"ic-building","8":"ic-coin","9":"ic-qa","補足":"ic-note","まとめ":"ic-check","公式":"ic-link"};
   var NAV=[
     {t:"昔と今（受験の常識アップデート）",sec:"1",h:"#beforeafter",kw:"ちがい 違い 変わった 旧制度 むかし 昔 以前 今 推薦 常識 過去 アップデート"},
     {t:"入試の日程・スケジュール",sec:"2",h:"#schedule",kw:"日程 いつ 日にち 日付 カレンダー 出願 願書 流れ スケジュール 中3"},
@@ -3551,6 +3669,7 @@ renderNowWhere();
       if(q && hay.indexOf(q)===-1) continue;
       shown++;
       html+='<a class="find-item" href="'+it.h+'" data-h="'+it.h+'">'+
+        '<span class="fi"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true">'+(FICONS[SEC_ICON[it.sec]]||'')+'</svg></span>'+
         (it.sec?'<span class="fsec">'+esc(it.sec)+'</span>':'')+
         '<span class="ft">'+esc(it.t)+'</span><span class="far" aria-hidden="true">→</span></a>';
     }
