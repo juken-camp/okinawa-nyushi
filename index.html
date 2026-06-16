@@ -247,8 +247,8 @@ img,svg{max-width:100%}
 a{color:var(--sea);text-underline-offset:3px}
 .wrap{width:min(92%,760px);margin-inline:auto}
 .mono{font-family:var(--fm);font-feature-settings:"tnum"}
-.small{font-size:.8rem;color:var(--ink-soft)}
-.note{font-size:.78rem;color:var(--ink-soft);line-height:1.7}
+.small{font-size:.85rem;color:var(--ink-soft)}
+.note{font-size:.84rem;color:var(--ink-soft);line-height:1.72}
 /* 可読性の地ならし（:where＝特異度0。クラス/インライン指定があればそちらが必ず勝つ＝安全） */
 :where(p){line-height:1.95}
 :where(.wrap>p){margin:0 0 1.15em}
@@ -415,7 +415,7 @@ section{padding:62px 0}
 }
 h2{font-family:var(--fd);font-weight:900;font-size:clamp(1.35rem,4.6vw,1.8rem);line-height:1.5;margin:0 0 10px;word-break:auto-phrase}
 h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color:var(--sea-deep);word-break:auto-phrase}
-.lead{color:var(--ink-soft);font-size:1.05rem;line-height:1.9;margin:0 0 32px;word-break:auto-phrase;max-width:34em}
+.lead{color:var(--ink);font-size:1.05rem;line-height:1.9;margin:0 0 32px;word-break:auto-phrase;max-width:34em}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 20px}
 .block{margin-top:30px}
 
@@ -697,9 +697,9 @@ footer .links{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:14px}
 footer a{color:var(--ink-soft)}
 
 /* ---- かんたん要約ストリップ ---- */
-.tldr{display:block;background:#fff;border:2px solid var(--sea);border-radius:14px;padding:11px 16px 13px;margin:-8px 0 24px;box-shadow:var(--shadow)}
+.tldr{display:block;background:#fff;border:2px solid var(--sea);border-radius:14px;padding:13px 17px 15px;margin:-8px 0 24px;box-shadow:var(--shadow)}
 .tldr .tl{display:inline-block;background:var(--sea);color:#fff;font-size:.64rem;font-weight:700;letter-spacing:.08em;border-radius:6px;padding:2px 9px;margin-bottom:5px}
-.tldr p{margin:0;font-size:.95rem;font-weight:700;line-height:1.8}
+.tldr p{margin:0;font-size:1.06rem;font-weight:700;line-height:1.75;color:var(--ink)}
 
 /* ---- 折りたたみ ---- */
 details.fold{background:#fbfdfe;border:1px solid var(--line);border-radius:12px;margin-top:12px;overflow:hidden}
@@ -799,15 +799,16 @@ table.avg tr.hl td{background:var(--sea-tint)}
 .act-grid{display:grid;gap:10px}
 @media(min-width:680px){.act-grid{grid-template-columns:repeat(3,1fr)}}
 .act{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px}
-#toTop{position:fixed;right:14px;bottom:calc(72px + env(safe-area-inset-bottom));z-index:55;width:42px;height:42px;border-radius:50%;border:0;background:var(--sea-deep);color:#fff;font-size:1.05rem;font-weight:800;box-shadow:0 6px 18px rgba(8,40,60,.32);cursor:pointer}
-#toTop[hidden]{display:none}
-body.has-cbar #toTop{bottom:calc(156px + env(safe-area-inset-bottom))}
+#toTop{position:fixed;right:14px;bottom:calc(156px + env(safe-area-inset-bottom));z-index:55;width:42px;height:42px;border-radius:50%;border:0;background:var(--sea-deep);color:#fff;font-size:1.05rem;font-weight:800;box-shadow:0 6px 18px rgba(8,40,60,.32);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .4s ease,transform .4s ease}
+#toTop.show{opacity:1;pointer-events:auto;transform:none}
+body.has-cbar #toTop{bottom:calc(240px + env(safe-area-inset-bottom))}
 
 /* ---- さがす・目次（フローティング） ---- */
 #findFab{
   position:fixed;right:14px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:56;
-  display:inline-flex;align-items:center;gap:7px;
-  background:var(--sea-deep);color:#fff;border:0;border-radius:99px;padding:11px 17px 11px 15px;
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap;
+  width:100px;height:38px;box-sizing:border-box;
+  background:var(--sea-deep);color:#fff;border:1.5px solid transparent;border-radius:99px;padding:0 10px;
   font-family:var(--fd);font-weight:700;font-size:.86rem;cursor:pointer;box-shadow:0 6px 18px rgba(8,40,60,.32);
   transition:opacity .18s,transform .12s;
 }
@@ -815,6 +816,25 @@ body.has-cbar #toTop{bottom:calc(156px + env(safe-area-inset-bottom))}
 #findFab svg{width:17px;height:17px;flex:0 0 auto}
 body.has-cbar #findFab{bottom:calc(102px + env(safe-area-inset-bottom))}
 body.find-open #findFab{opacity:0;pointer-events:none}
+body.gloss-open #findFab{opacity:0;pointer-events:none}
+
+/* ---- ことば辞典（フローティング） ---- */
+#readTools{position:fixed;right:14px;bottom:calc(64px + env(safe-area-inset-bottom));z-index:56;display:flex;flex-direction:column;gap:8px;align-items:flex-end;transition:opacity .18s}
+body.has-cbar #readTools{bottom:calc(148px + env(safe-area-inset-bottom))}
+body.find-open #readTools,body.gloss-open #readTools{opacity:0;pointer-events:none}
+.rt-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;box-sizing:border-box;height:38px;background:#fff;color:var(--sea-deep);border:1.5px solid #cfe0ea;border-radius:99px;padding:0 10px;font-family:var(--fd);font-weight:700;font-size:.82rem;cursor:pointer;box-shadow:0 4px 14px rgba(8,40,60,.16);transition:transform .12s,background .15s,border-color .15s,color .15s}
+.rt-btn:active{transform:scale(.96)}
+.rt-btn svg{width:17px;height:17px;flex:0 0 auto}
+#glossFab{width:100px;box-sizing:border-box;justify-content:center;gap:7px;white-space:nowrap;font-size:.86rem}
+#campFab{width:100px;box-sizing:border-box;justify-content:center;white-space:nowrap;font-size:.7rem;letter-spacing:.01em;text-decoration:none;background:#fff;color:var(--ink-soft);border-color:#dce6ec;box-shadow:0 2px 8px rgba(8,40,60,.10)}
+.gloss-title{flex:1;font-family:var(--fd);font-weight:900;font-size:1rem;color:var(--sea-deep);padding-left:4px}
+.gloss-count{flex:0 0 auto;font-size:.72rem;font-weight:700;color:var(--ink-soft);padding-right:4px}
+.gl-group{font-family:var(--fd);font-weight:800;font-size:.74rem;letter-spacing:.05em;color:var(--sea-deep);margin:16px 4px 8px;padding-bottom:6px;border-bottom:1.5px solid rgba(31,122,140,.18)}
+.gl-group:first-child{margin-top:2px}
+.gl-item{padding:11px 13px;border:1px solid rgba(120,160,180,.42);border-radius:11px;margin-bottom:7px;background:rgba(255,255,255,.62)}
+.gl-term{display:block;font-size:.98rem;font-weight:800;color:var(--sea-deep);margin-bottom:3px}
+.gl-def{display:block;font-size:.86rem;line-height:1.72;color:var(--ink)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.gl-item{background:#fff}}
 
 .find-overlay{position:fixed;inset:0;background:rgba(18,78,102,.20);z-index:60;opacity:0;transition:opacity .2s}
 .find-overlay.show{opacity:1}
@@ -1060,7 +1080,7 @@ body.has-cbar{padding-bottom:96px}
     <div class="hero-steps">
       <a class="step s1" href="#shikumi"><span class="no">1</span><span class="tx"><b>まず、仕組みを知る</b><small>合否の決まり方を図でつかむ</small></span><span class="ar">→</span></a>
       <a class="step s2" href="#naishin"><span class="no">2</span><span class="tx"><b>内申点を計算する</b><small>通知表の数字をタップするだけ</small></span><span class="ar">→</span></a>
-      <a class="step s3" href="#hantei"><span class="no">3</span><span class="tx"><b>合格可能性をみる</b><small>志望校とのキョリがわかる</small></span><span class="ar">→</span></a>
+      <a class="step s3" href="#hantei"><span class="no">3</span><span class="tx"><b>合格可能性をみる</b><small>志望校との距離がわかる</small></span><span class="ar">→</span></a>
     </div>
     <p class="steps-label"><span class="top-mark"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M15.3 8.7 10.7 10.7 8.7 15.3 13.3 13.3z" fill="currentColor"/></svg></span>大事なのは、この3つ</p>
     <div class="hero-keys">
@@ -1082,7 +1102,7 @@ body.has-cbar{padding-bottom:96px}
       <a href="#schedule"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M3.5 9.5h17M8 3.3v3.4M16 3.3v3.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="8.3" cy="13.6" r="1.25" fill="currentColor"/><circle cx="12" cy="13.6" r="1.25" fill="currentColor"/><circle cx="15.7" cy="13.6" r="1.25" fill="currentColor"/></svg></span><span class="tn">2</span><b>日程</b><small>本番の日・1年の流れ・平均点</small></a>
       <a href="#shikumi"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4.6v15M7.5 19.6h9M4.7 8.2h14.6" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/><path d="M4.7 8.2 2.4 13a2.8 2.8 0 0 0 4.6 0L4.7 8.2zM19.3 8.2 17 13a2.8 2.8 0 0 0 4.6 0l-2.3-4.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="4.6" r="1.5" fill="currentColor"/></svg></span><span class="tn">3</span><b>仕組み</b><small>合否はこう決まる</small></a>
       <a href="#naishin"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="8" y="6" width="8" height="3.2" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 13h.02M12 13h.02M15 13h.02M9 16.6h.02M12 16.6h.02M15 16.6h.02" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span><span class="tn">4</span><b>内申点を計算</b><small>通知表をタップするだけ</small></a>
-      <a href="#hantei"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span><span class="tn">5</span><b>合格判定</b><small>志望校とのキョリ</small></a>
+      <a href="#hantei"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span><span class="tn">5</span><b>合格判定</b><small>志望校との距離</small></a>
       <a href="#schools"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.5 6.2h11.5M8.5 12h11.5M8.5 17.8h11.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="4.3" cy="6.2" r="1.35" fill="currentColor"/><circle cx="4.3" cy="12" r="1.35" fill="currentColor"/><circle cx="4.3" cy="17.8" r="1.35" fill="currentColor"/></svg></span><span class="tn">6</span><b>学校データ</b><small>158学科の基準と倍率</small></a>
       <a href="#shiritsu"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V6.6L12 3l8 3.6V21" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linejoin="round"/><path d="M2.5 21h19" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/><rect x="9.6" y="14" width="4.8" height="7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="8.3" r="1.5" fill="currentColor"/></svg></span><span class="tn">7</span><b>私立高校</b><small>高校から入れるのは実質3校</small></a>
       <a href="#okane"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.3" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.8 9.4 11.4h5.2L12 7.8zm0 3.6V16.2M9.6 13.6h4.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tn">8</span><b>お金のこと</b><small>学費・無償化・使える支援</small></a>
@@ -1298,7 +1318,8 @@ body.has-cbar{padding-bottom:96px}
     <!-- 内申点とは -->
     <div class="block card rv">
       <h3>① 内申点 — 3年間の通知表が「持ち点」になる</h3>
-      <p style="font-size:.88rem">内申点（調査書点）は、<strong>中1・中2・中3の通知表の評定（5段階）</strong>から計算されます。沖縄県の特徴は、音楽・美術・保健体育・技術家庭の<strong>実技4教科が1.5倍</strong>で計算されること。そして<strong>3学年すべてが同じ重み</strong>で合計されることです。</p>
+      <p style="font-size:.88rem;margin-bottom:0">内申点（調査書点）は、<strong>中1・中2・中3の通知表の評定（5段階）</strong>から計算されます。</p>
+      <p style="font-size:.88rem;margin-top:.6em">沖縄県の特徴は、音楽・美術・保健体育・技術家庭の<strong>実技4教科が1.5倍</strong>で計算されること。そして<strong>3学年すべてが同じ重み</strong>で合計されることです。</p>
       <div class="nfig" aria-label="内申点の計算（評定がすべて5の場合）">
         <div class="nfig-row"><span class="nfig-l">5教科 × 評定5</span><span class="nfig-v">25<i>点</i></span></div>
         <div class="nfig-row"><span class="nfig-l">実技4教科 × 評定5 <span class="x15">×1.5</span></span><span class="nfig-v">30<i>点</i></span></div>
@@ -2020,7 +2041,7 @@ body.has-cbar{padding-bottom:96px}
 
 </main>
 
-<button type="button" id="toTop" hidden aria-label="ページの先頭へもどる">↑</button>
+<button type="button" id="toTop" aria-label="ページの先頭へもどる">↑</button>
 
 <!-- ============ さがす・目次（フローティング） ============ -->
 <button type="button" id="findFab" aria-label="さがす・目次をひらく">
@@ -2035,6 +2056,23 @@ body.has-cbar{padding-bottom:96px}
   </div>
   <div class="find-list" id="findList"></div>
   <p class="find-empty" id="findEmpty" hidden>見つかりませんでした。別のことばでお試しください。</p>
+</div>
+
+<!-- ============ ことば辞典（フローティング） ============ -->
+<div id="readTools">
+  <a id="campFab" class="rt-btn" href="https://www.juken-camp.online/" target="_blank" rel="noopener" aria-label="JUKEN CAMP 公式サイト（別タブで開きます）">JUKEN CAMP</a>
+  <button type="button" id="glossFab" class="rt-btn" aria-label="ことばの意味をひらく">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 6.6C10.5 5.3 8.3 4.7 5.5 4.7 4.7 4.7 4 5.4 4 6.2v11.1c0 .8.7 1.4 1.5 1.4 2.6 0 4.7.6 6.5 1.9 1.8-1.3 3.9-1.9 6.5-1.9.8 0 1.5-.6 1.5-1.4V6.2c0-.8-.7-1.5-1.5-1.5-2.8 0-5 .6-6.5 1.9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 6.6v13.7" stroke="currentColor" stroke-width="1.6"/></svg><span class="rt-tx">ことば</span>
+  </button>
+</div>
+<div class="find-overlay" id="glossOverlay" hidden></div>
+<div class="find-panel" id="glossPanel" hidden role="dialog" aria-modal="true" aria-label="ことばの意味">
+  <div class="find-head">
+    <strong class="gloss-title">ことばの意味</strong>
+    <span class="gloss-count" id="glossCount"></span>
+    <button type="button" class="find-x" id="glossClose" aria-label="閉じる">✕</button>
+  </div>
+  <div class="find-list" id="glossList"></div>
 </div>
 
 <!-- 学校くらべバー -->
@@ -3537,7 +3575,7 @@ const raf = window.requestAnimationFrame ? window.requestAnimationFrame.bind(win
 window.addEventListener("scroll", () => {
   if (!spyTick){ spyTick = true; raf(spy); }
   const y = window.scrollY || 0;
-  toTop.hidden = y < 600;
+  toTop.classList.toggle("show", y >= 600);
   /* ヘッダー自動ひっこめ：先頭付近は常時表示／読み進める（下へ）と隠れ／戻す（上へ）と出る */
   if (headEl && Date.now() >= headLock){
     if (y < 80) headEl.classList.remove("head-hidden");
@@ -3768,6 +3806,100 @@ renderNowWhere();
   }
   window.addEventListener("hashchange", openHashDetails);
   if(location.hash) setTimeout(openHashDetails, 60);
+})();
+
+/* ---- ことば辞典（フローティング・どこからでも開ける） ---- */
+(function(){
+  function esc2(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+  var GLOSS=[
+    {g:"入試のしくみ", items:[
+      {t:"特色選抜", d:"2025年春に推薦入試のかわりに始まった選抜。校長推薦は不要で、本人の意思で出願でき、全員が学力検査を受ける。"},
+      {t:"一般選抜", d:"内申点と当日の学力検査を中心に合否を決める、いちばん基本の選抜。"},
+      {t:"推薦入試（旧制度）", d:"以前あった選抜。校長の推薦が必要で、一部の生徒だけが対象だった。いまは特色選抜に置きかわった。"},
+      {t:"学力検査", d:"入試本番の5教科テスト。国・社・数・理・英の各60点で、合計300点満点。"},
+      {t:"学校独自検査", d:"特色選抜で学校が独自に行う検査。作文・実技・面接など、内容は学校ごとに決まる。"},
+      {t:"実績点（ランク表）", d:"英検・漢検や活動の実績を点数にしたもの。特色選抜だけで使われ、一般選抜では原則つかない。"},
+      {t:"傾斜配点", d:"特定の教科の点を高く（または低く）扱う配点。理数系の学科などで使われることがある。"},
+      {t:"第2志望", d:"同じ高校の中の別の学科を「次の希望」にすること。別の高校は第2志望にできない。"},
+      {t:"2次募集", d:"定員に空きが出た高校・学科で追加で行う募集。学力検査はやり直さず、3月の得点に面接などを合わせて選ぶ。"},
+      {t:"定員内不合格", d:"定員割れ（倍率1.0未満）でも、基準を大きく下回ると不合格になること。"}
+    ]},
+    {g:"内申・成績", items:[
+      {t:"内申点（調査書点）", d:"通知表の評定を点数にしたもの。沖縄は中1〜中3の3年分で165点満点。"},
+      {t:"調査書", d:"中学校がつくる、成績や出欠などをまとめた書類。内申点のもとになる。"},
+      {t:"評定", d:"通知表の「1〜5」の数字（5段階）。"},
+      {t:"実技4教科", d:"音楽・美術・保健体育・技術家庭。沖縄では内申点で1.5倍に数える。"},
+      {t:"観点別評価", d:"「知識・技能」などの観点ごとに学習を見る評価。評定のもとになる。"},
+      {t:"絶対評価", d:"ほかの人と比べず、達成度そのもので成績をつける方法（いまの通知表）。"},
+      {t:"相対評価", d:"集団の中の順位で成績をつける、昔の方式。"},
+      {t:"比重", d:"内申点と当日点をどんな割合で見るか。原則5:5で、一部の学校は4:6など。"},
+      {t:"当日点", d:"入試本番の学力検査の得点（300点満点）。内申点と合わせて合否を見る。"},
+      {t:"提出物", d:"授業の課題やノートなど、評価の対象になる出しもの。"}
+    ]},
+    {g:"偏差値・判定・模試", items:[
+      {t:"偏差値", d:"テストでの自分の位置を示す数字。50がちょうど真ん中。"},
+      {t:"合格判定", d:"過去のデータから合格の可能性をめやすで示すこと。本番の得点で決まるわけではない。"},
+      {t:"倍率", d:"志願者数÷募集人員。1.00より大きいと定員より人が多い。"},
+      {t:"プレ入試", d:"誠伸社が行う県内統一の模試。本番に近い形式で力だめしができる。"},
+      {t:"県模試", d:"教育開発出版が毎月行う模試。月号制で、広く受けられている。"}
+    ]},
+    {g:"出願・日程", items:[
+      {t:"出願", d:"「この高校を受けます」と正式に申し込むこと。"},
+      {t:"願書", d:"出願のときに出す申込書類。"},
+      {t:"志願変更", d:"出願後に受ける高校・学科を変えること。倍率1.0を超えた学科の人が1回だけできる（一般選抜のみ）。"},
+      {t:"志願状況", d:"各高校・学科に何人が出願したか（倍率）の公表。"},
+      {t:"募集要項・実施要項", d:"募集人員・日程・ルールなどを定めた公式の文書。"},
+      {t:"配慮願い", d:"障害や特性などに応じて検査で配慮を受けるための事前申請。中学校を通して行う。"},
+      {t:"自己採点", d:"本番の答えを控えておき、解答速報で自分の点を見積もること。2次募集で役立つ。"},
+      {t:"開示請求", d:"個人情報の制度にもとづき、自分の得点などの開示を求めること。"}
+    ]},
+    {g:"学校・学科", items:[
+      {t:"普通科", d:"はば広く学ぶ、いちばん多い学科。通学区域がある。"},
+      {t:"専門学科", d:"農業・工業・商業・理数などを専門に学ぶ学科。県内のどこからでも受けられる。"},
+      {t:"総合学科", d:"普通科と専門学科の両方の科目から選んで学べる学科。"},
+      {t:"通学区域（学区）", d:"普通科で、住む地域によって受けられる高校の範囲。区域外は定員の10%以内で入れる。"},
+      {t:"全日制", d:"昼間に毎日通う、いちばん一般的な課程。"},
+      {t:"定時制", d:"夜間など、決まった時間帯に通う課程。"},
+      {t:"通信制", d:"レポートやスクーリングで学ぶ、登校が少ない課程。"},
+      {t:"単位制", d:"学年ではなく、単位の積み上げで卒業する仕組み。"}
+    ]},
+    {g:"私立・お金", items:[
+      {t:"専願", d:"合格したら必ず入学する約束で受ける、私立の受け方。"},
+      {t:"併願", d:"県立など他校と一緒に受けられる、私立の受け方。"},
+      {t:"就学支援金", d:"国が授業料を補助する制度。条件を満たすと、公立の授業料は実質負担なしになることが多い。"},
+      {t:"奨学給付金", d:"授業料以外の費用に使える、返さなくていいお金。非課税世帯などが対象。"},
+      {t:"非課税世帯", d:"住民税が課されない世帯。支援の対象になりやすい。"}
+    ]}
+  ];
+
+  var total=0; for(var gi=0;gi<GLOSS.length;gi++){ total+=GLOSS[gi].items.length; }
+
+  var gl=document.getElementById("glossList");
+  if(gl){
+    var html="";
+    for(var i=0;i<GLOSS.length;i++){
+      html+='<div class="gl-group">'+esc2(GLOSS[i].g)+'</div>';
+      var it=GLOSS[i].items;
+      for(var j=0;j<it.length;j++){
+        html+='<div class="gl-item"><b class="gl-term">'+esc2(it[j].t)+'</b><span class="gl-def">'+esc2(it[j].d)+'</span></div>';
+      }
+    }
+    gl.innerHTML=html;
+  }
+  var cnt=document.getElementById("glossCount"); if(cnt) cnt.textContent="全"+total+"語";
+
+  var gfab=document.getElementById("glossFab"),
+      gov=document.getElementById("glossOverlay"),
+      gp=document.getElementById("glossPanel"),
+      gx=document.getElementById("glossClose");
+  if(gfab&&gp){
+    var gOpen=function(){ gov.hidden=false; gp.hidden=false; document.body.classList.add("gloss-open"); document.body.style.overflow="hidden"; if(gl) gl.scrollTop=0; requestAnimationFrame(function(){ gov.classList.add("show"); gp.classList.add("show"); }); };
+    var gClose=function(){ gov.classList.remove("show"); gp.classList.remove("show"); document.body.style.overflow=""; setTimeout(function(){ gov.hidden=true; gp.hidden=true; document.body.classList.remove("gloss-open"); },280); };
+    gfab.addEventListener("click",gOpen);
+    gx.addEventListener("click",gClose);
+    gov.addEventListener("click",gClose);
+    document.addEventListener("keydown",function(e){ if((e.key==="Escape"||e.keyCode===27)&&!gp.hidden) gClose(); });
+  }
 })();
 </script>
 </body>
