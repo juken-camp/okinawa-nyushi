@@ -322,7 +322,7 @@ strong{color:var(--sea-deep)}
 .hero-steps .ar{margin-left:auto;color:var(--sea);font-weight:800}
 
 /* ---- 今どこ？（学年×今月の現在地） ---- */
-.nowwhere{background:var(--sea-tint);border-block:1px solid #cfe6f1;padding:22px 0}
+.nowwhere{background:var(--sea-tint);border-block:1px solid #cfe6f1;padding:28px 0}
 .nowwhere .nw-head{font-family:var(--fd);font-weight:700;font-size:1rem;color:var(--sea-deep);margin:0;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .nowwhere .nw-month{font-family:var(--fm);font-weight:700;font-size:.72rem;color:#fff;background:var(--coral);border-radius:99px;padding:2px 10px;letter-spacing:.02em}
 .nowwhere .nw-q{font-size:.8rem;color:var(--ink-soft);margin:6px 0 12px;font-weight:700}
@@ -339,9 +339,11 @@ strong{color:var(--sea-deep)}
 .nw-go .ar{font-weight:800}
 
 /* ---- 目次グリッド ---- */
-.toc-wrap{background:#fff;border-block:1px solid var(--line);padding:20px 0 24px}
-.toc-title{margin:0 0 10px;font-size:.74rem;font-weight:700;color:var(--ink-soft);letter-spacing:.06em}
-.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.toc-wrap{background:#fff;border-top:1px solid var(--line);padding:38px 0 16px}
+.toc-title{margin:0 0 18px}
+.toc-title b{display:block;font-family:var(--fd);font-weight:900;font-size:1.12rem;color:var(--sea-deep);line-height:1.25;letter-spacing:.01em}
+.toc-title small{display:block;font-size:.75rem;font-weight:700;color:var(--ink-soft);margin-top:4px;letter-spacing:.02em}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 @media(min-width:640px){.toc{grid-template-columns:repeat(3,1fr)}}
 .toc a{position:relative;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:13px 13px 12px;text-decoration:none;color:var(--ink);line-height:1.4;min-height:98px}
 .toc a:active{background:var(--sea-tint)}
@@ -966,7 +968,8 @@ body.has-cbar{padding-bottom:96px}
 /* 詰まり緩和：ブロック間の余白を少し広げる */
 .block{margin-top:46px}
 /* ===== 悩み別の入口（ペルソナ・ルーター） ===== */
-.route-wrap{padding:20px 0 4px}
+.route-wrap{background:#fff;padding:16px 0 56px}
+#point3{padding-top:76px}
 .route{background:linear-gradient(180deg,var(--sea-tint),#fff);border:1px solid #cfe6f1;border-radius:18px;padding:17px 15px 15px}
 .route-h{display:flex;align-items:center;gap:9px;margin:0 0 12px}
 .route-h .rih{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:11px;background:#fff;border:1px solid #cfe6f1;color:var(--sea-deep)}
@@ -1085,7 +1088,7 @@ body.has-cbar{padding-bottom:96px}
 <!-- ============ 目次 ============ -->
 <nav class="toc-wrap" aria-label="このページの目次">
   <div class="wrap">
-    <p class="toc-title">このページでわかること ─ ぜんぶで9つ（タップでジャンプ）</p>
+    <p class="toc-title"><b>このページでわかること</b><small>ぜんぶで9つ・タップでジャンプ</small></p>
     <div class="toc">
       <a href="#beforeafter"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9a8 8 0 0 1 13.7-3.3L20 8M20 4.2V8h-3.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 15a8 8 0 0 1-13.7 3.3L4 16M4 19.8V16h3.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tn">1</span><b>昔と今</b><small>受験の常識アップデート</small></a>
       <a href="#schedule"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M3.5 9.5h17M8 3.3v3.4M16 3.3v3.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="8.3" cy="13.6" r="1.25" fill="currentColor"/><circle cx="12" cy="13.6" r="1.25" fill="currentColor"/><circle cx="15.7" cy="13.6" r="1.25" fill="currentColor"/></svg></span><span class="tn">2</span><b>日程</b><small>本番の日・1年の流れ・平均点</small></a>
