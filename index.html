@@ -304,7 +304,9 @@ strong{color:var(--sea-deep)}
 .nb{white-space:nowrap}
 .pc-br{display:none}
 @media(min-width:680px){.pc-br{display:inline}}
-.steps-label{margin:48px 0 18px;font-family:var(--fd);font-size:1.12rem;font-weight:900;color:var(--ink);letter-spacing:.01em}
+.steps-label{margin:48px 0 18px;font-family:var(--fd);font-size:1.12rem;font-weight:900;color:var(--ink);letter-spacing:.01em;display:flex;align-items:center;gap:11px}
+.top-mark{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--sea-deep);color:#fff}
+.top-mark .ic{width:17px;height:17px}
 .hero-steps{display:grid;gap:10px}
 .hero-steps .step{
   display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--line);
@@ -339,7 +341,7 @@ strong{color:var(--sea-deep)}
 
 /* ---- 目次グリッド ---- */
 .toc-wrap{background:#fff;border-top:1px solid var(--line);padding:38px 0 16px}
-.toc-title{margin:0 0 18px}
+.toc-title{margin:0 0 18px;display:flex;align-items:center;gap:11px}
 .toc-title b{display:block;font-family:var(--fd);font-weight:900;font-size:1.12rem;color:var(--sea-deep);line-height:1.25;letter-spacing:.01em}
 .toc-title small{display:block;font-size:.75rem;font-weight:700;color:var(--ink-soft);margin-top:4px;letter-spacing:.02em}
 .toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -970,10 +972,10 @@ body.has-cbar{padding-bottom:96px}
 .route-wrap{background:#fff;padding:16px 0 72px}
 #point3{padding-top:60px}
 .route{background:linear-gradient(180deg,var(--sea-tint),#fff);border:1px solid #cfe6f1;border-radius:18px;padding:22px 20px 26px}
-.route-h{display:flex;align-items:center;gap:9px;margin:0 0 16px}
+.route-h{display:flex;align-items:center;gap:11px;margin:0 0 16px}
 .route-h .rih{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:11px;background:#fff;border:1px solid #cfe6f1;color:var(--sea-deep)}
 .route-h .rih .ic{width:21px;height:21px}
-.route-h b{font-family:var(--fd);font-weight:900;font-size:1.04rem;color:var(--sea-deep);line-height:1.2}
+.route-h b{font-family:var(--fd);font-weight:900;font-size:1.12rem;color:var(--sea-deep);line-height:1.2}
 .route-h b small{display:block;font-family:var(--fb);font-size:.68rem;font-weight:700;color:var(--ink-soft);margin-top:1px}
 .route-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
 @media(min-width:640px){.route-grid{grid-template-columns:repeat(3,1fr)}}
@@ -1054,13 +1056,13 @@ body.has-cbar{padding-bottom:96px}
         <span class="cd-word" id="cdWord"></span>
       </div>
     </div>
-    <p class="steps-label">つかいかたは、3ステップ</p>
+    <p class="steps-label"><span class="top-mark"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M15.3 8.7 10.7 10.7 8.7 15.3 13.3 13.3z" fill="currentColor"/></svg></span>つかいかたは、3ステップ</p>
     <div class="hero-steps">
       <a class="step s1" href="#shikumi"><span class="no">1</span><span class="tx"><b>まず、仕組みを知る</b><small>合否の決まり方を図でつかむ</small></span><span class="ar">→</span></a>
       <a class="step s2" href="#naishin"><span class="no">2</span><span class="tx"><b>内申点を計算する</b><small>通知表の数字をタップするだけ</small></span><span class="ar">→</span></a>
       <a class="step s3" href="#hantei"><span class="no">3</span><span class="tx"><b>合格可能性をみる</b><small>志望校とのキョリがわかる</small></span><span class="ar">→</span></a>
     </div>
-    <p class="steps-label">大事なのは、この3つ</p>
+    <p class="steps-label"><span class="top-mark"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M15.3 8.7 10.7 10.7 8.7 15.3 13.3 13.3z" fill="currentColor"/></svg></span>大事なのは、この3つ</p>
     <div class="hero-keys">
       <div class="key"><b>中1から</b><span>内申点は3年間の<br>合計。技能教科は<br>1.5倍で計算</span></div>
       <div class="key"><span class="new-tag">2025年〜</span><b>全員が受験</b><span>推薦入試の廃止で<br>学力検査の<br>免除なし</span></div>
@@ -1070,24 +1072,11 @@ body.has-cbar{padding-bottom:96px}
 </div>
 
 
-<!-- ============ 今どこ？（学年×今月の現在地） ============ -->
-<div class="nowwhere" id="nowwhere">
-  <div class="wrap">
-    <p class="nw-head">受験生の「いま」<span class="nw-month" id="nwMonth"></span></p>
-    <p class="nw-q">あなたは、いま何年生？（タップで切り替え）</p>
-    <div class="nw-tabs" id="nwTabs">
-      <button type="button" data-g="1">中1</button>
-      <button type="button" data-g="2">中2</button>
-      <button type="button" data-g="3" class="on">中3</button>
-    </div>
-    <div class="nw-body" id="nwBody"><!-- JSで生成 --></div>
-  </div>
-</div>
 
 <!-- ============ 目次 ============ -->
 <nav class="toc-wrap" aria-label="このページの目次">
   <div class="wrap">
-    <p class="toc-title"><b>このページでわかること</b><small>ぜんぶで9つ・タップでジャンプ</small></p>
+    <p class="toc-title"><span class="top-mark"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M15.3 8.7 10.7 10.7 8.7 15.3 13.3 13.3z" fill="currentColor"/></svg></span><span class="tt-tx"><b>このページでわかること</b><small>ぜんぶで9つ・タップでジャンプ</small></span></p>
     <div class="toc">
       <a href="#beforeafter"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9a8 8 0 0 1 13.7-3.3L20 8M20 4.2V8h-3.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 15a8 8 0 0 1-13.7 3.3L4 16M4 19.8V16h3.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tn">1</span><b>昔と今</b><small>受験の常識アップデート</small></a>
       <a href="#schedule"><span class="ti"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M3.5 9.5h17M8 3.3v3.4M16 3.3v3.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="8.3" cy="13.6" r="1.25" fill="currentColor"/><circle cx="12" cy="13.6" r="1.25" fill="currentColor"/><circle cx="15.7" cy="13.6" r="1.25" fill="currentColor"/></svg></span><span class="tn">2</span><b>日程</b><small>本番の日・1年の流れ・平均点</small></a>
@@ -1104,7 +1093,7 @@ body.has-cbar{padding-bottom:96px}
 
 <div class="route-wrap"><div class="wrap">
   <div class="route">
-    <div class="route-h"><span class="rih"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span><b>迷ったら、ここから<small>あなたの状況から、近道で。</small></b></div>
+    <div class="route-h"><span class="top-mark"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M15.3 8.7 10.7 10.7 8.7 15.3 13.3 13.3z" fill="currentColor"/></svg></span><b>迷ったら、ここから<small>あなたの状況から、近道で。</small></b></div>
     <div class="route-grid">
       <a href="#hantei"><span class="ri"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span><span class="rt">志望校を決めたい<small>合格判定へ →</small></span></a>
       <a href="#naishin"><span class="ri"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.6" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="8" y="6" width="8" height="3.2" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 13h.02M12 13h.02M15 13h.02M9 16.6h.02M12 16.6h.02M15 16.6h.02" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span><span class="rt">内申点を知りたい<small>内申点計算へ →</small></span></a>
@@ -1141,6 +1130,20 @@ body.has-cbar{padding-bottom:96px}
     </div>
   </div>
 </section>
+
+<!-- ============ 今どこ？（学年×今月の現在地） ============ -->
+<div class="nowwhere" id="nowwhere">
+  <div class="wrap">
+    <p class="nw-head">受験生の「いま」<span class="nw-month" id="nwMonth"></span></p>
+    <p class="nw-q">あなたは、いま何年生？（タップで切り替え）</p>
+    <div class="nw-tabs" id="nwTabs">
+      <button type="button" data-g="1">中1</button>
+      <button type="button" data-g="2">中2</button>
+      <button type="button" data-g="3" class="on">中3</button>
+    </div>
+    <div class="nw-body" id="nwBody"><!-- JSで生成 --></div>
+  </div>
+</div>
 
 <!-- ============ 昔と今 ============ -->
 <section id="beforeafter" style="background:#fff;border-block:1px solid var(--line)">
