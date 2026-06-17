@@ -913,7 +913,7 @@ th.sortable.sd::after{content:"▼";color:var(--sea)}
 .cb-x{background:none;border:0;color:#bfe0f0;font-size:.74rem;cursor:pointer;text-decoration:underline}
 body.has-cbar{padding-bottom:96px}
 .cmptbl th,.cmptbl td{font-size:.78rem;white-space:nowrap;padding:9px 12px}
-.cmptbl td{font-family:var(--fm)}
+.cmptbl td{font-family:var(--fm);vertical-align:middle}
 .cmptbl th:first-child,.cmptbl td:first-child{position:sticky;left:0;background:#fbfdfe;font-family:var(--fb);z-index:1}
 .cmptbl thead th{background:#eef4f8;font-family:var(--fb)}
 
@@ -3415,16 +3415,16 @@ function renderCompare(){
     return key === "score" ? (r.score === null ? "—" : fmtPt(r.score)) : fmtPt(r[key]);
   };
   let h = `<table class="cmptbl"><thead>${head}</thead><tbody>`;
-  h += row("基準偏差値（80%）", d => `<b>${d.dev}</b>`);
-  h += row("基準内申（80%）",  d => `<b>${d.nai}</b>`);
-  h += row("倍率 特色", d => `<span class="${rateCls(d.rT)}">${fmtRate(d.rT)}</span>`);
-  h += row("倍率 一般", d => `<span class="${rateCls(d.rI)}">${fmtRate(d.rI)}</span>`);
-  h += row("一般合格者平均 偏差値", g("一般","合格","dev"));
-  h += row("一般合格者平均 内申",   g("一般","合格","nai"));
-  h += row("一般合格者平均 得点 /300", g("一般","合格","score"));
-  h += row("特色合格者平均 偏差値", g("特色","合格","dev"));
-  h += row("特色合格者平均 内申",   g("特色","合格","nai"));
-  h += row("特色合格者平均 得点 /250", g("特色","合格","score"));
+  h += row("基準偏差値<br>（80%）", d => `<b>${d.dev}</b>`);
+  h += row("基準内申<br>（80%）",  d => `<b>${d.nai}</b>`);
+  h += row("倍率<br>特色", d => `<span class="${rateCls(d.rT)}">${fmtRate(d.rT)}</span>`);
+  h += row("倍率<br>一般", d => `<span class="${rateCls(d.rI)}">${fmtRate(d.rI)}</span>`);
+  h += row("一般合格者平均<br>偏差値", g("一般","合格","dev"));
+  h += row("一般合格者平均<br>内申",   g("一般","合格","nai"));
+  h += row("一般合格者平均<br>得点 /300", g("一般","合格","score"));
+  h += row("特色合格者平均<br>偏差値", g("特色","合格","dev"));
+  h += row("特色合格者平均<br>内申",   g("特色","合格","nai"));
+  h += row("特色合格者平均<br>得点 /250", g("特色","合格","score"));
   h += `</tbody></table>`;
   $("#compareWrap").innerHTML = h;
   $("#compareBlock").hidden = false;
