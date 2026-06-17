@@ -236,7 +236,7 @@
   --fm:'JetBrains Mono',ui-monospace,monospace;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;scroll-padding-top:74px;touch-action:manipulation}
+html{scroll-behavior:smooth;scroll-padding-top:74px;touch-action:manipulation;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{
   margin:0;background:var(--paper);color:var(--ink);
   font-family:var(--fb);font-size:16px;line-height:1.85;
@@ -473,7 +473,7 @@ h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color
 .sch-id .l1{display:block;white-space:nowrap}
 .sch-id .nm{font-weight:700;color:var(--ink)}
 .sch-id .ar{display:inline-block;font-weight:600;font-size:.64rem;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:1px 8px;margin-left:5px;vertical-align:2px;white-space:nowrap}
-.sch-id .dp{display:block;margin-top:3px;font-size:.82rem;color:var(--ink)}
+.sch-id .dp{display:block;margin-top:3px;font-size:.82rem;color:var(--ink);max-width:12em}
 .tbl-count{font-size:.72rem;color:var(--ink-soft);margin:7px 2px 0;text-align:right}
 /* 通学区域チェッカー */
 .kuiki{background:#fff;border:2px solid var(--sea);border-radius:14px;padding:16px;margin:-8px 0 24px;box-shadow:var(--shadow)}
@@ -3340,7 +3340,7 @@ function renderTable(){
     const d = cur(s);
     const tr = document.createElement("tr");
     tr.innerHTML =
-      `<td><span class="sch-id"><span class="l1"><span class="nm">${esc(s.name)}</span><span class="ar">${AREA_LABEL[s.area]||s.area}</span></span><span class="dp">${esc(s.dept)}${d.dummy?' <span class="kari">準備中</span>':''}</span></span></td>
+      `<td><span class="sch-id"><span class="l1"><span class="nm">${esc(s.name)}</span><span class="ar">${AREA_LABEL[s.area]||s.area}</span></span><span class="dp">${esc(s.dept)}</span></span></td>
        <td class="num">${dval(d,'dev')}</td><td class="num">${dval(d,'nai')}</td>
        <td class="num">${TOKU[s.id] ? TOKU[s.id][1] + "%" : "—"}</td>
        <td class="num ${rateCls(d.rT)}">${fmtRate(d.rT)}</td>
