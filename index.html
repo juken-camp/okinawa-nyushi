@@ -468,6 +468,12 @@ h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color
 #schoolTable thead th:first-child{position:sticky;left:0;z-index:5}
 #schoolTable tbody tr:not(.detail-row) td:first-child{position:sticky;left:0;z-index:1;background:#fff;box-shadow:1px 0 0 var(--line)}
 #schoolTable tbody tr.kx td:first-child{background:inherit}
+/* 1列目を「高校名＋地区／学科」の2段に。高校名＋地区は必ず1行 */
+.sch-id{display:block;line-height:1.4}
+.sch-id .l1{display:block;white-space:nowrap}
+.sch-id .nm{font-weight:700;color:var(--ink)}
+.sch-id .ar{display:inline-block;font-weight:600;font-size:.64rem;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:1px 8px;margin-left:5px;vertical-align:2px;white-space:nowrap}
+.sch-id .dp{display:block;margin-top:3px;font-size:.82rem;color:var(--ink)}
 .tbl-count{font-size:.72rem;color:var(--ink-soft);margin:7px 2px 0;text-align:right}
 /* 通学区域チェッカー */
 .kuiki{background:#fff;border:2px solid var(--sea);border-radius:14px;padding:16px;margin:-8px 0 24px;box-shadow:var(--shadow)}
@@ -3334,7 +3340,7 @@ function renderTable(){
     const d = cur(s);
     const tr = document.createElement("tr");
     tr.innerHTML =
-      `<td><b>${esc(s.name)}</b> ${esc(s.dept)}${d.dummy?' <span class="kari">準備中</span>':''}<br><span style="color:var(--ink-soft);font-size:.68rem">${AREA_LABEL[s.area]||s.area}</span></td>
+      `<td><span class="sch-id"><span class="l1"><span class="nm">${esc(s.name)}</span><span class="ar">${AREA_LABEL[s.area]||s.area}</span></span><span class="dp">${esc(s.dept)}${d.dummy?' <span class="kari">準備中</span>':''}</span></span></td>
        <td class="num">${dval(d,'dev')}</td><td class="num">${dval(d,'nai')}</td>
        <td class="num">${TOKU[s.id] ? TOKU[s.id][1] + "%" : "—"}</td>
        <td class="num ${rateCls(d.rT)}">${fmtRate(d.rT)}</td>
