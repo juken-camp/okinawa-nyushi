@@ -3419,12 +3419,12 @@ function renderCompare(){
   h += row("基準内申<br>（80%）",  d => `<b>${d.nai}</b>`);
   h += row("倍率<br>特色", d => `<span class="${rateCls(d.rT)}">${fmtRate(d.rT)}</span>`);
   h += row("倍率<br>一般", d => `<span class="${rateCls(d.rI)}">${fmtRate(d.rI)}</span>`);
-  h += row("一般合格者平均<br>偏差値", g("一般","合格","dev"));
-  h += row("一般合格者平均<br>内申",   g("一般","合格","nai"));
-  h += row("一般合格者平均<br>得点 /300", g("一般","合格","score"));
-  h += row("特色合格者平均<br>偏差値", g("特色","合格","dev"));
-  h += row("特色合格者平均<br>内申",   g("特色","合格","nai"));
-  h += row("特色合格者平均<br>得点 /250", g("特色","合格","score"));
+  h += row("一般合格者<br>平均偏差値", g("一般","合格","dev"));
+  h += row("一般合格者<br>平均内申",   g("一般","合格","nai"));
+  h += row("一般合格者<br>平均得点 /300", g("一般","合格","score"));
+  h += row("特色合格者<br>平均偏差値", g("特色","合格","dev"));
+  h += row("特色合格者<br>平均内申",   g("特色","合格","nai"));
+  h += row("特色合格者<br>平均得点 /250", g("特色","合格","score"));
   h += `</tbody></table>`;
   $("#compareWrap").innerHTML = h;
   $("#compareBlock").hidden = false;
