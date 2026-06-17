@@ -470,10 +470,11 @@ h3{font-family:var(--fd);font-weight:700;font-size:1.08rem;margin:0 0 10px;color
 #schoolTable tbody tr.kx td:first-child{background:inherit}
 /* 1列目を「高校名＋地区／学科」の2段に。高校名＋地区は必ず1行 */
 .sch-id{display:block;line-height:1.4}
-.sch-id .l1{display:block;white-space:nowrap}
-.sch-id .nm{font-weight:700;color:var(--ink)}
+#schoolTable thead th:first-child,#schoolTable tbody td:first-child{width:10.5em}
+.sch-id .l1{display:block}
+.sch-id .nm{font-weight:700;color:var(--ink);white-space:nowrap}
 .sch-id .ar{display:inline-block;font-weight:600;font-size:.64rem;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:1px 8px;margin-left:5px;vertical-align:2px;white-space:nowrap}
-.sch-id .dp{display:block;margin-top:3px;font-size:.82rem;color:var(--ink);max-width:12em}
+.sch-id .dp{display:block;margin-top:3px;font-size:.82rem;color:var(--ink)}
 .tbl-count{font-size:.72rem;color:var(--ink-soft);margin:7px 2px 0;text-align:right}
 /* 通学区域チェッカー */
 .kuiki{background:#fff;border:2px solid var(--sea);border-radius:14px;padding:16px;margin:-8px 0 24px;box-shadow:var(--shadow)}
@@ -914,7 +915,7 @@ th.sortable.sd::after{content:"▼";color:var(--sea)}
 body.has-cbar{padding-bottom:96px}
 .cmptbl th,.cmptbl td{font-size:.78rem;white-space:nowrap;padding:9px 12px}
 .cmptbl td{font-family:var(--fm);vertical-align:middle}
-.cmptbl th:first-child,.cmptbl td:first-child{position:sticky;left:0;background:#fbfdfe;font-family:var(--fb);z-index:1}
+.cmptbl th:first-child,.cmptbl td:first-child{position:sticky;left:0;background:#fbfdfe;font-family:var(--fb);z-index:1;width:1%}
 .cmptbl thead th{background:#eef4f8;font-family:var(--fb)}
 
 /* ---- 私立 ---- */
@@ -3340,7 +3341,7 @@ function renderTable(){
     const d = cur(s);
     const tr = document.createElement("tr");
     tr.innerHTML =
-      `<td><span class="sch-id"><span class="l1"><span class="nm">${esc(s.name)}</span><span class="ar">${AREA_LABEL[s.area]||s.area}</span></span><span class="dp">${esc(s.dept)}</span></span></td>
+      `<td><span class="sch-id"><span class="l1"><span class="nm">${esc(s.name)}</span><span class="ar">${esc(s.area)}</span></span><span class="dp">${esc(s.dept)}</span></span></td>
        <td class="num">${dval(d,'dev')}</td><td class="num">${dval(d,'nai')}</td>
        <td class="num">${TOKU[s.id] ? TOKU[s.id][1] + "%" : "—"}</td>
        <td class="num ${rateCls(d.rT)}">${fmtRate(d.rT)}</td>
