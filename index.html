@@ -39,7 +39,7 @@
 <meta property="og:title" content="沖縄県立高校入試ナビ｜日程・内申点計算・合格判定・学校別データ">
 <meta property="og:description" content="新しくなった沖縄の高校入試を図解。内申点の自動計算・合格判定・学校別データがこれ1つで。">
 <meta property="og:url" content="https://okinawa-nyushi.jp/">
-<meta property="og:image" content="https://okinawa-nyushi.jp/ogp.png"><!-- ★OGP画像を用意して差し替え -->
+<meta property="og:image" content="https://okinawa-nyushi.jp/ogp.png"><!-- ogp.png（1200×630）をリポジトリ直下＝公開ルートに設置 -->
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -306,6 +306,9 @@ strong{color:var(--sea-deep)}
 .hero h1{font-family:var(--fd);font-weight:900;font-size:clamp(1.65rem,5.6vw,2.5rem);line-height:1.42;margin:0 0 6px;letter-spacing:.01em}
 .hero h1 .accent{color:var(--sea);}
 .hero .sub{color:var(--ink-soft);font-size:.92rem;line-height:1.8;margin:18px 0 0}
+.hero-meta{margin:11px 0 0;font-size:.74rem;color:var(--ink-soft);line-height:1.7}
+.hero-meta b{color:var(--sea-deep);font-weight:700}
+.hero-meta .dot{margin:0 7px;opacity:.45}
 .nb{white-space:nowrap}
 .pc-br{display:none}
 @media(min-width:680px){.pc-br{display:inline}}
@@ -648,6 +651,18 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
 .gauge-comment{font-size:.86rem;line-height:1.85;margin:14px 0 0;max-width:34em}
 .gap-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center}
 .gap-chips .gc{font-size:.76rem;font-weight:700;border-radius:99px;padding:7px 14px;background:var(--sea-tint);color:var(--sea-deep)}
+.here-step{margin-top:14px;padding:14px 15px;border:1px solid var(--line);border-left:3px solid var(--sea);border-radius:12px;background:var(--paper);text-align:left}
+.here-step .hs-h{margin:0 0 4px;font-weight:800;font-size:.95rem;color:var(--sea-deep)}
+.here-step .hs-lead{margin:0 0 8px;font-size:.86rem;color:var(--ink)}
+.here-step .hs-list{margin:0;padding-left:1.15em;font-size:.84rem;color:var(--ink-soft);line-height:1.75}
+.here-step .hs-list li{margin:5px 0}
+.here-step .hs-list b{color:var(--ink)}
+.judge-actions{margin-top:15px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.jbtn-share{font-size:.85rem;font-weight:800;border:0;border-radius:99px;padding:10px 20px;background:var(--sea);color:#fff;cursor:pointer}
+.jbtn-share:active{opacity:.85}
+.jbtn-share.copied{background:var(--reef)}
+.jbtn-clear{font-size:.78rem;color:var(--ink-soft);background:none;border:0;text-decoration:underline;cursor:pointer;padding:5px 2px}
+.judge-actions .save-note{flex-basis:100%;margin:1px 0 0;font-size:.72rem;color:var(--ink-soft);line-height:1.6}
 .school-mini{
   margin-top:18px;border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;background:#fbfdfe;
   display:flex;flex-wrap:wrap;gap:14px 26px;font-size:.8rem;
@@ -1080,6 +1095,8 @@ body.has-cbar{padding-bottom:96px}
     <span class="kicker"><span class="kdot" aria-hidden="true"></span>中学生になったら、まず知っておきたいこと。</span>
     <h1><span class="accent">沖縄県立高校入試</span>が、<br>ここだけでぜんぶわかる。</h1>
     <p class="sub">2025年春から新しくなった<span class="nb">特色選抜</span>・<span class="nb">一般選抜</span>のしくみを、沖縄県立高校入試専門の<span class="nb">JUKEN CAMP</span>が、図とことばでやさしく。</p>
+    <!-- 信頼バッジ：制度改正があれば「対応年度」、内容更新のたびに「最終更新」を更新 -->
+    <p class="hero-meta"><b>令和9年度入試（2027年春）対応</b><span class="dot">·</span>県教委など一次資料にもとづく<span class="dot">·</span>最終更新 2026.6</p>
 
     <div class="cd-card rv" id="cdCard">
       <span class="cd-l" id="cdLabel">令和9年度 学力検査</span>
@@ -1613,9 +1630,15 @@ body.has-cbar{padding-bottom:96px}
           <div class="gap-chips" id="gapChips"></div>
         </div>
         <div id="noDevBox" hidden></div>
+        <div class="here-step" id="hereStep" hidden></div>
         <div class="school-mini" id="schoolMini"></div>
         <div class="tscroll" id="recordsWrap" style="margin-top:14px"></div>
         <p class="note" id="judgeNote" style="margin-top:10px"></p>
+        <div class="judge-actions">
+          <button type="button" id="judgeShareBtn" class="jbtn-share">この結果をコピー・共有</button>
+          <button type="button" id="judgeClearBtn" class="jbtn-clear">保存を消す</button>
+          <p class="save-note">入力はこの端末にだけ保存され、次に開くと自動で表示されます（外部には送信されません）。</p>
+        </div>
       </div>
       <p id="judgeEmpty" class="small" style="margin:6px 0 0">内申点か偏差値のどちらかと、志望校を選ぶと判定が表示されます。</p>
     </div>
@@ -2999,6 +3022,7 @@ function readInputs(){
 }
 
 function judge(){
+  saveJudge();
   const {nai, dev} = readInputs();
   const s = SCHOOLS.find(x => x.id === $("#inSchool").value) || null;
   renderReach(nai, dev);
@@ -3039,14 +3063,31 @@ function judge(){
       const w = weights(s);
       const need = TARGET_C - c;                       // 65%ラインまでに必要な合成位置
       const dDev = need / (nai!==null ? w.wDev : 1);
-      chips.insertAdjacentHTML("beforeend",
-        `<span class="gc">偏差値 あと＋${(Math.ceil(dDev*10)/10).toFixed(1)} で65%ライン</span>`);
+      if (dev + dDev <= 80){                            // 模試偏差値の上限(80)内で届くときだけ
+        chips.insertAdjacentHTML("beforeend",
+          `<span class="gc">偏差値 あと＋${(Math.ceil(dDev*10)/10).toFixed(1)} で65%ライン</span>`);
+      }
       if (nai !== null){
         const dNai = need / w.wNai * DEV_PER_NAISHIN;
-        chips.insertAdjacentHTML("beforeend",
-          `<span class="gc">内申 あと＋${Math.ceil(dNai)}点 で65%ライン</span>`);
+        if (nai + dNai <= 165){                         // 内申は165満点まで。届く範囲のときだけ表示
+          chips.insertAdjacentHTML("beforeend",
+            `<span class="gc">内申 あと＋${Math.ceil(dNai)}点 で65%ライン</span>`);
+        }
       }
     }
+    const hs = $("#hereStep");
+    if (p < 50){
+      hs.hidden = false;
+      hs.innerHTML =
+        `<p class="hs-h">ここからできること</p>`
+        + `<p class="hs-lead">この%は<b>「いま」の位置</b>。本番まで、まだ動かせます。</p>`
+        + `<ul class="hs-list">`
+        + `<li>内申も偏差値も、入試本番まで変えられる数字です。少しずつでも詰めれば%は上がります。</li>`
+        + `<li>特色で届かなくても<b>同じ得点で一般選抜に自動で回ります</b>。本番後は必ず<b>自己採点</b>を——定員割れ校の2次募集で効きます。</li>`
+        + `<li>志望校は1つじゃない。<b>「いまの成績で狙える高校」</b>も見て、迷ったら学校の先生や家の人に相談を。</li>`
+        + `</ul>`;
+    } else { hs.hidden = true; }
+
     $("#judgeNote").innerHTML =
       `※合格可能性は、<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）を基準に、当日の学力検査のばらつきを見込んで算出した「めやす」です。内申と偏差値は、この学校の比重（調査書：学力検査＝<b>${hiju}</b>）で合成しています。合否を保証するものではありません。` +
       (d.dummy ? `<br><b>※この学科の基準値は追跡調査データ未取得のため「仮の目安」です。</b>実データが届きしだい差し替えます。` : "");
@@ -3054,6 +3095,7 @@ function judge(){
   } else {
     /* ===== 偏差値なし（内申だけ）：%は出さず、実合格率＋実例 ===== */
     gw.hidden = true; nd.hidden = false;
+    $("#hereStep").hidden = true;
     const rate = admitRate(d.rI);
     let rateLine;
     if (d.rI===null || d.rI===undefined) rateLine = "前年の一般選抜の倍率は未集計です。";
@@ -3078,6 +3120,18 @@ function judge(){
         ${naiLine ? `<p style="margin:0 0 8px">${naiLine}</p>` : ""}
         <p style="margin:10px 0 0;font-size:.85rem;color:var(--ink-soft)">模試の偏差値を入れると、内申と合わせた合格可能性（%）が出ます。沖縄の模試は<b>内申点も加味</b>して合否を判定してくれます（下の「沖縄の2大模試」を参照）。</p>
       </div>`;
+    if (nai - d.nai <= -10 && !(typeof d.rI === "number" && d.rI < 1)){
+      const hs2 = $("#hereStep"); hs2.hidden = false;
+      hs2.innerHTML =
+        `<p class="hs-h">ここからできること</p>`
+        + `<p class="hs-lead">内申だけだと位置は<b>ざっくり</b>。まず正確な現在地をつかみましょう。</p>`
+        + `<ul class="hs-list">`
+        + `<li><b>模試を受けて「いまの偏差値」を測る</b>と、内申と合わせた合格可能性（%）が出ます（このページの「沖縄の2大模試」へ）。</li>`
+        + `<li>内申はまだ上げられる——実技4教科は×1.5。本番まで動かせる数字です。</li>`
+        + `<li>特色で届かなくても<b>同じ得点で一般に自動</b>／本番後は<b>自己採点</b>を（2次募集で効く）。志望校は1つじゃない——迷ったら先生や家の人に相談を。</li>`
+        + `</ul>`;
+    }
+
     $("#judgeNote").innerHTML =
       `※上の実合格率は<b>前年（${yr}年度）の志願倍率</b>から計算した、応募者全体での合格割合です。<b>あなた個人の合格可能性ではありません。</b>個人の合格可能性を出すには、模試の偏差値が必要です。` +
       (d.dummy ? `<br><b>※この学科の基準値・倍率は一部が「仮の目安」です。</b>実データが届きしだい差し替えます。` : "");
@@ -3159,6 +3213,57 @@ $("#inNaishin").addEventListener("input", () => {
 });
 $("#inDev").addEventListener("input", judge);
 $("#inSchool").addEventListener("change", judge);
+
+/* ---- 判定の入力を端末に保存／復元（次回オープン時に自動表示）＋結果の共有 ---- */
+const JUDGE_KEY = "okinawaJudgeV1";
+let judgeReady = false;                 // 初期化中の自動 judge() で保存を上書きしないためのフラグ
+function saveJudge(){
+  if (!judgeReady) return;
+  try{ safeStorage.setItem(JUDGE_KEY, JSON.stringify({
+    nai: $("#inNaishin").value, dev: $("#inDev").value, school: $("#inSchool").value
+  })); }catch(e){}
+}
+function restoreJudge(){
+  let v=null; try{ v = JSON.parse(safeStorage.getItem(JUDGE_KEY) || "null"); }catch(e){}
+  if(!v) return;
+  if(v.school){ const sel=$("#inSchool"); if([...sel.options].some(o=>o.value===v.school)) sel.value=v.school; }
+  if(v.dev)  $("#inDev").value = v.dev;
+  if(v.nai){ $("#inNaishin").value = v.nai; lastAutoNaishin = null; }  // 復元値は手入力扱い（自動連携で上書きさせない）
+  judge();
+}
+function judgeShareText(){
+  const sel=$("#inSchool"), opt=sel.options[sel.selectedIndex];
+  if(!sel.value || !opt) return null;
+  const nai=$("#inNaishin").value, dev=$("#inDev").value;
+  const L=["【沖縄県立高校 合格判定】","志望校：" + opt.textContent];
+  const p=[]; if(nai) p.push("内申 "+nai+"点"); if(dev) p.push("偏差値 "+dev);
+  if(p.length) L.push(p.join("／"));
+  if(!$("#gaugeWrap").hidden){
+    const pct=($("#gaugeNum").textContent||"").trim(), band=($("#gaugeBand").textContent||"").replace(/❀/g,"").trim();
+    L.push("合格可能性（めやす）：" + pct + (band?"（"+band+"）":""));
+  }
+  L.push("", "沖縄県立高校入試ナビ https://okinawa-nyushi.jp/");
+  return L.join("\n");
+}
+async function shareJudge(){
+  const t = judgeShareText(); if(!t) return;
+  const btn=$("#judgeShareBtn");
+  const data={ title:"沖縄県立高校 合格判定", text:t };
+  if(navigator.share && (!navigator.canShare || navigator.canShare(data))){
+    try{ await navigator.share(data); return; }catch(e){ if(e&&e.name==="AbortError") return; }
+  }
+  let ok=false;
+  try{ await navigator.clipboard.writeText(t); ok=true; }
+  catch(e){ try{ const ta=document.createElement("textarea"); ta.value=t; ta.style.position="fixed"; ta.style.opacity="0"; document.body.appendChild(ta); ta.focus(); ta.select(); ok=document.execCommand("copy"); ta.remove(); }catch(e2){} }
+  if(btn){ const o=btn.textContent; btn.textContent = ok?"コピーしました ✓":"コピーできませんでした"; btn.classList.toggle("copied",ok); setTimeout(()=>{btn.textContent=o; btn.classList.remove("copied");},2400); }
+}
+if($("#judgeShareBtn")) $("#judgeShareBtn").addEventListener("click", shareJudge);
+if($("#judgeClearBtn")) $("#judgeClearBtn").addEventListener("click", ()=>{
+  $("#inNaishin").value=""; $("#inDev").value=""; $("#inSchool").value=""; lastAutoNaishin=null;
+  judgeReady=false; judge(); judgeReady=true;            // 空状態を描画（このjudgeでは保存しない）
+  try{ safeStorage.removeItem(JUDGE_KEY); }catch(e){}     // 保存をきれいに削除
+  const b=$("#judgeClearBtn"); if(b){ const o=b.textContent; b.textContent="保存を消しました"; setTimeout(()=>{b.textContent=o;},1800); }
+});
 
 /* =====================================================================
    KUIKI｜通学区域チェッカー
@@ -3701,6 +3806,8 @@ synthDummyYears();
 buildSelect();
 renderGradebook();
 calcNaishin();
+restoreJudge();
+judgeReady = true;
 renderTable();
 renderSchedule();
 renderToday();
