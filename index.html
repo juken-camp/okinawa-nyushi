@@ -2744,6 +2744,7 @@ function gkOf(s){
   const g = SCHOOL_GAKKU[s.name];
   if (!g) return "県全域";                                    // 普通科を持たない学校
   if (GK_SPECIAL_ZENIKI.has(s.dept)) return "県全域";          // 特例で県全域の普通科コース
+  if (s.dept === "みらい福祉") return "県全域";                 // 真和志の福祉専門学科（単位制／データ上は「科」を省略）
   if (s.dept !== "普通科" && /科$/.test(s.dept)) return "県全域"; // 専門学科（〜科）
   return g;                                                    // 普通科・各コース・普通総合
 }
