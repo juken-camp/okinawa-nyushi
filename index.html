@@ -2665,7 +2665,7 @@ function hijuTxt(j){
 function schoolProfile(s, d){
   const t = TOKU[s.id];
   let h = `<div class="sprof">`;
-  h += `<p><b>${esc(s.name)}高校 ${esc(s.dept)}</b>（${AREA_LABEL[s.area]||s.area}）`;
+  h += `<p><b>${esc(s.name)}高校 ${esc(s.dept)}</b>（${esc(gkOf(s))}）`;
   if (t){
     h += `　募集定員 <b class="mono">${t[0]}</b>人。<b>特色選抜の募集枠は定員の${t[1]}%</b>・${WAKU_TXT[t[2]]}。一般選抜の比重（調査書：学力検査等）は <b class="mono">${t[3]}</b> ${hijuTxt(t[3])}です。`;
   }
@@ -2729,6 +2729,24 @@ const latestYear = s => Math.max(...Object.keys(s.y).map(Number));
 const yearsOf = s => Object.keys(s.y).map(Number).sort((a,b)=>a-b);
 const cur = s => s.y[latestYear(s)];
 const AREA_LABEL = {"南部":"南部・那覇","中部":"中部","北部":"北部","宮古・八重山":"宮古・八重山"};
+/* 通学区域（学区）：全日制普通科だけが学区を持ち、専門学科・総合学科は県全域。
+   普通科でも 南風原(郷土文化)・真和志(クリエイティブアーツ)・小禄(芸術教養) は県全域。
+   出典：全日制普通科の通学区域（県教委）。学区＝学校の所在による。 */
+const SCHOOL_GAKKU = {
+  "辺土名":"国頭学区","北山":"国頭学区","本部":"国頭学区","名護":"国頭学区","宜野座":"国頭学区",
+  "石川":"中頭学区","前原":"中頭学区","具志川":"中頭学区","与勝":"中頭学区","読谷":"中頭学区","美里":"中頭学区","コザ":"中頭学区","北中城":"中頭学区","北谷":"中頭学区","普天間":"中頭学区","宜野湾":"中頭学区",
+  "西原":"那覇学区","浦添":"那覇学区","那覇国際":"那覇学区","首里":"那覇学区","首里東":"那覇学区","真和志":"那覇学区","那覇":"那覇学区","小禄":"那覇学区","那覇西":"那覇学区",
+  "豊見城":"島尻学区","豊見城南":"島尻学区","南風原":"島尻学区","知念":"島尻学区","糸満":"島尻学区","向陽":"島尻学区",
+  "久米島":"久米島学区","宮古":"宮古学区","八重山":"八重山学区"
+};
+const GK_SPECIAL_ZENIKI = new Set(["郷土文化コース","クリエイティブアーツ","芸術教養コース"]);
+function gkOf(s){
+  const g = SCHOOL_GAKKU[s.name];
+  if (!g) return "県全域";                                    // 普通科を持たない学校
+  if (GK_SPECIAL_ZENIKI.has(s.dept)) return "県全域";          // 特例で県全域の普通科コース
+  if (s.dept !== "普通科" && /科$/.test(s.dept)) return "県全域"; // 専門学科（〜科）
+  return g;                                                    // 普通科・各コース・普通総合
+}
 
 /* iOSプライベートモード等で localStorage が使えない場合のフォールバック */
 const safeStorage = (() => {
@@ -3348,7 +3366,7 @@ function renderTable(){
     const d = cur(s);
     const tr = document.createElement("tr");
     tr.innerHTML =
-      `<td><span class="sch-id"><span class="l1"><span class="nm">${esc(s.name)}</span><span class="ar">${esc(s.area)}</span></span><span class="dp">${esc(s.dept)}</span></span></td>
+      `<td><span class="sch-id"><span class="l1"><span class="nm">${esc(s.name)}</span><span class="ar">${esc(gkOf(s))}</span></span><span class="dp">${esc(s.dept)}</span></span></td>
        <td class="num">${dval(d,'dev')}</td><td class="num">${dval(d,'nai')}</td>
        <td class="num">${TOKU[s.id] ? TOKU[s.id][1] + "%" : "—"}</td>
        <td class="num ${rateCls(d.rT)}">${fmtRate(d.rT)}</td>
