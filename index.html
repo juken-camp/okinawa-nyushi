@@ -306,9 +306,9 @@ strong{color:var(--sea-deep)}
 .hero h1{font-family:var(--fd);font-weight:900;font-size:clamp(1.65rem,5.6vw,2.5rem);line-height:1.42;margin:0 0 6px;letter-spacing:.01em}
 .hero h1 .accent{color:var(--sea);}
 .hero .sub{color:var(--ink-soft);font-size:.92rem;line-height:1.8;margin:18px 0 0}
-.hero-meta{margin:11px 0 0;font-size:.74rem;color:var(--ink-soft);line-height:1.7}
-.hero-meta b{color:var(--sea-deep);font-weight:700}
-.hero-meta .dot{margin:0 7px;opacity:.45}
+.year-tag-row{display:flex;justify-content:flex-end;margin:0 0 12px}
+.year-tag{display:inline-flex;align-items:center;gap:6px;border:1px solid #b9d9ea;background:var(--sea-tint);color:var(--sea-deep);border-radius:9px;padding:6px 12px 6px 9px;font-size:.72rem;font-weight:800;letter-spacing:.01em;box-shadow:0 1px 2px rgba(8,72,107,.06)}
+.year-tag .yt-ic{width:15px;height:15px;color:var(--sea);flex:none}
 .nb{white-space:nowrap}
 .pc-br{display:none}
 @media(min-width:680px){.pc-br{display:inline}}
@@ -1093,11 +1093,11 @@ body.has-cbar{padding-bottom:96px}
 <!-- ============ HERO ============ -->
 <div class="hero">
   <div class="wrap">
+    <!-- 対応年度ラベル：制度改正で対応年度が変わるときだけ更新 -->
+    <div class="year-tag-row"><span class="year-tag"><svg class="yt-ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9.2" fill="currentColor"/><path d="M8.2 12.3l2.5 2.5 5-5.6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>令和9年度入試（2027年春）対応</span></div>
     <span class="kicker"><span class="kdot" aria-hidden="true"></span>中学生になったら、まず知っておきたいこと。</span>
     <h1><span class="accent">沖縄県立高校入試</span>が、<br>ここだけでぜんぶわかる。</h1>
     <p class="sub">2025年春から新しくなった<span class="nb">特色選抜</span>・<span class="nb">一般選抜</span>のしくみを、沖縄県立高校入試専門の<span class="nb">JUKEN CAMP</span>が、図とことばでやさしく。</p>
-    <!-- 信頼バッジ：制度改正があれば「対応年度」を更新（「最終更新」の日付はフッターに記載） -->
-    <p class="hero-meta"><b>令和9年度入試（2027年春）対応</b><span class="dot">·</span>県教委など一次資料にもとづく</p>
 
     <div class="cd-card rv" id="cdCard">
       <span class="cd-l" id="cdLabel">令和9年度 学力検査</span>
