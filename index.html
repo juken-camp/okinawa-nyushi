@@ -1094,7 +1094,7 @@ body.has-cbar{padding-bottom:96px}
   <div class="wrap">
     <!-- 対応年度ラベル：制度改正で対応年度が変わるときだけ更新 -->
     <div class="year-tag-row"><span class="year-tag">令和9年度入試対応</span></div>
-    <span class="kicker"><span class="kdot" aria-hidden="true"></span>中学生になったら、まず知っておきたいこと。</span>
+    <span class="kicker">中学生になったら、まず知っておきたいこと。</span>
     <h1><span class="accent">沖縄県立高校入試</span>が、<br>ここだけでぜんぶわかる。</h1>
     <p class="sub">2025年春から新しくなった<span class="nb">特色選抜</span>・<span class="nb">一般選抜</span>のしくみを、沖縄県立高校入試専門の<span class="nb">JUKEN CAMP</span>が、図とことばでやさしく。</p>
 
@@ -3055,8 +3055,8 @@ function judge(){
       ? "内申点が空欄です。内申も入れると、この学校の比重（調査書：学力検査）で合わせた、より実態に近い判定になります。"
       : band.msg;
     if (nai !== null) cm = band.msg;
-    if (d.rT >= 2)  cm += ` なお特色選抜の倍率は${fmtRate(d.rT)}倍と高めです。一般選抜での得点づくりも前提に準備しておくと安心です。`;
-    if (d.rI < 1)   cm += ` 一般選抜の倍率は${fmtRate(d.rI)}倍（1倍未満）でした。`;
+    if (typeof d.rT === "number" && d.rT >= 2)  cm += ` なお特色選抜の倍率は${fmtRate(d.rT)}倍と高めです。一般選抜での得点づくりも前提に準備しておくと安心です。`;
+    if (typeof d.rI === "number" && d.rI < 1)   cm += ` 一般選抜の倍率は${fmtRate(d.rI)}倍（1倍未満）でした。`;
     $("#gaugeComment").innerHTML = cm;
 
     const chips = $("#gapChips"); chips.innerHTML = "";
