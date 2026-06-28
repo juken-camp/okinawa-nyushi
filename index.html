@@ -3138,21 +3138,10 @@ function judge(){
       (d.dummy ? `<br><b>※この学科の基準値は追跡調査データ未取得のため「仮の目安」です。</b>実データが届きしだい差し替えます。` : "");
 
   } else {
-    /* ===== 偏差値なし（内申だけ）：内申のみでA〜E判定を表示 ===== */
-    gw.hidden = false; nd.hidden = false;
+    /* ===== 偏差値なし（内申だけ）：ゲージ非表示、案内パネルのみ ===== */
+    gw.hidden = true; nd.hidden = false;
     $("#hereStep").hidden = true;
-
-    /* 内申判定をゲージに表示 */
-    const ng2 = naiGrade(nai, d.nai);
-    const band2 = gradeInfo(ng2);
-    const p2 = GRADE_PCT[ng2];
-    const arc2 = $("#gaugeArc");
-    arc2.setAttribute("stroke", band2.color);
-    arc2.style.strokeDasharray = GAUGE_LEN;
-    arc2.style.strokeDashoffset = GAUGE_LEN * (1 - p2/100);
-    $("#gaugeNum").textContent = p2 + "%";
-    const gb2 = $("#gaugeBand"); gb2.textContent = band2.label; gb2.style.color = band2.text;
-    if (ng2 === "A") gb2.insertAdjacentHTML("afterbegin", '<span class="band-sakura" aria-hidden="true">❀</span>');
+    $("#gapChips").innerHTML = "";
 
     const rate = admitRate(d.rI);
     let rateLine;
@@ -3171,38 +3160,28 @@ function judge(){
       }
     }
 
-    /* ギャップチップ */
-    const chips2 = $("#gapChips"); chips2.innerHTML = "";
-    if (ng2 !== "A" && nai !== null && d.nai !== null && nai < d.nai){
-      chips2.insertAdjacentHTML("beforeend",
-        `<span class="gc">内申 あと＋${d.nai - nai}点 でA判定ライン</span>`);
-    }
-
     nd.innerHTML =
       `<div style="background:var(--sea-tint);border:1px solid var(--line);border-radius:14px;padding:15px 16px;font-size:.9rem;line-height:1.85">
-        <p style="font-weight:700;margin:0 0 9px;color:var(--sea-deep)">内申点のみの判定です。偏差値も入れると、より精度が上がります。</p>
+        <p style="font-weight:700;margin:0 0 9px;color:var(--sea-deep)">模試（偏差値）がないため、判定は出ません。</p>
         <p style="margin:0 0 8px">${rateLine}</p>
         ${naiLine ? `<p style="margin:0 0 8px">${naiLine}</p>` : ""}
-        <p style="margin:10px 0 0;font-size:.85rem;color:var(--ink-soft)">模試の偏差値を入れると、内申と合わせた総合判定になります。沖縄の模試は<b>内申点も加味</b>して合否を判定してくれます（下の「沖縄の2大模試」を参照）。</p>
+        <p style="margin:10px 0 0;font-size:.85rem;color:var(--ink-soft)">模試の偏差値を入れると、内申と合わせたA〜E判定が出ます。沖縄の模試は<b>内申点も加味</b>して合否を判定してくれます（下の「沖縄の2大模試」を参照）。</p>
       </div>`;
 
-    const cm2 = band2.msg;
-    $("#gaugeComment").innerHTML = cm2;
-
-    if (ng2 === "D" || ng2 === "E"){
+    if (nai !== null && nai - d.nai <= -10 && !(typeof d.rI === "number" && d.rI < 1)){
       const hs2 = $("#hereStep"); hs2.hidden = false;
       hs2.innerHTML =
         `<p class="hs-h">ここからできること</p>`
         + `<p class="hs-lead">内申だけだと位置は<b>ざっくり</b>。まず正確な現在地をつかみましょう。</p>`
         + `<ul class="hs-list">`
-        + `<li><b>模試を受けて「いまの偏差値」を測る</b>と、内申と合わせた総合判定が出ます（このページの「沖縄の2大模試」へ）。</li>`
+        + `<li><b>模試を受けて「いまの偏差値」を測る</b>と、内申と合わせたA〜E判定が出ます（このページの「沖縄の2大模試」へ）。</li>`
         + `<li>内申はまだ上げられる——実技4教科は×1.5。本番まで動かせる数字です。</li>`
         + `<li>特色で届かなくても<b>同じ得点で一般に自動</b>／本番後は<b>自己採点</b>を（2次募集で効く）。志望校は1つじゃない——迷ったら先生や家の人に相談を。</li>`
         + `</ul>`;
     }
 
     $("#judgeNote").innerHTML =
-      `※判定は内申点のみにもとづく「めやす」です（偏差値なし）。<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）との差で算出しています。模試の偏差値を入れると、より実態に近い総合判定になります。合否を保証するものではありません。` +
+      `※上の内申情報は<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）との比較です。模試の偏差値を入れると、内申と合わせたA〜E判定になります。合否を保証するものではありません。` +
       (d.dummy ? `<br><b>※この学科の基準値・倍率は一部が「仮の目安」です。</b>実データが届きしだい差し替えます。` : "");
   }
 
