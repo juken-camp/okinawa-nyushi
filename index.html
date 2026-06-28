@@ -1686,9 +1686,9 @@ body.has-cbar{padding-bottom:96px}
       <h3>いまの成績で狙える高校</h3>
       <p class="small" style="margin-top:-4px">入力された内申点・偏差値から自動で一覧化。タップすると上の判定に反映されます。</p>
       <p class="small" id="reachNote" hidden style="margin-top:-4px;color:var(--ink-soft)">※模試なし（内申だけ）のときは、内申が各校の基準ラインに対してどの位置かで分類しています（合格可能性%ではありません）。</p>
-      <div class="reach-group"><h4><span class="b" style="background:var(--reef)"></span>安全圏（合格可能性 高め）</h4><div class="reach-list" id="reachSafe"></div></div>
-      <div class="reach-group"><h4><span class="b" style="background:var(--sun)"></span>実力相応（しっかり対策を）</h4><div class="reach-list" id="reachFit"></div></div>
-      <div class="reach-group"><h4><span class="b" style="background:var(--coral)"></span>挑戦圏（ここから逆転）</h4><div class="reach-list" id="reachTry"></div></div>
+      <div class="reach-group"><h4><span class="b" style="background:var(--reef)"></span>A判定圏（合格可能性 高め）</h4><div class="reach-list" id="reachSafe"></div></div>
+      <div class="reach-group"><h4><span class="b" style="background:var(--sun)"></span>B判定圏（あと一歩）</h4><div class="reach-list" id="reachFit"></div></div>
+      <div class="reach-group"><h4><span class="b" style="background:var(--coral)"></span>C判定圏（ここから逆転）</h4><div class="reach-list" id="reachTry"></div></div>
     </div>
   </div>
     <a class="nextsec" href="#schools"><span class="nl">次はこれ</span><b>学校データ</b><span class="na"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.5 6.2h11.5M8.5 12h11.5M8.5 17.8h11.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="4.3" cy="6.2" r="1.35" fill="currentColor"/><circle cx="4.3" cy="12" r="1.35" fill="currentColor"/><circle cx="4.3" cy="17.8" r="1.35" fill="currentColor"/></svg></span></a>
@@ -3207,25 +3207,36 @@ function renderReach(nai, dev){
   const safe=[], fit=[], chal=[];
   SCHOOLS.forEach(s => {
     if (cur(s).dummy) return; // 仮データの学科は候補から除外
+    const d = cur(s);
     if (hasDev){
-      const p = passProb(combinedDiff(dev, nai, s));
-      if (p >= 78) safe.push([s,p]);
-      else if (p >= 60) fit.push([s,p]);
-      else if (p >= 38) chal.push([s,p]);
+      const ng = naiGrade(nai, d.nai);
+      const dg = devGrade(dev, d.dev);
+      const og = overallGrade(ng, dg);
+      const sortKey = RANK_ORDER[og];
+      if (og === "A") safe.push([s, sortKey]);
+      else if (og === "B") fit.push([s, sortKey]);
+      else if (og === "C") chal.push([s, sortKey]);
     } else {
-      // 内申だけ：基準内申との差で分類（%は出さない）
-      const diff = nai - cur(s).nai;
-      if (diff >= 0) safe.push([s,diff]);
-      else if (diff >= -10) fit.push([s,diff]);
-      else if (diff >= -25) chal.push([s,diff]);
+      // 内申だけ：基準内申との差で分類
+      const diff = nai - d.nai;
+      if (diff >= 0)   safe.push([s, diff]);
+      else if (diff >= -6)  fit.push([s, diff]);
+      else if (diff >= -12) chal.push([s, diff]);
     }
   });
   const fill = (id, arr) => {
     const el = $("#"+id);
     arr.sort((a,b)=>b[1]-a[1]);
     el.innerHTML = arr.length
-      ? arr.slice(0,12).map(([s,v]) => {
-          const tag = hasDev ? `${v}%` : `基準内申 ${cur(s).nai}`;
+      ? arr.slice(0,12).map(([s]) => {
+          const d = cur(s);
+          const tag = hasDev
+            ? (() => {
+                const ng = naiGrade(nai, d.nai);
+                const dg = devGrade(dev, d.dev);
+                return overallGrade(ng, dg) + "判定";
+              })()
+            : `基準内申 ${d.nai}`;
           return `<button type="button" data-id="${s.id}">${esc(s.name)}・${esc(s.dept)}<small>${tag}</small></button>`;
         }).join("")
       : `<span class="small" style="color:var(--ink-soft)">該当なし</span>`;
