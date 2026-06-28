@@ -2988,18 +2988,58 @@ function admitRate(rate){
   return Math.round(100/rate);
 }
 
-const BANDS = [
-  {min:80, label:"S判定｜合格圏",  color:"var(--reef)",  text:"#0b7a55",
-   msg:"80%合格ラインに到達しています。この位置をキープできれば、本番は十分に戦えます。特色選抜（面接・実技等）の準備も選択肢に入ります。"},
-  {min:65, label:"A判定｜あと一歩", color:"var(--sea)",   text:"var(--sea-deep)",
-   msg:"80%ラインまであと少し。内申は実技4教科が×1.5で計算されるため、実技1段階の改善がその学年＋1.5点になります。当日点と合わせて詰めていきましょう。"},
-  {min:50, label:"B判定｜ボーダー", color:"var(--sun)",   text:"#a86a12",
-   msg:"ボーダー圏です。ここからは当日の得点力で結果が分かれます。沖縄の入試は特色→一般→（定員割れ校の）2次募集と、チャンスが最大3回ある制度です。"},
-  {min:35, label:"C判定｜挑戦圏",  color:"var(--coral)", text:"#b03a2a",
-   msg:"現状では基準まで距離があります。内申も偏差値も、入試本番まで動かせる数字です。上のチップで基準との差を確認してください。"},
-  {min:0,  label:"D判定｜逆転圏",  color:"#b03a2a",      text:"#b03a2a",
-   msg:"現時点では基準との差が大きい状態です。差の内訳（内申・偏差値）を見て、どちらから詰めるか優先順位を決めましょう。"}
+/* A〜E判定：内申・偏差値それぞれ独立に算出し、低い方を総合判定とする */
+const GRADE_DEF = [
+  { rank:"A", label:"A判定｜合格圏",  color:"var(--reef)",  text:"#0b7a55",
+    msg:"基準ラインに到達しています。この位置をキープできれば、本番は十分に戦えます。特色選抜（面接・実技等）の準備も選択肢に入ります。"},
+  { rank:"B", label:"B判定｜あと一歩", color:"var(--sea)",   text:"var(--sea-deep)",
+    msg:"基準まであと少し。内申は実技4教科が×1.5で計算されるため、実技1段階の改善がその学年＋1.5点になります。当日点と合わせて詰めていきましょう。"},
+  { rank:"C", label:"C判定｜ボーダー", color:"var(--sun)",   text:"#a86a12",
+    msg:"ボーダー圏です。ここからは当日の得点力で結果が分かれます。沖縄の入試は特色→一般→（定員割れ校の）2次募集と、チャンスが最大3回ある制度です。"},
+  { rank:"D", label:"D判定｜挑戦圏",  color:"var(--coral)", text:"#b03a2a",
+    msg:"現状では基準まで距離があります。内申も偏差値も、入試本番まで動かせる数字です。上のチップで基準との差を確認してください。"},
+  { rank:"E", label:"E判定｜逆転圏",  color:"#b03a2a",      text:"#b03a2a",
+    msg:"現時点では基準との差が大きい状態です。差の内訳（内申・偏差値）を見て、どちらから詰めるか優先順位を決めましょう。"}
 ];
+
+/* 内申点の差 → 判定ランク（A:0以上 B:-6以内 C:-12以内 D:-18以内 E:それ以下） */
+function naiGrade(nai, baseNai){
+  if (nai === null) return null;
+  const diff = nai - baseNai;
+  if (diff >= 0)   return "A";
+  if (diff >= -6)  return "B";
+  if (diff >= -12) return "C";
+  if (diff >= -18) return "D";
+  return "E";
+}
+/* 偏差値の差 → 判定ランク（A:0以上 B:-3以内 C:-6以内 D:-9以内 E:それ以下） */
+function devGrade(dev, baseDev){
+  if (dev === null) return null;
+  const diff = dev - baseDev;
+  if (diff >= 0)   return "A";
+  if (diff >= -3)  return "B";
+  if (diff >= -6)  return "C";
+  if (diff >= -9)  return "D";
+  return "E";
+}
+/* ランク文字 → 数値（低いほど悪い） */
+const RANK_ORDER = { A:4, B:3, C:2, D:1, E:0 };
+/* 総合判定：内申・偏差値のうち低い方を採用 */
+function overallGrade(ng, dg){
+  if (ng === null && dg === null) return null;
+  if (ng === null) return dg;
+  if (dg === null) return ng;
+  return RANK_ORDER[ng] <= RANK_ORDER[dg] ? ng : dg;
+}
+function gradeInfo(rank){ return GRADE_DEF.find(g => g.rank === rank); }
+
+/* 合格可能性%：表示用（A=90 B=75 C=55 D=35 E=15） */
+const GRADE_PCT = { A:90, B:75, C:55, D:35, E:15 };
+
+/* 後方互換：BANDS.find(b => p >= b.min) を使っている箇所はなくなったが念のため残す */
+const BANDS = GRADE_DEF.map((g,i) => ({
+  min: [80,65,50,35,0][i], label:g.label, color:g.color, text:g.text, msg:g.msg
+}));
 
 const GAUGE_LEN = Math.PI * 96;
 
@@ -3037,11 +3077,13 @@ function judge(){
   const hiju = (typeof TOKU!=="undefined" && TOKU[s.id] && TOKU[s.id][3]) || "5:5";
 
   if (dev !== null){
-    /* ===== 偏差値あり：分布モデルで合格可能性% ===== */
+    /* ===== 偏差値あり：A〜E判定（内申・偏差値それぞれ算出し、低い方を総合判定） ===== */
     gw.hidden = false; nd.hidden = true;
-    const c = combinedDiff(dev, nai, s);
-    const p = passProb(c);
-    const band = BANDS.find(b => p >= b.min);
+    const ng = naiGrade(nai, d.nai);
+    const dg = devGrade(dev, d.dev);
+    const overall = overallGrade(ng, dg);
+    const band = gradeInfo(overall);
+    const p = GRADE_PCT[overall];
 
     const arc = $("#gaugeArc");
     arc.setAttribute("stroke", band.color);
@@ -3049,54 +3091,69 @@ function judge(){
     arc.style.strokeDashoffset = GAUGE_LEN * (1 - p/100);
     $("#gaugeNum").textContent = p + "%";
     const gb = $("#gaugeBand"); gb.textContent = band.label; gb.style.color = band.text;
-    if (p >= 80) gb.insertAdjacentHTML("afterbegin", '<span class="band-sakura" aria-hidden="true">❀</span>');
+    if (overall === "A") gb.insertAdjacentHTML("afterbegin", '<span class="band-sakura" aria-hidden="true">❀</span>');
 
+    /* 内申と偏差値で判定が食い違う場合、内申が足を引っ張っている旨を注記 */
     let cm = (nai === null)
-      ? "内申点が空欄です。内申も入れると、この学校の比重（調査書：学力検査）で合わせた、より実態に近い判定になります。"
+      ? "内申点が空欄です。内申も入れると、より実態に近い判定になります。"
       : band.msg;
-    if (nai !== null) cm = band.msg;
+    if (nai !== null){
+      cm = band.msg;
+      if (ng !== null && dg !== null && RANK_ORDER[ng] < RANK_ORDER[dg]){
+        cm += ` ※偏差値は${dg}判定ですが、内申点が${ng}判定のため総合${overall}判定です。内申を伸ばすと判定が上がります。`;
+      }
+    }
     if (typeof d.rT === "number" && d.rT >= 2)  cm += ` なお特色選抜の倍率は${fmtRate(d.rT)}倍と高めです。一般選抜での得点づくりも前提に準備しておくと安心です。`;
     if (typeof d.rI === "number" && d.rI < 1)   cm += ` 一般選抜の倍率は${fmtRate(d.rI)}倍（1倍未満）でした。`;
     $("#gaugeComment").innerHTML = cm;
 
+    /* ギャップチップ：A判定まで内申・偏差値それぞれ何点/何偏差値必要か */
     const chips = $("#gapChips"); chips.innerHTML = "";
-    if (c !== null && p < TARGET_P){
-      const w = weights(s);
-      const need = TARGET_C - c;                       // 65%ラインまでに必要な合成位置
-      const dDev = need / (nai!==null ? w.wDev : 1);
-      if (dev + dDev <= 80){                            // 模試偏差値の上限(80)内で届くときだけ
+    if (overall !== "A"){
+      if (dev !== null && d.dev !== null && dev < d.dev){
         chips.insertAdjacentHTML("beforeend",
-          `<span class="gc">偏差値 あと＋${(Math.ceil(dDev*10)/10).toFixed(1)} で65%ライン</span>`);
+          `<span class="gc">偏差値 あと＋${d.dev - dev} でA判定ライン</span>`);
       }
-      if (nai !== null){
-        const dNai = need / w.wNai * DEV_PER_NAISHIN;
-        if (nai + dNai <= 165){                         // 内申は165満点まで。届く範囲のときだけ表示
-          chips.insertAdjacentHTML("beforeend",
-            `<span class="gc">内申 あと＋${Math.ceil(dNai)}点 で65%ライン</span>`);
-        }
+      if (nai !== null && d.nai !== null && nai < d.nai){
+        chips.insertAdjacentHTML("beforeend",
+          `<span class="gc">内申 あと＋${d.nai - nai}点 でA判定ライン</span>`);
       }
     }
+
     const hs = $("#hereStep");
-    if (p < 50){
+    if (overall === "D" || overall === "E"){
       hs.hidden = false;
       hs.innerHTML =
         `<p class="hs-h">ここからできること</p>`
-        + `<p class="hs-lead">この%は<b>「いま」の位置</b>。本番まで、まだ動かせます。</p>`
+        + `<p class="hs-lead">この判定は<b>「いま」の位置</b>。本番まで、まだ動かせます。</p>`
         + `<ul class="hs-list">`
-        + `<li>内申も偏差値も、入試本番まで変えられる数字です。少しずつでも詰めれば%は上がります。</li>`
+        + `<li>内申も偏差値も、入試本番まで変えられる数字です。少しずつでも詰めれば判定は上がります。</li>`
         + `<li>特色で届かなくても<b>同じ得点で一般選抜に自動で回ります</b>。本番後は必ず<b>自己採点</b>を——定員割れ校の2次募集で効きます。</li>`
         + `<li>志望校は1つじゃない。<b>「いまの成績で狙える高校」</b>も見て、迷ったら学校の先生や家の人に相談を。</li>`
         + `</ul>`;
     } else { hs.hidden = true; }
 
     $("#judgeNote").innerHTML =
-      `※合格可能性は、<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）を基準に、当日の学力検査のばらつきを見込んで算出した「めやす」です。内申と偏差値は、この学校の比重（調査書：学力検査＝<b>${hiju}</b>）で合成しています。合否を保証するものではありません。` +
+      `※判定は、<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）との差をもとに算出した「めやす」です。内申・偏差値それぞれ独立に判定し、低い方を総合判定としています。合否を保証するものではありません。` +
       (d.dummy ? `<br><b>※この学科の基準値は追跡調査データ未取得のため「仮の目安」です。</b>実データが届きしだい差し替えます。` : "");
 
   } else {
-    /* ===== 偏差値なし（内申だけ）：%は出さず、実合格率＋実例 ===== */
-    gw.hidden = true; nd.hidden = false;
+    /* ===== 偏差値なし（内申だけ）：内申のみでA〜E判定を表示 ===== */
+    gw.hidden = false; nd.hidden = false;
     $("#hereStep").hidden = true;
+
+    /* 内申判定をゲージに表示 */
+    const ng2 = naiGrade(nai, d.nai);
+    const band2 = gradeInfo(ng2);
+    const p2 = GRADE_PCT[ng2];
+    const arc2 = $("#gaugeArc");
+    arc2.setAttribute("stroke", band2.color);
+    arc2.style.strokeDasharray = GAUGE_LEN;
+    arc2.style.strokeDashoffset = GAUGE_LEN * (1 - p2/100);
+    $("#gaugeNum").textContent = p2 + "%";
+    const gb2 = $("#gaugeBand"); gb2.textContent = band2.label; gb2.style.color = band2.text;
+    if (ng2 === "A") gb2.insertAdjacentHTML("afterbegin", '<span class="band-sakura" aria-hidden="true">❀</span>');
+
     const rate = admitRate(d.rI);
     let rateLine;
     if (d.rI===null || d.rI===undefined) rateLine = "前年の一般選抜の倍率は未集計です。";
@@ -3114,27 +3171,38 @@ function judge(){
       }
     }
 
+    /* ギャップチップ */
+    const chips2 = $("#gapChips"); chips2.innerHTML = "";
+    if (ng2 !== "A" && nai !== null && d.nai !== null && nai < d.nai){
+      chips2.insertAdjacentHTML("beforeend",
+        `<span class="gc">内申 あと＋${d.nai - nai}点 でA判定ライン</span>`);
+    }
+
     nd.innerHTML =
       `<div style="background:var(--sea-tint);border:1px solid var(--line);border-radius:14px;padding:15px 16px;font-size:.9rem;line-height:1.85">
-        <p style="font-weight:700;margin:0 0 9px;color:var(--sea-deep)">模試（偏差値）がないため、合格可能性%は出ません。</p>
+        <p style="font-weight:700;margin:0 0 9px;color:var(--sea-deep)">内申点のみの判定です。偏差値も入れると、より精度が上がります。</p>
         <p style="margin:0 0 8px">${rateLine}</p>
         ${naiLine ? `<p style="margin:0 0 8px">${naiLine}</p>` : ""}
-        <p style="margin:10px 0 0;font-size:.85rem;color:var(--ink-soft)">模試の偏差値を入れると、内申と合わせた合格可能性（%）が出ます。沖縄の模試は<b>内申点も加味</b>して合否を判定してくれます（下の「沖縄の2大模試」を参照）。</p>
+        <p style="margin:10px 0 0;font-size:.85rem;color:var(--ink-soft)">模試の偏差値を入れると、内申と合わせた総合判定になります。沖縄の模試は<b>内申点も加味</b>して合否を判定してくれます（下の「沖縄の2大模試」を参照）。</p>
       </div>`;
-    if (nai - d.nai <= -10 && !(typeof d.rI === "number" && d.rI < 1)){
+
+    const cm2 = band2.msg;
+    $("#gaugeComment").innerHTML = cm2;
+
+    if (ng2 === "D" || ng2 === "E"){
       const hs2 = $("#hereStep"); hs2.hidden = false;
       hs2.innerHTML =
         `<p class="hs-h">ここからできること</p>`
         + `<p class="hs-lead">内申だけだと位置は<b>ざっくり</b>。まず正確な現在地をつかみましょう。</p>`
         + `<ul class="hs-list">`
-        + `<li><b>模試を受けて「いまの偏差値」を測る</b>と、内申と合わせた合格可能性（%）が出ます（このページの「沖縄の2大模試」へ）。</li>`
+        + `<li><b>模試を受けて「いまの偏差値」を測る</b>と、内申と合わせた総合判定が出ます（このページの「沖縄の2大模試」へ）。</li>`
         + `<li>内申はまだ上げられる——実技4教科は×1.5。本番まで動かせる数字です。</li>`
         + `<li>特色で届かなくても<b>同じ得点で一般に自動</b>／本番後は<b>自己採点</b>を（2次募集で効く）。志望校は1つじゃない——迷ったら先生や家の人に相談を。</li>`
         + `</ul>`;
     }
 
     $("#judgeNote").innerHTML =
-      `※上の実合格率は<b>前年（${yr}年度）の志願倍率</b>から計算した、応募者全体での合格割合です。<b>あなた個人の合格可能性ではありません。</b>個人の合格可能性を出すには、模試の偏差値が必要です。` +
+      `※判定は内申点のみにもとづく「めやす」です（偏差値なし）。<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）との差で算出しています。模試の偏差値を入れると、より実態に近い総合判定になります。合否を保証するものではありません。` +
       (d.dummy ? `<br><b>※この学科の基準値・倍率は一部が「仮の目安」です。</b>実データが届きしだい差し替えます。` : "");
   }
 
