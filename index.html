@@ -650,6 +650,14 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
 .gauge-comment{font-size:.86rem;line-height:1.85;margin:14px 0 0;max-width:34em}
 .gap-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center}
 .gap-chips .gc{font-size:.76rem;font-weight:700;border-radius:99px;padding:7px 14px;background:var(--sea-tint);color:var(--sea-deep)}
+.grade-breakdown{margin:14px 0 0;width:100%;border-collapse:collapse;font-size:.86rem}
+.grade-breakdown td{padding:7px 6px;vertical-align:middle}
+.grade-breakdown td:first-child{color:var(--ink-soft);font-size:.78rem;font-weight:700;white-space:nowrap;width:5em}
+.grade-breakdown td:nth-child(2){font-family:var(--fd);font-weight:900;font-size:1.15rem;width:3em;text-align:center}
+.grade-breakdown td:last-child{font-size:.76rem;color:var(--ink-soft);padding-left:8px}
+.grade-breakdown tr.total-row td{border-top:1.5px solid var(--line);padding-top:9px}
+.grade-breakdown tr.total-row td:first-child{color:var(--ink);font-size:.78rem}
+.grade-breakdown tr.total-row td:nth-child(2){font-size:1.15rem}
 .here-step{margin-top:14px;padding:14px 15px;border:1px solid var(--line);border-left:3px solid var(--sea);border-radius:12px;background:var(--paper);text-align:left}
 .here-step .hs-h{margin:0 0 4px;font-weight:800;font-size:.95rem;color:var(--sea-deep)}
 .here-step .hs-lead{margin:0 0 8px;font-size:.86rem;color:var(--ink)}
@@ -1626,6 +1634,7 @@ body.has-cbar{padding-bottom:96px}
             <text x="120" y="126" text-anchor="middle" font-size="11" fill="#5a6b80">合格可能性（めやす）</text>
           </svg>
           <div class="gauge-band" id="gaugeBand"></div>
+          <div id="gradeBreakdown" style="display:none;width:100%;max-width:300px;margin:10px auto 0"></div>
           <p class="gauge-comment" id="gaugeComment"></p>
           <div class="gap-chips" id="gapChips"></div>
         </div>
@@ -3093,16 +3102,43 @@ function judge(){
     const gb = $("#gaugeBand"); gb.textContent = band.label; gb.style.color = band.text;
     if (overall === "A") gb.insertAdjacentHTML("afterbegin", '<span class="band-sakura" aria-hidden="true">❀</span>');
 
-    /* 内申と偏差値で判定が食い違う場合、内申が足を引っ張っている旨を注記 */
+    /* ── 内申・学力・総合の3行breakdown ── */
+    const bd = $("#gradeBreakdown");
+    const gradeColor = r => gradeInfo(r) ? gradeInfo(r).text : "var(--ink-soft)";
+    const naiDiffText = (nai !== null && d.nai !== null)
+      ? (nai >= d.nai ? `基準まで＋${Math.round(nai - d.nai)}点` : `基準まで−${Math.round(d.nai - nai)}点`)
+      : "—";
+    const devDiffText = (d.dev !== null)
+      ? (dev >= d.dev ? `基準まで＋${Math.round(dev - d.dev)}点` : `基準まで−${Math.round(d.dev - dev)}点`)
+      : "—";
+    if (nai !== null) {
+      bd.style.display = "";
+      bd.innerHTML = `<table class="grade-breakdown">
+        <tr>
+          <td>内申判定</td>
+          <td style="color:${gradeColor(ng)}">${ng}判定</td>
+          <td>${naiDiffText}</td>
+        </tr>
+        <tr>
+          <td>学力判定</td>
+          <td style="color:${gradeColor(dg)}">${dg}判定</td>
+          <td>${devDiffText}</td>
+        </tr>
+        <tr class="total-row">
+          <td>総合判定</td>
+          <td style="color:${band.text}">${overall}判定</td>
+          <td></td>
+        </tr>
+      </table>`;
+    } else {
+      bd.style.display = "none";
+      bd.innerHTML = "";
+    }
+
+    /* コメント（内申/偏差値の食い違い注記は breakdown で見せるので削除） */
     let cm = (nai === null)
       ? "内申点が空欄です。内申も入れると、より実態に近い判定になります。"
       : band.msg;
-    if (nai !== null){
-      cm = band.msg;
-      if (ng !== null && dg !== null && RANK_ORDER[ng] < RANK_ORDER[dg]){
-        cm += ` ※偏差値は${dg}判定ですが、内申点が${ng}判定のため総合${overall}判定です。内申を伸ばすと判定が上がります。`;
-      }
-    }
     if (typeof d.rT === "number" && d.rT >= 2)  cm += ` なお特色選抜の倍率は${fmtRate(d.rT)}倍と高めです。一般選抜での得点づくりも前提に準備しておくと安心です。`;
     if (typeof d.rI === "number" && d.rI < 1)   cm += ` 一般選抜の倍率は${fmtRate(d.rI)}倍（1倍未満）でした。`;
     $("#gaugeComment").innerHTML = cm;
@@ -3112,11 +3148,11 @@ function judge(){
     if (overall !== "A"){
       if (dev !== null && d.dev !== null && dev < d.dev){
         chips.insertAdjacentHTML("beforeend",
-          `<span class="gc">偏差値 あと＋${d.dev - dev} でA判定ライン</span>`);
+          `<span class="gc">偏差値 あと＋${Math.round(d.dev - dev)}点 でA判定ライン</span>`);
       }
       if (nai !== null && d.nai !== null && nai < d.nai){
         chips.insertAdjacentHTML("beforeend",
-          `<span class="gc">内申 あと＋${d.nai - nai}点 でA判定ライン</span>`);
+          `<span class="gc">内申 あと＋${Math.round(d.nai - nai)}点 でA判定ライン</span>`);
       }
     }
 
@@ -3142,6 +3178,8 @@ function judge(){
     gw.hidden = true; nd.hidden = false;
     $("#hereStep").hidden = true;
     $("#gapChips").innerHTML = "";
+    $("#gradeBreakdown").style.display = "none";
+    $("#gradeBreakdown").innerHTML = "";
 
     const rate = admitRate(d.rI);
     let rateLine;
