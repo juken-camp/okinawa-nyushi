@@ -1649,7 +1649,7 @@ body.has-cbar{padding-bottom:96px}
           <p class="save-note">入力はこの端末にだけ保存され、次に開くと自動で表示されます（外部には送信されません）。</p>
         </div>
       </div>
-      <p id="judgeEmpty" class="small" style="margin:6px 0 0">内申点か偏差値のどちらかと、志望校を選ぶと判定が表示されます。</p>
+      <p id="judgeEmpty" class="small" style="margin:6px 0 0">志望校と内申点（または偏差値）を入力すると判定が表示されます。内申だけで内申判定、偏差値だけで学力判定、両方で総合判定まで出ます。</p>
     </div>
 
     <div class="moshi rv" style="margin-top:16px">
@@ -3085,12 +3085,23 @@ function judge(){
   const gw = $("#gaugeWrap"), nd = $("#noDevBox");
   const hiju = (typeof TOKU!=="undefined" && TOKU[s.id] && TOKU[s.id][3]) || "5:5";
 
+  /* ===== 判定ロジック共通ヘルパー ===== */
+  const gradeColor = r => gradeInfo(r) ? gradeInfo(r).text : "var(--ink-soft)";
+  const naiDiffText = (nai !== null && d.nai !== null)
+    ? (nai === d.nai ? `基準ちょうど` : nai > d.nai ? `基準より＋${Math.round(nai - d.nai)}点` : `基準から−${Math.round(d.nai - nai)}点`)
+    : null;
+  const devDiffText = (dev !== null && d.dev !== null)
+    ? (dev === d.dev ? `基準ちょうど` : dev > d.dev ? `基準より＋${Math.round(dev - d.dev)}点` : `基準から−${Math.round(d.dev - dev)}点`)
+    : null;
+
   if (dev !== null){
-    /* ===== 偏差値あり：A〜E判定（内申・偏差値それぞれ算出し、低い方を総合判定） ===== */
+    /* ===== 偏差値あり（内申あり or なし）：A〜E判定 ===== */
     gw.hidden = false; nd.hidden = true;
-    const ng = naiGrade(nai, d.nai);
+
     const dg = devGrade(dev, d.dev);
-    const overall = overallGrade(ng, dg);
+    const ng = nai !== null ? naiGrade(nai, d.nai) : null;
+    const hasBoth = ng !== null;
+    const overall = hasBoth ? overallGrade(ng, dg) : dg;
     const band = gradeInfo(overall);
     const p = GRADE_PCT[overall];
 
@@ -3102,17 +3113,11 @@ function judge(){
     const gb = $("#gaugeBand"); gb.textContent = band.label; gb.style.color = band.text;
     if (overall === "A") gb.insertAdjacentHTML("afterbegin", '<span class="band-sakura" aria-hidden="true">❀</span>');
 
-    /* ── 内申・学力・総合の3行breakdown ── */
+    /* ── breakdown テーブル ── */
     const bd = $("#gradeBreakdown");
-    const gradeColor = r => gradeInfo(r) ? gradeInfo(r).text : "var(--ink-soft)";
-    const naiDiffText = (nai !== null && d.nai !== null)
-      ? (nai === d.nai ? `基準ちょうど` : nai > d.nai ? `基準より＋${Math.round(nai - d.nai)}点` : `基準から−${Math.round(d.nai - nai)}点`)
-      : "—";
-    const devDiffText = (d.dev !== null)
-      ? (dev === d.dev ? `基準ちょうど` : dev > d.dev ? `基準より＋${Math.round(dev - d.dev)}点` : `基準から−${Math.round(d.dev - dev)}点`)
-      : "—";
-    if (nai !== null) {
-      bd.style.display = "";
+    bd.style.display = "";
+    if (hasBoth) {
+      /* 内申＋偏差値 → 3行（内申判定・学力判定・総合判定） */
       bd.innerHTML = `<table class="grade-breakdown">
         <tr>
           <td>内申判定</td>
@@ -3131,26 +3136,42 @@ function judge(){
         </tr>
       </table>`;
     } else {
-      bd.style.display = "none";
-      bd.innerHTML = "";
+      /* 偏差値のみ → 学力判定のみ、他は「—」 */
+      bd.innerHTML = `<table class="grade-breakdown">
+        <tr>
+          <td>内申判定</td>
+          <td style="color:var(--ink-soft)">—</td>
+          <td style="color:var(--ink-soft);font-size:.82em">内申点を入力すると表示</td>
+        </tr>
+        <tr>
+          <td>学力判定</td>
+          <td style="color:${gradeColor(dg)}">${dg}判定</td>
+          <td>${devDiffText}</td>
+        </tr>
+        <tr class="total-row">
+          <td>総合判定</td>
+          <td style="color:var(--ink-soft)">—</td>
+          <td style="color:var(--ink-soft);font-size:.82em">内申点を入力すると表示</td>
+        </tr>
+      </table>`;
     }
 
-    /* コメント（内申/偏差値の食い違い注記は breakdown で見せるので削除） */
-    let cm = (nai === null)
-      ? "内申点が空欄です。内申も入れると、より実態に近い判定になります。"
-      : band.msg;
+    /* コメント */
+    let cm = hasBoth
+      ? band.msg
+      : "内申点が空欄です。内申も入れると、内申判定・総合判定も表示されます。";
     if (typeof d.rT === "number" && d.rT >= 2)  cm += ` なお特色選抜の倍率は${fmtRate(d.rT)}倍と高めです。一般選抜での得点づくりも前提に準備しておくと安心です。`;
     if (typeof d.rI === "number" && d.rI < 1)   cm += ` 一般選抜の倍率は${fmtRate(d.rI)}倍（1倍未満）でした。`;
     $("#gaugeComment").innerHTML = cm;
 
-    /* ギャップチップ：A判定まで内申・偏差値それぞれ何点/何偏差値必要か */
+    /* ギャップチップ */
     const chips = $("#gapChips"); chips.innerHTML = "";
     if (overall !== "A"){
-      if (dev !== null && d.dev !== null && dev < d.dev){
+      if (d.dev !== null && dev < d.dev){
         chips.insertAdjacentHTML("beforeend",
           `<span class="gc">偏差値 あと＋${Math.round(d.dev - dev)}点 でA判定ライン</span>`);
       }
-      if (nai !== null && d.nai !== null && nai < d.nai){
+      if (hasBoth && d.nai !== null && nai < d.nai){
         chips.insertAdjacentHTML("beforeend",
           `<span class="gc">内申 あと＋${Math.round(d.nai - nai)}点 でA判定ライン</span>`);
       }
@@ -3170,56 +3191,70 @@ function judge(){
     } else { hs.hidden = true; }
 
     $("#judgeNote").innerHTML =
-      `※判定は、<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）との差をもとに算出した「めやす」です。内申・偏差値それぞれ独立に判定し、低い方を総合判定としています。合否を保証するものではありません。` +
+      `※判定は、<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）との差をもとに算出した「めやす」です。` +
+      (hasBoth ? `内申・偏差値それぞれ独立に判定し、低い方を総合判定としています。` : `偏差値のみで算出した学力判定です。内申点を入力すると総合判定も表示されます。`) +
+      `合否を保証するものではありません。` +
       (d.dummy ? `<br><b>※この学科の基準値は追跡調査データ未取得のため「仮の目安」です。</b>実データが届きしだい差し替えます。` : "");
 
   } else {
-    /* ===== 偏差値なし（内申だけ）：ゲージ非表示、案内パネルのみ ===== */
-    gw.hidden = true; nd.hidden = false;
-    $("#hereStep").hidden = true;
+    /* ===== 偏差値なし（内申だけ）：ゲージ表示・内申判定のみ、他は「—」 ===== */
+    gw.hidden = false; nd.hidden = true;
     $("#gapChips").innerHTML = "";
-    $("#gradeBreakdown").style.display = "none";
-    $("#gradeBreakdown").innerHTML = "";
 
-    const rate = admitRate(d.rI);
-    let rateLine;
-    if (d.rI===null || d.rI===undefined) rateLine = "前年の一般選抜の倍率は未集計です。";
-    else if (d.rI < 1) rateLine = `前年の一般選抜は <b>${fmtRate(d.rI)}倍</b>＝<b>定員割れ</b>（志願者が定員より少ない）。実質ほぼ全員が合格し、空き定員で2次募集も行われました。`;
-    else rateLine = `前年の一般選抜は <b>${fmtRate(d.rI)}倍</b>。<b>応募者のうち約${rate}%</b>が合格した計算です（だれが受かるかは内申＋当日点の順位で決まるので、これは「平均的な応募者」の目安）。`;
+    const ng = naiGrade(nai, d.nai);
+    const band = gradeInfo(ng);
+    const p = GRADE_PCT[ng];
 
-    let naiLine = "";
-    if (nai !== null){
-      const diff = nai - d.nai, sign = diff>=0 ? "+" : "";
-      naiLine = `あなたの見込み内申 <b>${nai}点</b>は、合格可能性80%ライン <b>${d.nai}点</b>を${diff>=0?"上回って":"下回って"}います（<b>${sign}${diff}点</b>）。`;
-      const pr = (d.rec||[]).filter(r => r.res==="合格" && typeof r.nai==="number");
-      if (pr.length){
-        const avg = Math.round(pr.reduce((a,r)=>a+r.nai,0)/pr.length*10)/10;
-        naiLine += ` 参考までに、前年の合格者の内申は平均 <b>${avg}点</b>でした。`;
-      }
-    }
+    const arc = $("#gaugeArc");
+    arc.setAttribute("stroke", band.color);
+    arc.style.strokeDasharray = GAUGE_LEN;
+    arc.style.strokeDashoffset = GAUGE_LEN * (1 - p/100);
+    $("#gaugeNum").textContent = p + "%";
+    const gb = $("#gaugeBand"); gb.textContent = band.label; gb.style.color = band.text;
+    if (ng === "A") gb.insertAdjacentHTML("afterbegin", '<span class="band-sakura" aria-hidden="true">❀</span>');
 
-    nd.innerHTML =
-      `<div style="background:var(--sea-tint);border:1px solid var(--line);border-radius:14px;padding:15px 16px;font-size:.9rem;line-height:1.85">
-        <p style="font-weight:700;margin:0 0 9px;color:var(--sea-deep)">模試（偏差値）がないため、判定は出ません。</p>
-        <p style="margin:0 0 8px">${rateLine}</p>
-        ${naiLine ? `<p style="margin:0 0 8px">${naiLine}</p>` : ""}
-        <p style="margin:10px 0 0;font-size:.85rem;color:var(--ink-soft)">模試の偏差値を入れると、内申と合わせたA〜E判定が出ます。沖縄の模試は<b>内申点も加味</b>して合否を判定してくれます（下の「沖縄の2大模試」を参照）。</p>
-      </div>`;
+    /* breakdown：内申判定のみ、学力判定・総合判定は「—」 */
+    const bd = $("#gradeBreakdown");
+    bd.style.display = "";
+    bd.innerHTML = `<table class="grade-breakdown">
+      <tr>
+        <td>内申判定</td>
+        <td style="color:${gradeColor(ng)}">${ng}判定</td>
+        <td>${naiDiffText || ""}</td>
+      </tr>
+      <tr>
+        <td>学力判定</td>
+        <td style="color:var(--ink-soft)">—</td>
+        <td style="color:var(--ink-soft);font-size:.82em">模試の偏差値を入力すると表示</td>
+      </tr>
+      <tr class="total-row">
+        <td>総合判定</td>
+        <td style="color:var(--ink-soft)">—</td>
+        <td style="color:var(--ink-soft);font-size:.82em">模試の偏差値を入力すると表示</td>
+      </tr>
+    </table>`;
 
-    if (nai !== null && nai - d.nai <= -10 && !(typeof d.rI === "number" && d.rI < 1)){
-      const hs2 = $("#hereStep"); hs2.hidden = false;
-      hs2.innerHTML =
+    /* コメント */
+    let cm = "模試の偏差値を入れると、学力判定と総合判定も表示されます。";
+    if (typeof d.rT === "number" && d.rT >= 2)  cm += ` なお特色選抜の倍率は${fmtRate(d.rT)}倍と高めです。`;
+    if (typeof d.rI === "number" && d.rI < 1)   cm += ` 一般選抜の倍率は${fmtRate(d.rI)}倍（1倍未満）でした。`;
+    $("#gaugeComment").innerHTML = cm;
+
+    const hs = $("#hereStep");
+    if (ng === "D" || ng === "E"){
+      hs.hidden = false;
+      hs.innerHTML =
         `<p class="hs-h">ここからできること</p>`
         + `<p class="hs-lead">内申だけだと位置は<b>ざっくり</b>。まず正確な現在地をつかみましょう。</p>`
         + `<ul class="hs-list">`
-        + `<li><b>模試を受けて「いまの偏差値」を測る</b>と、内申と合わせたA〜E判定が出ます（このページの「沖縄の2大模試」へ）。</li>`
+        + `<li><b>模試を受けて「いまの偏差値」を測る</b>と、内申と合わせた学力判定・総合判定が出ます（このページの「沖縄の2大模試」へ）。</li>`
         + `<li>内申はまだ上げられる——実技4教科は×1.5。本番まで動かせる数字です。</li>`
         + `<li>特色で届かなくても<b>同じ得点で一般に自動</b>／本番後は<b>自己採点</b>を（2次募集で効く）。志望校は1つじゃない——迷ったら先生や家の人に相談を。</li>`
         + `</ul>`;
-    }
+    } else { hs.hidden = true; }
 
     $("#judgeNote").innerHTML =
-      `※上の内申情報は<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）との比較です。模試の偏差値を入れると、内申と合わせたA〜E判定になります。合否を保証するものではありません。` +
+      `※内申判定は、<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）の基準内申点との比較にもとづく「めやす」です。模試の偏差値を入れると学力判定・総合判定も表示されます。合否を保証するものではありません。` +
       (d.dummy ? `<br><b>※この学科の基準値・倍率は一部が「仮の目安」です。</b>実データが届きしだい差し替えます。` : "");
   }
 
