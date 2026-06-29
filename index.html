@@ -653,7 +653,7 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
 .grade-breakdown{margin:14px 0 0;width:100%;border-collapse:collapse;font-size:.86rem}
 .grade-breakdown td{padding:7px 6px;vertical-align:middle}
 .grade-breakdown td:first-child{color:var(--ink-soft);font-size:.78rem;font-weight:700;white-space:nowrap;width:5em}
-.grade-breakdown td:nth-child(2){font-family:var(--fd);font-weight:900;font-size:1.15rem;width:3em;text-align:center}
+.grade-breakdown td:nth-child(2){font-family:var(--fd);font-weight:900;font-size:1.15rem;width:3em;text-align:center;white-space:nowrap}
 .grade-breakdown td:last-child{font-size:.76rem;color:var(--ink-soft);padding-left:8px}
 .grade-breakdown tr.total-row td{border-top:1.5px solid var(--line);padding-top:9px}
 .grade-breakdown tr.total-row td:first-child{color:var(--ink);font-size:.78rem}
@@ -3106,10 +3106,10 @@ function judge(){
     const bd = $("#gradeBreakdown");
     const gradeColor = r => gradeInfo(r) ? gradeInfo(r).text : "var(--ink-soft)";
     const naiDiffText = (nai !== null && d.nai !== null)
-      ? (nai >= d.nai ? `基準まで＋${Math.round(nai - d.nai)}点` : `基準まで−${Math.round(d.nai - nai)}点`)
+      ? (nai === d.nai ? `基準ちょうど` : nai > d.nai ? `基準より＋${Math.round(nai - d.nai)}点` : `基準から−${Math.round(d.nai - nai)}点`)
       : "—";
     const devDiffText = (d.dev !== null)
-      ? (dev >= d.dev ? `基準まで＋${Math.round(dev - d.dev)}点` : `基準まで−${Math.round(d.dev - dev)}点`)
+      ? (dev === d.dev ? `基準ちょうど` : dev > d.dev ? `基準より＋${Math.round(dev - d.dev)}点` : `基準から−${Math.round(d.dev - dev)}点`)
       : "—";
     if (nai !== null) {
       bd.style.display = "";
