@@ -4177,6 +4177,20 @@ renderNowWhere();
     document.addEventListener("keydown",function(e){ if((e.key==="Escape"||e.keyCode===27)&&!gp.hidden) gClose(); });
   }
 })();
-</script>
-</body>
-</html>
+
+/* ---- ピンチズーム無効化（iOS Safariは viewport の user-scalable=no を無視するため、JSで明示的に抑止） ---- */
+(function(){
+  // Safari固有のgestureイベント（2本指ピンチ）を抑止
+  document.addEventListener("gesturestart", function(e){ e.preventDefault(); }, { passive:false });
+  document.addEventListener("gesturechange", function(e){ e.preventDefault(); }, { passive:false });
+  document.addEventListener("gestureend", function(e){ e.preventDefault(); }, { passive:false });
+  // 2本指以上のtouchmove（ピンチ操作）を抑止
+  document.addEventListener("touchmove", function(e){ if (e.touches && e.touches.length > 1) e.preventDefault(); }, { passive:false });
+  // すばやい連続タップによるダブルタップズームを抑止
+  var lastTouchEnd = 0;
+  document.addEventListener("touchend", function(e){
+    var now = Date.now();
+    if (now - lastTouchEnd <= 300) e.preventDefault();
+    lastTouchEnd = now;
+  }, { passive:false });
+})();
