@@ -4177,6 +4177,10 @@ renderNowWhere();
     document.addEventListener("keydown",function(e){ if((e.key==="Escape"||e.keyCode===27)&&!gp.hidden) gClose(); });
   }
 })();
+
+/* ---- ピンチズーム無効化（iOS Safari は viewport の user-scalable=no を無視するため、gesturestart のみ抑止。
+   touchmove/touchend には触れず、スクロールや IntersectionObserver への干渉を避ける） ---- */
+document.addEventListener("gesturestart", function(e){ e.preventDefault(); });
 </script>
 </body>
 </html>
