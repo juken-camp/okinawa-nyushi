@@ -650,11 +650,11 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
 .gauge-comment{font-size:.86rem;line-height:1.85;margin:14px 0 0;max-width:34em}
 .gap-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center}
 .gap-chips .gc{font-size:.76rem;font-weight:700;border-radius:99px;padding:7px 14px;background:var(--sea-tint);color:var(--sea-deep)}
-.grade-breakdown{margin:14px 0 0;width:100%;border-collapse:collapse;font-size:.86rem}
+.grade-breakdown{margin:14px 0 0;width:100%;table-layout:fixed;border-collapse:collapse;font-size:.86rem}
 .grade-breakdown td{padding:7px 6px;vertical-align:middle}
 .grade-breakdown td:first-child{color:var(--ink-soft);font-size:.78rem;font-weight:700;white-space:nowrap;width:5em}
 .grade-breakdown td:nth-child(2){font-family:var(--fd);font-weight:900;font-size:1.15rem;width:3em;text-align:center;white-space:nowrap}
-.grade-breakdown td:last-child{font-size:.76rem;color:var(--ink-soft);padding-left:8px}
+.grade-breakdown td:last-child{font-size:.76rem;color:var(--ink-soft);padding-left:8px;overflow-wrap:anywhere;word-break:break-word}
 .grade-breakdown tr.total-row td{border-top:1.5px solid var(--line);padding-top:9px}
 .grade-breakdown tr.total-row td:first-child{color:var(--ink);font-size:.78rem}
 .grade-breakdown tr.total-row td:nth-child(2){font-size:1.15rem}
@@ -1634,7 +1634,7 @@ body.has-cbar{padding-bottom:96px}
             <text x="120" y="126" text-anchor="middle" font-size="11" fill="#5a6b80">合格可能性（めやす）</text>
           </svg>
           <div class="gauge-band" id="gaugeBand"></div>
-          <div id="gradeBreakdown" style="display:none;width:100%;max-width:300px;margin:10px auto 0"></div>
+          <div id="gradeBreakdown" style="display:none;overflow:hidden;width:100%;max-width:300px;margin:10px auto 0"></div>
           <p class="gauge-comment" id="gaugeComment"></p>
           <div class="gap-chips" id="gapChips"></div>
         </div>
