@@ -1071,6 +1071,19 @@ body.has-cbar{padding-bottom:96px}
 .c3-stages{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap;justify-content:center}
 .c3-stages i{font-style:normal;font-size:.7rem;font-weight:700;color:var(--sea-deep);background:#fff;border:1px solid #cfe6f1;border-radius:99px;padding:4px 11px;white-space:nowrap}
 .c3-note{margin:13px 0 0;font-size:.8rem;color:var(--ink);line-height:1.7}
+
+/* ===== 学校別公式入試情報（2026-07統合） ===== */
+.official-update-note{margin:10px 0 18px;padding:11px 13px;border:1px solid #9fcfe1;border-left:5px solid var(--sea);border-radius:12px;background:#f1fbff;font-size:.82rem;line-height:1.65;color:var(--ink)}
+.official-update-note small{color:var(--ink-soft)}
+.official-detail{margin:12px 0 14px;border:1px solid #c9dde6;border-radius:14px;background:#fff;overflow:hidden}
+.od-head{padding:12px 14px;background:linear-gradient(135deg,#eefaff,#f8fcfe);border-bottom:1px solid #d9e9ef;display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.od-title{font-weight:900;font-size:.92rem}.od-badge{font-size:.68rem;font-weight:800;padding:3px 8px;border-radius:999px;background:#fff3d4;color:#795500;border:1px solid #efd28c}.od-badge.partial{background:#fff0ed;color:#9b352a;border-color:#efb2aa}.od-body{padding:13px}
+.od-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}.od-stat{border:1px solid var(--line);border-radius:10px;padding:8px;background:#fbfdfe}.od-stat span{display:block;font-size:.66rem;color:var(--ink-soft);margin-bottom:2px}.od-stat b{font-size:.88rem;line-height:1.35}
+.od-section{border:1px solid var(--line);border-radius:11px;margin-top:9px;background:#fff}.od-section>summary{cursor:pointer;list-style:none;padding:10px 12px;font-weight:900;font-size:.84rem;display:flex;align-items:center;justify-content:space-between;gap:8px}.od-section>summary::-webkit-details-marker{display:none}.od-section>summary:after{content:"＋";font-size:1rem;color:var(--sea)}.od-section[open]>summary:after{content:"−"}.od-inner{border-top:1px solid var(--line);padding:11px 12px;font-size:.78rem;line-height:1.75}.od-inner p{margin:0 0 8px}.od-inner p:last-child{margin-bottom:0}.od-sub{font-weight:900;color:var(--sea-deep);margin:10px 0 4px}.od-list{margin:4px 0 9px;padding-left:1.25em}.od-list li{margin:2px 0}.od-empty{color:var(--ink-soft)}
+.od-table{width:100%;border-collapse:collapse;font-size:.74rem}.od-table th,.od-table td{border:1px solid var(--line);padding:6px 7px;vertical-align:top;text-align:left}.od-table th{background:#f5fafc;white-space:nowrap}.od-links{display:grid;gap:6px}.od-links a{display:block;border:1px solid var(--line);border-radius:9px;padding:7px 9px;text-decoration:none;overflow-wrap:anywhere}.od-links a:hover{background:#f3fbfe}.od-links small{display:block;color:var(--ink-soft);margin-top:2px}.od-warn{margin-top:9px;padding:8px 10px;border-radius:9px;background:#fff8e8;border:1px solid #efd998;color:#654d10;font-size:.72rem}.od-rank{margin-top:7px}.od-rank summary{cursor:pointer;font-weight:800}.od-qual{display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;border-radius:999px;background:#edf8fc;border:1px solid #c6e3ee;font-size:.68rem}
+.od-meta{display:block;margin-top:4px;color:var(--ink-soft);font-size:.68rem;line-height:1.55}.od-method{padding:8px 10px;border-radius:9px;background:#f7fbfd;border:1px solid var(--line);margin:7px 0}
+@media(max-width:720px){.detail-row>td{padding:10px 8px!important}.detail-inner{position:sticky;left:8px;width:calc(100vw - 44px);max-width:calc(100vw - 44px)}.od-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.od-body{padding:10px}.od-inner{padding:10px}.od-table{font-size:.69rem}}
+
 </style>
 </head>
 <body>
@@ -1709,7 +1722,8 @@ body.has-cbar{padding-bottom:96px}
     <span class="sec-ico"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.5 6.2h11.5M8.5 12h11.5M8.5 17.8h11.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="4.3" cy="6.2" r="1.35" fill="currentColor"/><circle cx="4.3" cy="12" r="1.35" fill="currentColor"/><circle cx="4.3" cy="17.8" r="1.35" fill="currentColor"/></svg></span>
     <span class="sec-label">6/9｜学校データ</span>
     <h2>県立高校データ一覧</h2>
-    <p class="lead">合格基準（80%合格ライン）の偏差値・内申点と、志願倍率の一覧です。</p>
+    <p class="lead">合格基準・倍率に加え、学校別・学科別の一般選抜と特色選抜の公式情報を確認できます。</p>
+    <p class="official-update-note"><b>公式データ更新：</b>全59校・164学科／コースを収録。行をタップすると、一般選抜の比重、特色選抜の出願要件・検査・配点・実績ランク・公式出典を表示します。<br><small>令和9年度の学校別資料は未公表のため、現在は令和8年度公式資料を前年度参考として掲載しています。</small></p>
 
     <div class="tldr rv"><span class="tl">かんたんに言うと</span><p>基準の偏差値・内申は<b>合格可能性80%ライン</b>。<b>倍率1.0未満（定員割れ）の学校も多い</b>。数値の見出しをタップで並び替えできます。</p></div>
 
@@ -1754,14 +1768,14 @@ body.has-cbar{padding-bottom:96px}
     </div>
     <p class="tbl-count" id="tblCount"></p>
     <details class="fold" style="margin-top:10px"><summary>このデータの出典と注意点</summary><div class="fold-body">
-      <p class="note" id="dataNote" style="margin:0">基準の偏差値・内申点は<b>合格可能性80%ライン</b>、合否データは受験者の平均値です（出典：沖縄県統一プレ入試 2025年度〈令和7年度〉追跡調査結果）。得点は特色＝250点満点（記述式を除く）・一般＝300点満点、「—」は集計なし。<b>「準備中」の学科</b>は追跡調査データが未取得のため、基準値・倍率を「—」で表示しています（実データが届きしだい掲載します）。各学科の定員・特色選抜の募集枠・一般選抜の比重は、県教育委員会の公表一覧（令和7年度・2025年春実施分）にもとづく実データです。学校・学科を優劣や序列で分類する意図はなく、志望校選択の参考として整理しています。出願にあたっては必ず県教育委員会・各校の最新の公式発表をご確認ください。</p>
+      <p class="note" id="dataNote" style="margin:0">基準の偏差値・内申点は<b>合格可能性80%ライン</b>、合否データは受験者の平均値です（出典：沖縄県統一プレ入試 2025年度〈令和7年度〉追跡調査結果）。得点は特色＝250点満点（記述式を除く）・一般＝300点満点、「—」は集計なし。<b>「準備中」の学科</b>は追跡調査データが未取得のため、基準値・倍率を「—」で表示しています（実データが届きしだい掲載します）。各学科の定員・特色選抜の募集枠・一般選抜の比重・学校別要件は、県教育委員会および各高校の令和8年度公式資料にもとづきます。令和9年度の学校別資料は2026年7月7日時点で未公表のため、前年度参考として表示しています。学校・学科を優劣や序列で分類する意図はなく、志望校選択の参考として整理しています。出願にあたっては必ず県教育委員会・各校の最新の公式発表をご確認ください。</p>
     </div></details>
 
     <!-- 学校くらべ（比較結果の表示先） -->
     <div class="block" id="compareBlock" hidden>
       <h3 style="margin-top:30px">学校くらべ</h3>
       <div class="tscroll" id="compareWrap"></div>
-      <p class="note" style="margin-top:8px">数値は2025年度（出典は上記と同じ）。「—」はデータなし。</p>
+      <p class="note" style="margin-top:8px">合否追跡の数値は2025年度、学校別公式入試情報は令和8年度資料を前年度参考として表示しています。「—」はデータなし。</p>
     </div>
   </div>
     <a class="nextsec" href="#shiritsu"><span class="nl">次はこれ</span><b>私立高校</b><span class="na"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V6.6L12 3l8 3.6V21" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linejoin="round"/><path d="M2.5 21h19" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/><rect x="9.6" y="14" width="4.8" height="7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="8.3" r="1.5" fill="currentColor"/></svg></span></a>
@@ -2138,10 +2152,13 @@ body.has-cbar{padding-bottom:96px}
   <div class="wrap">
     <p>当サイトの判定・データは独自の集計にもとづく参考情報です。入試制度・日程・募集要項は変更される場合があるため、必ず沖縄県教育委員会および各高校の最新の公式発表をご確認ください。</p>
     <p class="foot-by">Presented by JUKEN CAMP（公式サイトは<a href="https://www.juken-camp.online/" target="_blank" rel="noopener">こちら</a>）</p>
-    <p class="foot-upd">最終更新 2026.6</p>
+    <p class="foot-upd">最終更新 2026.7.7</p>
   </div>
 </footer>
 
+<script src="./data/admission-details.js"></script>
+<script src="./data/achievement-ranks.js"></script>
+<script src="./data/sources.js"></script>
 <script>
 /* =====================================================================
    沖縄の高校入試ナビ — アプリケーションスクリプト
@@ -2171,518 +2188,19 @@ const SUBJECTS  = [...SUBJECTS5, ...SUBJECTS4];
      rec : 合否データ {sel,res,dev,nai,score}  score:null=集計なし
            得点は 特色=250点満点（記述式除く）/ 一般=300点満点
    ===================================================================== */
-const SCHOOLS = [
-/* ===== 南部・那覇 ===== */
-{id:"kaiho-g",name:"開邦",dept:"学術探究科",area:"南部",y:{2025:{dev:67,nai:147,rT:1.81,rI:0.93,rec:[
-  {sel:"特色",res:"合格",dev:70.5,nai:158.8,score:231.6},
-  {sel:"特色",res:"不合格",dev:63.9,nai:155.0,score:212.5},
-  {sel:"一般",res:"合格",dev:65.9,nai:156.3,score:251.5}]}}},
-{id:"kaiho-art",name:"開邦",dept:"芸術科",area:"南部",y:{2025:{dev:50,nai:120,rT:1.75,rI:0.85,rec:[
-  {sel:"特色",res:"合格",dev:57.1,nai:142.8,score:200.0},
-  {sel:"特色",res:"不合格",dev:47.8,nai:112.3,score:170.0},
-  {sel:"一般",res:"合格",dev:51.6,nai:128.3,score:177.2}]}}},
-{id:"nahakok-f",name:"那覇国際",dept:"普通科",area:"南部",y:{2025:{dev:64,nai:147,rT:4.73,rI:1.12,rec:[
-  {sel:"特色",res:"合格",dev:67.8,nai:157.0,score:227.1},
-  {sel:"特色",res:"不合格",dev:64.0,nai:151.3,score:211.0},
-  {sel:"一般",res:"合格",dev:65.2,nai:151.8,score:247.8},
-  {sel:"一般",res:"不合格",dev:63.0,nai:143.4,score:236.2}]}}},
-{id:"nahakok-k",name:"那覇国際",dept:"国際科",area:"南部",y:{2025:{dev:61,nai:143,rT:4.28,rI:1.33,rec:[
-  {sel:"特色",res:"合格",dev:64.1,nai:155.2,score:216.0},
-  {sel:"特色",res:"不合格",dev:58.7,nai:142.9,score:193.9},
-  {sel:"一般",res:"合格",dev:61.4,nai:155.4,score:231.3},
-  {sel:"一般",res:"不合格",dev:59.4,nai:141.1,score:228.5}]}}},
-{id:"naha-f",name:"那覇",dept:"普通科",area:"南部",y:{2025:{dev:59,nai:136,rT:2.86,rI:1.02,rec:[
-  {sel:"特色",res:"合格",dev:62.5,nai:151.5,score:213.6},
-  {sel:"特色",res:"不合格",dev:58.0,nai:142.9,score:193.4},
-  {sel:"一般",res:"合格",dev:59.5,nai:140.4,score:229.6}]}}},
-{id:"shuri-f",name:"首里",dept:"普通科",area:"南部",y:{2025:{dev:59,nai:137,rT:1.23,rI:1.13,rec:[
-  {sel:"特色",res:"合格",dev:59.4,nai:154.6,score:199.7},
-  {sel:"特色",res:"不合格",dev:59.0,nai:141.9,score:197.0},
-  {sel:"一般",res:"合格",dev:60.2,nai:143.6,score:229.9},
-  {sel:"一般",res:"不合格",dev:54.2,nai:124.5,score:199.5}]}}},
-{id:"shuri-sen",name:"首里",dept:"染織デザイン科",area:"南部",y:{2025:{dev:47,nai:112,rT:1.00,rI:1.23,rec:[
-  {sel:"特色",res:"合格",dev:53.5,nai:131.2,score:186.0},
-  {sel:"特色",res:"不合格",dev:52.8,nai:115.7,score:184.5},
-  {sel:"一般",res:"合格",dev:53.1,nai:130.9,score:192.6},
-  {sel:"一般",res:"不合格",dev:46.3,nai:110.7,score:160.3}]}}},
-{id:"shurihigashi-f",name:"首里東",dept:"普通科",area:"南部",y:{2025:{dev:41,nai:92,rT:1.42,rI:1.05,rec:[
-  {sel:"特色",res:"合格",dev:44.1,nai:104.5,score:137.8},
-  {sel:"特色",res:"不合格",dev:37.0,nai:90.1,score:84.8},
-  {sel:"一般",res:"合格",dev:42.6,nai:98.7,score:138.1},
-  {sel:"一般",res:"不合格",dev:40.2,nai:102.0,score:null}]}}},
-{id:"nahanishi-f",name:"那覇西",dept:"普通科",area:"南部",y:{2025:{dev:51,nai:120,rT:4.46,rI:1.13,rec:[
-  {sel:"特色",res:"合格",dev:53.4,nai:128.0,score:190.9},
-  {sel:"特色",res:"不合格",dev:50.5,nai:120.1,score:161.8},
-  {sel:"一般",res:"合格",dev:52.5,nai:126.1,score:201.0},
-  {sel:"一般",res:"不合格",dev:45.2,nai:111.6,score:154.5}]}}},
-{id:"nahanishi-jin",name:"那覇西",dept:"国際人文科",area:"南部",y:{2025:{dev:49,nai:117,rT:2.38,rI:1.10,rec:[
-  {sel:"特色",res:"合格",dev:55.1,nai:135.9,score:189.0},
-  {sel:"特色",res:"不合格",dev:48.5,nai:117.5,score:158.0},
-  {sel:"一般",res:"合格",dev:50.6,nai:122.8,score:184.1},
-  {sel:"一般",res:"不合格",dev:46.8,nai:115.7,score:140.7}]}}},
-{id:"nahanishi-tai",name:"那覇西",dept:"体育科",area:"南部",y:{2025:{dev:44,nai:100,rT:2.65,rI:1.20,rec:[
-  {sel:"特色",res:"合格",dev:42.6,nai:111.8,score:126.0},
-  {sel:"特色",res:"不合格",dev:41.6,nai:105.0,score:130.6},
-  {sel:"一般",res:"合格",dev:47.4,nai:118.5,score:164.4},
-  {sel:"一般",res:"不合格",dev:43.0,nai:107.3,score:153.4}]}}},
-{id:"oroku-f",name:"小禄",dept:"普通コース",area:"南部",y:{2025:{dev:51,nai:120,rT:3.19,rI:1.06,rec:[
-  {sel:"特色",res:"合格",dev:52.1,nai:129.7,score:172.6},
-  {sel:"特色",res:"不合格",dev:50.0,nai:119.0,score:166.8},
-  {sel:"一般",res:"合格",dev:52.8,nai:125.3,score:194.7},
-  {sel:"一般",res:"不合格",dev:46.6,nai:112.9,score:162.6}]}}},
-{id:"oroku-gei",name:"小禄",dept:"芸術教養コース",area:"南部",y:{2025:{dev:45,nai:110,rT:2.50,rI:0.95,rec:[
-  {sel:"特色",res:"合格",dev:48.6,nai:127.3,score:140.0},
-  {sel:"特色",res:"不合格",dev:42.3,nai:115.3,score:104.0},
-  {sel:"一般",res:"合格",dev:46.4,nai:117.3,score:162.5}]}}},
-{id:"oroku-biz",name:"小禄",dept:"情報ビジネスコース",area:"南部",y:{2025:{dev:48,nai:110,rT:1.90,rI:1.05,rec:[
-  {sel:"特色",res:"合格",dev:49.5,nai:124.0,score:160.3},
-  {sel:"特色",res:"不合格",dev:43.7,nai:111.0,score:142.0},
-  {sel:"一般",res:"合格",dev:48.5,nai:113.3,score:189.6},
-  {sel:"一般",res:"不合格",dev:50.1,nai:114.0,score:177.3}]}}},
-{id:"mawashi-f",name:"真和志",dept:"普通コース",area:"南部",y:{2025:{dev:35,nai:70,rT:0.04,rI:0.55,rec:[
-  {sel:"一般",res:"合格",dev:33.9,nai:82.8,score:81.5}]}}},
-{id:"mawashi-arts",name:"真和志",dept:"クリエイティブアーツ",area:"南部",y:{2025:{dev:36,nai:80,rT:0.30,rI:1.30,rec:[
-  {sel:"特色",res:"合格",dev:41.9,nai:115.3,score:117.5},
-  {sel:"一般",res:"合格",dev:38.8,nai:93.8,score:109.8}]}}},
-{id:"mawashi-fuku",name:"真和志",dept:"みらい福祉",area:"南部",y:{2025:{dev:36,nai:75,rT:0.21,rI:0.53,rec:[
-  {sel:"一般",res:"合格",dev:36.3,nai:73.8,score:110.5}]}}},
-{id:"tomishiro-f",name:"豊見城",dept:"普通コース",area:"南部",y:{2025:{dev:44,nai:103,rT:2.29,rI:1.20,rec:[
-  {sel:"特色",res:"合格",dev:46.7,nai:110.3,score:145.7},
-  {sel:"特色",res:"不合格",dev:42.4,nai:108.1,score:123.0},
-  {sel:"一般",res:"合格",dev:45.7,nai:109.3,score:162.1},
-  {sel:"一般",res:"不合格",dev:40.4,nai:97.9,score:130.9}]}}},
-{id:"tomishiro-t",name:"豊見城",dept:"特進コース",area:"南部",y:{2025:{dev:45,nai:105,rT:0.50,rI:0.88,rec:[
-  {sel:"一般",res:"合格",dev:48.3,nai:111.4,score:173.4},
-  {sel:"一般",res:"不合格",dev:47.0,nai:101.0,score:114.0}]}}},
-{id:"tomiminami-f",name:"豊見城南",dept:"普通コース",area:"南部",y:{2025:{dev:38,nai:85,rT:0.33,rI:0.96,rec:[
-  {sel:"特色",res:"合格",dev:42.0,nai:113.8,score:130.0},
-  {sel:"一般",res:"合格",dev:40.9,nai:93.2,score:129.3}]}}},
-{id:"tomiminami-t",name:"豊見城南",dept:"特進コース",area:"南部",y:{2025:{dev:40,nai:88,rT:0.00,rI:0.40,rec:[
-  {sel:"一般",res:"合格",dev:45.8,nai:105.5,score:168.5}]}}},
-{id:"haebaru-fs",name:"南風原",dept:"普通総合",area:"南部",y:{2025:{dev:37,nai:86,rT:0.60,rI:0.58,rec:[
-  {sel:"特色",res:"合格",dev:36.2,nai:91.0,score:93.8},
-  {sel:"特色",res:"不合格",dev:32.0,nai:77.5,score:67.0},
-  {sel:"一般",res:"合格",dev:38.0,nai:94.3,score:115.9},
-  {sel:"一般",res:"不合格",dev:32.1,nai:70.2,score:53.9}]}}},
-{id:"haebaru-kyodo",name:"南風原",dept:"郷土文化コース",area:"南部",y:{2025:{dev:36,nai:84,rT:1.20,rI:0.83,rec:[
-  {sel:"特色",res:"合格",dev:41.2,nai:110.0,score:122.0},
-  {sel:"一般",res:"合格",dev:40.1,nai:91.9,score:117.0},
-  {sel:"一般",res:"不合格",dev:32.0,nai:65.0,score:null}]}}},
-{id:"haebaru-biz",name:"南風原",dept:"教養ビジネスコース",area:"南部",y:{2025:{dev:36,nai:83,rT:0.38,rI:0.50,rec:[
-  {sel:"特色",res:"合格",dev:37.0,nai:99.0,score:75.0},
-  {sel:"一般",res:"合格",dev:37.8,nai:95.0,score:126.0},
-  {sel:"一般",res:"不合格",dev:30.0,nai:86.0,score:null}]}}},
-{id:"nahasho-sho",name:"那覇商業",dept:"商業科",area:"南部",y:{2025:{dev:43,nai:105,rT:1.39,rI:1.17,rec:[
-  {sel:"特色",res:"合格",dev:43.8,nai:112.1,score:129.4},
-  {sel:"特色",res:"不合格",dev:42.5,nai:108.0,score:133.0},
-  {sel:"一般",res:"合格",dev:45.7,nai:111.8,score:156.0},
-  {sel:"一般",res:"不合格",dev:39.2,nai:99.9,score:127.8}]}}},
-{id:"nahasho-joho",name:"那覇商業",dept:"情報処理科",area:"南部",y:{2025:{dev:47,nai:108,rT:1.29,rI:1.05,rec:[
-  {sel:"特色",res:"合格",dev:49.3,nai:123.1,score:167.1},
-  {sel:"一般",res:"合格",dev:48.4,nai:114.8,score:172.4}]}}},
-{id:"nahasho-kokukei",name:"那覇商業",dept:"国際経済科",area:"南部",y:{2025:{dev:48,nai:118,rT:2.00,rI:1.08,rec:[
-  {sel:"特色",res:"合格",dev:51.0,nai:142.5,score:167.8},
-  {sel:"特色",res:"不合格",dev:45.8,nai:123.3,score:150.3},
-  {sel:"一般",res:"合格",dev:49.4,nai:124.5,score:173.5}]}}},
-{id:"nanbusho-ryu",name:"南部商業",dept:"流通クリエイト科",area:"南部",y:{2025:{dev:35,nai:78,rT:0.06,rI:0.58,rec:[
-  {sel:"一般",res:"合格",dev:39.4,nai:81.8,score:96.0}]}}},
-{id:"nanbusho-digi",name:"南部商業",dept:"デジタルクリエイト科",area:"南部",y:{2025:{dev:37,nai:82,rT:0.06,rI:0.98,rec:[
-  {sel:"特色",res:"合格",dev:42.0,nai:102.0,score:null},
-  {sel:"一般",res:"合格",dev:36.3,nai:79.6,score:100.7}]}}},
-{id:"nanbusho-office",name:"南部商業",dept:"オフィスクリエイト科",area:"南部",y:{2025:{dev:35,nai:73,rT:0.06,rI:0.70,rec:[
-  {sel:"一般",res:"合格",dev:40.9,nai:104.1,score:109.8}]}}},
-{id:"nanbusho-kanko",name:"南部商業",dept:"観光クリエイト科",area:"南部",y:{2025:{dev:35,nai:75,rT:0.22,rI:1.18,rec:[
-  {sel:"特色",res:"合格",dev:41.3,nai:103.0,score:131.0},
-  {sel:"一般",res:"合格",dev:38.4,nai:102.2,score:115.6}]}}},
-{id:"nahako-kikai",name:"那覇工業",dept:"機械科",area:"南部",y:{2025:{dev:35,nai:70,rT:0.00,rI:0.90,rec:[
-  {sel:"一般",res:"合格",dev:35.3,nai:90.1,score:102.2},
-  {sel:"一般",res:"不合格",dev:31.7,nai:78.3,score:41.0}]}}},
-{id:"nahako-jidosha",name:"那覇工業",dept:"自動車科",area:"南部",y:{2025:{dev:36,nai:80,rT:1.00,rI:1.15,rec:[
-  {sel:"特色",res:"合格",dev:40.0,nai:92.0,score:126.0},
-  {sel:"一般",res:"合格",dev:37.5,nai:82.3,score:121.8},
-  {sel:"一般",res:"不合格",dev:29.0,nai:79.0,score:null}]}}},
-{id:"nahako-denki",name:"那覇工業",dept:"電気科",area:"南部",y:{2025:{dev:35,nai:70,rT:0.04,rI:0.70,rec:[
-  {sel:"一般",res:"合格",dev:34.9,nai:87.4,score:102.6}]}}},
-{id:"nahako-graphic",name:"那覇工業",dept:"グラフィックアーツ科",area:"南部",y:{2025:{dev:37,nai:80,rT:0.50,rI:0.85,rec:[
-  {sel:"特色",res:"合格",dev:46.9,nai:118.0,score:157.0},
-  {sel:"一般",res:"合格",dev:36.7,nai:90.4,score:101.3}]}}},
-{id:"nahako-fuku",name:"那覇工業",dept:"服飾デザイン科",area:"南部",y:{2025:{dev:38,nai:85,rT:0.25,rI:0.55,rec:[
-  {sel:"特色",res:"合格",dev:45.0,nai:135.0,score:162.0},
-  {sel:"一般",res:"合格",dev:39.8,nai:107.0,score:123.3}]}}},
-{id:"okiko-johoden",name:"沖縄工業",dept:"情報電子科",area:"南部",y:{2025:{dev:47,nai:103,rT:0.54,rI:0.86,rec:[
-  {sel:"特色",res:"合格",dev:50.6,nai:115.2,score:151.0},
-  {sel:"一般",res:"合格",dev:47.0,nai:102.3,score:155.4}]}}},
-{id:"okiko-denshiki",name:"沖縄工業",dept:"電子機械科",area:"南部",y:{2025:{dev:45,nai:100,rT:0.42,rI:1.04,rec:[
-  {sel:"特色",res:"合格",dev:44.6,nai:112.3,score:140.0},
-  {sel:"一般",res:"合格",dev:46.2,nai:105.5,score:171.2}]}}},
-{id:"okiko-kenchiku",name:"沖縄工業",dept:"建築科",area:"南部",y:{2025:{dev:45,nai:102,rT:0.92,rI:1.18,rec:[
-  {sel:"特色",res:"合格",dev:46.3,nai:111.7,score:142.0},
-  {sel:"一般",res:"合格",dev:47.1,nai:107.2,score:165.9},
-  {sel:"一般",res:"不合格",dev:38.2,nai:87.4,score:135.0}]}}},
-{id:"okiko-doboku",name:"沖縄工業",dept:"土木科",area:"南部",y:{2025:{dev:39,nai:90,rT:0.00,rI:1.28,rec:[
-  {sel:"一般",res:"合格",dev:38.9,nai:92.0,score:125.3},
-  {sel:"一般",res:"不合格",dev:33.9,nai:83.0,score:80.7}]}}},
-{id:"okiko-kagaku",name:"沖縄工業",dept:"工業化学科",area:"南部",y:{2025:{dev:39,nai:85,rT:0.13,rI:0.50,rec:[
-  {sel:"特色",res:"合格",dev:44.0,nai:105.0,score:114.0},
-  {sel:"一般",res:"合格",dev:39.3,nai:88.5,score:128.0}]}}},
-{id:"okiko-seikatsu",name:"沖縄工業",dept:"生活情報科",area:"南部",y:{2025:{dev:39,nai:99,rT:0.67,rI:1.10,rec:[
-  {sel:"特色",res:"合格",dev:39.8,nai:107.0,score:102.5},
-  {sel:"一般",res:"合格",dev:40.1,nai:100.3,score:116.7}]}}},
-/* ===== 中部 ===== */
-{id:"kyuyo-bunri",name:"球陽",dept:"文理探究科",area:"中部",y:{2025:{dev:62,nai:143,rT:1.71,rI:0.93,rec:[
-  {sel:"特色",res:"合格",dev:65.6,nai:156.9,score:222.0},
-  {sel:"特色",res:"不合格",dev:60.7,nai:155.9,score:205.4},
-  {sel:"一般",res:"合格",dev:61.2,nai:152.1,score:233.7}]}}},
-{id:"futenma-f",name:"普天間",dept:"普通科",area:"中部",y:{2025:{dev:59,nai:139,rT:2.65,rI:1.09,rec:[
-  {sel:"特色",res:"合格",dev:60.0,nai:153.6,score:208.9},
-  {sel:"特色",res:"不合格",dev:56.0,nai:147.3,score:196.3},
-  {sel:"一般",res:"合格",dev:60.4,nai:150.6,score:228.1},
-  {sel:"一般",res:"不合格",dev:52.8,nai:132.1,score:204.3}]}}},
-{id:"ginowan-f",name:"宜野湾",dept:"普通コース",area:"中部",y:{2025:{dev:48,nai:122,rT:1.69,rI:1.23,rec:[
-  {sel:"特色",res:"合格",dev:51.2,nai:133.4,score:163.9},
-  {sel:"特色",res:"不合格",dev:47.4,nai:132.0,score:148.8},
-  {sel:"一般",res:"合格",dev:50.9,nai:131.0,score:189.1},
-  {sel:"一般",res:"不合格",dev:44.8,nai:119.7,score:147.5}]}}},
-{id:"ginowan-joho",name:"宜野湾",dept:"情報処理コース",area:"中部",y:{2025:{dev:45,nai:110,rT:1.63,rI:1.43,rec:[
-  {sel:"特色",res:"合格",dev:49.9,nai:135.5,score:152.0},
-  {sel:"特色",res:"不合格",dev:44.6,nai:121.0,score:153.0},
-  {sel:"一般",res:"合格",dev:48.2,nai:117.8,score:174.2},
-  {sel:"一般",res:"不合格",dev:44.8,nai:106.3,score:152.3}]}}},
-{id:"ginowan-spo",name:"宜野湾",dept:"スポーツ・健康コース",area:"中部",y:{2025:{dev:40,nai:95,rT:2.40,rI:1.05,rec:[
-  {sel:"特色",res:"合格",dev:44.6,nai:109.8,score:124.5},
-  {sel:"特色",res:"不合格",dev:43.0,nai:108.0,score:null},
-  {sel:"一般",res:"合格",dev:43.8,nai:103.7,score:144.5},
-  {sel:"一般",res:"不合格",dev:38.5,nai:93.6,score:109.8}]}}},
-{id:"urasoe-f",name:"浦添",dept:"普通科",area:"中部",y:{2025:{dev:54,nai:123,rT:3.21,rI:0.99,rec:[
-  {sel:"特色",res:"合格",dev:53.8,nai:127.5,score:181.1},
-  {sel:"特色",res:"不合格",dev:51.4,nai:121.4,score:168.4},
-  {sel:"一般",res:"合格",dev:54.5,nai:125.9,score:202.4},
-  {sel:"一般",res:"不合格",dev:43.9,nai:136.5,score:148.8}]}}},
-{id:"yomei-sogo",name:"陽明",dept:"総合学科",area:"中部",y:{2025:{dev:42,nai:96,rT:0.75,rI:1.15,rec:[
-  {sel:"特色",res:"合格",dev:45.6,nai:109.2,score:134.4},
-  {sel:"特色",res:"不合格",dev:37.8,nai:102.0,score:93.0},
-  {sel:"一般",res:"合格",dev:44.6,nai:104.4,score:149.6},
-  {sel:"一般",res:"不合格",dev:37.2,nai:88.7,score:96.6}]}}},
-{id:"nishihara-kenko",name:"西原",dept:"健康科学コース",area:"中部",y:{2025:{dev:38,nai:90,rT:1.70,rI:0.85,rec:[
-  {sel:"特色",res:"合格",dev:42.1,nai:110.8,score:121.0},
-  {sel:"特色",res:"不合格",dev:40.7,nai:104.7,score:147.0},
-  {sel:"一般",res:"合格",dev:39.5,nai:101.1,score:133.9},
-  {sel:"一般",res:"不合格",dev:32.0,nai:91.0,score:null}]}}},
-{id:"nishihara-bunri",name:"西原",dept:"文理コース",area:"中部",y:{2025:{dev:44,nai:100,rT:1.18,rI:1.08,rec:[
-  {sel:"特色",res:"合格",dev:46.4,nai:123.8,score:144.5},
-  {sel:"特色",res:"不合格",dev:44.8,nai:117.0,score:138.7},
-  {sel:"一般",res:"合格",dev:46.2,nai:109.5,score:159.7},
-  {sel:"一般",res:"不合格",dev:36.7,nai:93.5,score:107.5}]}}},
-{id:"nishihara-toku",name:"西原",dept:"特別進学コース",area:"中部",y:{2025:{dev:46,nai:107,rT:0.80,rI:0.95,rec:[
-  {sel:"特色",res:"合格",dev:55.5,nai:142.7,score:199.7},
-  {sel:"一般",res:"合格",dev:50.0,nai:118.1,score:175.7}]}}},
-{id:"kitanaka-f",name:"北中城",dept:"普通科",area:"中部",y:{2025:{dev:42,nai:102,rT:0.23,rI:0.98,rec:[
-  {sel:"特色",res:"合格",dev:46.0,nai:130.3,score:129.7},
-  {sel:"一般",res:"合格",dev:43.3,nai:110.2,score:140.4},
-  {sel:"一般",res:"不合格",dev:34.0,nai:94.0,score:54.0}]}}},
-{id:"chatan-f",name:"北谷",dept:"普通科",area:"中部",y:{2025:{dev:36,nai:85,rT:0.45,rI:0.54,rec:[
-  {sel:"特色",res:"合格",dev:40.5,nai:111.8,score:86.0},
-  {sel:"特色",res:"不合格",dev:39.0,nai:100.5,score:147.0},
-  {sel:"一般",res:"合格",dev:39.8,nai:104.0,score:117.5},
-  {sel:"一般",res:"不合格",dev:30.5,nai:86.3,score:80.0}]}}},
-{id:"urasho-kigyo",name:"浦添商業",dept:"企業システム科",area:"中部",y:{2025:{dev:36,nai:90,rT:0.06,rI:0.64,rec:[
-  {sel:"一般",res:"合格",dev:35.8,nai:91.4,score:97.3}]}}},
-{id:"urasho-it",name:"浦添商業",dept:"ITビジネス科",area:"中部",y:{2025:{dev:37,nai:89,rT:0.00,rI:0.35,rec:[
-  {sel:"一般",res:"合格",dev:38.9,nai:89.7,score:125.8}]}}},
-{id:"urasho-kanko",name:"浦添商業",dept:"国際観光科",area:"中部",y:{2025:{dev:38,nai:98,rT:0.06,rI:0.45,rec:[
-  {sel:"一般",res:"合格",dev:39.4,nai:99.9,score:113.9}]}}},
-{id:"chubusho-sogo",name:"中部商業",dept:"総合ビジネス科",area:"中部",y:{2025:{dev:36,nai:82,rT:0.08,rI:0.74,rec:[
-  {sel:"一般",res:"合格",dev:37.4,nai:93.6,score:118.7}]}}},
-{id:"chubusho-joho",name:"中部商業",dept:"情報ビジネス科",area:"中部",y:{2025:{dev:36,nai:80,rT:0.00,rI:0.40,rec:[
-  {sel:"一般",res:"合格",dev:38.5,nai:84.1,score:110.0}]}}},
-{id:"chubusho-kokusai",name:"中部商業",dept:"国際ビジネス科",area:"中部",y:{2025:{dev:37,nai:86,rT:0.44,rI:0.65,rec:[
-  {sel:"一般",res:"合格",dev:38.3,nai:96.8,score:116.6}]}}},
-{id:"chubusho-spo",name:"中部商業",dept:"生涯スポーツ科",area:"中部",y:{2025:{dev:36,nai:88,rT:0.55,rI:0.40,rec:[
-  {sel:"特色",res:"合格",dev:36.7,nai:96.8,score:112.5},
-  {sel:"一般",res:"合格",dev:37.4,nai:104.0,score:131.5}]}}},
-{id:"urako-chori",name:"浦添工業",dept:"調理科",area:"中部",y:{2025:{dev:42,nai:108,rT:0.31,rI:0.88,rec:[
-  {sel:"特色",res:"合格",dev:49.0,nai:113.0,score:129.0},
-  {sel:"一般",res:"合格",dev:43.9,nai:109.6,score:135.9}]}}},
-{id:"urako-design",name:"浦添工業",dept:"デザイン科",area:"中部",y:{2025:{dev:41,nai:93,rT:0.31,rI:0.94,rec:[
-  {sel:"特色",res:"合格",dev:45.8,nai:115.0,score:136.7},
-  {sel:"一般",res:"合格",dev:45.8,nai:111.8,score:152.8}]}}},
-{id:"urako-johogi",name:"浦添工業",dept:"情報技術科",area:"中部",y:{2025:{dev:39,nai:80,rT:0.56,rI:1.05,rec:[
-  {sel:"特色",res:"合格",dev:41.3,nai:110.5,score:132.0},
-  {sel:"一般",res:"合格",dev:39.0,nai:91.8,score:111.8}]}}},
-{id:"urako-interior",name:"浦添工業",dept:"インテリア科",area:"中部",y:{2025:{dev:39,nai:80,rT:0.06,rI:0.54,rec:[
-  {sel:"特色",res:"合格",dev:40.8,nai:121.3,score:135.5},
-  {sel:"一般",res:"合格",dev:40.0,nai:99.8,score:110.6},
-  {sel:"一般",res:"不合格",dev:35.0,nai:71.0,score:null}]}}},
-{id:"urako-kenchiku",name:"浦添工業",dept:"建築科",area:"中部",y:{2025:{dev:37,nai:83,rT:0.56,rI:1.05,rec:[
-  {sel:"特色",res:"合格",dev:49.0,nai:117.0,score:154.0},
-  {sel:"一般",res:"合格",dev:36.0,nai:88.6,score:107.1}]}}},
-
-/* ===== 以下、追跡調査データ未取得の学科（基準値は仮・倍率と合否データは集計中） =====
-   学科の存在・定員・特色割合などは県教委の令和7年度一覧（一次情報）にもとづく実データです。
-   追跡調査の実データが届いたら、dev/nai を差し替え rT/rI/rec を埋めて dummy を外してください。 */
-{id:"hentona-f",name:"辺土名",dept:"普通科",area:"北部",y:{2025:{dev:36,nai:80,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"hentona-env",name:"辺土名",dept:"自然環境科",area:"北部",y:{2025:{dev:37,nai:84,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"hokuzan-f",name:"北山",dept:"普通科",area:"北部",y:{2025:{dev:38,nai:88,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"hokuzan-ri",name:"北山",dept:"理数科",area:"北部",y:{2025:{dev:43,nai:100,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"motobu-sj",name:"本部",dept:"進学・情報コース",area:"北部",y:{2025:{dev:37,nai:84,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"motobu-sf",name:"本部",dept:"スポーツ・保育福祉コース",area:"北部",y:{2025:{dev:36,nai:82,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nago-f",name:"名護",dept:"普通科",area:"北部",y:{2025:{dev:46,nai:110,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nago-fr",name:"名護",dept:"フロンティア科",area:"北部",y:{2025:{dev:52,nai:124,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"ginoza-f",name:"宜野座",dept:"普通科",area:"北部",y:{2025:{dev:38,nai:88,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"hokuno-na",name:"北部農林",dept:"熱帯農業科",area:"北部",y:{2025:{dev:35,nai:76,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"hokuno-ek",name:"北部農林",dept:"園芸工学科",area:"北部",y:{2025:{dev:35,nai:76,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"hokuno-sk",name:"北部農林",dept:"食品科学科",area:"北部",y:{2025:{dev:36,nai:78,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"hokuno-rr",name:"北部農林",dept:"林業緑地科",area:"北部",y:{2025:{dev:35,nai:75,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"hokuno-sg",name:"北部農林",dept:"生活科学科",area:"北部",y:{2025:{dev:36,nai:78,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nagosho-km",name:"名護商工",dept:"工業技術科（機械）",area:"北部",y:{2025:{dev:37,nai:82,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nagosho-kd",name:"名護商工",dept:"工業技術科（電気）",area:"北部",y:{2025:{dev:37,nai:82,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nagosho-ke",name:"名護商工",dept:"建築科",area:"北部",y:{2025:{dev:37,nai:84,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nagosho-sj",name:"名護商工",dept:"総合情報科",area:"北部",y:{2025:{dev:39,nai:88,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nagosho-sh",name:"名護商工",dept:"商業科",area:"北部",y:{2025:{dev:39,nai:88,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nagosho-cs",name:"名護商工",dept:"地域産業科",area:"北部",y:{2025:{dev:36,nai:80,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"ishikawa-f",name:"石川",dept:"普通科",area:"中部",y:{2025:{dev:39,nai:90,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"maehara-br",name:"前原",dept:"文理コース",area:"中部",y:{2025:{dev:44,nai:104,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"maehara-en",name:"前原",dept:"英語コース",area:"中部",y:{2025:{dev:45,nai:108,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"maehara-sp",name:"前原",dept:"総合スポーツコース",area:"中部",y:{2025:{dev:40,nai:92,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yokatsu-f",name:"与勝",dept:"普通科",area:"中部",y:{2025:{dev:40,nai:92,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yomitan-f",name:"読谷",dept:"普通科",area:"中部",y:{2025:{dev:45,nai:106,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"kadena-dd",name:"嘉手納",dept:"総合学科（ドリームデザイン）",area:"中部",y:{2025:{dev:37,nai:86,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"kadena-ca",name:"嘉手納",dept:"総合学科（キャリアアップ）",area:"中部",y:{2025:{dev:37,nai:86,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"gushikawa-f",name:"具志川",dept:"普通科",area:"中部",y:{2025:{dev:44,nai:104,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"misato-f",name:"美里",dept:"普通科",area:"中部",y:{2025:{dev:42,nai:98,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"koza-f",name:"コザ",dept:"普通科",area:"中部",y:{2025:{dev:52,nai:124,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"chubuno-nr",name:"中部農林",dept:"熱帯資源科",area:"中部",y:{2025:{dev:35,nai:76,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"chubuno-ek",name:"中部農林",dept:"園芸科学科",area:"中部",y:{2025:{dev:35,nai:76,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"chubuno-sk",name:"中部農林",dept:"食品科学科",area:"中部",y:{2025:{dev:36,nai:78,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"chubuno-zo",name:"中部農林",dept:"造園科",area:"中部",y:{2025:{dev:35,nai:75,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"chubuno-fk",name:"中部農林",dept:"福祉科",area:"中部",y:{2025:{dev:36,nai:79,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miraikoka-ms",name:"美来工科",dept:"機械システム科",area:"中部",y:{2025:{dev:40,nai:88,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miraikoka-jd",name:"美来工科",dept:"自動車工学科",area:"中部",y:{2025:{dev:39,nai:86,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miraikoka-es",name:"美来工科",dept:"電子システム科",area:"中部",y:{2025:{dev:41,nai:92,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miraikoka-dk",name:"美来工科",dept:"土木工学科",area:"中部",y:{2025:{dev:38,nai:84,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miraikoka-it",name:"美来工科",dept:"ITシステム科",area:"中部",y:{2025:{dev:42,nai:96,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miraikoka-cd",name:"美来工科",dept:"コンピュータデザイン科",area:"中部",y:{2025:{dev:41,nai:92,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"misatoko-ki",name:"美里工業",dept:"機械科",area:"中部",y:{2025:{dev:38,nai:84,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"misatoko-de",name:"美里工業",dept:"電気科",area:"中部",y:{2025:{dev:38,nai:86,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"misatoko-ke",name:"美里工業",dept:"建築科",area:"中部",y:{2025:{dev:38,nai:85,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"misatoko-se",name:"美里工業",dept:"設備工業科",area:"中部",y:{2025:{dev:37,nai:82,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"misatoko-ch",name:"美里工業",dept:"調理科",area:"中部",y:{2025:{dev:39,nai:88,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"gushisho-rk",name:"具志川商業",dept:"リゾート観光科",area:"中部",y:{2025:{dev:38,nai:88,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"gushisho-ob",name:"具志川商業",dept:"オフィスビジネス科",area:"中部",y:{2025:{dev:38,nai:86,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"gushisho-bm",name:"具志川商業",dept:"ビジネスマルチメディア科",area:"中部",y:{2025:{dev:38,nai:87,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"gushisho-js",name:"具志川商業",dept:"情報システム科",area:"中部",y:{2025:{dev:40,nai:92,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"koyo-f",name:"向陽",dept:"普通科",area:"南部",y:{2025:{dev:56,nai:132,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"koyo-ri",name:"向陽",dept:"理数科",area:"南部",y:{2025:{dev:58,nai:138,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"koyo-kb",name:"向陽",dept:"国際文科",area:"南部",y:{2025:{dev:57,nai:135,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"chinen-f",name:"知念",dept:"普通科",area:"南部",y:{2025:{dev:50,nai:119,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"itoman-f",name:"糸満",dept:"普通科",area:"南部",y:{2025:{dev:45,nai:107,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"kumejima-f",name:"久米島",dept:"普通科",area:"南部",y:{2025:{dev:37,nai:84,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"kumejima-en",name:"久米島",dept:"園芸科",area:"南部",y:{2025:{dev:35,nai:76,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nanbuno-ss",name:"南部農林",dept:"食料生産科",area:"南部",y:{2025:{dev:35,nai:76,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nanbuno-sb",name:"南部農林",dept:"生物資源科",area:"南部",y:{2025:{dev:35,nai:76,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nanbuno-sk",name:"南部農林",dept:"食品加工科",area:"南部",y:{2025:{dev:36,nai:77,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nanbuno-ks",name:"南部農林",dept:"環境創造科",area:"南部",y:{2025:{dev:35,nai:75,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nanbuno-sd",name:"南部農林",dept:"生活デザイン科",area:"南部",y:{2025:{dev:36,nai:78,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nanbuko-ki",name:"南部工業",dept:"機械科",area:"南部",y:{2025:{dev:36,nai:78,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nanbuko-de",name:"南部工業",dept:"電気科",area:"南部",y:{2025:{dev:36,nai:78,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nanbuko-kd",name:"南部工業",dept:"建築設備科（建築デザイン）",area:"南部",y:{2025:{dev:36,nai:79,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"nanbuko-sg",name:"南部工業",dept:"建築設備科（設備工学）",area:"南部",y:{2025:{dev:36,nai:78,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"okisui-kg",name:"沖縄水産",dept:"海洋技術科",area:"南部",y:{2025:{dev:35,nai:75,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"okisui-ks",name:"沖縄水産",dept:"海洋サイエンス科",area:"南部",y:{2025:{dev:36,nai:78,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"okisui-sg",name:"沖縄水産",dept:"総合学科",area:"南部",y:{2025:{dev:37,nai:82,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miyako-f",name:"宮古",dept:"普通科",area:"宮古・八重山",y:{2025:{dev:47,nai:112,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miyako-br",name:"宮古",dept:"文理探究科",area:"宮古・八重山",y:{2025:{dev:53,nai:126,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yaeyama-f",name:"八重山",dept:"普通科",area:"宮古・八重山",y:{2025:{dev:49,nai:116,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yaeno-af",name:"八重山農林",dept:"アグリフード科",area:"宮古・八重山",y:{2025:{dev:34,nai:74,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yaeno-gl",name:"八重山農林",dept:"グリーンライフ科",area:"宮古・八重山",y:{2025:{dev:34,nai:74,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yaeno-fp",name:"八重山農林",dept:"フードプロデュース科",area:"宮古・八重山",y:{2025:{dev:35,nai:76,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yaeno-ls",name:"八重山農林",dept:"ライフスキル科",area:"宮古・八重山",y:{2025:{dev:35,nai:76,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miyakoko-jm",name:"宮古工業",dept:"自動車機械システム科",area:"宮古・八重山",y:{2025:{dev:36,nai:78,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miyakoko-dj",name:"宮古工業",dept:"電気情報科",area:"宮古・八重山",y:{2025:{dev:36,nai:79,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miyakoko-sj",name:"宮古工業",dept:"生活情報科",area:"宮古・八重山",y:{2025:{dev:36,nai:80,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yaesho-km",name:"八重山商工",dept:"機械電気科（機械）",area:"宮古・八重山",y:{2025:{dev:35,nai:76,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yaesho-kd",name:"八重山商工",dept:"機械電気科（電気）",area:"宮古・八重山",y:{2025:{dev:35,nai:76,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yaesho-jg",name:"八重山商工",dept:"情報技術科",area:"宮古・八重山",y:{2025:{dev:37,nai:82,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yaesho-ka",name:"八重山商工",dept:"商業科（会計システム）",area:"宮古・八重山",y:{2025:{dev:36,nai:80,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yaesho-jb",name:"八重山商工",dept:"商業科（情報ビジネス）",area:"宮古・八重山",y:{2025:{dev:36,nai:80,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"yaesho-kk",name:"八重山商工",dept:"商業科（観光）",area:"宮古・八重山",y:{2025:{dev:36,nai:79,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miyasou-sb",name:"宮古総合実業",dept:"生物生産科",area:"宮古・八重山",y:{2025:{dev:34,nai:74,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miyasou-fc",name:"宮古総合実業",dept:"食と環境科（フードクリエイト）",area:"宮古・八重山",y:{2025:{dev:35,nai:76,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miyasou-kc",name:"宮古総合実業",dept:"食と環境科（環境クリエイト）",area:"宮古・八重山",y:{2025:{dev:34,nai:75,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miyasou-sf",name:"宮古総合実業",dept:"生活福祉科",area:"宮古・八重山",y:{2025:{dev:35,nai:77,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miyasou-kk",name:"宮古総合実業",dept:"海洋科学科",area:"宮古・八重山",y:{2025:{dev:34,nai:75,rT:null,rI:null,rec:[],dummy:true}}},
-{id:"miyasou-sh",name:"宮古総合実業",dept:"商業科",area:"宮古・八重山",y:{2025:{dev:36,nai:78,rT:null,rI:null,rec:[],dummy:true}}}
-];
+const SCHOOLS = [{"id":"kaiho-g","name":"開邦","dept":"学術探究科","area":"南部","track":"全日制","department":"学術探究科","course":null,"y":{"2025":{"dev":67,"nai":147,"rT":1.81,"rI":0.93,"rec":[{"sel":"特色","res":"合格","dev":70.5,"nai":158.8,"score":231.6},{"sel":"特色","res":"不合格","dev":63.9,"nai":155,"score":212.5},{"sel":"一般","res":"合格","dev":65.9,"nai":156.3,"score":251.5}]}}},{"id":"kaiho-art-music","name":"開邦","dept":"芸術科（音楽）","area":"南部","track":"全日制","department":"芸術科","course":"音楽","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"kaiho-art-art","name":"開邦","dept":"芸術科（美術）","area":"南部","track":"全日制","department":"芸術科","course":"美術","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nahakok-f","name":"那覇国際","dept":"普通科","area":"南部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":64,"nai":147,"rT":4.73,"rI":1.12,"rec":[{"sel":"特色","res":"合格","dev":67.8,"nai":157,"score":227.1},{"sel":"特色","res":"不合格","dev":64,"nai":151.3,"score":211},{"sel":"一般","res":"合格","dev":65.2,"nai":151.8,"score":247.8},{"sel":"一般","res":"不合格","dev":63,"nai":143.4,"score":236.2}]}}},{"id":"nahakok-k","name":"那覇国際","dept":"国際科","area":"南部","track":"全日制","department":"国際科","course":null,"y":{"2025":{"dev":61,"nai":143,"rT":4.28,"rI":1.33,"rec":[{"sel":"特色","res":"合格","dev":64.1,"nai":155.2,"score":216},{"sel":"特色","res":"不合格","dev":58.7,"nai":142.9,"score":193.9},{"sel":"一般","res":"合格","dev":61.4,"nai":155.4,"score":231.3},{"sel":"一般","res":"不合格","dev":59.4,"nai":141.1,"score":228.5}]}}},{"id":"naha-f","name":"那覇","dept":"普通科","area":"南部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":59,"nai":136,"rT":2.86,"rI":1.02,"rec":[{"sel":"特色","res":"合格","dev":62.5,"nai":151.5,"score":213.6},{"sel":"特色","res":"不合格","dev":58,"nai":142.9,"score":193.4},{"sel":"一般","res":"合格","dev":59.5,"nai":140.4,"score":229.6}]}}},{"id":"shuri-f","name":"首里","dept":"普通科","area":"南部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":59,"nai":137,"rT":1.23,"rI":1.13,"rec":[{"sel":"特色","res":"合格","dev":59.4,"nai":154.6,"score":199.7},{"sel":"特色","res":"不合格","dev":59,"nai":141.9,"score":197},{"sel":"一般","res":"合格","dev":60.2,"nai":143.6,"score":229.9},{"sel":"一般","res":"不合格","dev":54.2,"nai":124.5,"score":199.5}]}}},{"id":"shuri-sen","name":"首里","dept":"染織デザイン科","area":"南部","track":"全日制","department":"染織デザイン科","course":null,"y":{"2025":{"dev":47,"nai":112,"rT":1,"rI":1.23,"rec":[{"sel":"特色","res":"合格","dev":53.5,"nai":131.2,"score":186},{"sel":"特色","res":"不合格","dev":52.8,"nai":115.7,"score":184.5},{"sel":"一般","res":"合格","dev":53.1,"nai":130.9,"score":192.6},{"sel":"一般","res":"不合格","dev":46.3,"nai":110.7,"score":160.3}]}}},{"id":"shurihigashi-f","name":"首里東","dept":"普通科","area":"南部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":41,"nai":92,"rT":1.42,"rI":1.05,"rec":[{"sel":"特色","res":"合格","dev":44.1,"nai":104.5,"score":137.8},{"sel":"特色","res":"不合格","dev":37,"nai":90.1,"score":84.8},{"sel":"一般","res":"合格","dev":42.6,"nai":98.7,"score":138.1},{"sel":"一般","res":"不合格","dev":40.2,"nai":102,"score":null}]}}},{"id":"nahanishi-f","name":"那覇西","dept":"普通科","area":"南部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":51,"nai":120,"rT":4.46,"rI":1.13,"rec":[{"sel":"特色","res":"合格","dev":53.4,"nai":128,"score":190.9},{"sel":"特色","res":"不合格","dev":50.5,"nai":120.1,"score":161.8},{"sel":"一般","res":"合格","dev":52.5,"nai":126.1,"score":201},{"sel":"一般","res":"不合格","dev":45.2,"nai":111.6,"score":154.5}]}}},{"id":"nahanishi-jin","name":"那覇西","dept":"国際人文科","area":"南部","track":"全日制","department":"国際人文科","course":null,"y":{"2025":{"dev":49,"nai":117,"rT":2.38,"rI":1.1,"rec":[{"sel":"特色","res":"合格","dev":55.1,"nai":135.9,"score":189},{"sel":"特色","res":"不合格","dev":48.5,"nai":117.5,"score":158},{"sel":"一般","res":"合格","dev":50.6,"nai":122.8,"score":184.1},{"sel":"一般","res":"不合格","dev":46.8,"nai":115.7,"score":140.7}]}}},{"id":"nahanishi-tai","name":"那覇西","dept":"体育科","area":"南部","track":"全日制","department":"体育科","course":null,"y":{"2025":{"dev":44,"nai":100,"rT":2.65,"rI":1.2,"rec":[{"sel":"特色","res":"合格","dev":42.6,"nai":111.8,"score":126},{"sel":"特色","res":"不合格","dev":41.6,"nai":105,"score":130.6},{"sel":"一般","res":"合格","dev":47.4,"nai":118.5,"score":164.4},{"sel":"一般","res":"不合格","dev":43,"nai":107.3,"score":153.4}]}}},{"id":"oroku-f","name":"小禄","dept":"普通科（普通）","area":"南部","track":"全日制","department":"普通科","course":"普通","y":{"2025":{"dev":51,"nai":120,"rT":3.19,"rI":1.06,"rec":[{"sel":"特色","res":"合格","dev":52.1,"nai":129.7,"score":172.6},{"sel":"特色","res":"不合格","dev":50,"nai":119,"score":166.8},{"sel":"一般","res":"合格","dev":52.8,"nai":125.3,"score":194.7},{"sel":"一般","res":"不合格","dev":46.6,"nai":112.9,"score":162.6}]}}},{"id":"oroku-gei","name":"小禄","dept":"普通科（芸術教養）","area":"南部","track":"全日制","department":"普通科","course":"芸術教養","y":{"2025":{"dev":45,"nai":110,"rT":2.5,"rI":0.95,"rec":[{"sel":"特色","res":"合格","dev":48.6,"nai":127.3,"score":140},{"sel":"特色","res":"不合格","dev":42.3,"nai":115.3,"score":104},{"sel":"一般","res":"合格","dev":46.4,"nai":117.3,"score":162.5}]}}},{"id":"oroku-biz","name":"小禄","dept":"普通科（情報ビジネス）","area":"南部","track":"全日制","department":"普通科","course":"情報ビジネス","y":{"2025":{"dev":48,"nai":110,"rT":1.9,"rI":1.05,"rec":[{"sel":"特色","res":"合格","dev":49.5,"nai":124,"score":160.3},{"sel":"特色","res":"不合格","dev":43.7,"nai":111,"score":142},{"sel":"一般","res":"合格","dev":48.5,"nai":113.3,"score":189.6},{"sel":"一般","res":"不合格","dev":50.1,"nai":114,"score":177.3}]}}},{"id":"mawashi-f","name":"真和志","dept":"普通科（普通）","area":"南部","track":"全日制","department":"普通科","course":"普通","y":{"2025":{"dev":35,"nai":70,"rT":0.04,"rI":0.55,"rec":[{"sel":"一般","res":"合格","dev":33.9,"nai":82.8,"score":81.5}]}}},{"id":"mawashi-arts","name":"真和志","dept":"普通科（クリエイティブアーツ）","area":"南部","track":"全日制","department":"普通科","course":"クリエイティブアーツ","y":{"2025":{"dev":36,"nai":80,"rT":0.3,"rI":1.3,"rec":[{"sel":"特色","res":"合格","dev":41.9,"nai":115.3,"score":117.5},{"sel":"一般","res":"合格","dev":38.8,"nai":93.8,"score":109.8}]}}},{"id":"mawashi-fuku","name":"真和志","dept":"みらい福祉","area":"南部","track":"全日制","department":"みらい福祉","course":null,"y":{"2025":{"dev":36,"nai":75,"rT":0.21,"rI":0.53,"rec":[{"sel":"一般","res":"合格","dev":36.3,"nai":73.8,"score":110.5}]}}},{"id":"tomari-am","name":"泊","dept":"普通科（午前部・定時制）","area":"南部","track":"定時制","department":"普通科","course":"午前部","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"tomari-night","name":"泊","dept":"普通科（夜間部・定時制）","area":"南部","track":"定時制","department":"普通科","course":"夜間部","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"tomishiro-f","name":"豊見城","dept":"普通科","area":"南部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":44,"nai":103,"rT":2.29,"rI":1.2,"rec":[{"sel":"特色","res":"合格","dev":46.7,"nai":110.3,"score":145.7},{"sel":"特色","res":"不合格","dev":42.4,"nai":108.1,"score":123},{"sel":"一般","res":"合格","dev":45.7,"nai":109.3,"score":162.1},{"sel":"一般","res":"不合格","dev":40.4,"nai":97.9,"score":130.9}]}}},{"id":"tomiminami-f","name":"豊見城南","dept":"普通科（普通）","area":"南部","track":"全日制","department":"普通科","course":"普通","y":{"2025":{"dev":38,"nai":85,"rT":0.33,"rI":0.96,"rec":[{"sel":"特色","res":"合格","dev":42,"nai":113.8,"score":130},{"sel":"一般","res":"合格","dev":40.9,"nai":93.2,"score":129.3}]}}},{"id":"tomiminami-t","name":"豊見城南","dept":"普通科（特進）","area":"南部","track":"全日制","department":"普通科","course":"特進","y":{"2025":{"dev":40,"nai":88,"rT":0,"rI":0.4,"rec":[{"sel":"一般","res":"合格","dev":45.8,"nai":105.5,"score":168.5}]}}},{"id":"haebaru-fs","name":"南風原","dept":"普通科（普通総合）","area":"南部","track":"全日制","department":"普通科","course":"普通総合","y":{"2025":{"dev":37,"nai":86,"rT":0.6,"rI":0.58,"rec":[{"sel":"特色","res":"合格","dev":36.2,"nai":91,"score":93.8},{"sel":"特色","res":"不合格","dev":32,"nai":77.5,"score":67},{"sel":"一般","res":"合格","dev":38,"nai":94.3,"score":115.9},{"sel":"一般","res":"不合格","dev":32.1,"nai":70.2,"score":53.9}]}}},{"id":"haebaru-kyodo","name":"南風原","dept":"普通科（郷土文化）","area":"南部","track":"全日制","department":"普通科","course":"郷土文化","y":{"2025":{"dev":36,"nai":84,"rT":1.2,"rI":0.83,"rec":[{"sel":"特色","res":"合格","dev":41.2,"nai":110,"score":122},{"sel":"一般","res":"合格","dev":40.1,"nai":91.9,"score":117},{"sel":"一般","res":"不合格","dev":32,"nai":65,"score":null}]}}},{"id":"haebaru-biz","name":"南風原","dept":"普通科（教養ビジネス）","area":"南部","track":"全日制","department":"普通科","course":"教養ビジネス","y":{"2025":{"dev":36,"nai":83,"rT":0.38,"rI":0.5,"rec":[{"sel":"特色","res":"合格","dev":37,"nai":99,"score":75},{"sel":"一般","res":"合格","dev":37.8,"nai":95,"score":126},{"sel":"一般","res":"不合格","dev":30,"nai":86,"score":null}]}}},{"id":"nahasho-sho","name":"那覇商業","dept":"商業科","area":"南部","track":"全日制","department":"商業科","course":null,"y":{"2025":{"dev":43,"nai":105,"rT":1.39,"rI":1.17,"rec":[{"sel":"特色","res":"合格","dev":43.8,"nai":112.1,"score":129.4},{"sel":"特色","res":"不合格","dev":42.5,"nai":108,"score":133},{"sel":"一般","res":"合格","dev":45.7,"nai":111.8,"score":156},{"sel":"一般","res":"不合格","dev":39.2,"nai":99.9,"score":127.8}]}}},{"id":"nahasho-joho","name":"那覇商業","dept":"情報処理科","area":"南部","track":"全日制","department":"情報処理科","course":null,"y":{"2025":{"dev":47,"nai":108,"rT":1.29,"rI":1.05,"rec":[{"sel":"特色","res":"合格","dev":49.3,"nai":123.1,"score":167.1},{"sel":"一般","res":"合格","dev":48.4,"nai":114.8,"score":172.4}]}}},{"id":"nahasho-kokukei","name":"那覇商業","dept":"国際経済科","area":"南部","track":"全日制","department":"国際経済科","course":null,"y":{"2025":{"dev":48,"nai":118,"rT":2,"rI":1.08,"rec":[{"sel":"特色","res":"合格","dev":51,"nai":142.5,"score":167.8},{"sel":"特色","res":"不合格","dev":45.8,"nai":123.3,"score":150.3},{"sel":"一般","res":"合格","dev":49.4,"nai":124.5,"score":173.5}]}}},{"id":"nanbusho-ryu","name":"南部商業","dept":"流通クリエイト科","area":"南部","track":"全日制","department":"流通クリエイト科","course":null,"y":{"2025":{"dev":35,"nai":78,"rT":0.06,"rI":0.58,"rec":[{"sel":"一般","res":"合格","dev":39.4,"nai":81.8,"score":96}]}}},{"id":"nanbusho-digi","name":"南部商業","dept":"デジタルクリエイト科","area":"南部","track":"全日制","department":"デジタルクリエイト科","course":null,"y":{"2025":{"dev":37,"nai":82,"rT":0.06,"rI":0.98,"rec":[{"sel":"特色","res":"合格","dev":42,"nai":102,"score":null},{"sel":"一般","res":"合格","dev":36.3,"nai":79.6,"score":100.7}]}}},{"id":"nanbusho-office","name":"南部商業","dept":"オフィスクリエイト科","area":"南部","track":"全日制","department":"オフィスクリエイト科","course":null,"y":{"2025":{"dev":35,"nai":73,"rT":0.06,"rI":0.7,"rec":[{"sel":"一般","res":"合格","dev":40.9,"nai":104.1,"score":109.8}]}}},{"id":"nanbusho-kanko","name":"南部商業","dept":"観光クリエイト科","area":"南部","track":"全日制","department":"観光クリエイト科","course":null,"y":{"2025":{"dev":35,"nai":75,"rT":0.22,"rI":1.18,"rec":[{"sel":"特色","res":"合格","dev":41.3,"nai":103,"score":131},{"sel":"一般","res":"合格","dev":38.4,"nai":102.2,"score":115.6}]}}},{"id":"nahako-kikai","name":"那覇工業","dept":"機械科","area":"南部","track":"全日制","department":"機械科","course":null,"y":{"2025":{"dev":35,"nai":70,"rT":0,"rI":0.9,"rec":[{"sel":"一般","res":"合格","dev":35.3,"nai":90.1,"score":102.2},{"sel":"一般","res":"不合格","dev":31.7,"nai":78.3,"score":41}]}}},{"id":"nahako-jidosha","name":"那覇工業","dept":"自動車科","area":"南部","track":"全日制","department":"自動車科","course":null,"y":{"2025":{"dev":36,"nai":80,"rT":1,"rI":1.15,"rec":[{"sel":"特色","res":"合格","dev":40,"nai":92,"score":126},{"sel":"一般","res":"合格","dev":37.5,"nai":82.3,"score":121.8},{"sel":"一般","res":"不合格","dev":29,"nai":79,"score":null}]}}},{"id":"nahako-denki","name":"那覇工業","dept":"電気科","area":"南部","track":"全日制","department":"電気科","course":null,"y":{"2025":{"dev":35,"nai":70,"rT":0.04,"rI":0.7,"rec":[{"sel":"一般","res":"合格","dev":34.9,"nai":87.4,"score":102.6}]}}},{"id":"nahako-graphic","name":"那覇工業","dept":"グラフィックアーツ科","area":"南部","track":"全日制","department":"グラフィックアーツ科","course":null,"y":{"2025":{"dev":37,"nai":80,"rT":0.5,"rI":0.85,"rec":[{"sel":"特色","res":"合格","dev":46.9,"nai":118,"score":157},{"sel":"一般","res":"合格","dev":36.7,"nai":90.4,"score":101.3}]}}},{"id":"nahako-fuku","name":"那覇工業","dept":"服飾デザイン科","area":"南部","track":"全日制","department":"服飾デザイン科","course":null,"y":{"2025":{"dev":38,"nai":85,"rT":0.25,"rI":0.55,"rec":[{"sel":"特色","res":"合格","dev":45,"nai":135,"score":162},{"sel":"一般","res":"合格","dev":39.8,"nai":107,"score":123.3}]}}},{"id":"nahako-night-kikai","name":"那覇工業","dept":"機械科（定時制）","area":"南部","track":"定時制","department":"機械科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nahako-night-denki","name":"那覇工業","dept":"電気科（定時制）","area":"南部","track":"定時制","department":"電気科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"okiko-johoden","name":"沖縄工業","dept":"情報電子科","area":"南部","track":"全日制","department":"情報電子科","course":null,"y":{"2025":{"dev":47,"nai":103,"rT":0.54,"rI":0.86,"rec":[{"sel":"特色","res":"合格","dev":50.6,"nai":115.2,"score":151},{"sel":"一般","res":"合格","dev":47,"nai":102.3,"score":155.4}]}}},{"id":"okiko-denshiki","name":"沖縄工業","dept":"電子機械科","area":"南部","track":"全日制","department":"電子機械科","course":null,"y":{"2025":{"dev":45,"nai":100,"rT":0.42,"rI":1.04,"rec":[{"sel":"特色","res":"合格","dev":44.6,"nai":112.3,"score":140},{"sel":"一般","res":"合格","dev":46.2,"nai":105.5,"score":171.2}]}}},{"id":"okiko-kenchiku","name":"沖縄工業","dept":"建築科","area":"南部","track":"全日制","department":"建築科","course":null,"y":{"2025":{"dev":45,"nai":102,"rT":0.92,"rI":1.18,"rec":[{"sel":"特色","res":"合格","dev":46.3,"nai":111.7,"score":142},{"sel":"一般","res":"合格","dev":47.1,"nai":107.2,"score":165.9},{"sel":"一般","res":"不合格","dev":38.2,"nai":87.4,"score":135}]}}},{"id":"okiko-doboku","name":"沖縄工業","dept":"土木科","area":"南部","track":"全日制","department":"土木科","course":null,"y":{"2025":{"dev":39,"nai":90,"rT":0,"rI":1.28,"rec":[{"sel":"一般","res":"合格","dev":38.9,"nai":92,"score":125.3},{"sel":"一般","res":"不合格","dev":33.9,"nai":83,"score":80.7}]}}},{"id":"okiko-kagaku","name":"沖縄工業","dept":"工業化学科","area":"南部","track":"全日制","department":"工業化学科","course":null,"y":{"2025":{"dev":39,"nai":85,"rT":0.13,"rI":0.5,"rec":[{"sel":"特色","res":"合格","dev":44,"nai":105,"score":114},{"sel":"一般","res":"合格","dev":39.3,"nai":88.5,"score":128}]}}},{"id":"okiko-seikatsu","name":"沖縄工業","dept":"生活情報科","area":"南部","track":"全日制","department":"生活情報科","course":null,"y":{"2025":{"dev":39,"nai":99,"rT":0.67,"rI":1.1,"rec":[{"sel":"特色","res":"合格","dev":39.8,"nai":107,"score":102.5},{"sel":"一般","res":"合格","dev":40.1,"nai":100.3,"score":116.7}]}}},{"id":"kyuyo-bunri","name":"球陽","dept":"文理探究科","area":"中部","track":"全日制","department":"文理探究科","course":null,"y":{"2025":{"dev":62,"nai":143,"rT":1.71,"rI":0.93,"rec":[{"sel":"特色","res":"合格","dev":65.6,"nai":156.9,"score":222},{"sel":"特色","res":"不合格","dev":60.7,"nai":155.9,"score":205.4},{"sel":"一般","res":"合格","dev":61.2,"nai":152.1,"score":233.7}]}}},{"id":"futenma-f","name":"普天間","dept":"普通科","area":"中部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":59,"nai":139,"rT":2.65,"rI":1.09,"rec":[{"sel":"特色","res":"合格","dev":60,"nai":153.6,"score":208.9},{"sel":"特色","res":"不合格","dev":56,"nai":147.3,"score":196.3},{"sel":"一般","res":"合格","dev":60.4,"nai":150.6,"score":228.1},{"sel":"一般","res":"不合格","dev":52.8,"nai":132.1,"score":204.3}]}}},{"id":"ginowan-f","name":"宜野湾","dept":"普通科（普通）","area":"中部","track":"全日制","department":"普通科","course":"普通","y":{"2025":{"dev":48,"nai":122,"rT":1.69,"rI":1.23,"rec":[{"sel":"特色","res":"合格","dev":51.2,"nai":133.4,"score":163.9},{"sel":"特色","res":"不合格","dev":47.4,"nai":132,"score":148.8},{"sel":"一般","res":"合格","dev":50.9,"nai":131,"score":189.1},{"sel":"一般","res":"不合格","dev":44.8,"nai":119.7,"score":147.5}]}}},{"id":"ginowan-joho","name":"宜野湾","dept":"普通科（情報処理）","area":"中部","track":"全日制","department":"普通科","course":"情報処理","y":{"2025":{"dev":45,"nai":110,"rT":1.63,"rI":1.43,"rec":[{"sel":"特色","res":"合格","dev":49.9,"nai":135.5,"score":152},{"sel":"特色","res":"不合格","dev":44.6,"nai":121,"score":153},{"sel":"一般","res":"合格","dev":48.2,"nai":117.8,"score":174.2},{"sel":"一般","res":"不合格","dev":44.8,"nai":106.3,"score":152.3}]}}},{"id":"ginowan-spo","name":"宜野湾","dept":"普通科（スポーツ・健康）","area":"中部","track":"全日制","department":"普通科","course":"スポーツ・健康","y":{"2025":{"dev":40,"nai":95,"rT":2.4,"rI":1.05,"rec":[{"sel":"特色","res":"合格","dev":44.6,"nai":109.8,"score":124.5},{"sel":"特色","res":"不合格","dev":43,"nai":108,"score":null},{"sel":"一般","res":"合格","dev":43.8,"nai":103.7,"score":144.5},{"sel":"一般","res":"不合格","dev":38.5,"nai":93.6,"score":109.8}]}}},{"id":"urasoe-f","name":"浦添","dept":"普通科","area":"中部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":54,"nai":123,"rT":3.21,"rI":0.99,"rec":[{"sel":"特色","res":"合格","dev":53.8,"nai":127.5,"score":181.1},{"sel":"特色","res":"不合格","dev":51.4,"nai":121.4,"score":168.4},{"sel":"一般","res":"合格","dev":54.5,"nai":125.9,"score":202.4},{"sel":"一般","res":"不合格","dev":43.9,"nai":136.5,"score":148.8}]}}},{"id":"yomei-sogo","name":"陽明","dept":"総合学科","area":"中部","track":"全日制","department":"総合学科","course":null,"y":{"2025":{"dev":42,"nai":96,"rT":0.75,"rI":1.15,"rec":[{"sel":"特色","res":"合格","dev":45.6,"nai":109.2,"score":134.4},{"sel":"特色","res":"不合格","dev":37.8,"nai":102,"score":93},{"sel":"一般","res":"合格","dev":44.6,"nai":104.4,"score":149.6},{"sel":"一般","res":"不合格","dev":37.2,"nai":88.7,"score":96.6}]}}},{"id":"nishihara-kenko","name":"西原","dept":"普通科（健康科学）","area":"中部","track":"全日制","department":"普通科","course":"健康科学","y":{"2025":{"dev":38,"nai":90,"rT":1.7,"rI":0.85,"rec":[{"sel":"特色","res":"合格","dev":42.1,"nai":110.8,"score":121},{"sel":"特色","res":"不合格","dev":40.7,"nai":104.7,"score":147},{"sel":"一般","res":"合格","dev":39.5,"nai":101.1,"score":133.9},{"sel":"一般","res":"不合格","dev":32,"nai":91,"score":null}]}}},{"id":"nishihara-bunri","name":"西原","dept":"普通科（文理）","area":"中部","track":"全日制","department":"普通科","course":"文理","y":{"2025":{"dev":44,"nai":100,"rT":1.18,"rI":1.08,"rec":[{"sel":"特色","res":"合格","dev":46.4,"nai":123.8,"score":144.5},{"sel":"特色","res":"不合格","dev":44.8,"nai":117,"score":138.7},{"sel":"一般","res":"合格","dev":46.2,"nai":109.5,"score":159.7},{"sel":"一般","res":"不合格","dev":36.7,"nai":93.5,"score":107.5}]}}},{"id":"kitanaka-f","name":"北中城","dept":"普通科","area":"中部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":42,"nai":102,"rT":0.23,"rI":0.98,"rec":[{"sel":"特色","res":"合格","dev":46,"nai":130.3,"score":129.7},{"sel":"一般","res":"合格","dev":43.3,"nai":110.2,"score":140.4},{"sel":"一般","res":"不合格","dev":34,"nai":94,"score":54}]}}},{"id":"chatan-f","name":"北谷","dept":"普通科","area":"中部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":36,"nai":85,"rT":0.45,"rI":0.54,"rec":[{"sel":"特色","res":"合格","dev":40.5,"nai":111.8,"score":86},{"sel":"特色","res":"不合格","dev":39,"nai":100.5,"score":147},{"sel":"一般","res":"合格","dev":39.8,"nai":104,"score":117.5},{"sel":"一般","res":"不合格","dev":30.5,"nai":86.3,"score":80}]}}},{"id":"urasho-kigyo","name":"浦添商業","dept":"企業システム科","area":"中部","track":"全日制","department":"企業システム科","course":null,"y":{"2025":{"dev":36,"nai":90,"rT":0.06,"rI":0.64,"rec":[{"sel":"一般","res":"合格","dev":35.8,"nai":91.4,"score":97.3}]}}},{"id":"urasho-it","name":"浦添商業","dept":"ITビジネス科","area":"中部","track":"全日制","department":"ITビジネス科","course":null,"y":{"2025":{"dev":37,"nai":89,"rT":0,"rI":0.35,"rec":[{"sel":"一般","res":"合格","dev":38.9,"nai":89.7,"score":125.8}]}}},{"id":"urasho-kanko","name":"浦添商業","dept":"国際観光科","area":"中部","track":"全日制","department":"国際観光科","course":null,"y":{"2025":{"dev":38,"nai":98,"rT":0.06,"rI":0.45,"rec":[{"sel":"一般","res":"合格","dev":39.4,"nai":99.9,"score":113.9}]}}},{"id":"chubusho-sogo","name":"中部商業","dept":"総合ビジネス科","area":"中部","track":"全日制","department":"総合ビジネス科","course":null,"y":{"2025":{"dev":36,"nai":82,"rT":0.08,"rI":0.74,"rec":[{"sel":"一般","res":"合格","dev":37.4,"nai":93.6,"score":118.7}]}}},{"id":"chubusho-joho","name":"中部商業","dept":"情報ビジネス科","area":"中部","track":"全日制","department":"情報ビジネス科","course":null,"y":{"2025":{"dev":36,"nai":80,"rT":0,"rI":0.4,"rec":[{"sel":"一般","res":"合格","dev":38.5,"nai":84.1,"score":110}]}}},{"id":"chubusho-kokusai","name":"中部商業","dept":"国際ビジネス科","area":"中部","track":"全日制","department":"国際ビジネス科","course":null,"y":{"2025":{"dev":37,"nai":86,"rT":0.44,"rI":0.65,"rec":[{"sel":"一般","res":"合格","dev":38.3,"nai":96.8,"score":116.6}]}}},{"id":"chubusho-spo","name":"中部商業","dept":"生涯スポーツ科","area":"中部","track":"全日制","department":"生涯スポーツ科","course":null,"y":{"2025":{"dev":36,"nai":88,"rT":0.55,"rI":0.4,"rec":[{"sel":"特色","res":"合格","dev":36.7,"nai":96.8,"score":112.5},{"sel":"一般","res":"合格","dev":37.4,"nai":104,"score":131.5}]}}},{"id":"urako-chori","name":"浦添工業","dept":"調理科","area":"中部","track":"全日制","department":"調理科","course":null,"y":{"2025":{"dev":42,"nai":108,"rT":0.31,"rI":0.88,"rec":[{"sel":"特色","res":"合格","dev":49,"nai":113,"score":129},{"sel":"一般","res":"合格","dev":43.9,"nai":109.6,"score":135.9}]}}},{"id":"urako-design","name":"浦添工業","dept":"デザイン科","area":"中部","track":"全日制","department":"デザイン科","course":null,"y":{"2025":{"dev":41,"nai":93,"rT":0.31,"rI":0.94,"rec":[{"sel":"特色","res":"合格","dev":45.8,"nai":115,"score":136.7},{"sel":"一般","res":"合格","dev":45.8,"nai":111.8,"score":152.8}]}}},{"id":"urako-johogi","name":"浦添工業","dept":"情報技術科","area":"中部","track":"全日制","department":"情報技術科","course":null,"y":{"2025":{"dev":39,"nai":80,"rT":0.56,"rI":1.05,"rec":[{"sel":"特色","res":"合格","dev":41.3,"nai":110.5,"score":132},{"sel":"一般","res":"合格","dev":39,"nai":91.8,"score":111.8}]}}},{"id":"urako-interior","name":"浦添工業","dept":"インテリア科","area":"中部","track":"全日制","department":"インテリア科","course":null,"y":{"2025":{"dev":39,"nai":80,"rT":0.06,"rI":0.54,"rec":[{"sel":"特色","res":"合格","dev":40.8,"nai":121.3,"score":135.5},{"sel":"一般","res":"合格","dev":40,"nai":99.8,"score":110.6},{"sel":"一般","res":"不合格","dev":35,"nai":71,"score":null}]}}},{"id":"urako-kenchiku","name":"浦添工業","dept":"建築科","area":"中部","track":"全日制","department":"建築科","course":null,"y":{"2025":{"dev":37,"nai":83,"rT":0.56,"rI":1.05,"rec":[{"sel":"特色","res":"合格","dev":49,"nai":117,"score":154},{"sel":"一般","res":"合格","dev":36,"nai":88.6,"score":107.1}]}}},{"id":"hentona-f","name":"辺土名","dept":"普通科","area":"北部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"hentona-env","name":"辺土名","dept":"自然環境科","area":"北部","track":"全日制","department":"自然環境科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"hokuzan-f","name":"北山","dept":"普通科","area":"北部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"hokuzan-ri","name":"北山","dept":"理数科","area":"北部","track":"全日制","department":"理数科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"motobu-sj","name":"本部","dept":"普通科（進学・情報）","area":"北部","track":"全日制","department":"普通科","course":"進学・情報","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"motobu-sf","name":"本部","dept":"普通科（スポーツ・保育福祉）","area":"北部","track":"全日制","department":"普通科","course":"スポーツ・保育福祉","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nago-f","name":"名護","dept":"普通科","area":"北部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nago-fr","name":"名護","dept":"フロンティア科","area":"北部","track":"全日制","department":"フロンティア科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"ginoza-f","name":"宜野座","dept":"普通科","area":"北部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"hokuno-agritech","name":"北部農林","dept":"アグリテクノ科","area":"北部","track":"全日制","department":"アグリテクノ科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"hokuno-resource-design","name":"北部農林","dept":"地域資源デザイン科","area":"北部","track":"全日制","department":"地域資源デザイン科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"hokuno-food-create","name":"北部農林","dept":"食品クリエイト科","area":"北部","track":"全日制","department":"食品クリエイト科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"hokuno-life-create","name":"北部農林","dept":"ライフ創造科","area":"北部","track":"全日制","department":"ライフ創造科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"hokuno-night-agri","name":"北部農林","dept":"農業科（定時制）","area":"北部","track":"定時制","department":"農業科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nagosho-km","name":"名護商工","dept":"工業技術科（機械）","area":"北部","track":"全日制","department":"工業技術科","course":"機械","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nagosho-kd","name":"名護商工","dept":"工業技術科（電気）","area":"北部","track":"全日制","department":"工業技術科","course":"電気","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nagosho-ke","name":"名護商工","dept":"建築科","area":"北部","track":"全日制","department":"建築科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nagosho-sj","name":"名護商工","dept":"総合情報科","area":"北部","track":"全日制","department":"総合情報科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nagosho-sh","name":"名護商工","dept":"商業科","area":"北部","track":"全日制","department":"商業科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nagosho-cs","name":"名護商工","dept":"地域産業科","area":"北部","track":"全日制","department":"地域産業科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"ishikawa-f","name":"石川","dept":"普通科","area":"中部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"maehara-br","name":"前原","dept":"普通科（文理）","area":"中部","track":"全日制","department":"普通科","course":"文理","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"maehara-en","name":"前原","dept":"普通科（英語）","area":"中部","track":"全日制","department":"普通科","course":"英語","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"maehara-sp","name":"前原","dept":"普通科（総合スポーツ）","area":"中部","track":"全日制","department":"普通科","course":"総合スポーツ","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yokatsu-f","name":"与勝","dept":"普通科","area":"中部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yomitan-f","name":"読谷","dept":"普通科","area":"中部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"kadena-dd","name":"嘉手納","dept":"総合学科（ドリームデザイン）","area":"中部","track":"全日制","department":"総合学科","course":"ドリームデザイン","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"kadena-ca","name":"嘉手納","dept":"総合学科（キャリアアップ）","area":"中部","track":"全日制","department":"総合学科","course":"キャリアアップ","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"gushikawa-f","name":"具志川","dept":"普通科","area":"中部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"misato-f","name":"美里","dept":"普通科","area":"中部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"koza-f","name":"コザ","dept":"普通科","area":"中部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"koza-night-commerce","name":"コザ","dept":"商業科（定時制）","area":"中部","track":"定時制","department":"商業科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"chubuno-nr","name":"中部農林","dept":"熱帯資源科","area":"中部","track":"全日制","department":"熱帯資源科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"chubuno-ek","name":"中部農林","dept":"園芸科学科","area":"中部","track":"全日制","department":"園芸科学科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"chubuno-sk","name":"中部農林","dept":"食品科学科","area":"中部","track":"全日制","department":"食品科学科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"chubuno-zo","name":"中部農林","dept":"造園科","area":"中部","track":"全日制","department":"造園科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"chubuno-fk","name":"中部農林","dept":"福祉科","area":"中部","track":"全日制","department":"福祉科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"chubuno-night-agri","name":"中部農林","dept":"農業科（定時制）","area":"中部","track":"定時制","department":"農業科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miraikoka-ms","name":"美来工科","dept":"機械システム科","area":"中部","track":"全日制","department":"機械システム科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miraikoka-jd","name":"美来工科","dept":"自動車工学科","area":"中部","track":"全日制","department":"自動車工学科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miraikoka-es","name":"美来工科","dept":"電子システム科","area":"中部","track":"全日制","department":"電子システム科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miraikoka-dk","name":"美来工科","dept":"土木工学科","area":"中部","track":"全日制","department":"土木工学科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miraikoka-it","name":"美来工科","dept":"ITシステム科","area":"中部","track":"全日制","department":"ITシステム科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miraikoka-cd","name":"美来工科","dept":"コンピュータデザイン科","area":"中部","track":"全日制","department":"コンピュータデザイン科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"misatoko-ki","name":"美里工業","dept":"機械科","area":"中部","track":"全日制","department":"機械科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"misatoko-de","name":"美里工業","dept":"電気科","area":"中部","track":"全日制","department":"電気科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"misatoko-ke","name":"美里工業","dept":"建築科","area":"中部","track":"全日制","department":"建築科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"misatoko-se","name":"美里工業","dept":"設備工業科","area":"中部","track":"全日制","department":"設備工業科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"misatoko-ch","name":"美里工業","dept":"調理科","area":"中部","track":"全日制","department":"調理科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"gushisho-rk","name":"具志川商業","dept":"リゾート観光科","area":"中部","track":"全日制","department":"リゾート観光科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"gushisho-ob","name":"具志川商業","dept":"オフィスビジネス科","area":"中部","track":"全日制","department":"オフィスビジネス科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"gushisho-bm","name":"具志川商業","dept":"ビジネスマルチメディア科","area":"中部","track":"全日制","department":"ビジネスマルチメディア科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"gushisho-js","name":"具志川商業","dept":"情報システム科","area":"中部","track":"全日制","department":"情報システム科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"koyo-f","name":"向陽","dept":"普通科","area":"南部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"koyo-ri","name":"向陽","dept":"理数科","area":"南部","track":"全日制","department":"理数科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"koyo-kb","name":"向陽","dept":"国際文科","area":"南部","track":"全日制","department":"国際文科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"chinen-f","name":"知念","dept":"普通科","area":"南部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"itoman-f","name":"糸満","dept":"普通科","area":"南部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"kumejima-f","name":"久米島","dept":"普通科","area":"南部","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"kumejima-en","name":"久米島","dept":"園芸科","area":"南部","track":"全日制","department":"園芸科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nanbuno-ss","name":"南部農林","dept":"食料生産科","area":"南部","track":"全日制","department":"食料生産科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nanbuno-sb","name":"南部農林","dept":"生物資源科","area":"南部","track":"全日制","department":"生物資源科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nanbuno-sk","name":"南部農林","dept":"食品加工科","area":"南部","track":"全日制","department":"食品加工科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nanbuno-ks","name":"南部農林","dept":"環境創造科","area":"南部","track":"全日制","department":"環境創造科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nanbuno-sd","name":"南部農林","dept":"生活デザイン科","area":"南部","track":"全日制","department":"生活デザイン科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nanbuko-ki","name":"南部工業","dept":"機械科","area":"南部","track":"全日制","department":"機械科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nanbuko-de","name":"南部工業","dept":"電気科","area":"南部","track":"全日制","department":"電気科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nanbuko-kd","name":"南部工業","dept":"建築設備科（建築デザイン）","area":"南部","track":"全日制","department":"建築設備科","course":"建築デザイン","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"nanbuko-sg","name":"南部工業","dept":"建築設備科（設備工学）","area":"南部","track":"全日制","department":"建築設備科","course":"設備工学","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"okisui-kg","name":"沖縄水産","dept":"海洋技術科","area":"南部","track":"全日制","department":"海洋技術科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"okisui-ks","name":"沖縄水産","dept":"海洋サイエンス科","area":"南部","track":"全日制","department":"海洋サイエンス科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"okisui-sg","name":"沖縄水産","dept":"総合学科","area":"南部","track":"全日制","department":"総合学科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miyako-f","name":"宮古","dept":"普通科","area":"宮古・八重山","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miyako-br","name":"宮古","dept":"文理探究科","area":"宮古・八重山","track":"全日制","department":"文理探究科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yaeyama-f","name":"八重山","dept":"普通科","area":"宮古・八重山","track":"全日制","department":"普通科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yaeno-af","name":"八重山農林","dept":"アグリフード科","area":"宮古・八重山","track":"全日制","department":"アグリフード科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yaeno-gl","name":"八重山農林","dept":"グリーンライフ科","area":"宮古・八重山","track":"全日制","department":"グリーンライフ科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yaeno-fp","name":"八重山農林","dept":"フードプロデュース科","area":"宮古・八重山","track":"全日制","department":"フードプロデュース科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yaeno-ls","name":"八重山農林","dept":"ライフスキル科","area":"宮古・八重山","track":"全日制","department":"ライフスキル科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miyakoko-jm","name":"宮古工業","dept":"自動車機械システム科","area":"宮古・八重山","track":"全日制","department":"自動車機械システム科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miyakoko-dj","name":"宮古工業","dept":"電気情報科","area":"宮古・八重山","track":"全日制","department":"電気情報科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miyakoko-sj","name":"宮古工業","dept":"生活情報科","area":"宮古・八重山","track":"全日制","department":"生活情報科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yaesho-km","name":"八重山商工","dept":"機械電気科（機械）","area":"宮古・八重山","track":"全日制","department":"機械電気科","course":"機械","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yaesho-kd","name":"八重山商工","dept":"機械電気科（電気）","area":"宮古・八重山","track":"全日制","department":"機械電気科","course":"電気","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yaesho-jg","name":"八重山商工","dept":"情報技術科","area":"宮古・八重山","track":"全日制","department":"情報技術科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yaesho-ka","name":"八重山商工","dept":"商業科（会計システム）","area":"宮古・八重山","track":"全日制","department":"商業科","course":"会計システム","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yaesho-jb","name":"八重山商工","dept":"商業科（情報ビジネス）","area":"宮古・八重山","track":"全日制","department":"商業科","course":"情報ビジネス","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yaesho-kk","name":"八重山商工","dept":"商業科（観光）","area":"宮古・八重山","track":"全日制","department":"商業科","course":"観光","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"yaesho-night-commerce","name":"八重山商工","dept":"商業科（定時制）","area":"宮古・八重山","track":"定時制","department":"商業科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miyasou-sb","name":"宮古総合実業","dept":"生物生産科","area":"宮古・八重山","track":"全日制","department":"生物生産科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miyasou-fc","name":"宮古総合実業","dept":"食と環境科（フードクリエイト）","area":"宮古・八重山","track":"全日制","department":"食と環境科","course":"フードクリエイト","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miyasou-kc","name":"宮古総合実業","dept":"食と環境科（環境クリエイト）","area":"宮古・八重山","track":"全日制","department":"食と環境科","course":"環境クリエイト","y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miyasou-sf","name":"宮古総合実業","dept":"生活福祉科","area":"宮古・八重山","track":"全日制","department":"生活福祉科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miyasou-kk","name":"宮古総合実業","dept":"海洋科学科","area":"宮古・八重山","track":"全日制","department":"海洋科学科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}},{"id":"miyasou-sh","name":"宮古総合実業","dept":"商業科","area":"宮古・八重山","track":"全日制","department":"商業科","course":null,"y":{"2025":{"dev":null,"nai":null,"rT":null,"rI":null,"rec":[],"dummy":true}}}];
 
 /* =====================================================================
    ★ 特色選抜・校別データ（県教委「特色選抜に係る募集人員の特別枠の設置」及び
      「調査書と学力検査等の成績との比重」一覧・令和7年度＝2025年春実施分より）
    id: [募集定員, 特色選抜の募集割合%, 特別枠(0=なし/1=あり・特別な検査なし/2=あり・特別な検査を課す), 一般選抜の比重(調査書:学力検査等)]
    ===================================================================== */
-const TOKU = {
-"kaiho-g":[200,45,2,"4:6"],
-"kaiho-art":[40,50,2,"4:6"],
-"nahakok-f":[320,25,1,"4:6"],
-"nahakok-k":[40,45,1,"4:6"],
-"naha-f":[400,25,1,"4.5:5.5"],
-"shuri-f":[360,25,1,"4:6"],
-"shuri-sen":[40,40,0,"5:5"],
-"shurihigashi-f":[240,20,0,"4.5:5.5"],
-"nahanishi-f":[240,20,0,"5:5"],
-"nahanishi-jin":[80,40,0,"5:5"],
-"nahanishi-tai":[40,50,1,"5:5"],
-"oroku-f":[280,25,2,"5:5"],
-"oroku-gei":[40,25,2,"5:5"],
-"oroku-biz":[40,25,2,"5:5"],
-"mawashi-f":[120,20,0,"5:5"],
-"mawashi-arts":[40,25,2,"5:5"],
-"mawashi-fuku":[40,35,1,"5:5"],
-"tomishiro-f":[280,20,0,"5:5"],
-"tomishiro-t":[40,20,0,"5:5"],
-"tomiminami-f":[120,20,0,"5:5"],
-"tomiminami-t":[40,20,0,"5:5"],
-"haebaru-fs":[200,20,0,"5:5"],
-"haebaru-kyodo":[40,25,1,"5:5"],
-"haebaru-biz":[80,20,0,"5:5"],
-"nahasho-sho":[200,35,2,"5:5"],
-"nahasho-joho":[80,35,2,"5:5"],
-"nahasho-kokukei":[40,35,2,"5:5"],
-"nanbusho-ryu":[40,45,1,"5:5"],
-"nanbusho-digi":[40,45,1,"5:5"],
-"nanbusho-office":[40,45,1,"5:5"],
-"nanbusho-kanko":[40,45,1,"5:5"],
-"nahako-kikai":[40,40,0,"5:5"],
-"nahako-jidosha":[40,30,0,"5:5"],
-"nahako-denki":[80,30,0,"5:5"],
-"nahako-graphic":[40,30,0,"5:5"],
-"nahako-fuku":[40,30,0,"5:5"],
-"okiko-johoden":[80,30,0,"5:5"],
-"okiko-denshiki":[80,30,0,"5:5"],
-"okiko-kenchiku":[40,30,0,"5:5"],
-"okiko-doboku":[40,30,0,"5:5"],
-"okiko-kagaku":[40,40,0,"5:5"],
-"okiko-seikatsu":[40,30,0,"5:5"],
-"kyuyo-bunri":[280,45,1,"4:6"],
-"futenma-f":[360,20,0,"4.5:5.5"],
-"ginowan-f":[160,20,0,"5:5"],
-"ginowan-joho":[40,20,0,"5:5"],
-"ginowan-spo":[40,25,1,"5:5"],
-"urasoe-f":[360,25,2,"5:5"],
-"yomei-sogo":[240,20,0,"5:5"],
-"nishihara-kenko":[40,25,2,"5:5"],
-"nishihara-bunri":[200,25,1,"5:5"],
-"nishihara-toku":[80,25,1,"5:5"],
-"kitanaka-f":[280,20,0,"5:5"],
-"chatan-f":[280,20,0,"5:5"],
-"urasho-kigyo":[160,20,0,"5:5"],
-"urasho-it":[40,20,0,"5:5"],
-"urasho-kanko":[80,20,0,"5:5"],
-"chubusho-sogo":[120,40,0,"5:5"],
-"chubusho-joho":[80,40,0,"5:5"],
-"chubusho-kokusai":[40,40,0,"5:5"],
-"chubusho-spo":[40,50,1,"5:5"],
-"urako-chori":[40,40,0,"5:5"],
-"urako-design":[80,40,0,"5:5"],
-"urako-johogi":[80,40,0,"5:5"],
-"urako-interior":[40,40,0,"5:5"],
-"urako-kenchiku":[40,40,0,"5:5"],
-"hentona-f":[40,20,0,"5:5"],
-"hentona-env":[40,30,0,"5:5"],
-"hokuzan-f":[80,25,1,"5:5"],
-"hokuzan-ri":[40,35,2,"5:5"],
-"motobu-sj":[40,20,0,"5:5"],
-"motobu-sf":[40,20,0,"5:5"],
-"nago-f":[240,25,2,"4.5:5.5"],
-"nago-fr":[80,45,1,"4.5:5.5"],
-"ginoza-f":[120,25,1,"5:5"],
-"hokuno-na":[40,30,0,"5:5"],
-"hokuno-ek":[40,30,0,"5:5"],
-"hokuno-sk":[40,40,0,"5:5"],
-"hokuno-rr":[40,40,0,"5:5"],
-"hokuno-sg":[40,40,0,"5:5"],
-"nagosho-km":[20,40,0,"5:5"],
-"nagosho-kd":[20,40,0,"5:5"],
-"nagosho-ke":[40,40,0,"5:5"],
-"nagosho-sj":[40,40,0,"5:5"],
-"nagosho-sh":[40,40,0,"5:5"],
-"nagosho-cs":[40,40,0,"5:5"],
-"ishikawa-f":[160,25,1,"5:5"],
-"maehara-br":[240,25,2,"5:5"],
-"maehara-en":[40,25,2,"5:5"],
-"maehara-sp":[40,25,1,"5:5"],
-"yokatsu-f":[160,25,1,"5:5"],
-"yomitan-f":[320,25,2,"4.5:5.5"],
-"kadena-dd":[185,45,1,"5:5"],
-"kadena-ca":[15,45,1,"5:5"],
-"gushikawa-f":[240,25,1,"4.5:5.5"],
-"misato-f":[200,20,0,"5:5"],
-"koza-f":[360,25,1,"4.5:5.5"],
-"chubuno-nr":[40,30,0,"5:5"],
-"chubuno-ek":[40,30,0,"5:5"],
-"chubuno-sk":[40,30,0,"5:5"],
-"chubuno-zo":[40,30,0,"5:5"],
-"chubuno-fk":[40,30,0,"5:5"],
-"miraikoka-ms":[80,40,0,"5:5"],
-"miraikoka-jd":[40,40,0,"5:5"],
-"miraikoka-es":[80,40,0,"5:5"],
-"miraikoka-dk":[40,40,0,"5:5"],
-"miraikoka-it":[40,40,0,"5:5"],
-"miraikoka-cd":[40,40,0,"5:5"],
-"misatoko-ki":[80,30,0,"5:5"],
-"misatoko-de":[80,30,0,"5:5"],
-"misatoko-ke":[40,30,0,"5:5"],
-"misatoko-se":[40,30,0,"5:5"],
-"misatoko-ch":[40,30,0,"5:5"],
-"gushisho-rk":[40,35,2,"5:5"],
-"gushisho-ob":[40,35,2,"5:5"],
-"gushisho-bm":[40,35,2,"5:5"],
-"gushisho-js":[80,35,2,"5:5"],
-"koyo-f":[80,25,1,"4:6"],
-"koyo-ri":[80,45,1,"4:6"],
-"koyo-kb":[80,45,1,"4:6"],
-"chinen-f":[320,20,0,"4.5:5.5"],
-"itoman-f":[320,25,2,"5:5"],
-"kumejima-f":[80,20,0,"5:5"],
-"kumejima-en":[40,20,0,"5:5"],
-"nanbuno-ss":[40,30,0,"5:5"],
-"nanbuno-sb":[40,30,0,"5:5"],
-"nanbuno-sk":[40,30,0,"5:5"],
-"nanbuno-ks":[40,30,0,"5:5"],
-"nanbuno-sd":[40,30,0,"5:5"],
-"nanbuko-ki":[40,30,0,"5:5"],
-"nanbuko-de":[40,30,0,"5:5"],
-"nanbuko-kd":[20,30,0,"5:5"],
-"nanbuko-sg":[20,30,0,"5:5"],
-"okisui-kg":[40,30,0,"5:5"],
-"okisui-ks":[40,30,0,"5:5"],
-"okisui-sg":[160,30,0,"5:5"],
-"miyako-f":[160,20,0,"4.5:5.5"],
-"miyako-br":[80,30,0,"4.5:5.5"],
-"yaeyama-f":[240,20,0,"5:5"],
-"yaeno-af":[40,30,0,"5:5"],
-"yaeno-gl":[40,30,0,"5:5"],
-"yaeno-fp":[40,30,0,"5:5"],
-"yaeno-ls":[40,30,0,"5:5"],
-"miyakoko-jm":[40,40,0,"5:5"],
-"miyakoko-dj":[40,40,0,"5:5"],
-"miyakoko-sj":[40,40,0,"5:5"],
-"yaesho-km":[20,40,0,"5:5"],
-"yaesho-kd":[20,40,0,"5:5"],
-"yaesho-jg":[40,40,0,"5:5"],
-"yaesho-ka":[30,40,0,"5:5"],
-"yaesho-jb":[30,40,0,"5:5"],
-"yaesho-kk":[20,40,0,"5:5"],
-"miyasou-sb":[40,30,0,"5:5"],
-"miyasou-fc":[20,40,0,"5:5"],
-"miyasou-kc":[20,40,0,"5:5"],
-"miyasou-sf":[40,40,0,"5:5"],
-"miyasou-kk":[40,40,0,"5:5"],
-"miyasou-sh":[40,30,0,"5:5"]
-};
-const TOKU_SRC = "県教育委員会「特色選抜に係る募集人員の特別枠の設置」及び「調査書と学力検査等の成績との比重」一覧（令和7年度・2025年春実施分）";
+const TOKU = {"hentona-f":[40,20,0,"5:5"],"hentona-env":[40,40,0,"5:5"],"hokuzan-f":[80,25,2,"5:5"],"hokuzan-ri":[40,35,2,"5:5"],"motobu-sj":[40,20,0,"5:5"],"motobu-sf":[40,20,0,"5:5"],"nago-f":[240,25,2,"4.5:5.5"],"nago-fr":[80,25,0,"4.5:5.5"],"ginoza-f":[120,25,2,"5:5"],"ishikawa-f":[160,25,1,"5:5"],"maehara-br":[240,25,2,"5:5"],"maehara-en":[40,25,2,"5:5"],"maehara-sp":[40,25,2,"5:5"],"yokatsu-f":[160,25,1,"5:5"],"yomitan-f":[320,25,2,"4.5:5.5"],"kadena-dd":[185,20,0,"5:5"],"kadena-ca":[15,20,0,"5:5"],"gushikawa-f":[240,25,2,"4.5:5.5"],"misato-f":[200,20,0,"5:5"],"koza-f":[360,25,1,"4.5:5.5"],"koza-night-commerce":[40,40,0,"5:5"],"kyuyo-bunri":[280,45,1,"4:6"],"chatan-f":[280,20,0,"5:5"],"kitanaka-f":[280,20,0,"5:5"],"futenma-f":[360,25,1,"4.5:5.5"],"ginowan-joho":[40,25,2,"5:5"],"ginowan-spo":[40,25,1,"5:5"],"ginowan-f":[160,25,2,"5:5"],"nishihara-kenko":[40,25,1,"5:5"],"nishihara-bunri":[280,25,1,"5:5"],"urasoe-f":[360,25,2,"5:5"],"nahakok-f":[320,25,1,"4:6"],"nahakok-k":[40,45,1,"4:6"],"yomei-sogo":[240,20,0,"5:5"],"shuri-f":[360,25,1,"4:6"],"shuri-sen":[40,40,0,"5:5"],"shurihigashi-f":[240,20,0,"4.5:5.5"],"kaiho-g":[200,45,1,"4:6"],"kaiho-art-music":[20,50,1,"4:6"],"kaiho-art-art":[20,50,1,"4:6"],"naha-f":[400,25,1,"4.5:5.5"],"mawashi-f":[120,20,0,"5:5"],"mawashi-arts":[40,25,1,"5:5"],"mawashi-fuku":[40,40,0,"5:5"],"oroku-f":[280,25,2,"5:5"],"oroku-biz":[40,25,2,"5:5"],"oroku-gei":[40,25,2,"5:5"],"nahanishi-f":[240,20,0,"5:5"],"nahanishi-jin":[80,40,0,"5:5"],"nahanishi-tai":[40,50,1,"5:5"],"tomishiro-f":[320,25,1,"5:5"],"tomiminami-f":[120,20,0,"5:5"],"tomiminami-t":[40,20,0,"5:5"],"haebaru-fs":[200,20,0,"5:5"],"haebaru-kyodo":[40,25,1,"5:5"],"haebaru-biz":[80,20,0,"5:5"],"koyo-f":[80,25,1,"4:6"],"koyo-ri":[80,45,1,"4:6"],"koyo-kb":[80,45,1,"4:6"],"chinen-f":[320,25,1,"4.5:5.5"],"itoman-f":[320,25,2,"5:5"],"kumejima-f":[80,20,0,"5:5"],"kumejima-en":[40,20,0,"5:5"],"miyako-f":[160,20,0,"4.5:5.5"],"miyako-br":[80,40,0,"4.5:5.5"],"yaeyama-f":[240,20,0,"5:5"],"hokuno-agritech":[40,40,0,"5:5"],"hokuno-resource-design":[40,40,0,"5:5"],"hokuno-food-create":[40,40,0,"5:5"],"hokuno-life-create":[40,40,0,"5:5"],"hokuno-night-agri":[40,40,0,"5:5"],"chubuno-nr":[40,30,0,"5:5"],"chubuno-ek":[40,30,0,"5:5"],"chubuno-sk":[40,30,0,"5:5"],"chubuno-zo":[40,30,0,"5:5"],"chubuno-fk":[40,30,0,"5:5"],"chubuno-night-agri":[40,30,0,"5:5"],"nanbuno-ss":[40,30,0,"5:5"],"nanbuno-sb":[40,30,0,"5:5"],"nanbuno-sk":[40,30,0,"5:5"],"nanbuno-ks":[40,30,0,"5:5"],"nanbuno-sd":[40,30,0,"5:5"],"yaeno-af":[40,30,0,"5:5"],"yaeno-gl":[40,30,0,"5:5"],"yaeno-fp":[40,30,0,"5:5"],"yaeno-ls":[40,30,0,"5:5"],"miraikoka-ms":[80,40,0,"5:5"],"miraikoka-jd":[40,40,0,"5:5"],"miraikoka-es":[80,40,0,"5:5"],"miraikoka-dk":[40,40,0,"5:5"],"miraikoka-it":[40,40,0,"5:5"],"miraikoka-cd":[40,40,0,"5:5"],"misatoko-ki":[80,30,0,"5:5"],"misatoko-de":[80,30,0,"5:5"],"misatoko-ke":[40,30,0,"5:5"],"misatoko-se":[40,30,0,"5:5"],"misatoko-ch":[40,30,0,"5:5"],"urako-johogi":[80,40,0,"5:5"],"urako-kenchiku":[40,40,0,"5:5"],"urako-interior":[40,40,0,"5:5"],"urako-design":[80,40,0,"5:5"],"urako-chori":[40,40,0,"5:5"],"nahako-kikai":[40,30,0,"5:5"],"nahako-jidosha":[40,30,0,"5:5"],"nahako-denki":[80,30,0,"5:5"],"nahako-graphic":[40,30,0,"5:5"],"nahako-fuku":[40,30,0,"5:5"],"nahako-night-kikai":[40,30,0,"5:5"],"nahako-night-denki":[40,30,0,"5:5"],"okiko-denshiki":[80,30,0,"5:5"],"okiko-johoden":[80,30,0,"5:5"],"okiko-kenchiku":[40,30,0,"5:5"],"okiko-doboku":[40,30,0,"5:5"],"okiko-kagaku":[40,40,0,"5:5"],"okiko-seikatsu":[40,30,0,"5:5"],"nanbuko-ki":[40,30,0,"5:5"],"nanbuko-de":[40,30,0,"5:5"],"nanbuko-kd":[20,30,0,"5:5"],"nanbuko-sg":[20,30,0,"5:5"],"miyakoko-jm":[40,40,0,"5:5"],"miyakoko-dj":[40,40,0,"5:5"],"miyakoko-sj":[40,40,0,"5:5"],"nagosho-km":[20,40,0,"5:5"],"nagosho-kd":[20,40,0,"5:5"],"nagosho-ke":[40,40,0,"5:5"],"nagosho-sj":[40,40,0,"5:5"],"nagosho-sh":[40,40,0,"5:5"],"nagosho-cs":[40,40,0,"5:5"],"yaesho-km":[20,40,0,"5:5"],"yaesho-kd":[20,40,0,"5:5"],"yaesho-jg":[40,40,0,"5:5"],"yaesho-ka":[30,40,0,"5:5"],"yaesho-jb":[30,40,0,"5:5"],"yaesho-kk":[20,40,0,"5:5"],"yaesho-night-commerce":[40,30,0,"5:5"],"gushisho-rk":[40,35,2,"5:5"],"gushisho-ob":[40,35,2,"5:5"],"gushisho-bm":[40,35,2,"5:5"],"gushisho-js":[80,35,2,"5:5"],"chubusho-sogo":[120,40,0,"5:5"],"chubusho-joho":[80,40,0,"5:5"],"chubusho-kokusai":[40,40,0,"5:5"],"chubusho-spo":[40,50,1,"5:5"],"urasho-kigyo":[160,20,0,"5:5"],"urasho-it":[40,20,0,"5:5"],"urasho-kanko":[80,20,0,"5:5"],"nahasho-sho":[200,45,2,"5:5"],"nahasho-joho":[80,45,2,"5:5"],"nahasho-kokukei":[40,45,2,"5:5"],"nanbusho-ryu":[40,45,1,"5:5"],"nanbusho-office":[40,45,1,"5:5"],"nanbusho-digi":[40,45,1,"5:5"],"nanbusho-kanko":[40,45,1,"5:5"],"okisui-kg":[40,30,0,"5:5"],"okisui-ks":[40,30,0,"5:5"],"okisui-sg":[160,30,0,"5:5"],"miyasou-kk":[40,40,0,"5:5"],"miyasou-sb":[40,30,0,"5:5"],"miyasou-fc":[20,40,0,"5:5"],"miyasou-kc":[20,40,0,"5:5"],"miyasou-sf":[40,30,0,"5:5"],"miyasou-sh":[40,30,0,"5:5"],"tomari-am":[120,20,0,"5:5"],"tomari-night":[40,20,0,"5:5"]};
+const TOKU_SRC = "沖縄県教育委員会・各県立高校の令和8年度公式資料（令和9年度資料は2026年7月7日時点で未公表）";
 const SCHOOL_MEMO = {
   "kaiho-g":"開邦は併設型の中高一貫校。高校からの募集人員は、定員から開邦中学校からの内部進学者を除いた数になります。",
-  "kaiho-art":"開邦は併設型の中高一貫校。芸術科の定員40人は音楽20人・美術20人の合計です。",
+  "kaiho-art-music":"開邦は併設型の中高一貫校。芸術科の定員40人は音楽20人・美術20人の合計です。",
+  "kaiho-art-art":"開邦は併設型の中高一貫校。芸術科の定員40人は音楽20人・美術20人の合計です。",
   "kyuyo-bunri":"球陽は併設型の中高一貫校。高校からの募集人員は、定員から球陽中学校からの内部進学者を除いた数になります。",
   "motobu-sj":"本部高校は連携型の中高一貫教育校で、連携中学校の生徒を対象とした連携型選抜もあります。",
   "motobu-sf":"本部高校は連携型の中高一貫教育校で、連携中学校の生徒を対象とした連携型選抜もあります。",
@@ -2695,12 +2213,137 @@ function hijuTxt(j){
   if (j === "4.5:5.5") return "（やや学力検査を重視）";
   return "（原則どおり）";
 }
+
+const ADMISSION_DETAILS = window.ADMISSION_DETAILS || {};
+const ACHIEVEMENT_RECORDS = (window.ACHIEVEMENT_RANKS && window.ACHIEVEMENT_RANKS.records) || [];
+const ACHIEVEMENT_BY_ID = Object.fromEntries(ACHIEVEMENT_RECORDS.map(x => [x.achievementId || x.achievementRankId, x]));
+const ADMISSION_SOURCE_LIST = window.ADMISSION_SOURCES || [];
+const ADMISSION_SOURCE_BY_ID = Object.fromEntries(ADMISSION_SOURCE_LIST.map(x => [x.source_id, x]));
+function fmtOfficial(v){ return (v===null||v===undefined||v==="") ? "記載なし／未確認" : esc(v); }
+function odList(title, arr){
+  if (!Array.isArray(arr) || !arr.length) return "";
+  return `<div class="od-sub">${esc(title)}</div><ul class="od-list">${arr.map(x=>`<li>${esc(typeof x==="string"?x:JSON.stringify(x))}</li>`).join("")}</ul>`;
+}
+function odTestText(v){
+  if (!v) return "";
+  if (typeof v === "string") return v;
+  const a=[];
+  if (v.required===true) a.push("必須");
+  if (v.required===false) a.push("実施なし／対象外");
+  if (v.name) a.push(v.name);
+  if (v.format) a.push(v.format);
+  if (v.points!=null) a.push(v.points+"点");
+  if (v.duration) a.push(v.duration);
+  if (v.length) a.push("字数："+v.length);
+  if (v.topic) a.push("テーマ："+v.topic);
+  if (v.theme) a.push("テーマ："+v.theme);
+  if (v.details) a.push(v.details);
+  if (v.evaluation) a.push(v.evaluation);
+  if (v.treatment) a.push(v.treatment);
+  if (v.notes) a.push(v.notes);
+  return a.join("／");
+}
+function odScoring(scoring){
+  if (!Array.isArray(scoring)||!scoring.length) return `<p class="od-empty">配点の詳細は公式資料で未確認または未公表です。</p>`;
+  let rows=[];
+  scoring.forEach(x=>{
+    rows.push(`<tr><td>${esc(x.item||x.name||"項目")}</td><td>${x.points==null?"—":esc(x.points)+"点"}</td><td>${esc(x.notes||x.details||"")}</td></tr>`);
+    (x.breakdown||[]).forEach(b=>rows.push(`<tr><td>└ ${esc(b.item||"")}</td><td>${b.points==null?"—":esc(b.points)+"点"}</td><td>${esc(b.notes||"")}</td></tr>`));
+  });
+  return `<div class="tscroll"><table class="od-table"><thead><tr><th>評価項目</th><th>配点</th><th>補足</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>`;
+}
+function odScoringOptions(options){
+  if(!Array.isArray(options)||!options.length) return "";
+  return `<div class="od-sub">枠別の配点</div>`+options.map(x=>`<div class="od-sub">${esc(x.name||"区分")}</div>${odScoring(x.items||[])}`).join("");
+}
+function odDocumentItems(sp){
+  const a=[];
+  const add=(label,v)=>{
+    if(v===null||v===undefined||v===false||v==="") return;
+    if(Array.isArray(v)){ v.forEach(x=>add(label,x)); return; }
+    if(typeof v==="string"){ a.push(`${label}：${v}`); return; }
+    if(typeof v==="object"){
+      const t=[]; if(v.required===true)t.push("必須"); if(v.form)t.push(v.form); if(v.notes)t.push(v.notes);
+      a.push(`${label}：${t.join("／")||JSON.stringify(v)}`);
+    }
+  };
+  (sp.evidenceDocuments||[]).forEach(x=>a.push(x));
+  add("学校所定様式",sp.schoolApplicationForm);
+  add("志望理由書",sp.statementOfPurpose);
+  add("その他",sp.otherDocuments);
+  return a;
+}
+function odRanks(r){
+  const ids=r.achievementRankIds||[];
+  if(!ids.length) return `<p class="od-empty">学校別の実績ランク表は収録されていません。</p>`;
+  return ids.map(id=>{
+    const a=ACHIEVEMENT_BY_ID[id]; if(!a) return "";
+    const rows=a.rows||a.items||[];
+    const body=rows.map(x=>{
+      const quals=x.qualificationLevels && typeof x.qualificationLevels==="object" ? Object.entries(x.qualificationLevels).map(([k,v])=>`<span class="od-qual">${esc(k)} ${esc(v)}</span>`).join("") : "";
+      const main=x.criteria||x.summary||"";
+      const meta=[];
+      if(x.scope) meta.push(`対象範囲：${x.scope}`);
+      if(x.conditions) meta.push(`条件：${x.conditions}`);
+      if(x.notes) meta.push(`注記：${x.notes}`);
+      return `<tr><td>${esc(x.category||"")}</td><td>${esc(x.activityName||"")}</td><td>${esc(x.rank||"")}${x.points!=null?` ${esc(x.points)}点`:""}</td><td>${esc(main)}${quals?`<div>${quals}</div>`:""}${meta.length?`<small class="od-meta">${meta.map(esc).join("<br>")}</small>`:""}</td></tr>`;
+    }).join("");
+    return `<details class="od-rank"><summary>${esc(a.schoolName||r.schoolName)} ${esc(a.referenceYear||"")} 実績・資格評価表</summary><div class="tscroll"><table class="od-table"><thead><tr><th>区分</th><th>活動</th><th>ランク・点</th><th>基準</th></tr></thead><tbody>${body||'<tr><td colspan="4">詳細行なし</td></tr>'}</tbody></table></div>${odList("注意",a.notes)}</details>`;
+  }).join("");
+}
+function odSources(r){
+  const links=[];
+  if(r.schoolOfficialSiteUrl) links.push({title:"学校公式サイト",url:r.schoolOfficialSiteUrl,note:r.officialSchoolName||""});
+  if(r.schoolAdmissionPageUrl && r.schoolAdmissionPageUrl!==r.schoolOfficialSiteUrl) links.push({title:"学校公式 入試情報ページ",url:r.schoolAdmissionPageUrl,note:""});
+  (r.sourceIds||[]).forEach(id=>{
+    const s=ADMISSION_SOURCE_BY_ID[id]; if(!s) return;
+    const url=s.direct_file_url||s.official_page_url;
+    if(url) links.push({title:s.title||id,url,note:[s.target_year,s.heading,s.link_status].filter(Boolean).join("／")});
+  });
+  const seen=new Set();
+  return `<div class="od-links">${links.filter(x=>{if(seen.has(x.url))return false;seen.add(x.url);return true;}).map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener"><b>${esc(x.title)}</b>${x.note?`<small>${esc(x.note)}</small>`:""}</a>`).join("")}</div>`;
+}
+function officialAdmissionsHtml(s){
+  const r=ADMISSION_DETAILS[s.id];
+  if(!r) return `<div class="official-detail"><div class="od-body od-empty">この学科の公式詳細データは見つかりませんでした。</div></div>`;
+  const b=r.basic||{}, g=r.generalSelection||{}, sp=r.specialSelection||{};
+  const status=r.dataCompleteness==="school_detail_partial"?"一部要確認":`${r.referenceYear}資料確認済み`;
+  const review=(r.reviewReasons||[]).filter(x=>!String(x).includes("令和9年度学校別資料が未公表")&&!String(x).includes("前年度参考"));
+  const genTests=[g.interview&&["面接",odTestText(g.interview)],g.essay&&["作文",odTestText(g.essay)],g.shortEssay&&["小論文",odTestText(g.shortEssay)],g.practicalTest&&["実技",odTestText(g.practicalTest)],g.schoolIndependentTest&&["学校独自検査",odTestText(g.schoolIndependentTest)]].filter(Boolean);
+  const spTests=[sp.interview&&["面接",odTestText(sp.interview)],sp.essay&&["作文",odTestText(sp.essay)],sp.shortEssay&&["小論文",odTestText(sp.shortEssay)],sp.presentation&&["プレゼン",odTestText(sp.presentation)],sp.practicalTest&&["実技",odTestText(sp.practicalTest)],sp.schoolIndependentTest&&["学校独自検査",odTestText(sp.schoolIndependentTest)]].filter(Boolean);
+  const listedTests=(sp.tests||[]).map(x=>`${x.name||"検査"}：${odTestText(x)}`);
+  const documentItems=odDocumentItems(sp);
+  const sf=sp.specialFrame||b.specialFrame||{};
+  const sfText=sf.officialText||(!sf.available?"特別枠なし":(sf.applicationCheckRequired?"特別枠あり（希望者に特別な検査あり）":"特別枠あり"));
+  let h=`<div class="official-detail"><div class="od-head"><span class="od-title">学校別公式入試情報</span><span class="od-badge">${esc(r.referenceYear)}参考</span><span class="od-badge ${r.dataCompleteness==="school_detail_partial"?"partial":""}">${status}</span></div><div class="od-body">`;
+  h+=`<div class="od-grid"><div class="od-stat"><span>課程</span><b>${fmtOfficial(r.track)}</b></div><div class="od-stat"><span>募集定員</span><b>${fmtOfficial(b.capacity)}人</b></div><div class="od-stat"><span>特色選抜</span><b>${fmtOfficial(sp.quotaOfficialText||b.specialQuotaOfficialText)}${sp.quotaNumber!=null?`・最大${esc(sp.quotaNumber)}人`:""}</b></div><div class="od-stat"><span>一般選抜比重</span><b>${fmtOfficial(g.officialRatio)}</b></div></div>`;
+  h+=`<details class="od-section" open><summary>一般選抜</summary><div class="od-inner"><p><b>${fmtOfficial(g.summary)}</b></p><p class="od-method"><b>選抜方法：</b>${fmtOfficial(g.selectionMethod)}</p><p><b>一般選抜の募集人員：</b>${b.generalQuotaNumber!=null?`${esc(b.generalQuotaNumber)}人`:fmtOfficial(b.generalQuotaFormula)}${b.generalQuotaNumberIfMaxSpecial!=null?`（特色選抜が上限まで合格した場合の目安：${esc(b.generalQuotaNumberIfMaxSpecial)}人）`:""}</p>${genTests.length?`<div class="od-sub">検査</div><ul class="od-list">${genTests.map(x=>`<li><b>${esc(x[0])}</b>：${esc(x[1])}</li>`).join("")}</ul>`:""}${odScoring(g.scoring)}${odList("補足",g.notes)}</div></details>`;
+  const scoringStatus = sp.scoringPublicationStatus==="not_published"
+    ? `<p class="od-empty"><b>配点：</b>学校別資料で未公表</p>`
+    : (sp.scoringPublicationStatus==="partial" ? `<p class="od-empty"><b>配点：</b>一部のみ公表・確認</p>` : "");
+  const evidenceStatus = sp.activityEvidenceRequired===true ? `<p><b>活動実績等の証明資料：</b>必要</p>` : (sp.activityEvidenceRequired===false ? `<p><b>活動実績等の証明資料：</b>不要</p>` : "");
+  const specialFrameScoring = Array.isArray(sf.scoring)&&sf.scoring.length ? `<div class="od-sub">特別枠専用の配点</div>${odScoring(sf.scoring)}` : "";
+  h+=`<details class="od-section" open><summary>特色選抜</summary><div class="od-inner"><p><b>${fmtOfficial(sp.summary)}</b></p><p><b>特別枠：</b>${fmtOfficial(sfText)}</p><p class="od-method"><b>選抜方法：</b>${fmtOfficial(sp.selectionMethod)}</p>${odList("特別枠の対象活動",sf.activityFields)}${specialFrameScoring}${odList("出願要件",sp.eligibility)}${odList("追加条件",sp.applicationRequirements)}${odList("求める生徒像",sp.desiredStudentProfile)}${odList("評価する活動・実績",sp.activityFields)}${odList("評価項目",sp.evaluationItems)}${listedTests.length?`<div class="od-sub">検査一覧</div><ul class="od-list">${listedTests.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}${spTests.length?`<div class="od-sub">面接・独自検査の詳細</div><ul class="od-list">${spTests.map(x=>`<li><b>${esc(x[0])}</b>：${esc(x[1])}</li>`).join("")}</ul>`:""}${scoringStatus}${odScoring(sp.scoring)}${odScoringOptions(sp.scoringOptions)}${evidenceStatus}${odList("提出・証明資料",documentItems)}${odList("補足",sp.notes)}</div></details>`;
+  h+=`<details class="od-section"><summary>実績・資格のランク表</summary><div class="od-inner">${odRanks(r)}</div></details>`;
+  h+=`<details class="od-section"><summary>第2志望・通学区域</summary><div class="od-inner"><p><b>通学区域：</b>${fmtOfficial(b.attendanceArea)}</p>${b.outsideAreaNotes?`<p>${esc(b.outsideAreaNotes)}</p>`:""}<p><b>第2志望：</b>${b.secondChoice&&b.secondChoice.available?"設定可能":"設定なし／候補なし"}</p>${b.secondChoice&&b.secondChoice.combinations&&b.secondChoice.combinations.length?`<ul class="od-list">${b.secondChoice.combinations.map(x=>`<li>${esc(x.department||"")}${x.course?`（${esc(x.course)}）`:""}${x.track?`・${esc(x.track)}`:""}</li>`).join("")}</ul>`:""}${b.secondChoice&&b.secondChoice.notes?`<p>${esc(b.secondChoice.notes)}</p>`:""}</div></details>`;
+  h+=`<details class="od-section"><summary>公式出典</summary><div class="od-inner">${odSources(r)}</div></details>`;
+  h+=`<div class="od-warn">令和9年度の学校別募集要項・特色選抜資料は2026年7月7日時点で未公表です。この欄は令和8年度公式資料を前年度参考として表示しています。出願時は必ず最新の学校公式資料をご確認ください。${review.length?`<br><b>追加確認事項：</b>${review.map(esc).join("／")}`:""}</div>`;
+  h+=`</div></div>`;
+  return h;
+}
+
 function schoolProfile(s, d){
+  const r = ADMISSION_DETAILS[s.id];
   const t = TOKU[s.id];
   let h = `<div class="sprof">`;
   h += `<p><b>${esc(s.name)}高校 ${esc(s.dept)}</b>（${esc(gkOf(s))}）`;
-  if (t){
-    h += `　募集定員 <b class="mono">${t[0]}</b>人。<b>特色選抜の募集枠は定員の${t[1]}%</b>・${WAKU_TXT[t[2]]}。一般選抜の比重（調査書：学力検査等）は <b class="mono">${t[3]}</b> ${hijuTxt(t[3])}です。`;
+  if (r){
+    const b=r.basic||{}, g=r.generalSelection||{}, sp=r.specialSelection||{};
+    h += `　募集定員 <b class="mono">${fmtOfficial(b.capacity)}</b>人。<b>特色選抜は${fmtOfficial(sp.quotaOfficialText||b.specialQuotaOfficialText)}</b>${sp.quotaNumber!=null?`（最大${fmtOfficial(sp.quotaNumber)}人）`:""}。一般選抜の比重（調査書：学力検査等）は <b class="mono">${fmtOfficial(g.officialRatio)}</b> ${hijuTxt(g.officialRatio)}です。`;
+    if (b.externalRecruitmentCapacity!=null || b.internalAdvancementExpected!=null) h += `<br>高校からの外部募集人員：<b>${fmtOfficial(b.externalRecruitmentCapacity)}</b>人／内部進学見込み：<b>${fmtOfficial(b.internalAdvancementExpected)}</b>人。`;
+    if (r.track && r.track!=="全日制") h += `課程は<b>${esc(r.track)}</b>です。`;
+  } else if (t){
+    h += `　募集定員 <b class="mono">${t[0]}</b>人。特色選抜の募集枠は定員の${t[1]}%。一般選抜の比重は <b class="mono">${t[3]}</b> です。`;
   }
   const sibs = SCHOOLS.filter(x => x.name === s.name && x.id !== s.id);
   if (sibs.length){
@@ -2709,9 +2352,7 @@ function schoolProfile(s, d){
   if (SCHOOL_MEMO[s.id]) h += `<br>${SCHOOL_MEMO[s.id]}`;
   h += `</p>`;
   if (d.dummy){
-    h += `<p class="sprof-note">この学科の基準（偏差値・内申）・倍率・合否データは、追跡調査の集計中のため未掲載（「—」表示）です。定員・特色枠・比重は県教委の公表一覧にもとづく実データです。実データが届きしだい掲載します。</p>`;
-  } else if (t){
-    h += `<p class="sprof-note">定員・特色枠・比重の出典：${TOKU_SRC}。校別の出願要件・配点は毎年秋に各校が公表する要項で必ず確認を。</p>`;
+    h += `<p class="sprof-note">合格基準（偏差値・内申）・倍率・追跡調査の合否データは未掲載（「—」）ですが、下の学校別公式入試情報は確認できます。</p>`;
   }
   h += `</div>`;
   return h;
@@ -2772,13 +2413,14 @@ const SCHOOL_GAKKU = {
   "豊見城":"島尻学区","豊見城南":"島尻学区","南風原":"島尻学区","知念":"島尻学区","糸満":"島尻学区","向陽":"島尻学区",
   "久米島":"久米島学区","宮古":"宮古学区","八重山":"八重山学区"
 };
-const GK_SPECIAL_ZENIKI = new Set(["郷土文化コース","クリエイティブアーツ","芸術教養コース"]);
+const GK_SPECIAL_ZENIKI = new Set(["郷土文化","クリエイティブアーツ","芸術教養","郷土文化コース","芸術教養コース"]);
 function gkOf(s){
+  if (s.track && s.track !== "全日制") return "県全域";               // 定時制は通学区域の制限なし
   const g = SCHOOL_GAKKU[s.name];
   if (!g) return "県全域";                                    // 普通科を持たない学校
-  if (GK_SPECIAL_ZENIKI.has(s.dept)) return "県全域";          // 特例で県全域の普通科コース
-  if (s.dept === "みらい福祉") return "県全域";                 // 真和志の福祉専門学科（単位制／データ上は「科」を省略）
-  if (s.dept !== "普通科" && /科$/.test(s.dept)) return "県全域"; // 専門学科（〜科）
+  const dep = s.department || s.dept;
+  if (dep !== "普通科") return "県全域";                        // 専門学科・総合学科（みらい福祉を含む）
+  if (GK_SPECIAL_ZENIKI.has(s.course || "") || GK_SPECIAL_ZENIKI.has(s.dept)) return "県全域"; // 特例で県全域の普通科コース
   return g;                                                    // 普通科・各コース・普通総合
 }
 
@@ -2875,8 +2517,9 @@ function calcNaishin(){
       lines.push("実技4教科（音・美・保体・技家）は評定×1.5で計算される仕組みです。実技が1段階上がると、その学年の内申は＋1.5点になります。");
     }
     if (projected !== null){
-      const clearedN = SCHOOLS.filter(s => cur(s).nai <= projected).length;
-      lines.push(`見込み${projected}点は、掲載${SCHOOLS.length}学科のうち <b>${clearedN}学科</b> の基準内申（80%合格ライン）に届いています。下の判定ツールで志望校との距離を確認できます。`);
+      const naiListed = SCHOOLS.filter(s => !cur(s).dummy && cur(s).nai !== null);
+      const clearedN = naiListed.filter(s => cur(s).nai <= projected).length;
+      lines.push(`見込み${projected}点は、基準内申を掲載している${naiListed.length}学科のうち <b>${clearedN}学科</b> の基準内申（80%合格ライン）に届いています。下の判定ツールで志望校との距離を確認できます。`);
     }
     msg.innerHTML = lines.join("<br>");
   }
@@ -3536,6 +3179,7 @@ function detailRow(s){
   const td = document.createElement("td"); td.colSpan = 6;
 
   let h = schoolProfile(s, d);
+  h += officialAdmissionsHtml(s);
   if (years.length > 1){
     h += `<div class="ychips">` + years.slice().reverse().map(y =>
       `<button type="button" data-yc="${y}" class="${y===ySel?"on":""}">${y}年度</button>`).join("") + `</div>`;
@@ -3561,7 +3205,7 @@ function detailRow(s){
           <button type="button" class="btn-mini" data-cmp ${inCmp?"disabled":""}>${inCmp?"比較に追加済み ✓":"＋ 比較に追加"}</button>
         </div>`;
 
-  td.innerHTML = h;
+  td.innerHTML = `<div class="detail-inner">${h}</div>`;
   td.addEventListener("click", e => e.stopPropagation());
   td.querySelectorAll("[data-sib]").forEach(a => a.addEventListener("click", e => {
     e.preventDefault();
@@ -3590,7 +3234,8 @@ function renderTable(){
     (!tblArea || s.area === tblArea) &&
     (!tblQuery || (s.name + "高校" + s.dept).includes(tblQuery)));
   if (sortKey) list = [...list].sort((a,b) => {
-    const av = cur(a)[sortKey], bv = cur(b)[sortKey];
+    const ad = cur(a), bd = cur(b);
+    const av = ad.dummy ? null : ad[sortKey], bv = bd.dummy ? null : bd[sortKey];
     return ((av==null ? -1e9 : av) - (bv==null ? -1e9 : bv)) * sortDir;
   });
 
@@ -3679,8 +3324,8 @@ function renderCompare(){
     return key === "score" ? (r.score === null ? "—" : fmtPt(r.score)) : fmtPt(r[key]);
   };
   let h = `<table class="cmptbl"><thead>${head}</thead><tbody>`;
-  h += row("基準偏差値<br>（80%）", d => `<b>${d.dev}</b>`);
-  h += row("基準内申<br>（80%）",  d => `<b>${d.nai}</b>`);
+  h += row("基準偏差値<br>（80%）", d => `<b>${dval(d,"dev")}</b>`);
+  h += row("基準内申<br>（80%）",  d => `<b>${dval(d,"nai")}</b>`);
   h += row("倍率<br>特色", d => `<span class="${rateCls(d.rT)}">${fmtRate(d.rT)}</span>`);
   h += row("倍率<br>一般", d => `<span class="${rateCls(d.rI)}">${fmtRate(d.rI)}</span>`);
   h += row("一般合格者<br>平均偏差値", g("一般","合格","dev"));
