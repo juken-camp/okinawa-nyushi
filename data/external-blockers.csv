@@ -1,0 +1,6 @@
+﻿record_id,school,department_course,classification,current_result,data_treatment
+koza-f,コザ,普通科（全日制）,needs_review_external_blocker,公式PDFの所在・検索索引本文は確認済み。PDF本体は502 Bad Gatewayで全セル未確認。,主要ランク・資格級のみ収録し、未確認部分を明示。
+koza-night-commerce,コザ,商業科（定時制）,not_found_current_year_rank_table,学校ページ上のリンクは確認できるが、検索索引で取得できるPDF本文は令和7年度表。令和8年度表としては使用不可。,令和7年度表を過年度参考として別管理し、令和8年度の実績ランクは未確認扱い。
+okisui-kg,沖縄水産,海洋技術科,needs_review_external_blocker,公式PDFの所在・検索索引本文は確認済み。PDF本体は502 Bad Gatewayで全セル未確認。,配点・資格級・主要ランクのみ収録し、未確認部分を明示。
+okisui-ks,沖縄水産,海洋サイエンス科,needs_review_external_blocker,公式PDFの所在・検索索引本文は確認済み。PDF本体は502 Bad Gatewayで全セル未確認。,配点・資格級・主要ランクのみ収録し、未確認部分を明示。
+okisui-sg,沖縄水産,総合学科,needs_review_external_blocker,公式PDFの所在・検索索引本文は確認済み。PDF本体は502 Bad Gatewayで全セル未確認。,配点・資格級・主要ランクのみ収録し、未確認部分を明示。

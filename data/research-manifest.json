@@ -1,0 +1,20 @@
+{
+  "package": "okinawa_admissions_final_verification_addendum",
+  "version": "1.0.0",
+  "created_at": "2026-07-07",
+  "purpose": "v9.0.0-finalの最終再確認結果と例外件数表現の整理",
+  "files": {
+    "FINAL-VERIFICATION-ADDENDUM.md": {
+      "size": 2146,
+      "sha256": "0fd46e3528934f61ea548acf102385d60eec82ca65be2ddd3c508e95938ff031"
+    },
+    "external-blockers.csv": {
+      "size": 1482,
+      "sha256": "e00024e5e1e5a3804916bf687de6378df3efd5125783423cc21e8e3b78dec7fb"
+    },
+    "official-source-recheck.csv": {
+      "size": 1412,
+      "sha256": "4a5489b579549e8dff29cd064b0b726e7f8b6c29b3bb9e3f3b026ec5aa802d0f"
+    }
+  }
+}

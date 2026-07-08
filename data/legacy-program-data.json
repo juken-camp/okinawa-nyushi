@@ -1,0 +1,229 @@
+{
+  "_meta": {
+    "createdAt": "2026-07-07",
+    "purpose": "統合前index.htmlに存在したが、令和8年度公式母集団では廃止・再編・分割扱いとなった学科データを、現行学科へ誤転用せず保存する。",
+    "recordCount": 8
+  },
+  "records": [
+    {
+      "id": "kaiho-art",
+      "schoolName": "開邦",
+      "department": "芸術科",
+      "area": "南部",
+      "yearData": {
+        "2025": {
+          "dev": 50,
+          "nai": 120,
+          "rT": 1.75,
+          "rI": 0.85,
+          "rec": [
+            {
+              "sel": "特色",
+              "res": "合格",
+              "dev": 57.1,
+              "nai": 142.8,
+              "score": 200
+            },
+            {
+              "sel": "特色",
+              "res": "不合格",
+              "dev": 47.8,
+              "nai": 112.3,
+              "score": 170
+            },
+            {
+              "sel": "一般",
+              "res": "合格",
+              "dev": 51.6,
+              "nai": 128.3,
+              "score": 177.2
+            }
+          ]
+        }
+      },
+      "status": "not_in_current_official_program_list_or_restructured",
+      "mappingNotes": [
+        "既存の芸術科1件を、公式の音楽・美術2コースに分割する必要がある。"
+      ],
+      "suggestedSuccessorIds": [
+        "kaiho-art-music",
+        "kaiho-art-art"
+      ]
+    },
+    {
+      "id": "tomishiro-t",
+      "schoolName": "豊見城",
+      "department": "特進コース",
+      "area": "南部",
+      "yearData": {
+        "2025": {
+          "dev": 45,
+          "nai": 105,
+          "rT": 0.5,
+          "rI": 0.88,
+          "rec": [
+            {
+              "sel": "一般",
+              "res": "合格",
+              "dev": 48.3,
+              "nai": 111.4,
+              "score": 173.4
+            },
+            {
+              "sel": "一般",
+              "res": "不合格",
+              "dev": 47,
+              "nai": 101,
+              "score": 114
+            }
+          ]
+        }
+      },
+      "status": "not_in_current_official_program_list_or_restructured",
+      "mappingNotes": [
+        "令和8年度公式一覧に同名の学科・コースを確認できない。"
+      ],
+      "suggestedSuccessorIds": []
+    },
+    {
+      "id": "nishihara-toku",
+      "schoolName": "西原",
+      "department": "特別進学コース",
+      "area": "中部",
+      "yearData": {
+        "2025": {
+          "dev": 46,
+          "nai": 107,
+          "rT": 0.8,
+          "rI": 0.95,
+          "rec": [
+            {
+              "sel": "特色",
+              "res": "合格",
+              "dev": 55.5,
+              "nai": 142.7,
+              "score": 199.7
+            },
+            {
+              "sel": "一般",
+              "res": "合格",
+              "dev": 50,
+              "nai": 118.1,
+              "score": 175.7
+            }
+          ]
+        }
+      },
+      "status": "not_in_current_official_program_list_or_restructured",
+      "mappingNotes": [
+        "令和8年度公式一覧に同名の学科・コースを確認できない。"
+      ],
+      "suggestedSuccessorIds": []
+    },
+    {
+      "id": "hokuno-na",
+      "schoolName": "北部農林",
+      "department": "熱帯農業科",
+      "area": "北部",
+      "yearData": {
+        "2025": {
+          "dev": 35,
+          "nai": 76,
+          "rT": null,
+          "rI": null,
+          "rec": [],
+          "dummy": true
+        }
+      },
+      "status": "not_in_current_official_program_list_or_restructured",
+      "mappingNotes": [
+        "令和8年度公式一覧に同名の学科・コースを確認できない。"
+      ],
+      "suggestedSuccessorIds": []
+    },
+    {
+      "id": "hokuno-ek",
+      "schoolName": "北部農林",
+      "department": "園芸工学科",
+      "area": "北部",
+      "yearData": {
+        "2025": {
+          "dev": 35,
+          "nai": 76,
+          "rT": null,
+          "rI": null,
+          "rec": [],
+          "dummy": true
+        }
+      },
+      "status": "not_in_current_official_program_list_or_restructured",
+      "mappingNotes": [
+        "令和8年度公式一覧に同名の学科・コースを確認できない。"
+      ],
+      "suggestedSuccessorIds": []
+    },
+    {
+      "id": "hokuno-sk",
+      "schoolName": "北部農林",
+      "department": "食品科学科",
+      "area": "北部",
+      "yearData": {
+        "2025": {
+          "dev": 36,
+          "nai": 78,
+          "rT": null,
+          "rI": null,
+          "rec": [],
+          "dummy": true
+        }
+      },
+      "status": "not_in_current_official_program_list_or_restructured",
+      "mappingNotes": [
+        "令和8年度公式一覧に同名の学科・コースを確認できない。"
+      ],
+      "suggestedSuccessorIds": []
+    },
+    {
+      "id": "hokuno-rr",
+      "schoolName": "北部農林",
+      "department": "林業緑地科",
+      "area": "北部",
+      "yearData": {
+        "2025": {
+          "dev": 35,
+          "nai": 75,
+          "rT": null,
+          "rI": null,
+          "rec": [],
+          "dummy": true
+        }
+      },
+      "status": "not_in_current_official_program_list_or_restructured",
+      "mappingNotes": [
+        "令和8年度公式一覧に同名の学科・コースを確認できない。"
+      ],
+      "suggestedSuccessorIds": []
+    },
+    {
+      "id": "hokuno-sg",
+      "schoolName": "北部農林",
+      "department": "生活科学科",
+      "area": "北部",
+      "yearData": {
+        "2025": {
+          "dev": 36,
+          "nai": 78,
+          "rT": null,
+          "rI": null,
+          "rec": [],
+          "dummy": true
+        }
+      },
+      "status": "not_in_current_official_program_list_or_restructured",
+      "mappingNotes": [
+        "令和8年度公式一覧に同名の学科・コースを確認できない。"
+      ],
+      "suggestedSuccessorIds": []
+    }
+  ]
+}

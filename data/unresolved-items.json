@@ -1,0 +1,2222 @@
+[
+  {
+    "existing_id": "koza-night-commerce",
+    "school_name": "コザ",
+    "department": "商業科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "koza-night-commerce",
+    "school_name": "コザ",
+    "department": "商業科",
+    "item": "実績ランク詳細",
+    "status": "needs_review",
+    "reason": "公式PDFのURL・資料名・主要本文は確認済みだが、学校サーバーが継続して502エラーを返すため、表の全セルを直接再確認できない。確認できた配点・資格級・主要ランクは収録済みで、未確認部分は推測していない。",
+    "searched_sources": "koza-night-r8-selection / koza-night-r7-rank",
+    "recommended_next_action": "学校サーバー復旧後に公式PDFを再取得し、現在のpartial行と全セルを照合する。"
+  },
+  {
+    "existing_id": "koza-f",
+    "school_name": "コザ",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "koza-f",
+    "school_name": "コザ",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "needs_review",
+    "reason": "公式PDFのURL・資料名・主要本文は確認済みだが、学校サーバーが継続して502エラーを返すため、表の全セルを直接再確認できない。確認できた配点・資格級・主要ランクは収録済みで、未確認部分は推測していない。",
+    "searched_sources": "koza-r8-rank-table / koza-r8-selection-method / koza-r8-decision-standard",
+    "recommended_next_action": "学校サーバー復旧後に公式PDFを再取得し、現在のpartial行と全セルを照合する。"
+  },
+  {
+    "existing_id": "yokatsu-f",
+    "school_name": "与勝",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "chubusho-kokusai",
+    "school_name": "中部商業",
+    "department": "国際ビジネス科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "chubusho-kokusai",
+    "school_name": "中部商業",
+    "department": "国際ビジネス科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "学校公式の募集要項・特色選抜方法・合否判定基準を確認したが、活動・資格を級別・大会別に並べた独立ランク表を特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-53-criteria-detail / school-53-main / school-53-page",
+    "recommended_next_action": "令和9年度の学校別資料公開時に、別紙の評価基準・ランク表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "chubusho-joho",
+    "school_name": "中部商業",
+    "department": "情報ビジネス科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "chubusho-joho",
+    "school_name": "中部商業",
+    "department": "情報ビジネス科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "学校公式の募集要項・特色選抜方法・合否判定基準を確認したが、活動・資格を級別・大会別に並べた独立ランク表を特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-53-criteria-detail / school-53-main / school-53-page",
+    "recommended_next_action": "令和9年度の学校別資料公開時に、別紙の評価基準・ランク表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "chubusho-spo",
+    "school_name": "中部商業",
+    "department": "生涯スポーツ科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "chubusho-spo",
+    "school_name": "中部商業",
+    "department": "生涯スポーツ科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "学校公式の募集要項・特色選抜方法・合否判定基準を確認したが、活動・資格を級別・大会別に並べた独立ランク表を特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-53-criteria-detail / school-53-main / school-53-page",
+    "recommended_next_action": "令和9年度の学校別資料公開時に、別紙の評価基準・ランク表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "chubusho-sogo",
+    "school_name": "中部商業",
+    "department": "総合ビジネス科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "chubusho-sogo",
+    "school_name": "中部商業",
+    "department": "総合ビジネス科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "学校公式の募集要項・特色選抜方法・合否判定基準を確認したが、活動・資格を級別・大会別に並べた独立ランク表を特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-53-criteria-detail / school-53-main / school-53-page",
+    "recommended_next_action": "令和9年度の学校別資料公開時に、別紙の評価基準・ランク表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "chubuno-ek",
+    "school_name": "中部農林",
+    "department": "園芸科学科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "chubuno-nr",
+    "school_name": "中部農林",
+    "department": "熱帯資源科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "chubuno-fk",
+    "school_name": "中部農林",
+    "department": "福祉科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "chubuno-night-agri",
+    "school_name": "中部農林",
+    "department": "農業科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "chubuno-zo",
+    "school_name": "中部農林",
+    "department": "造園科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "chubuno-sk",
+    "school_name": "中部農林",
+    "department": "食品科学科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "kumejima-en",
+    "school_name": "久米島",
+    "department": "園芸科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "kumejima-en",
+    "school_name": "久米島",
+    "department": "園芸科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / kumejima-r8-detail / school-36-main / school-36-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "kumejima-f",
+    "school_name": "久米島",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "kumejima-f",
+    "school_name": "久米島",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / kumejima-r8-detail / school-36-main / school-36-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "yaeyama-f",
+    "school_name": "八重山",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yaeyama-f",
+    "school_name": "八重山",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-38-main / school-38-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "yaeyama-f",
+    "school_name": "八重山",
+    "department": "普通科",
+    "item": "配点",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式入試資料を確認したが、特色選抜の項目別数値配点を特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-38-main / school-38-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙配点表・合否判定基準を再確認する。"
+  },
+  {
+    "existing_id": "yaesho-jb",
+    "school_name": "八重山商工",
+    "department": "商業科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yaesho-ka",
+    "school_name": "八重山商工",
+    "department": "商業科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yaesho-kk",
+    "school_name": "八重山商工",
+    "department": "商業科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yaesho-night-commerce",
+    "school_name": "八重山商工",
+    "department": "商業科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yaesho-night-commerce",
+    "school_name": "八重山商工",
+    "department": "商業科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "学校公式資料は総合選抜の項目を示すが、項目別配点数値は掲載していない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-51-main / school-51-page / yaesho-night-r8-detail / yaesho-r8-entry / yaesho-r8-method / yaesho-r8-rank",
+    "recommended_next_action": "令和9年度定時制資料公開後に再確認する。"
+  },
+  {
+    "existing_id": "yaesho-jg",
+    "school_name": "八重山商工",
+    "department": "情報技術科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yaesho-kd",
+    "school_name": "八重山商工",
+    "department": "機械電気科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yaesho-km",
+    "school_name": "八重山商工",
+    "department": "機械電気科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yaeno-af",
+    "school_name": "八重山農林",
+    "department": "アグリフード科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yaeno-af",
+    "school_name": "八重山農林",
+    "department": "アグリフード科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-42-main / school-42-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "yaeno-gl",
+    "school_name": "八重山農林",
+    "department": "グリーンライフ科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yaeno-gl",
+    "school_name": "八重山農林",
+    "department": "グリーンライフ科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-42-main / school-42-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "yaeno-fp",
+    "school_name": "八重山農林",
+    "department": "フードプロデュース科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yaeno-fp",
+    "school_name": "八重山農林",
+    "department": "フードプロデュース科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-42-main / school-42-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "yaeno-ls",
+    "school_name": "八重山農林",
+    "department": "ライフスキル科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yaeno-ls",
+    "school_name": "八重山農林",
+    "department": "ライフスキル科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-42-main / school-42-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "gushikawa-f",
+    "school_name": "具志川",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "gushikawa-f",
+    "school_name": "具志川",
+    "department": "普通科",
+    "item": "配点",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式入試資料を確認したが、特色選抜の項目別数値配点を特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / gushikawa-r8-interview / gushikawa-r8-rank / school-11-main / school-11-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙配点表・合否判定基準を再確認する。"
+  },
+  {
+    "existing_id": "gushisho-ob",
+    "school_name": "具志川商業",
+    "department": "オフィスビジネス科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "gushisho-bm",
+    "school_name": "具志川商業",
+    "department": "ビジネスマルチメディア科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "gushisho-rk",
+    "school_name": "具志川商業",
+    "department": "リゾート観光科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "gushisho-js",
+    "school_name": "具志川商業",
+    "department": "情報システム科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "maehara-br",
+    "school_name": "前原",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "maehara-en",
+    "school_name": "前原",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "maehara-sp",
+    "school_name": "前原",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "kitanaka-f",
+    "school_name": "北中城",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "hokuzan-f",
+    "school_name": "北山",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "hokuzan-ri",
+    "school_name": "北山",
+    "department": "理数科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "chatan-f",
+    "school_name": "北谷",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "chatan-f",
+    "school_name": "北谷",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-15-main / school-15-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "hokuno-agritech",
+    "school_name": "北部農林",
+    "department": "アグリテクノ科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "hokuno-life-create",
+    "school_name": "北部農林",
+    "department": "ライフ創造科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "hokuno-resource-design",
+    "school_name": "北部農林",
+    "department": "地域資源デザイン科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "hokuno-night-agri",
+    "school_name": "北部農林",
+    "department": "農業科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "hokuno-food-create",
+    "school_name": "北部農林",
+    "department": "食品クリエイト科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbusho-office",
+    "school_name": "南部商業",
+    "department": "オフィスクリエイト科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbusho-digi",
+    "school_name": "南部商業",
+    "department": "デジタルクリエイト科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbusho-ryu",
+    "school_name": "南部商業",
+    "department": "流通クリエイト科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbusho-kanko",
+    "school_name": "南部商業",
+    "department": "観光クリエイト科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbuko-kd",
+    "school_name": "南部工業",
+    "department": "建築設備科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbuko-sg",
+    "school_name": "南部工業",
+    "department": "建築設備科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbuko-kd",
+    "school_name": "南部工業",
+    "department": "建築設備科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "活動実績50点は確認できたが、ランク・大会範囲・資格級別の具体的基準表は公式資料で確認できず。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-48-main / school-48-page",
+    "recommended_next_action": "令和9年度資料公開時に、学校が別紙ランク表を公開するか再確認する。"
+  },
+  {
+    "existing_id": "nanbuko-sg",
+    "school_name": "南部工業",
+    "department": "建築設備科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "活動実績50点は確認できたが、ランク・大会範囲・資格級別の具体的基準表は公式資料で確認できず。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-48-main / school-48-page",
+    "recommended_next_action": "令和9年度資料公開時に、学校が別紙ランク表を公開するか再確認する。"
+  },
+  {
+    "existing_id": "nanbuko-ki",
+    "school_name": "南部工業",
+    "department": "機械科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbuko-ki",
+    "school_name": "南部工業",
+    "department": "機械科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "活動実績50点は確認できたが、ランク・大会範囲・資格級別の具体的基準表は公式資料で確認できず。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-48-main / school-48-page",
+    "recommended_next_action": "令和9年度資料公開時に、学校が別紙ランク表を公開するか再確認する。"
+  },
+  {
+    "existing_id": "nanbuko-de",
+    "school_name": "南部工業",
+    "department": "電気科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbuko-de",
+    "school_name": "南部工業",
+    "department": "電気科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "活動実績50点は確認できたが、ランク・大会範囲・資格級別の具体的基準表は公式資料で確認できず。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-48-main / school-48-page",
+    "recommended_next_action": "令和9年度資料公開時に、学校が別紙ランク表を公開するか再確認する。"
+  },
+  {
+    "existing_id": "nanbuno-ks",
+    "school_name": "南部農林",
+    "department": "環境創造科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbuno-sd",
+    "school_name": "南部農林",
+    "department": "生活デザイン科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbuno-sb",
+    "school_name": "南部農林",
+    "department": "生物資源科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbuno-sk",
+    "school_name": "南部農林",
+    "department": "食品加工科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nanbuno-ss",
+    "school_name": "南部農林",
+    "department": "食料生産科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "haebaru-biz",
+    "school_name": "南風原",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "haebaru-fs",
+    "school_name": "南風原",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "haebaru-kyodo",
+    "school_name": "南風原",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "haebaru-biz",
+    "school_name": "南風原",
+    "department": "普通科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-32-criteria-detail / school-32-main / school-32-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "haebaru-fs",
+    "school_name": "南風原",
+    "department": "普通科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-32-criteria-detail / school-32-main / school-32-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "haebaru-kyodo",
+    "school_name": "南風原",
+    "department": "普通科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-32-criteria-detail / school-32-main / school-32-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "nago-fr",
+    "school_name": "名護",
+    "department": "フロンティア科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nago-fr",
+    "school_name": "名護",
+    "department": "フロンティア科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "学校公式資料は選抜項目と実績ランクを示すが、項目別の配点数値を掲載していない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-04-main / school-04-page",
+    "recommended_next_action": "令和9年度学校別選抜方法の公開後に再確認する。"
+  },
+  {
+    "existing_id": "nago-f",
+    "school_name": "名護",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nago-f",
+    "school_name": "名護",
+    "department": "普通科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "学校公式資料は選抜項目と実績ランクを示すが、項目別の配点数値を掲載していない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-04-main / school-04-page",
+    "recommended_next_action": "令和9年度学校別選抜方法の公開後に再確認する。"
+  },
+  {
+    "existing_id": "nagosho-sh",
+    "school_name": "名護商工",
+    "department": "商業科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nagosho-cs",
+    "school_name": "名護商工",
+    "department": "地域産業科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nagosho-kd",
+    "school_name": "名護商工",
+    "department": "工業技術科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nagosho-km",
+    "school_name": "名護商工",
+    "department": "工業技術科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nagosho-ke",
+    "school_name": "名護商工",
+    "department": "建築科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nagosho-sj",
+    "school_name": "名護商工",
+    "department": "総合情報科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "koyo-kb",
+    "school_name": "向陽",
+    "department": "国際文科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "koyo-f",
+    "school_name": "向陽",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "koyo-ri",
+    "school_name": "向陽",
+    "department": "理数科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "kadena-ca",
+    "school_name": "嘉手納",
+    "department": "総合学科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "kadena-dd",
+    "school_name": "嘉手納",
+    "department": "総合学科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "ginoza-f",
+    "school_name": "宜野座",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "ginoza-f",
+    "school_name": "宜野座",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-05-main / school-05-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "ginowan-f",
+    "school_name": "宜野湾",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "ginowan-joho",
+    "school_name": "宜野湾",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "ginowan-spo",
+    "school_name": "宜野湾",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miyako-br",
+    "school_name": "宮古",
+    "department": "文理探究科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miyako-br",
+    "school_name": "宮古",
+    "department": "文理探究科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "学校公式の選抜方法は確認したが、活動実績・資格の個別ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-37-main / school-37-page / miyako-r8-criteria / miyako-r8-rank",
+    "recommended_next_action": "学校公式サイトの令和9年度入試資料公開時に別紙ランク表を再検索する。"
+  },
+  {
+    "existing_id": "miyako-f",
+    "school_name": "宮古",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miyako-f",
+    "school_name": "宮古",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "学校公式の選抜方法は確認したが、活動実績・資格の個別ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-37-main / school-37-page / miyako-r8-criteria / miyako-r8-rank",
+    "recommended_next_action": "学校公式サイトの令和9年度入試資料公開時に別紙ランク表を再検索する。"
+  },
+  {
+    "existing_id": "miyakoko-sj",
+    "school_name": "宮古工業",
+    "department": "生活情報科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miyakoko-sj",
+    "school_name": "宮古工業",
+    "department": "生活情報科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "活動実績は75点×最大2項目と確認できたが、ランク・資格級別の具体的基準表は公式資料で確認できず。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-49-criteria / school-49-main / school-49-page",
+    "recommended_next_action": "令和9年度資料公開時に、学校が別紙評価基準を公開するか再確認する。"
+  },
+  {
+    "existing_id": "miyakoko-jm",
+    "school_name": "宮古工業",
+    "department": "自動車機械システム科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miyakoko-jm",
+    "school_name": "宮古工業",
+    "department": "自動車機械システム科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "活動実績は75点×最大2項目と確認できたが、ランク・資格級別の具体的基準表は公式資料で確認できず。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-49-criteria / school-49-main / school-49-page",
+    "recommended_next_action": "令和9年度資料公開時に、学校が別紙評価基準を公開するか再確認する。"
+  },
+  {
+    "existing_id": "miyakoko-dj",
+    "school_name": "宮古工業",
+    "department": "電気情報科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miyakoko-dj",
+    "school_name": "宮古工業",
+    "department": "電気情報科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "活動実績は75点×最大2項目と確認できたが、ランク・資格級別の具体的基準表は公式資料で確認できず。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-49-criteria / school-49-main / school-49-page",
+    "recommended_next_action": "令和9年度資料公開時に、学校が別紙評価基準を公開するか再確認する。"
+  },
+  {
+    "existing_id": "miyasou-sh",
+    "school_name": "宮古総合実業",
+    "department": "商業科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miyasou-kk",
+    "school_name": "宮古総合実業",
+    "department": "海洋科学科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miyasou-sf",
+    "school_name": "宮古総合実業",
+    "department": "生活福祉科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miyasou-sb",
+    "school_name": "宮古総合実業",
+    "department": "生物生産科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miyasou-fc",
+    "school_name": "宮古総合実業",
+    "department": "食と環境科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miyasou-kc",
+    "school_name": "宮古総合実業",
+    "department": "食と環境科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "oroku-biz",
+    "school_name": "小禄",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "oroku-f",
+    "school_name": "小禄",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "oroku-gei",
+    "school_name": "小禄",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "oroku-biz",
+    "school_name": "小禄",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-28-criteria-detail / school-28-main / school-28-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "oroku-f",
+    "school_name": "小禄",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-28-criteria-detail / school-28-main / school-28-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "oroku-gei",
+    "school_name": "小禄",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-28-criteria-detail / school-28-main / school-28-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "futenma-f",
+    "school_name": "普天間",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "motobu-sf",
+    "school_name": "本部",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "motobu-sj",
+    "school_name": "本部",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "okiko-doboku",
+    "school_name": "沖縄工業",
+    "department": "土木科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "okiko-kagaku",
+    "school_name": "沖縄工業",
+    "department": "工業化学科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "okiko-kenchiku",
+    "school_name": "沖縄工業",
+    "department": "建築科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "okiko-johoden",
+    "school_name": "沖縄工業",
+    "department": "情報電子科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "okiko-seikatsu",
+    "school_name": "沖縄工業",
+    "department": "生活情報科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "okiko-denshiki",
+    "school_name": "沖縄工業",
+    "department": "電子機械科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "okisui-ks",
+    "school_name": "沖縄水産",
+    "department": "海洋サイエンス科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "okisui-ks",
+    "school_name": "沖縄水産",
+    "department": "海洋サイエンス科",
+    "item": "実績ランク詳細",
+    "status": "needs_review",
+    "reason": "公式PDFのURL・資料名・主要本文は確認済みだが、学校サーバーが継続して502エラーを返すため、表の全セルを直接再確認できない。確認できた配点・資格級・主要ランクは収録済みで、未確認部分は推測していない。",
+    "searched_sources": "school-57-rank / school-57-criteria / school-57-page",
+    "recommended_next_action": "学校サーバー復旧後に公式PDFを再取得し、現在のpartial行と全セルを照合する。"
+  },
+  {
+    "existing_id": "okisui-kg",
+    "school_name": "沖縄水産",
+    "department": "海洋技術科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "okisui-kg",
+    "school_name": "沖縄水産",
+    "department": "海洋技術科",
+    "item": "実績ランク詳細",
+    "status": "needs_review",
+    "reason": "公式PDFのURL・資料名・主要本文は確認済みだが、学校サーバーが継続して502エラーを返すため、表の全セルを直接再確認できない。確認できた配点・資格級・主要ランクは収録済みで、未確認部分は推測していない。",
+    "searched_sources": "school-57-rank / school-57-criteria / school-57-page",
+    "recommended_next_action": "学校サーバー復旧後に公式PDFを再取得し、現在のpartial行と全セルを照合する。"
+  },
+  {
+    "existing_id": "okisui-sg",
+    "school_name": "沖縄水産",
+    "department": "総合学科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "okisui-sg",
+    "school_name": "沖縄水産",
+    "department": "総合学科",
+    "item": "実績ランク詳細",
+    "status": "needs_review",
+    "reason": "公式PDFのURL・資料名・主要本文は確認済みだが、学校サーバーが継続して502エラーを返すため、表の全セルを直接再確認できない。確認できた配点・資格級・主要ランクは収録済みで、未確認部分は推測していない。",
+    "searched_sources": "school-57-rank / school-57-criteria / school-57-page",
+    "recommended_next_action": "学校サーバー復旧後に公式PDFを再取得し、現在のpartial行と全セルを照合する。"
+  },
+  {
+    "existing_id": "tomari-am",
+    "school_name": "泊",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "tomari-night",
+    "school_name": "泊",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "tomari-am",
+    "school_name": "泊",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-59-main / school-59-nightPage / school-59-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "tomari-night",
+    "school_name": "泊",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-59-main / school-59-nightPage / school-59-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "tomari-am",
+    "school_name": "泊",
+    "department": "普通科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "令和8年度学校公式募集要項に項目別の配点数値が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-59-main / school-59-nightPage / school-59-page",
+    "recommended_next_action": "令和9年度資料公開後に配点の新規掲載がないか再確認する。"
+  },
+  {
+    "existing_id": "tomari-night",
+    "school_name": "泊",
+    "department": "普通科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "令和8年度学校公式募集要項に項目別の配点数値が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-59-main / school-59-nightPage / school-59-page",
+    "recommended_next_action": "令和9年度資料公開後に配点の新規掲載がないか再確認する。"
+  },
+  {
+    "existing_id": "urasoe-f",
+    "school_name": "浦添",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "urasho-it",
+    "school_name": "浦添商業",
+    "department": "ITビジネス科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "urasho-kigyo",
+    "school_name": "浦添商業",
+    "department": "企業システム科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "urasho-kanko",
+    "school_name": "浦添商業",
+    "department": "国際観光科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "urako-interior",
+    "school_name": "浦添工業",
+    "department": "インテリア科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "urako-design",
+    "school_name": "浦添工業",
+    "department": "デザイン科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "urako-kenchiku",
+    "school_name": "浦添工業",
+    "department": "建築科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "urako-johogi",
+    "school_name": "浦添工業",
+    "department": "情報技術科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "urako-chori",
+    "school_name": "浦添工業",
+    "department": "調理科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "kyuyo-bunri",
+    "school_name": "球陽",
+    "department": "文理探究科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "kyuyo-bunri",
+    "school_name": "球陽",
+    "department": "文理探究科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-14-main / school-14-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "mawashi-fuku",
+    "school_name": "真和志",
+    "department": "みらい福祉",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "mawashi-fuku",
+    "school_name": "真和志",
+    "department": "みらい福祉",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-27-criteria-detail / school-27-main / school-27-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "mawashi-arts",
+    "school_name": "真和志",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "mawashi-f",
+    "school_name": "真和志",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "mawashi-arts",
+    "school_name": "真和志",
+    "department": "普通科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-27-criteria-detail / school-27-main / school-27-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "mawashi-f",
+    "school_name": "真和志",
+    "department": "普通科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-27-criteria-detail / school-27-main / school-27-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "chinen-f",
+    "school_name": "知念",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "ishikawa-f",
+    "school_name": "石川",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "itoman-f",
+    "school_name": "糸満",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miraikoka-it",
+    "school_name": "美来工科",
+    "department": "ITシステム科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miraikoka-cd",
+    "school_name": "美来工科",
+    "department": "コンピュータデザイン科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miraikoka-dk",
+    "school_name": "美来工科",
+    "department": "土木工学科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miraikoka-ms",
+    "school_name": "美来工科",
+    "department": "機械システム科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miraikoka-jd",
+    "school_name": "美来工科",
+    "department": "自動車工学科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "miraikoka-es",
+    "school_name": "美来工科",
+    "department": "電子システム科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "misato-f",
+    "school_name": "美里",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "misatoko-ke",
+    "school_name": "美里工業",
+    "department": "建築科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "misatoko-ke",
+    "school_name": "美里工業",
+    "department": "建築科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-44-criteria-detail / school-44-main / school-44-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "misatoko-ki",
+    "school_name": "美里工業",
+    "department": "機械科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "misatoko-ki",
+    "school_name": "美里工業",
+    "department": "機械科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-44-criteria-detail / school-44-main / school-44-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "misatoko-se",
+    "school_name": "美里工業",
+    "department": "設備工業科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "misatoko-se",
+    "school_name": "美里工業",
+    "department": "設備工業科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-44-criteria-detail / school-44-main / school-44-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "misatoko-ch",
+    "school_name": "美里工業",
+    "department": "調理科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "misatoko-ch",
+    "school_name": "美里工業",
+    "department": "調理科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-44-criteria-detail / school-44-main / school-44-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "misatoko-de",
+    "school_name": "美里工業",
+    "department": "電気科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "misatoko-de",
+    "school_name": "美里工業",
+    "department": "電気科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-44-criteria-detail / school-44-main / school-44-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "nishihara-bunri",
+    "school_name": "西原",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nishihara-kenko",
+    "school_name": "西原",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yomitan-f",
+    "school_name": "読谷",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yomitan-f",
+    "school_name": "読谷",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-09-main / school-09-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "tomishiro-f",
+    "school_name": "豊見城",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "tomishiro-f",
+    "school_name": "豊見城",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-30-main / school-30-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "tomiminami-f",
+    "school_name": "豊見城南",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "tomiminami-t",
+    "school_name": "豊見城南",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "tomiminami-f",
+    "school_name": "豊見城南",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-31-page / tominan-r8-detail",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "tomiminami-t",
+    "school_name": "豊見城南",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-31-page / tominan-r8-detail",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  },
+  {
+    "existing_id": "hentona-f",
+    "school_name": "辺土名",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "hentona-env",
+    "school_name": "辺土名",
+    "department": "自然環境科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "naha-f",
+    "school_name": "那覇",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahasho-sho",
+    "school_name": "那覇商業",
+    "department": "商業科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahasho-kokukei",
+    "school_name": "那覇商業",
+    "department": "国際経済科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahasho-joho",
+    "school_name": "那覇商業",
+    "department": "情報処理科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahakok-k",
+    "school_name": "那覇国際",
+    "department": "国際科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahakok-f",
+    "school_name": "那覇国際",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahako-graphic",
+    "school_name": "那覇工業",
+    "department": "グラフィックアーツ科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahako-fuku",
+    "school_name": "那覇工業",
+    "department": "服飾デザイン科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahako-kikai",
+    "school_name": "那覇工業",
+    "department": "機械科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahako-night-kikai",
+    "school_name": "那覇工業",
+    "department": "機械科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahako-jidosha",
+    "school_name": "那覇工業",
+    "department": "自動車科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahako-denki",
+    "school_name": "那覇工業",
+    "department": "電気科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahako-night-denki",
+    "school_name": "那覇工業",
+    "department": "電気科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahanishi-tai",
+    "school_name": "那覇西",
+    "department": "体育科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahanishi-jin",
+    "school_name": "那覇西",
+    "department": "国際人文科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "nahanishi-f",
+    "school_name": "那覇西",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "kaiho-g",
+    "school_name": "開邦",
+    "department": "学術探究科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "kaiho-art-art",
+    "school_name": "開邦",
+    "department": "芸術科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "kaiho-art-music",
+    "school_name": "開邦",
+    "department": "芸術科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "yomei-sogo",
+    "school_name": "陽明",
+    "department": "総合学科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "shuri-f",
+    "school_name": "首里",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "shuri-f",
+    "school_name": "首里",
+    "department": "普通科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-23-criteria / school-23-main / school-23-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "shuri-sen",
+    "school_name": "首里",
+    "department": "染織デザイン科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "shuri-sen",
+    "school_name": "首里",
+    "department": "染織デザイン科",
+    "item": "配点",
+    "status": "not_published",
+    "reason": "確認できた令和8年度学校公式資料には項目別の数値配点が掲載されていない。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-23-criteria / school-23-main / school-23-page",
+    "recommended_next_action": "令和9年度の学校別選抜方法または別紙配点表が公開されたら再確認する。"
+  },
+  {
+    "existing_id": "shurihigashi-f",
+    "school_name": "首里東",
+    "department": "普通科",
+    "item": "令和9年度学校別募集要項・特色選抜資料",
+    "status": "not_published",
+    "reason": "2026年7月7日時点で県公式の令和9年度学校別資料が未公表。",
+    "searched_sources": "沖縄県教育委員会令和9年度入学者選抜ページ、学校公式入試ページ",
+    "recommended_next_action": "令和9年度資料公開後、referenceYear・status・各項目・出典を令和9年度版へ差し替える。"
+  },
+  {
+    "existing_id": "shurihigashi-f",
+    "school_name": "首里東",
+    "department": "普通科",
+    "item": "実績ランク詳細",
+    "status": "not_found",
+    "reason": "令和8年度の学校公式募集要項・特色選抜方法・入試情報ページを確認したが、級別・大会範囲別の独立した実績ランク表を公式サイト上で特定できなかった。",
+    "searched_sources": "pref-r8-ratio / pref-r8-capacity / pref-r8-official-list / pref-r8-guidelines / pref-r9-info-page / school-24-main / school-24-page",
+    "recommended_next_action": "令和9年度資料の公開時に、別紙ランク表または評価基準表が追加されていないか再確認する。"
+  }
+]
