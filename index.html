@@ -1098,6 +1098,41 @@ body.has-cbar{padding-bottom:96px}
 .od-meta{display:block;margin-top:4px;color:var(--ink-soft);font-size:.68rem;line-height:1.55}.od-method{padding:8px 10px;border-radius:9px;background:#f7fbfd;border:1px solid var(--line);margin:7px 0}
 @media(max-width:720px){.detail-row>td{padding:10px 8px!important}.detail-inner{position:sticky;left:8px;width:calc(100vw - 44px);max-width:calc(100vw - 44px)}.od-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.od-body{padding:10px}.od-inner{padding:10px}.od-table{font-size:.69rem}}
 
+/* ===== 学校詳細：進学・就職実績 ===== */
+.school-career{min-width:0;margin:12px 0 14px;padding:15px 16px;border:1px solid #efcfbf;border-radius:14px;background:linear-gradient(145deg,#fff9f5,#fff);color:var(--ink)}
+.school-career-head{display:flex;align-items:center;gap:9px;flex-wrap:wrap;line-height:1.4}
+.school-career-mark{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:10px;background:#fff0e9;color:var(--coral-deep);flex:0 0 auto}
+.school-career-mark svg{width:18px;height:18px}
+.school-career-title{min-width:0;display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.school-career-title b{font-size:.92rem;font-weight:900;color:var(--coral-deep)}
+.school-career-title small{font-size:.68rem;color:var(--ink-soft);font-weight:700}
+.school-career-year{margin-left:auto;padding:3px 8px;border:1px solid #edcbbb;border-radius:999px;background:#fff;font-size:.68rem;font-weight:800;color:#874b36}
+.school-career-summary{margin:10px 0 0;font-size:.8rem;line-height:1.75}
+.school-career-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:7px;margin-top:11px}
+.school-career-stat{min-width:0;padding:8px 9px;border:1px solid #efddd4;border-radius:10px;background:#fff}
+.school-career-stat span{display:block;font-size:.66rem;line-height:1.45;color:var(--ink-soft)}
+.school-career-stat b{display:block;margin-top:2px;font-size:.88rem;line-height:1.4;overflow-wrap:anywhere}
+.school-career-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:9px}
+.school-career-cols.single{grid-template-columns:minmax(0,1fr)}
+.school-career-card{min-width:0;padding:10px 11px;border:1px solid #efddd4;border-radius:11px;background:#fff}
+.school-career-card h4{margin:0 0 6px;font-size:.76rem;color:var(--sea-deep)}
+.school-career-list{margin:0;padding-left:1.25em;font-size:.75rem;line-height:1.7}
+.school-career-list li{margin:2px 0;overflow-wrap:anywhere}
+.school-career-notes{margin:9px 0 0;padding:8px 10px;border-radius:9px;background:#fff8e8;border:1px solid #efd998;font-size:.7rem;line-height:1.65;color:#654d10}
+.school-career-notes ul{margin:0;padding-left:1.2em}.school-career-notes li{margin:2px 0}
+.school-career-source{margin:10px 0 0;padding-top:9px;border-top:1px solid #efddd4;font-size:.69rem;line-height:1.65;color:var(--ink-soft);overflow-wrap:anywhere}
+.school-career-source b{color:var(--ink)}
+.school-career-source a{font-weight:800;color:var(--sea-deep);text-underline-offset:2px}
+.school-career-source a:hover{color:var(--coral-deep)}
+.school-career-empty{margin:10px 0 0;padding:10px 11px;border:1px dashed #d7c8c1;border-radius:10px;background:#fff;font-size:.78rem;line-height:1.7;color:var(--ink-soft)}
+@media(max-width:720px){
+  .school-career{padding:13px 12px;overflow:hidden}
+  .school-career-year{margin-left:39px}
+  .school-career-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .school-career-cols{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:390px){.school-career-stats{grid-template-columns:minmax(0,1fr)}.school-career-year{margin-left:0}}
+
 /* ===== 学校詳細：Googleマップ通学経路 ===== */
 .school-route{min-width:0;margin:12px 0 14px;padding:13px 14px;border:1px solid #c9dde6;border-radius:14px;background:#f8fcfe}
 .school-route-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:var(--sea-deep);line-height:1.4}
@@ -2252,6 +2287,510 @@ const SCHOOLS = [{"id":"kaiho-g","name":"開邦","dept":"学術探究科","area"
    id: [募集定員, 特色選抜の募集割合%, 特別枠(0=なし/1=あり・特別な検査なし/2=あり・特別な検査を課す), 一般選抜の比重(調査書:学力検査等)]
    ===================================================================== */
 const TOKU = {"hentona-f":[40,20,0,"5:5"],"hentona-env":[40,40,0,"5:5"],"hokuzan-f":[80,25,2,"5:5"],"hokuzan-ri":[40,35,2,"5:5"],"motobu-sj":[40,20,0,"5:5"],"motobu-sf":[40,20,0,"5:5"],"nago-f":[240,25,2,"4.5:5.5"],"nago-fr":[80,25,0,"4.5:5.5"],"ginoza-f":[120,25,2,"5:5"],"ishikawa-f":[160,25,1,"5:5"],"maehara-br":[240,25,2,"5:5"],"maehara-en":[40,25,2,"5:5"],"maehara-sp":[40,25,2,"5:5"],"yokatsu-f":[160,25,1,"5:5"],"yomitan-f":[320,25,2,"4.5:5.5"],"kadena-dd":[185,20,0,"5:5"],"kadena-ca":[15,20,0,"5:5"],"gushikawa-f":[240,25,2,"4.5:5.5"],"misato-f":[200,20,0,"5:5"],"koza-f":[360,25,1,"4.5:5.5"],"koza-night-commerce":[40,40,0,"5:5"],"kyuyo-bunri":[280,45,1,"4:6"],"chatan-f":[280,20,0,"5:5"],"kitanaka-f":[280,20,0,"5:5"],"futenma-f":[360,25,1,"4.5:5.5"],"ginowan-joho":[40,25,2,"5:5"],"ginowan-spo":[40,25,1,"5:5"],"ginowan-f":[160,25,2,"5:5"],"nishihara-kenko":[40,25,1,"5:5"],"nishihara-bunri":[280,25,1,"5:5"],"urasoe-f":[360,25,2,"5:5"],"nahakok-f":[320,25,1,"4:6"],"nahakok-k":[40,45,1,"4:6"],"yomei-sogo":[240,20,0,"5:5"],"shuri-f":[360,25,1,"4:6"],"shuri-sen":[40,40,0,"5:5"],"shurihigashi-f":[240,20,0,"4.5:5.5"],"kaiho-g":[200,45,1,"4:6"],"kaiho-art-music":[20,50,1,"4:6"],"kaiho-art-art":[20,50,1,"4:6"],"naha-f":[400,25,1,"4.5:5.5"],"mawashi-f":[120,20,0,"5:5"],"mawashi-arts":[40,25,1,"5:5"],"mawashi-fuku":[40,40,0,"5:5"],"oroku-f":[280,25,2,"5:5"],"oroku-biz":[40,25,2,"5:5"],"oroku-gei":[40,25,2,"5:5"],"nahanishi-f":[240,20,0,"5:5"],"nahanishi-jin":[80,40,0,"5:5"],"nahanishi-tai":[40,50,1,"5:5"],"tomishiro-f":[320,25,1,"5:5"],"tomiminami-f":[120,20,0,"5:5"],"tomiminami-t":[40,20,0,"5:5"],"haebaru-fs":[200,20,0,"5:5"],"haebaru-kyodo":[40,25,1,"5:5"],"haebaru-biz":[80,20,0,"5:5"],"koyo-f":[80,25,1,"4:6"],"koyo-ri":[80,45,1,"4:6"],"koyo-kb":[80,45,1,"4:6"],"chinen-f":[320,25,1,"4.5:5.5"],"itoman-f":[320,25,2,"5:5"],"kumejima-f":[80,20,0,"5:5"],"kumejima-en":[40,20,0,"5:5"],"miyako-f":[160,20,0,"4.5:5.5"],"miyako-br":[80,40,0,"4.5:5.5"],"yaeyama-f":[240,20,0,"5:5"],"hokuno-agritech":[40,40,0,"5:5"],"hokuno-resource-design":[40,40,0,"5:5"],"hokuno-food-create":[40,40,0,"5:5"],"hokuno-life-create":[40,40,0,"5:5"],"hokuno-night-agri":[40,40,0,"5:5"],"chubuno-nr":[40,30,0,"5:5"],"chubuno-ek":[40,30,0,"5:5"],"chubuno-sk":[40,30,0,"5:5"],"chubuno-zo":[40,30,0,"5:5"],"chubuno-fk":[40,30,0,"5:5"],"chubuno-night-agri":[40,30,0,"5:5"],"nanbuno-ss":[40,30,0,"5:5"],"nanbuno-sb":[40,30,0,"5:5"],"nanbuno-sk":[40,30,0,"5:5"],"nanbuno-ks":[40,30,0,"5:5"],"nanbuno-sd":[40,30,0,"5:5"],"yaeno-af":[40,30,0,"5:5"],"yaeno-gl":[40,30,0,"5:5"],"yaeno-fp":[40,30,0,"5:5"],"yaeno-ls":[40,30,0,"5:5"],"miraikoka-ms":[80,40,0,"5:5"],"miraikoka-jd":[40,40,0,"5:5"],"miraikoka-es":[80,40,0,"5:5"],"miraikoka-dk":[40,40,0,"5:5"],"miraikoka-it":[40,40,0,"5:5"],"miraikoka-cd":[40,40,0,"5:5"],"misatoko-ki":[80,30,0,"5:5"],"misatoko-de":[80,30,0,"5:5"],"misatoko-ke":[40,30,0,"5:5"],"misatoko-se":[40,30,0,"5:5"],"misatoko-ch":[40,30,0,"5:5"],"urako-johogi":[80,40,0,"5:5"],"urako-kenchiku":[40,40,0,"5:5"],"urako-interior":[40,40,0,"5:5"],"urako-design":[80,40,0,"5:5"],"urako-chori":[40,40,0,"5:5"],"nahako-kikai":[40,30,0,"5:5"],"nahako-jidosha":[40,30,0,"5:5"],"nahako-denki":[80,30,0,"5:5"],"nahako-graphic":[40,30,0,"5:5"],"nahako-fuku":[40,30,0,"5:5"],"nahako-night-kikai":[40,30,0,"5:5"],"nahako-night-denki":[40,30,0,"5:5"],"okiko-denshiki":[80,30,0,"5:5"],"okiko-johoden":[80,30,0,"5:5"],"okiko-kenchiku":[40,30,0,"5:5"],"okiko-doboku":[40,30,0,"5:5"],"okiko-kagaku":[40,40,0,"5:5"],"okiko-seikatsu":[40,30,0,"5:5"],"nanbuko-ki":[40,30,0,"5:5"],"nanbuko-de":[40,30,0,"5:5"],"nanbuko-kd":[20,30,0,"5:5"],"nanbuko-sg":[20,30,0,"5:5"],"miyakoko-jm":[40,40,0,"5:5"],"miyakoko-dj":[40,40,0,"5:5"],"miyakoko-sj":[40,40,0,"5:5"],"nagosho-km":[20,40,0,"5:5"],"nagosho-kd":[20,40,0,"5:5"],"nagosho-ke":[40,40,0,"5:5"],"nagosho-sj":[40,40,0,"5:5"],"nagosho-sh":[40,40,0,"5:5"],"nagosho-cs":[40,40,0,"5:5"],"yaesho-km":[20,40,0,"5:5"],"yaesho-kd":[20,40,0,"5:5"],"yaesho-jg":[40,40,0,"5:5"],"yaesho-ka":[30,40,0,"5:5"],"yaesho-jb":[30,40,0,"5:5"],"yaesho-kk":[20,40,0,"5:5"],"yaesho-night-commerce":[40,30,0,"5:5"],"gushisho-rk":[40,35,2,"5:5"],"gushisho-ob":[40,35,2,"5:5"],"gushisho-bm":[40,35,2,"5:5"],"gushisho-js":[80,35,2,"5:5"],"chubusho-sogo":[120,40,0,"5:5"],"chubusho-joho":[80,40,0,"5:5"],"chubusho-kokusai":[40,40,0,"5:5"],"chubusho-spo":[40,50,1,"5:5"],"urasho-kigyo":[160,20,0,"5:5"],"urasho-it":[40,20,0,"5:5"],"urasho-kanko":[80,20,0,"5:5"],"nahasho-sho":[200,45,2,"5:5"],"nahasho-joho":[80,45,2,"5:5"],"nahasho-kokukei":[40,45,2,"5:5"],"nanbusho-ryu":[40,45,1,"5:5"],"nanbusho-office":[40,45,1,"5:5"],"nanbusho-digi":[40,45,1,"5:5"],"nanbusho-kanko":[40,45,1,"5:5"],"okisui-kg":[40,30,0,"5:5"],"okisui-ks":[40,30,0,"5:5"],"okisui-sg":[160,30,0,"5:5"],"miyasou-kk":[40,40,0,"5:5"],"miyasou-sb":[40,30,0,"5:5"],"miyasou-fc":[20,40,0,"5:5"],"miyasou-kc":[20,40,0,"5:5"],"miyasou-sf":[40,30,0,"5:5"],"miyasou-sh":[40,30,0,"5:5"],"tomari-am":[120,20,0,"5:5"],"tomari-night":[40,20,0,"5:5"]};
+const CAREER_OUTCOMES = {
+  "開邦": {
+    "year":"令和8年度入試（令和8年4月5日集計）",
+    "summary":"大学・短大・大学校・専門学校の合格者数と就職者数を、現役・過卒別に公表しています。",
+    "stats":[["国立大学 合格","124人"],["公立大学 合格","34人"],["私立大学 合格","132人"],["短期大学 合格","2人"],["専門学校 合格","4人"],["就職","0人"]],
+    "study":["東京大学 3人","京都大学 7人","九州大学 9人","琉球大学 46人","医・歯・薬・獣医系 44人"],
+    "work":[],
+    "notes":["合格者数であり、進学者数ではありません。","現役・過卒を含みます。過卒は判明分です。","医・歯・薬・獣医系の人数は左記大学集計にも含まれます。"],
+    "sources":[["令和8年度入試 合格者数一覧","https://www.kaiho-h.open.ed.jp/20260405_2026nendo%20daigakunyuushikekka.pdf"]]
+  },
+  "那覇国際": {
+    "year":"令和8年度入試（令和8年3月31日集計）",
+    "summary":"大学・大学校・短期大学・専門学校・海外大学等の合格者数を、現役・過卒別に公表しています。",
+    "stats":[["国公立大学 合格","182人"],["県内私立大学 合格","33人"],["大学校等 合格","4人"],["専門学校 合格","5人"],["海外大学・留学","3人"]],
+    "study":["琉球大学 75人","九州大学 8人","早稲田大学 11人","明治大学 16人","立教大学 14人","沖縄県立看護大学 9人"],
+    "work":[],
+    "notes":["延べ人数です。同一人物が同一大学の複数学部・学科に合格した場合も別に数えています。","過卒生は判明分です。"],
+    "sources":[["令和8年度入試 26期・過卒生 進路別合格数一覧","https://www.nahakokusai-h.open.ed.jp/8f343c51b03d6e02f9377850bfb1b0d7cc523112.pdf"]]
+  },
+  "那覇": {
+    "year":"令和8年3月卒業（79期生）",
+    "summary":"大学・短大等の合格者延べ数と、専門学校・就職を含む進路区分別人数を公表しています。",
+    "stats":[["県内国公立大 合格","127人"],["県外国公立大 合格","40人"],["県内私立大 合格","79人"],["県外私立大 合格","169人"],["専門学校 合格","38人"],["就職","6人"]],
+    "study":["琉球大学を含む県内国公立大学","県外国公立大学","県内・県外私立大学","県内専門学校 33人","県外専門学校 5人"],
+    "work":["就職 6人"],
+    "notes":["大学・短大等は合格者延べ数です。推薦・総合型選抜には学校推薦・指定校推薦・総合型選抜を含みます。"],
+    "sources":[["令和8年3月卒業生の進路状況","https://www.naha-h.open.ed.jp/f4e6f479768097f80ca4873964ce53ce42e3c423.pdf"]]
+  },
+  "首里": {
+    "year":"2026年入試",
+    "summary":"学校種別の合格者数と就職決定者数を、過去6年と比較して公表しています。",
+    "stats":[["琉球大学 合格","88人"],["沖縄県立芸術大学 合格","7人"],["沖縄県立看護大学 合格","6人"],["名桜大学 合格","9人"],["県外国公立大学 合格","49人"],["就職決定","2人"]],
+    "study":["沖縄国際大学 71人","沖縄大学 18人","沖縄キリスト教学院大学 1人"],
+    "work":["県内就職 2人","県外就職 0人"],
+    "notes":["学校公式表の「合格者数・就職決定者数」を掲載しています。進学者数とは限りません。"],
+    "sources":[["学校種別合格者数及び就職決定者数（2026）","https://www.shuri-h.open.ed.jp/sinro_goukakupass2026.pdf"]]
+  },
+  "首里東": {
+    "status":"unavailable","year":"対象年度の確認なし",
+    "sources":[["学校公式サイト","https://www.shurihigashi-h.open.ed.jp/"],["学校要覧","https://www.shurihigashi-h.open.ed.jp/r7_gakkoyoran.pdf"]]
+  },
+  "那覇西": {
+    "year":"第35期生",
+    "summary":"大学・短大、専門学校、就職・公務員等の合格状況を公表しています。",
+    "stats":[["琉球大学 合格","11人"],["名桜大学 合格","9人"],["沖縄県立看護大学 合格","1人"],["沖縄県立芸術大学 合格","1人"],["沖縄国際大学 合格","51人"]],
+    "study":["沖縄大学 16人","沖縄キリスト教学院大学 15人","鹿屋体育大学 1人"],
+    "work":[],
+    "notes":["大学・短大は順不同の延べ人数です。資料には進学先別人数が掲載されています。"],
+    "sources":[["第35期生 進路合格状況","https://www.nahanishi-h.open.ed.jp/1598c4a65928a3e479ab272ad964e2cf8263d89b.pdf"]]
+  },
+  "小禄": {
+    "status":"unavailable","year":"対象年度の確認なし",
+    "sources":[["令和7年度進路情報","https://www.oroku-h.open.ed.jp/7.html"],["学校案内","https://www.oroku-h.open.ed.jp/R7_orokukoukougakkouannai20251029.pdf"]]
+  },
+  "真和志": {
+    "status":"unavailable","year":"対象年度の確認なし",
+    "sources":[["学校公式サイト","https://www.mawashi-h.open.ed.jp/"],["学校要覧","https://www.mawashi-h.open.ed.jp/0a10d5fa9c54c74d13eea82c8bdee274967e6a22.pdf"]]
+  },
+  "泊": {
+    "year":"令和7年度学校案内掲載",
+    "summary":"学校案内で主な進学先を公表しています。人数は記載されていないため、進学先名のみ掲載します。",
+    "stats":[],
+    "study":["琉球大学","沖縄国際大学","沖縄大学"],
+    "work":[],
+    "notes":["人数の記載がないため推計していません。課程別の実績であるかは資料で確認してください。"],
+    "sources":[["令和7年度 学校案内","https://www.tomari-h.open.ed.jp/R7_pamphlet.pdf"]]
+  },
+  "豊見城": {
+    "year":"令和5年度",
+    "summary":"学校案内で卒業後の進路構成と主な進学・就職先を公表しています。",
+    "stats":[["大学・短大","43%"],["専門学校","40%"],["就職","5%"],["公共開発校等","2%"],["その他","10%"]],
+    "study":["琉球大学","名桜大学","沖縄県立看護大学","沖縄県立芸術大学","沖縄看護専門学校","那覇看護専門学校"],
+    "work":["沖縄銀行","オンデーズ","沖縄トヨタ自動車","MS&ADグランアシスタンス"],
+    "notes":["学校案内に示された構成比と主な進路先です。進路先名ごとの人数は記載されていません。"],
+    "sources":[["令和7年度学校案内（令和5年度進路決定状況）","https://www.tomishiro-h.open.ed.jp/r7gakouannai.pdf"]]
+  },
+  "豊見城南": {
+    "status":"unavailable","year":"対象年度の確認なし",
+    "sources":[["進路支援部","https://www.tominan-h.open.ed.jp/sinrosienbu.html?id=shinro"],["学校案内","https://www.tominan-h.open.ed.jp/R7nyuugakuseigakkouannnai.pdf"]]
+  },
+  "南風原": {
+    "year":"令和6年3月31日集計",
+    "summary":"卒業生204人のうち188人の進路決定と、主な進学・就職先を公表しています。",
+    "stats":[["卒業生","204人"],["進路決定","188人"]],
+    "study":["大学・専門学校等（学校資料掲載）"],
+    "work":["ジェイ・エス・エス","ケン・ホテルマネジメント那覇","ザホテリエグループ那覇","おもと会大浜第一病院","沖縄医療生活協同組合","自衛隊"],
+    "notes":["進路先名ごとの人数は確認できた範囲で記載していません。"],
+    "sources":[["学校案内・進路状況","https://www.haebaru-h.open.ed.jp/e8a594bb79fb403658fafb7d55cb4553e4d2aa5b.pdf"]]
+  },
+  "那覇商業": {
+    "status":"unavailable","year":"対象年度の確認なし",
+    "sources":[["学校公式サイト","https://www.naha-ch.open.ed.jp/"]]
+  },
+  "南部商業": {
+    "year":"令和6年度卒業生",
+    "summary":"卒業生の進路決定状況と進路状況一覧を学校公式ページで画像資料として公表しています。",
+    "stats":[],
+    "study":[],
+    "work":[],
+    "notes":["公開画像から数値を安全に転記できない項目は掲載していません。公式資料で一覧を確認できます。"],
+    "sources":[["令和6年度進路状況","https://www.nanbu-ch.open.ed.jp/post-13.html"]]
+  },
+  "那覇工業": {
+    "year":"令和6年度卒業生",
+    "summary":"進学先一覧と就職先一覧を学校公式ページで別資料として公表しています。",
+    "stats":[],
+    "study":[],
+    "work":[],
+    "notes":["学科別・進路先別の詳細は公式PDFで確認できます。人数を推測せず、公開ページへのリンクを掲載します。"],
+    "sources":[["R6卒業生進路状況","https://www.naha-th.open.ed.jp/post-14.html"]]
+  },
+  "沖縄工業": {
+    "year":"令和5年度卒業生",
+    "summary":"就職内定者数と進学合格者数、進路先一覧を公表しています。",
+    "stats":[["就職内定","156人"],["就職内定率","100%"],["進学合格","131人"],["進学合格率","98.49%"]],
+    "study":["琉球大学","沖縄国際大学","沖縄大学","沖縄職業能力開発大学校"],
+    "work":["沖縄電力","沖縄都市モノレール","MRO Japan","沖縄シャープ電機","沖電工"],
+    "notes":["進学は合格者数、就職は内定者数です。"],
+    "sources":[["進路指導部・令和5年度卒業生進路情報","https://www.okinawa-th.open.ed.jp/post-16.html"],["令和5年度 3年生進路先一覧","https://www.okinawa-th.open.ed.jp/4bead1a930a98a4ae949a9ca1eafd1d7f27f2ae2.pdf"]]
+  },
+  "球陽": {
+    "year":"2026年度入試（35期生・3月31日集計）",
+    "summary":"大学・大学校・専門学校の合格者数と就職者数を公表しています。",
+    "stats":[["合計","345人"],["琉球大学 合格","73人"],["県外国公立大学 合格","70人"],["県外私立大学 合格","152人"],["県内就職","1人"],["県外就職","3人"]],
+    "study":["沖縄県立看護大学 5人","沖縄県立芸術大学 1人","名桜大学 6人","県内専門学校等 2人","県外専門学校等 1人"],
+    "work":["県内就職 1人","県外就職 3人"],
+    "notes":["合格者数は延べ人数です。"],
+    "sources":[["2026年度入試 合格者総数一覧","https://www.kyuyo-h.open.ed.jp/26a6f79cb65d8e408811086bd8e95b1bfff94497.pdf"]]
+  },
+  "普天間": {
+    "year":"令和7年度学校案内掲載（過去5年間）",
+    "summary":"過去5年間の大学・短大・専門学校・大学校・就職の実績を、合格・内定者の延べ人数で公表しています。",
+    "stats":[],
+    "study":[],
+    "work":[],
+    "notes":["学校案内の表は合格・内定者数の延べ人数です。表の個別数値は公式資料で確認できます。"],
+    "sources":[["学校案内・過去5年間の進路実績","https://www.futenma-h.open.ed.jp/05900d9540aa467dbc4ffd5ba42f9ed00da622d6.pdf"]]
+  },
+  "宜野湾": {
+    "year":"平成24年度〜令和6年度",
+    "summary":"年度別進路決定状況を長期推移表として公表しています。",
+    "stats":[],
+    "study":[],
+    "work":[],
+    "notes":["年度別・進路区分別の数値は公式表で確認できます。公開表の列対応を誤らないため、ここでは推測転記していません。"],
+    "sources":[["年度別進路決定状況 H24〜R6年度","https://www.ginowan-h.open.ed.jp/b25e6d85660634175b5875d9e96ca8b5ac6d413d.pdf"]]
+  },
+  "浦添": {
+    "year":"学校公式「進路指導部」掲載値（対象年度の明記なし）",
+    "summary":"大学・短大等の合格者数を学校公式ページで公表しています。",
+    "stats":[["国公立大学 合格","54人"],["私立大学 合格","239人"],["短期大学 合格","12人"]],
+    "study":["琉球大学 36人","沖縄県立看護大学 3人","名桜大学 7人","県外国公立大学 8人","県内私立大学 148人","県外私立大学 91人"],
+    "work":[],
+    "notes":["学校公式ページに対象年度の明記がないため、年度を補完していません。合格者数であり進学者数とは限りません。"],
+    "sources":[["進路指導部","https://www.urasoe-h.open.ed.jp/shinroshidou.html"]]
+  },
+  "陽明": {
+    "year":"令和6年度",
+    "summary":"進路決定率と主な進学・就職先を学校案内で公表しています。",
+    "stats":[["進路決定率","92.6%"],["浦添看護学校","3人"],["沖縄看護専門学校","2人"]],
+    "study":["横浜商科大学","朝日大学","大阪体育大学","関西外国語大学短期大学部","兵庫大学","美作大学"],
+    "work":["MS&ADグランアシスタンス","リウボウストア","海洋食品","ザ・テラスホテルズ","沖縄ダイケン","自衛隊"],
+    "notes":["主な進学・就職先は人数が明記されたもの以外、名称のみ掲載しています。"],
+    "sources":[["令和6年度 主な進学・就職先","https://www.yomei-h.open.ed.jp/208ed52b4bcf4c9a994dcf8b13c486c4d504d1d3.pdf"]]
+  },
+  "西原": {
+    "year":"令和6年度",
+    "summary":"卒業後の主な進路、進路決定率、就職者数と就職先を学校案内で公表しています。",
+    "stats":[["進路決定率","94.5%"],["就職","3人"]],
+    "study":["沖縄リハビリテーション福祉学院","専門学校那覇日経ビジネス","福岡美容理容専門学校"],
+    "work":["中城村役場","自衛隊","仲正空調設備"],
+    "notes":["学校案内に掲載された学校全体の実績です。"],
+    "sources":[["令和6年度 卒業後の主な進路","https://www.nishihara-h.open.ed.jp/b3a59c4a12ebce989aab32b4a486f4fd108382b2.pdf"]]
+  },
+  "北中城": {
+    "year":"令和6年度卒業生",
+    "summary":"卒業者数、進路決定者数、大学・短大・専修学校・就職の人数を公表しています。",
+    "stats":[["卒業者","258人"],["進路決定","222人"],["進路決定率","86.0%"],["現役国公立大 合格","10人"],["大学 合格","75人"],["就職","25人"]],
+    "study":["短期大学 8人","専修学校 107人"],
+    "work":["県内就職 22人","県外就職 3人"],
+    "notes":["大学は合格状況、専修学校・就職は進路決定状況として公表されています。"],
+    "sources":[["令和6年度卒業生進路決定状況","https://www.kitanaka-h.open.ed.jp/a99f0f1a3f43c86f3035dbb8b335a6596375ab2a.pdf"]]
+  },
+  "北谷": {
+    "year":"令和7年度（令和8年3月31日集計）",
+    "summary":"卒業後の進路内訳と主な進学・就職先を公表しています。",
+    "stats":[["大学・短大","51人"],["沖縄職業能力開発校","6人"],["専修学校","95人"],["就職","18人"],["自己就職","8人"],["進路未決定","54人"]],
+    "study":["名桜大学","沖縄国際大学","沖縄大学","周南公立大学","下関市立大学"],
+    "work":[],
+    "notes":["学校資料の区分をそのまま掲載しています。自己就職者は就職者とは別に示されています。"],
+    "sources":[["令和7年度進路決定状況","https://www.chatan-h.open.ed.jp/386be585629ac7ce9c9330ab46e1703b09342313.pdf"]]
+  },
+  "浦添商業": {
+    "year":"学校案内掲載・過去3カ年",
+    "summary":"過去3カ年の主要進路先を学校案内で公表しています。人数の記載を確認できないため名称のみ掲載します。",
+    "stats":[],
+    "study":["中央学院大学","洗足学園音楽大学","人間環境大学","大阪体育大学","神戸国際大学","長崎外国語大学","福岡大学"],
+    "work":[],
+    "notes":["掲載校名は主な進路先であり、人数は推測していません。"],
+    "sources":[["主要進路先一覧（過去3カ年）","https://www.urasoe-ch.open.ed.jp/R5_panfuretto_ALL.pdf"]]
+  },
+  "中部商業": {
+    "year":"令和7年度卒業生",
+    "summary":"進路決定率の推移と、大学・短大・専門学校・就職の進路先を公表しています。",
+    "stats":[["進路決定率","81.1%"]],
+    "study":["沖縄国際大学","沖縄キリスト教学院大学","沖縄大学","沖縄女子短期大学","日本経済大学","九州共立大学","福岡こども短期大学"],
+    "work":[],
+    "notes":["進路先名ごとの人数は資料に記載された範囲を超えて補完していません。"],
+    "sources":[["令和7年度卒業生の進路状況","https://www.chubu-ch.open.ed.jp/7_%E5%8D%92%E6%A5%AD%E7%94%9F%E3%81%AE%E9%80%B2%E8%B7%AF%E7%8A%B6%E6%B3%81.pdf"]]
+  },
+  "浦添工業": {
+    "year":"学校案内掲載（対象年度の明記なし）",
+    "summary":"主な進学実績と就職先を学校案内で公表しています。",
+    "stats":[["琉球大学","3人"],["沖縄国際大学","6人"],["沖縄職業能力開発大学校","5人"]],
+    "study":["専門学校KBC","ITカレッジ","日本工学院"],
+    "work":["沖縄銀行","MRO Japan","太名嘉組","光電気工事","砂田義肢製作所"],
+    "notes":["資料に対象年度の明記がないため、年度を補完していません。"],
+    "sources":[["学校案内パンフレット","https://www.urasoe-th.open.ed.jp/5b1c2b4f7ab6e345876c69ceacbf363e6dc5d7e6.pdf"]]
+  },
+  "辺土名": {
+    "year":"令和6年度卒業生（令和7年度学校要覧掲載）",
+    "summary":"大学・短大、専門学校、就職の決定先と人数を公表しています。",
+    "stats":[["専門学校","6人"],["就職","11人"]],
+    "study":["東京農業大学","高千穂大学","沖縄女子短期大学","大阪芸術大学 通信教育部","沖縄国際大学","産業技術短期大学"],
+    "work":["国頭村森林組合","オクマプライベートビーチ＆リゾート","伊江村役場","海上自衛隊","波上宮","大川"],
+    "notes":["就職11人の内訳は北部4人・中南部5人・県外2人です。"],
+    "sources":[["令和7年度学校要覧・進路指導","https://www.hentona-h.open.ed.jp/%E3%80%90WebR7%E3%80%91%E2%85%A7%EF%BC%8E%E9%80%B2%E8%B7%AF%E6%8C%87%E5%B0%8E_%E8%BE%BA%E5%9C%9F%E5%90%8D%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1%E5%AD%A6%E6%A0%A1%E8%A6%A7.pdf"]]
+  },
+  "北山": {
+    "year":"令和7年度卒業生（令和8年3月31日集計）",
+    "summary":"卒業生の進路決定率と主な進路先を公表しています。",
+    "stats":[["進路決定","80人"],["卒業生","88人"],["進路決定率","90.9%"]],
+    "study":["北九州市立大学 外国語学部ほか"],
+    "work":[],
+    "notes":["主な進路先の詳細は公式資料で確認できます。"],
+    "sources":[["令和7年度卒業生進路決定状況一覧","https://www.hokuzan-h.open.ed.jp/5118877ca8025f00356f40f4dacad210e76d2683.pdf"]]
+  },
+  "本部": {
+    "year":"令和6年度卒業生（令和7年3月25日集計）",
+    "summary":"大学・短大・専門学校・就職の進路決定状況を公表しています。",
+    "stats":[["県外大学・短大","3人"],["県内専門学校","14人"],["県外専門学校","4人"],["県外就職","0人"]],
+    "study":["名桜大学ほか"],
+    "work":["御菓子御殿ほか"],
+    "notes":["公開表で明確に確認できた区分のみ掲載しています。"],
+    "sources":[["令和6年度卒業生の進路決定状況","https://www.motobu-h.open.ed.jp/R7gakkouyouran.pdf"]]
+  },
+  "名護": {
+    "year":"学校案内掲載・過去10年間",
+    "summary":"過去10年間の合格者数と、主な指定校推薦大学を学校案内で公表しています。",
+    "stats":[],
+    "study":["関東学院大学","福岡大学","拓殖大学","徳島文理大学","美作大学"],
+    "work":[],
+    "notes":["過去10年間の合格者数であり、単年度の進学者数ではありません。"],
+    "sources":[["学校案内・過去10年間の進路実績","https://www.nago-h.open.ed.jp/panfu2024.pdf"]]
+  },
+  "宜野座": {
+    "year":"令和6年度卒業生",
+    "summary":"卒業生の進路決定状況を学校公式の進路ページで公表しています。",
+    "stats":[],
+    "study":[],
+    "work":[],
+    "notes":["公開資料の数値を安全に転記できない項目は掲載していません。公式資料で詳細を確認できます。"],
+    "sources":[["進路指導部・令和6年度卒業生進路決定状況","https://www.ginoza-h.open.ed.jp/sinro.html"]]
+  },
+  "北部農林": {
+    "year":"令和6年度卒業生",
+    "summary":"進学・就職の決定率と主な進学・就職先を学校案内で公表しています。",
+    "stats":[["進学決定率","95%"],["就職決定率","90%"]],
+    "study":["琉球大学","名桜大学","沖縄国際大学","東京農業大学","日本体育大学","国士舘大学"],
+    "work":[],
+    "notes":["主な進路先は人数の記載がないため名称のみ掲載しています。"],
+    "sources":[["学校案内・進路関係","https://www.hokubu-ah.open.ed.jp/d29fa9487fb7e8f64d4e8b579de87864c4648cd3.pdf"]]
+  },
+  "名護商工": {
+    "year":"令和5年度卒業生（令和6年3月31日集計）",
+    "summary":"学科・コース別の進路状況、進学先、就職先を公表しています。",
+    "stats":[["進路決定率","91.7%"]],
+    "study":[],
+    "work":["太名嘉組","北勝建設","沖縄銀行","屋部土建","沖縄伊藤園","名護市役所","自衛隊"],
+    "notes":["学校全体の決定率です。就職先名ごとの人数は推測していません。"],
+    "sources":[["令和5年度進路決定状況","https://www.nago-th.open.ed.jp/99ad107e4c7f0158cd44ac3872b2e20a059e8a10.pdf"]]
+  },
+  "石川": {
+    "year":"2025年卒業生",
+    "summary":"進学・就職状況を、複数合格を含まない区分で公表しています。",
+    "stats":[],
+    "study":[],
+    "work":[],
+    "notes":["公式資料は『複数合格を含まない』と明記しています。OCR上で列の対応が不明確な数値は転記していません。"],
+    "sources":[["卒業生進路状況","https://www.ishikawa-h.open.ed.jp/2025_sinro_jyoukyou.pdf"]]
+  },
+  "前原": {
+    "year":"令和7年度卒業生（令和8年3月25日集計）",
+    "summary":"大学・短大、看護系、専門学校、就職の主な進路先を公表しています。",
+    "stats":[],
+    "study":["沖縄国際大学","沖縄大学","大阪学院大学","大東文化大学","近畿大学","ぐしかわ看護専門学校","北部看護学校"],
+    "work":["サンエー","沖縄森永乳業","前田産業ホテルズ","KPG HOTEL＆RESORT","海上保安庁","愛知県警察","自衛官候補生"],
+    "notes":["進路先別人数が公開されていないものは名称のみ掲載しています。"],
+    "sources":[["進路情報・令和7年度卒業生進路状況","https://www.maehara-h.open.ed.jp/shinro.html"]]
+  },
+  "与勝": {
+    "year":"令和5年度（令和6年3月31日集計）",
+    "summary":"進路合格・内定状況と進路決定率を公表しています。",
+    "stats":[["進路決定率","93.0%"]],
+    "study":[],
+    "work":[],
+    "notes":["合格・内定状況の詳細は公式資料で確認できます。"],
+    "sources":[["令和5年度進路決定状況","https://www.yokatsu-h.open.ed.jp/2024/06/post-353.html"]]
+  },
+  "読谷": {
+    "year":"令和7年度（令和8年3月31日集計）",
+    "summary":"卒業者数、進路決定者数、進路決定率、大学短大進学率を実数で公表しています。",
+    "stats":[["卒業者","312人"],["進路決定","274人"],["進路決定率","87.8%"],["大学・短大進学率","52.9%"]],
+    "study":["琉球大学 24人","沖縄県立芸術大学 3人","沖縄県立看護大学 4人","名桜大学 18人"],
+    "work":[],
+    "notes":["進路決定状況は実数です。別掲の入試合格状況は延べ人数であるため、混同しないよう注意が必要です。"],
+    "sources":[["2025年度（令和7年度）進路決定状況","https://www.yomitan-h.open.ed.jp/b6e04b9fe7cbe68e62dbcf64943471fa06b70857.pdf"]]
+  },
+  "嘉手納": {
+    "year":"令和7年度卒業生（令和8年3月31日集計）",
+    "summary":"卒業者数、進学・就職の決定人数、進路決定率と主な進路先を公表しています。",
+    "stats":[["卒業者","146人"],["進学","99人"],["就職","24人"],["進路決定","123人"],["進路決定率","84.2%"]],
+    "study":["県外国公立大学 1人","沖縄国際大学 7人","沖縄大学 4人","沖縄キリスト教学院大学 3人","沖縄女子短期大学 3人"],
+    "work":["県内就職","県外就職"],
+    "notes":["大学・短大等は合格状況、専門学校等と就職は決定状況として掲載されています。"],
+    "sources":[["卒業生の進路状況（2026年3月卒業）","https://www.kadena-h.open.ed.jp/R7_sinrojyoukyou.pdf"]]
+  },
+  "具志川": {
+    "year":"令和5年度",
+    "summary":"大学・専門学校の進学実績と就職者数を公表しています。",
+    "stats":[["国公立大学","69人"],["私立大学","75人"],["専門学校","60人"],["就職","7人"]],
+    "study":["県内国公立大学 60人","県外国公立大学 9人"],
+    "work":["公務員など 7人"],
+    "notes":["学校公式ページの進路実績掲載値です。進学者数・合格者数の別は公式表現を確認してください。"],
+    "sources":[["進路状況","https://www.gushikawa-h.open.ed.jp/Course.html"]]
+  },
+  "美里": {
+    "year":"令和8年度進路の手引き掲載",
+    "summary":"学校公式の『進路の手引き』で卒業生の進路実績データを公表しています。",
+    "stats":[],
+    "study":[],
+    "work":[],
+    "notes":["公開資料の表から列対応を安全に確認できない数値は転記していません。詳細は公式資料で確認できます。"],
+    "sources":[["令和8年度 進路の手引き","https://www.misato-h.open.ed.jp/2026/04/21/1a1d402051c7d863dd8b044a1ad52db22dfa3709.pdf"]]
+  },
+  "コザ": {
+    "status":"unavailable","year":"対象年度の確認なし",
+    "sources":[["学校公式サイト","https://www.koza-h.open.ed.jp/"]]
+  },
+  "中部農林": {
+    "year":"学校公式掲載（対象年度・人数の明記なし）",
+    "summary":"主な進学先と、専門学校・県内企業への多様な進路実績を学校公式ページで紹介しています。",
+    "stats":[],
+    "study":["琉球大学農学部","名桜大学","沖縄国際大学","東京農業大学","沖縄県立農業大学校"],
+    "work":["県内企業"],
+    "notes":["人数と対象年度が明記されていないため、進路先名のみ掲載しています。"],
+    "sources":[["校長挨拶・進路実績","https://www.chubu-ah.open.ed.jp/koutyou.html?id=koutyou"]]
+  },
+  "美来工科": {
+    "year":"令和7年度",
+    "summary":"国公立大学合格者数と県内・県外企業の内定者数、進路決定率を公表しています。",
+    "stats":[["国公立大学 合格","11人"],["県内企業 内定","72人"],["県外企業 内定","93人"],["進路決定率","97%"]],
+    "study":["国公立大学 11人"],
+    "work":["沖縄電力など県内企業","トヨタ自動車など県外企業"],
+    "notes":["進学は合格者数、就職は内定者数です。"],
+    "sources":[["令和7年度 進路状況","https://www.mirai-th.open.ed.jp/cat2916/97.html"],["進路状況一覧","https://www.mirai-th.open.ed.jp/2025/CareerPaths.pdf"]]
+  },
+  "美里工業": {
+    "year":"令和7年度",
+    "summary":"卒業者数、就職内定者数、進学合格者数、進路決定者数を公表しています。",
+    "stats":[["卒業者","228人"],["就職内定","158人"],["進学合格","63人"],["進路決定","221人"],["進路決定率","96.9%"]],
+    "study":["学科別進学決定状況を掲載"],
+    "work":["学科別就職内定状況を掲載"],
+    "notes":["就職は内定者数、進学は合格者数です。学科別の内訳は公式資料で確認できます。"],
+    "sources":[["令和8年度学校要覧・令和7年度各科別進路状況","https://www.misato-th.open.ed.jp/2026_misatotech_youran.pdf"]]
+  },
+  "具志川商業": {
+    "year":"令和7年度卒業生",
+    "summary":"卒業生の主な進路先を学校案内で公表しています。",
+    "stats":[],
+    "study":[],
+    "work":[],
+    "notes":["進路先別人数を確認できないため、人数は推測していません。公式資料で主な進路先を確認できます。"],
+    "sources":[["令和7年度 卒業生の主な進路先","https://www.gushikawa-ch.open.ed.jp/6401d86fd89afeeaaaf4df4d55ceee1f8281854f.pdf"]]
+  },
+  "向陽": {
+    "year":"令和7年度卒業生（29期生）",
+    "summary":"学校評議員の運営状況報告で、現役国公立大学合格者数を公表しています。",
+    "stats":[["現役国公立大学 合格","150人"]],
+    "study":["国立大学","公立大学","琉球大学","私立大学・専修学校"],
+    "work":[],
+    "notes":["合格者数であり進学者数ではありません。学校公式の進学状況ページでは大学区分別資料も公開しています。"],
+    "sources":[["令和7年度学校評議員の運営状況報告","https://www.koyo-h.open.ed.jp/R7hyougiiin_unei.pdf"],["向陽高校の進学状況","https://www.koyo-h.open.ed.jp/kouyoushingakujyoukyou.html"]]
+  },
+  "知念": {
+    "year":"学校案内掲載・過去3年間",
+    "summary":"過去3年間の進路決定状況と主要な進学先・就職先を学校案内で公表しています。",
+    "stats":[],
+    "study":[],
+    "work":[],
+    "notes":["単年度の数値と混同しないよう、ここでは過去3年間の公開であることのみ掲載します。詳細は公式資料で確認できます。"],
+    "sources":[["学校案内・過去3年間の進路決定状況","https://www.chinen-h.open.ed.jp/gakkoannai_25.pdf"]]
+  },
+  "糸満": {
+    "year":"令和5年度",
+    "summary":"卒業者数と大学・短大・専門学校・就職の進路決定状況を公表しています。",
+    "stats":[["卒業生","290人"],["琉球大学","20人"],["看護・医療系専門学校","44人"],["その他専門学校","75人"]],
+    "study":["国公立大学","私立大学","短期大学","専門学校","文部科学省管轄外大学校等"],
+    "work":["県内就職","県外就職"],
+    "notes":["就職進学は就職に数えています。大学等は選抜区分別の合格状況です。"],
+    "sources":[["令和5年度進路決定状況","https://www.itoman-h.open.ed.jp/youran_13-3.pdf"]]
+  },
+  "久米島": {
+    "year":"令和7年度（12月末時点）",
+    "summary":"学校通信で3年生の進路決定状況を途中集計として公表しています。",
+    "stats":[["国公立大学","5人"],["私立大学","11人"],["短期大学","1人"],["専門学校","15人"],["公共職業開発施設等","2人"],["就職","11人"]],
+    "study":[],
+    "work":[],
+    "notes":["年度途中の12月末時点の集計です。年度末確定値ではありません。"],
+    "sources":[["久米高通信 令和7年度版（令和8年2月号）","https://www.kumejima-h.open.ed.jp/r7/pdf/tusin/tusin2602.pdf"]]
+  },
+  "南部農林": {
+    "year":"令和5年度",
+    "summary":"学校案内で学校全体の進路決定率、就職決定率、進学決定率を公表しています。",
+    "stats":[["進路決定率","89%"],["就職決定率","83%"],["進学決定率","96%"]],
+    "study":[],
+    "work":[],
+    "notes":["学校全体の決定率です。学科別内訳は掲載資料で確認してください。"],
+    "sources":[["学校案内・令和5年度進路決定率","https://www.nanbu-ah.open.ed.jp/abe3fdfdccdb6093464e2770c6b821aa4714a5e0.pdf"]]
+  },
+  "南部工業": {
+    "year":"令和5年度（令和6年5月1日集計）",
+    "summary":"卒業生の進路状況を、学科別・県内外別に公表しています。",
+    "stats":[],
+    "study":[],
+    "work":[],
+    "notes":["公開表の列対応を安全に確認できない数値は転記していません。詳細は公式資料で確認できます。"],
+    "sources":[["令和5年度卒業生進路状況","https://www.nanbu-th.open.ed.jp/3ffa09bb0615df0dbd513f57495ab7b388e3aaa6.pdf"]]
+  },
+  "沖縄水産": {
+    "year":"学校公式掲載・過去3年間",
+    "summary":"本科の大学・専門学校等への進学先と県内外の就職先、専攻科の就職先を公表しています。",
+    "stats":[],
+    "study":["大学","専門学校・専修学校"],
+    "work":["本科 県内就職先","本科 県外就職先","専攻科 就職先"],
+    "notes":["過去3年間の進路先一覧で、人数は確認できた範囲を超えて補完していません。"],
+    "sources":[["進路情報・過去三年間の進路先状況","https://www.okisui-h.open.ed.jp/sinro.html"]]
+  },
+  "宮古": {
+    "year":"令和7年度学校要覧掲載",
+    "summary":"学校要覧で進路状況と進路別合格者推移を公表しています。",
+    "stats":[],
+    "study":[],
+    "work":[],
+    "notes":["公開表の個別数値を安全に転記できないため、公式資料へのリンクを掲載します。"],
+    "sources":[["令和7年度学校要覧・進路状況","https://www.miyako-h.open.ed.jp/4e634e0396a56b8e8d81a57b1f156c1b1f909962.pdf"]]
+  },
+  "八重山": {
+    "year":"令和6年度卒業生（令和7年度学校要覧掲載）",
+    "summary":"大学・専修学校等の合格者と就職状況を学校要覧で公表しています。",
+    "stats":[],
+    "study":[],
+    "work":[],
+    "notes":["令和5年度以降は仮を含む実人数、令和4年度以前は延べ人数と資料に明記されています。"],
+    "sources":[["令和7年度学校要覧・令和6年度卒業生進路状況","https://www.yaeyama-h.open.ed.jp/7ab764f9e4e2201a165836e42899bd7dbcce83a8.pdf"]]
+  },
+  "八重山農林": {
+    "year":"令和7年度卒業生（110人）",
+    "summary":"学校要覧で卒業生の進路状況と、主な進学先・就職先を公表しています。",
+    "stats":[["卒業生","110人"]],
+    "study":["琉球大学","東京農業大学","南九州大学","摂南大学","日本獣医生命科学大学","徳島文理大学"],
+    "work":[],
+    "notes":["進路区分別の数値は公式表で確認できます。主な進路先は人数の記載がないため名称のみ掲載しています。"],
+    "sources":[["令和8年度学校要覧","https://www.yaeyama-ah.open.ed.jp/R8youran.pdf"],["学校案内・主な進路実績","https://www.yaeyama-ah.open.ed.jp/83cab4302dd156d29231c470746fa825d48ef3d4.pdf"]]
+  },
+  "宮古工業": {
+    "year":"令和7年度卒業生",
+    "summary":"大学・大学校・専門学校の進学先と、県内外の就職先を人数付きで公表しています。",
+    "stats":[["沖縄国際大学","2人"],["沖縄職業能力開発大学校","1人"]],
+    "study":["東海大学 1人","静岡産業大学 1人","九州産業大学 1人","日本工学院専門学校 1人","東京モード学園 1人"],
+    "work":["日本キャタピラー 1人","東京エネシス 2人","仲本工業 1人","ヤマダデンキ 1人"],
+    "notes":["進学先・就職先別の人数を学校公式表のとおり掲載しています。"],
+    "sources":[["令和7年度卒業生進路状況","https://www.miyako-th.open.ed.jp/d1e1bf7a5400c9fbd08f3cfbcfed0a293532e55f.pdf"]]
+  },
+  "八重山商工": {
+    "year":"令和6年度（令和7年3月10日集計）",
+    "summary":"学科・コース別の進路希望と決定状況、主な進学・就職先を公表しています。",
+    "stats":[],
+    "study":["琉球大学","沖縄国際大学","沖縄大学","沖縄県立農業大学校","東京工科大学","日本工業大学","日本経済大学"],
+    "work":[],
+    "notes":["学科・コース別の決定率と進路先は公式資料で確認できます。列対応が不明確な数値は推測転記していません。"],
+    "sources":[["令和6年度進路希望と決定状況","https://www.yaeyama-th.open.ed.jp/8abc0cc46c161b7c6ac42e41d0f1830552bfe819.pdf"]]
+  },
+  "宮古総合実業": {
+    "year":"令和6年度卒業生（令和7年度資料掲載）",
+    "summary":"進学先・就職先を学校名・企業名・人数付きで公表しています。",
+    "stats":[["進学","39人"],["就職","45人"]],
+    "study":["名桜大学 1人","沖縄国際大学 2人","沖縄大学 1人","沖縄こども専門学校 6人","沖縄リゾート＆スポーツ専門学校 5人"],
+    "work":["国家公務員 1人","宮古島市役所 3人","JALスカイエアポート沖縄 5人","沖縄綜合警備保障 4人","自衛官候補生 8人"],
+    "notes":["進学先・就職先別の人数を学校公式資料のとおり掲載しています。"],
+    "sources":[["進学校名および就職企業名と人数","https://www.miyasou-h.open.ed.jp/R7_shinro.pdf"]]
+  }
+};
+
 const TOKU_SRC = "沖縄県教育委員会・各県立高校の令和8年度公式資料（令和9年度資料は2026年7月7日時点で未公表）";
 const SCHOOL_MEMO = {
   "kaiho-g":"開邦は併設型の中高一貫校。高校からの募集人員は、定員から開邦中学校からの内部進学者を除いた数になります。",
@@ -3328,6 +3867,47 @@ let sortKey = null, sortDir = 1;
 // 仮データ（追跡調査データ未取得）の学科は、基準偏差値・内申を「—」表示にする
 const dval = (o, k) => (o && o.dummy ? "—" : o[k]);
 
+function schoolCareerHtml(s){
+  const c = CAREER_OUTCOMES[s.name];
+  if (!c) return "";
+
+  const sourceHtml = (c.sources || []).map(src =>
+    `<a href="${esc(src[1])}" target="_blank" rel="noopener noreferrer">${esc(src[0])}</a>`
+  ).join(" ／ ");
+  const listCard = (title, items) => items && items.length
+    ? `<div class="school-career-card"><h4>${title}</h4><ul class="school-career-list">${items.map(item => `<li>${esc(item)}</li>`).join("")}</ul></div>`
+    : "";
+
+  let body = "";
+  if (c.status === "unavailable"){
+    body = '<p class="school-career-empty">学校公式サイト等の公開資料から、進学・就職実績を確認できませんでした。</p>';
+  } else {
+    if (c.summary) body += `<p class="school-career-summary">${esc(c.summary)}</p>`;
+    if (c.stats && c.stats.length){
+      body += `<div class="school-career-stats">${c.stats.map(stat =>
+        `<div class="school-career-stat"><span>${esc(stat[0])}</span><b>${esc(stat[1])}</b></div>`
+      ).join("")}</div>`;
+    }
+    const studyCard = listCard("進学", c.study || []);
+    const workCard = listCard("就職・公務員", c.work || []);
+    if (studyCard || workCard){
+      body += `<div class="school-career-cols${studyCard && workCard ? "" : " single"}">${studyCard}${workCard}</div>`;
+    }
+    if (c.notes && c.notes.length){
+      body += `<div class="school-career-notes"><ul>${c.notes.map(note => `<li>${esc(note)}</li>`).join("")}</ul></div>`;
+    }
+  }
+
+  return `<section class="school-career" aria-label="${esc(s.name)}高校の進学・就職実績">` +
+    '<div class="school-career-head">' +
+      '<span class="school-career-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m3 9 9-5 9 5-9 5-9-5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M7 12v4.2c2.9 2.1 7.1 2.1 10 0V12M21 9v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' +
+      '<div class="school-career-title"><b>進学・就職実績</b><small>学校全体の共通情報</small></div>' +
+      `<span class="school-career-year">${esc(c.year || "対象年度の確認なし")}</span>` +
+    '</div>' + body +
+    `<p class="school-career-source"><b>公式出典：</b>${sourceHtml || "公式資料のURLを確認できませんでした"}</p>` +
+  '</section>';
+}
+
 function schoolRouteHtml(s){
   const destination = schoolRouteDestination(s);
   return '<div class="school-route" data-school-route data-destination="' + esc(destination) + '">' +
@@ -3357,6 +3937,7 @@ function detailRow(s){
   const td = document.createElement("td"); td.colSpan = 6;
 
   let h = schoolProfile(s, d);
+  h += schoolCareerHtml(s);
   h += schoolRouteHtml(s);
   h += officialAdmissionsHtml(s);
   h += legacyReferenceHtml(s);
