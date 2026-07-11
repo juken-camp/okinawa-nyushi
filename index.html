@@ -306,6 +306,19 @@ strong{color:var(--sea-deep)}
 .hero h1{font-family:var(--fd);font-weight:900;font-size:clamp(1.65rem,5.6vw,2.5rem);line-height:1.42;margin:0 0 6px;letter-spacing:.01em}
 .hero h1 .accent{color:var(--sea);}
 .hero .sub{color:var(--ink-soft);font-size:.92rem;line-height:1.8;margin:18px 0 0}
+/* ---- トップ更新情報（コンパクト） ---- */
+.update-mini{margin:20px 0 0;background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:12px;padding:11px 13px;box-shadow:0 2px 10px rgba(17,42,62,.045)}
+.update-mini-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;line-height:1}
+.update-mini-head b{font-family:var(--fd);font-size:.78rem;color:var(--sea-deep)}
+.update-mini-head small{margin-left:auto;font-size:.62rem;font-weight:700;color:var(--ink-soft);line-height:1.4}
+.update-badge{display:inline-flex;align-items:center;justify-content:center;background:var(--coral);color:#fff;border-radius:99px;padding:3px 8px;font-family:var(--fm);font-size:.58rem;font-weight:800;letter-spacing:.08em}
+.update-mini ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.update-mini li{display:grid;grid-template-columns:6.7em minmax(0,1fr);gap:8px;padding:5px 0;border-top:1px dashed var(--line);font-size:.72rem;line-height:1.55}
+.update-mini li:first-child{border-top:0}
+.update-mini time{font-family:var(--fm);font-size:.66rem;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+.update-mini a{color:var(--ink);text-decoration:none;font-weight:600}
+.update-mini a:hover{color:var(--sea);text-decoration:underline}
+@media(max-width:520px){.update-mini-head{flex-wrap:wrap}.update-mini-head small{width:100%;margin-left:0}.update-mini li{grid-template-columns:1fr;gap:1px}.update-mini time{font-size:.62rem}}
 .year-tag-row{display:flex;justify-content:flex-start;margin:0 0 11px}
 .year-tag{display:inline-flex;align-items:center;border:1px solid #cfe3ee;background:var(--sea-tint);color:var(--sea-deep);border-radius:6px;padding:3px 9px;font-size:.66rem;font-weight:700;letter-spacing:.02em}
 .nb{white-space:nowrap}
@@ -324,6 +337,8 @@ strong{color:var(--sea-deep)}
 .hero-steps .no{flex:0 0 auto;width:30px;height:30px;border-radius:99px;background:var(--sea-tint);color:var(--sea-deep);font-family:var(--fm);font-weight:800;font-size:.95rem;display:grid;place-items:center}
 .hero-steps .s2 .no{background:var(--sea);color:#fff}
 .hero-steps .s3 .no{background:var(--coral);color:#fff}
+.hero-steps .s4 .no{background:var(--sun);color:#5d3c05}
+.hero-steps .s5 .no{background:var(--reef);color:#fff}
 .hero-steps .tx{display:block;line-height:1.4}
 .hero-steps .tx b{display:block;font-size:.95rem}
 .hero-steps .tx small{display:block;font-size:.72rem;color:var(--ink-soft);font-weight:500;margin-top:2px}
@@ -729,7 +744,6 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
 footer{padding:8px 0 60px;color:var(--ink-soft);font-size:.76rem}
 footer .links{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:14px}
 footer a{color:var(--ink-soft)}
-.foot-upd{margin:10px 0 0;font-size:.72rem;opacity:.7}
 
 /* ---- かんたん要約ストリップ ---- */
 .tldr{display:block;background:#fff;border:2px solid var(--sea);border-radius:14px;padding:13px 17px 15px;margin:-8px 0 24px;box-shadow:var(--shadow)}
@@ -1084,6 +1098,30 @@ body.has-cbar{padding-bottom:96px}
 .od-meta{display:block;margin-top:4px;color:var(--ink-soft);font-size:.68rem;line-height:1.55}.od-method{padding:8px 10px;border-radius:9px;background:#f7fbfd;border:1px solid var(--line);margin:7px 0}
 @media(max-width:720px){.detail-row>td{padding:10px 8px!important}.detail-inner{position:sticky;left:8px;width:calc(100vw - 44px);max-width:calc(100vw - 44px)}.od-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.od-body{padding:10px}.od-inner{padding:10px}.od-table{font-size:.69rem}}
 
+/* ===== 学校詳細：Googleマップ通学経路 ===== */
+.school-route{min-width:0;margin:12px 0 14px;padding:13px 14px;border:1px solid #c9dde6;border-radius:14px;background:#f8fcfe}
+.school-route-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:var(--sea-deep);line-height:1.4}
+.school-route-head .sr-pin{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:9px;background:var(--sea-tint);color:var(--sea-deep);flex:0 0 auto}
+.school-route-head .sr-pin svg{width:17px;height:17px}
+.school-route-head b{font-size:.88rem;font-weight:900}
+.school-route-head small{font-size:.68rem;color:var(--ink-soft);font-weight:700}
+.school-route-form{display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:8px;align-items:center;margin-top:10px;min-width:0}
+.school-route-input{box-sizing:border-box;width:100%;min-width:0;height:42px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);padding:0 11px;font:inherit;font-size:.82rem;outline:none}
+.school-route-input:focus{border-color:var(--sea);box-shadow:0 0 0 3px rgba(15,126,164,.12)}
+.school-route-actions{display:flex;gap:6px;min-width:0}
+.school-route-btn{min-height:42px;border:1px solid #b9d9e5;border-radius:10px;background:#fff;color:var(--sea-deep);padding:7px 10px;font:inherit;font-size:.74rem;font-weight:800;line-height:1.25;white-space:nowrap;cursor:pointer}
+.school-route-btn:active{background:var(--sea-tint)}
+@media(hover:hover){.school-route-btn:hover{border-color:var(--sea);background:var(--sea-tint)}}
+.school-route-btn:disabled{opacity:.52;cursor:default}
+.school-route-note{margin:7px 0 0;font-size:.67rem;line-height:1.55;color:var(--ink-soft)}
+.school-route-message{margin:6px 0 0;font-size:.74rem;font-weight:800;line-height:1.45;color:var(--coral-deep)}
+@media(max-width:720px){
+  .school-route{padding:12px;overflow:hidden}
+  .school-route-form{grid-template-columns:minmax(0,1fr)}
+  .school-route-actions{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,.7fr) minmax(0,.7fr);width:100%;gap:6px}
+  .school-route-btn{width:100%;min-width:0;padding:8px 5px;font-size:.7rem;white-space:normal}
+}
+
 
 /* ---- 旧学科・クラスの参考データ ---- */
 .legacy-ref{margin:14px 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
@@ -1125,7 +1163,16 @@ body.has-cbar{padding-bottom:96px}
     <div class="year-tag-row"><span class="year-tag">令和9年度入試対応</span></div>
     <span class="kicker">中学生になったら、まず知っておきたいこと。</span>
     <h1><span class="accent">沖縄県立高校入試</span>が、<br>ここだけでぜんぶわかる。</h1>
-    <p class="sub">2025年春から新しくなった<span class="nb">特色選抜</span>・<span class="nb">一般選抜</span>のしくみを、沖縄県立高校入試専門の<span class="nb">JUKEN CAMP</span>が、図とことばでやさしく。</p>
+    <p class="sub">入試のしくみから、日程・内申点計算・合格可能性・学校別データ・通学経路まで。沖縄県立高校入試に必要な情報とツールを、<span class="nb">JUKEN CAMP</span>がひとつにまとめました。</p>
+
+    <aside class="update-mini" aria-label="更新情報">
+      <div class="update-mini-head"><span class="update-badge">NEW</span><b>更新情報</b><small>便利な機能を、随時アップデートしています。</small></div>
+      <ul>
+        <li><time datetime="2026-07-11">2026.07.11</time><a href="#schools">自宅から高校までの通学経路を、バス・ゆいレール・車・徒歩で検索できるようになりました</a></li>
+        <li><time datetime="2026-07-08">2026.07.08</time><a href="#schools">特色選抜の出願要件や検査内容を、学校別に確認できるようになりました</a></li>
+        <li><time datetime="2026-07-05">2026.07.05</time><a href="#schedule">令和9年度入試の日程を、カウントダウンで確認できるようになりました</a></li>
+      </ul>
+    </aside>
 
     <div class="cd-card rv" id="cdCard">
       <span class="cd-l" id="cdLabel">令和9年度 学力検査</span>
@@ -1135,11 +1182,13 @@ body.has-cbar{padding-bottom:96px}
         <span class="cd-word" id="cdWord"></span>
       </div>
     </div>
-    <p class="steps-label"><span class="top-mark"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M15.3 8.7 10.7 10.7 8.7 15.3 13.3 13.3z" fill="currentColor"/></svg></span>つかいかたは、3ステップ</p>
+    <p class="steps-label"><span class="top-mark"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M15.3 8.7 10.7 10.7 8.7 15.3 13.3 13.3z" fill="currentColor"/></svg></span>つかいかたは、5ステップ</p>
     <div class="hero-steps">
       <a class="step s1" href="#shikumi"><span class="no">1</span><span class="tx"><b>まず、仕組みを知る</b><small>合否の決まり方を図でつかむ</small></span><span class="ar">→</span></a>
       <a class="step s2" href="#naishin"><span class="no">2</span><span class="tx"><b>内申点を計算する</b><small>通知表の数字をタップするだけ</small></span><span class="ar">→</span></a>
       <a class="step s3" href="#hantei"><span class="no">3</span><span class="tx"><b>合格可能性をみる</b><small>志望校との距離がわかる</small></span><span class="ar">→</span></a>
+      <a class="step s4" href="#schools"><span class="no">4</span><span class="tx"><b>学校データを比べる</b><small>学科・倍率・選抜方法を確認</small></span><span class="ar">→</span></a>
+      <a class="step s5" href="#schoolTable"><span class="no">5</span><span class="tx"><b>通学経路を調べる</b><small>バス・ゆいレール・車・徒歩で検索</small></span><span class="ar">→</span></a>
     </div>
     <p class="steps-label"><span class="top-mark"><svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M15.3 8.7 10.7 10.7 8.7 15.3 13.3 13.3z" fill="currentColor"/></svg></span>大事なのは、この3つ</p>
     <div class="hero-keys">
@@ -2160,7 +2209,6 @@ body.has-cbar{padding-bottom:96px}
   <div class="wrap">
     <p>当サイトの判定・データは独自の集計にもとづく参考情報です。入試制度・日程・募集要項は変更される場合があるため、必ず沖縄県教育委員会および各高校の最新の公式発表をご確認ください。</p>
     <p class="foot-by">Presented by JUKEN CAMP（公式サイトは<a href="https://www.juken-camp.online/" target="_blank" rel="noopener">こちら</a>）</p>
-    <p class="foot-upd">最終更新 2026.7.7</p>
   </div>
 </footer>
 
@@ -2433,6 +2481,85 @@ const latestYear = s => Math.max(...Object.keys(s.y).map(Number));
 const yearsOf = s => Object.keys(s.y).map(Number).sort((a,b)=>a-b);
 const cur = s => s.y[latestYear(s)];
 const AREA_LABEL = {"南部":"南部・那覇","中部":"中部","北部":"北部","宮古・八重山":"宮古・八重山"};
+
+/* Googleマップ経路検索の目的地（令和8年度・沖縄県「学校一覧」の所在地） */
+const SCHOOL_ROUTE_ADDRESSES = {
+  "開邦":"沖縄県島尻郡南風原町字新川646",
+  "那覇国際":"沖縄県那覇市天久1-29-1",
+  "那覇":"沖縄県那覇市松尾1-21-44",
+  "首里":"沖縄県那覇市首里真和志町2-43",
+  "首里東":"沖縄県那覇市首里石嶺町3-178",
+  "那覇西":"沖縄県那覇市金城3-5-1",
+  "小禄":"沖縄県那覇市鏡原町22-1",
+  "真和志":"沖縄県那覇市字真地248",
+  "泊":"沖縄県那覇市泊3-19-2",
+  "豊見城":"沖縄県豊見城市字真玉橋217",
+  "豊見城南":"沖縄県豊見城市字翁長520",
+  "南風原":"沖縄県島尻郡南風原町字津嘉山1140",
+  "那覇商業":"沖縄県那覇市松山1-16-1",
+  "南部商業":"沖縄県島尻郡八重瀬町字友寄850",
+  "那覇工業":"沖縄県浦添市勢理客4-22-1",
+  "沖縄工業":"沖縄県那覇市松川3-20-1",
+  "球陽":"沖縄県沖縄市南桃原1-10-1",
+  "普天間":"沖縄県宜野湾市普天間1-24-1",
+  "宜野湾":"沖縄県宜野湾市真志喜2-25-1",
+  "浦添":"沖縄県浦添市内間3-26-1",
+  "陽明":"沖縄県浦添市字大平488",
+  "西原":"沖縄県中頭郡西原町字翁長610",
+  "北中城":"沖縄県中頭郡北中城村字渡口1997-13",
+  "北谷":"沖縄県中頭郡北谷町字桑江414",
+  "浦添商業":"沖縄県浦添市伊祖3-11-1",
+  "中部商業":"沖縄県宜野湾市我如古2-2-1",
+  "浦添工業":"沖縄県浦添市経塚1-1-1",
+  "辺土名":"沖縄県国頭郡大宜味村字饒波2015",
+  "北山":"沖縄県国頭郡今帰仁村字仲尾次540-1",
+  "本部":"沖縄県国頭郡本部町字渡久地377",
+  "名護":"沖縄県名護市大西5-17-1",
+  "宜野座":"沖縄県国頭郡宜野座村字宜野座1",
+  "北部農林":"沖縄県名護市字宇茂佐13",
+  "名護商工":"沖縄県名護市大北4-1-23",
+  "石川":"沖縄県うるま市石川伊波861",
+  "前原":"沖縄県うるま市字田場1827",
+  "与勝":"沖縄県うるま市勝連平安名3248",
+  "読谷":"沖縄県中頭郡読谷村字伊良皆198",
+  "嘉手納":"沖縄県中頭郡嘉手納町字屋良806",
+  "具志川":"沖縄県うるま市喜仲3-28-1",
+  "美里":"沖縄県沖縄市松本2-5-1",
+  "コザ":"沖縄県沖縄市照屋5-5-1",
+  "中部農林":"沖縄県うるま市字田場1570",
+  "美来工科":"沖縄県沖縄市越来3-17-1",
+  "美里工業":"沖縄県沖縄市泡瀬5-42-2",
+  "具志川商業":"沖縄県うるま市みどり町6-10-1",
+  "向陽":"沖縄県島尻郡八重瀬町字港川150",
+  "知念":"沖縄県島尻郡与那原町字与那原11",
+  "糸満":"沖縄県糸満市字糸満1696-1",
+  "久米島":"沖縄県島尻郡久米島町字嘉手苅727",
+  "南部農林":"沖縄県豊見城市字長堂182",
+  "南部工業":"沖縄県島尻郡八重瀬町字富盛1338",
+  "沖縄水産":"沖縄県糸満市西崎1-1-1",
+  "宮古":"沖縄県宮古島市平良字西里718-1",
+  "八重山":"沖縄県石垣市字登野城275",
+  "八重山農林":"沖縄県石垣市字大川477-1",
+  "宮古工業":"沖縄県宮古島市平良字東仲宗根968-4",
+  "八重山商工":"沖縄県石垣市字真栄里180",
+  "宮古総合実業":"沖縄県宮古島市平良字下里280"
+};
+
+function schoolRouteDestination(s){
+  const direct = typeof s.googleMapsDestination === "string" ? s.googleMapsDestination.trim() : "";
+  if (direct) return direct;
+  const lat = s.latitude != null ? s.latitude : s.lat;
+  const lng = s.longitude != null ? s.longitude : s.lng;
+  if (lat != null && lng != null && Number.isFinite(Number(lat)) && Number.isFinite(Number(lng))){
+    return String(lat) + "," + String(lng);
+  }
+  if (typeof s.address === "string" && s.address.trim()){
+    return "沖縄県立" + s.name + "高等学校, " + s.address.trim();
+  }
+  const address = SCHOOL_ROUTE_ADDRESSES[s.name];
+  return "沖縄県立" + s.name + "高等学校, " + (address || "沖縄県");
+}
+
 /* 通学区域（学区）：全日制普通科だけが学区を持ち、専門学科・総合学科は県全域。
    普通科でも 南風原(郷土文化)・真和志(クリエイティブアーツ)・小禄(芸術教養) は県全域。
    出典：全日制普通科の通学区域（県教委）。学区＝学校の所在による。 */
@@ -3201,6 +3328,27 @@ let sortKey = null, sortDir = 1;
 // 仮データ（追跡調査データ未取得）の学科は、基準偏差値・内申を「—」表示にする
 const dval = (o, k) => (o && o.dummy ? "—" : o[k]);
 
+function schoolRouteHtml(s){
+  const destination = schoolRouteDestination(s);
+  return '<div class="school-route" data-school-route data-destination="' + esc(destination) + '">' +
+    '<div class="school-route-head">' +
+      '<span class="sr-pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s6-5.5 6-11a6 6 0 1 0-12 0c0 5.5 6 11 6 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.1" stroke="currentColor" stroke-width="1.8"/></svg></span>' +
+      '<b>自宅から学校までの行き方</b>' +
+      '<small>目的地：' + esc(s.name) + '高校</small>' +
+    '</div>' +
+    '<div class="school-route-form">' +
+      '<input type="search" class="school-route-input" data-route-origin aria-label="自宅住所または出発地点" placeholder="自宅住所・駅・バス停などを入力" autocomplete="off" maxlength="200">' +
+      '<div class="school-route-actions">' +
+        '<button type="button" class="school-route-btn" data-travelmode="transit">バス・ゆいレール</button>' +
+        '<button type="button" class="school-route-btn" data-travelmode="driving">車</button>' +
+        '<button type="button" class="school-route-btn" data-travelmode="walking">徒歩</button>' +
+      '</div>' +
+    '</div>' +
+    '<p class="school-route-note">入力した住所はこのサイトには保存されません。Googleマップを新しいタブで開きます。</p>' +
+    '<p class="school-route-message" data-route-message aria-live="polite" hidden></p>' +
+  '</div>';
+}
+
 function detailRow(s){
   const years = yearsOf(s);
   const ySel = (detailYearSel && s.y[detailYearSel]) ? detailYearSel : latestYear(s);
@@ -3209,6 +3357,7 @@ function detailRow(s){
   const td = document.createElement("td"); td.colSpan = 6;
 
   let h = schoolProfile(s, d);
+  h += schoolRouteHtml(s);
   h += officialAdmissionsHtml(s);
   h += legacyReferenceHtml(s);
   if (years.length > 1){
@@ -3247,6 +3396,47 @@ function detailRow(s){
   td.querySelectorAll("[data-yc]").forEach(b => b.addEventListener("click", () => {
     detailYearSel = Number(b.dataset.yc); renderTable();
   }));
+  const routeBox = td.querySelector("[data-school-route]");
+  if (routeBox){
+    const routeInput = routeBox.querySelector("[data-route-origin]");
+    const routeMessage = routeBox.querySelector("[data-route-message]");
+    const routeButtons = [...routeBox.querySelectorAll("[data-travelmode]")];
+    let routeOpening = false;
+    const clearRouteMessage = () => {
+      routeMessage.textContent = "";
+      routeMessage.hidden = true;
+    };
+    routeInput.addEventListener("input", clearRouteMessage);
+    routeButtons.forEach(button => button.addEventListener("click", () => {
+      const origin = routeInput.value.trim();
+      if (!origin){
+        routeMessage.textContent = "出発地点を入力してください";
+        routeMessage.hidden = false;
+        routeInput.focus();
+        return;
+      }
+      if (routeOpening) return;
+      clearRouteMessage();
+      const url = new URL("https://www.google.com/maps/dir/");
+      url.searchParams.set("api", "1");
+      url.searchParams.set("origin", origin);
+      url.searchParams.set("destination", routeBox.dataset.destination);
+      url.searchParams.set("travelmode", button.dataset.travelmode);
+      routeOpening = true;
+      routeButtons.forEach(b => { b.disabled = true; });
+      const link = document.createElement("a");
+      link.href = url.toString();
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.setTimeout(() => {
+        routeOpening = false;
+        routeButtons.forEach(b => { b.disabled = false; });
+      }, 900);
+    }));
+  }
   const judgeBtn = td.querySelector("[data-judge]");
   if (judgeBtn) judgeBtn.addEventListener("click", () => {
     $("#inSchool").value = s.id; judge();
