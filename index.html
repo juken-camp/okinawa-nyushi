@@ -28,7 +28,7 @@
 
 <!-- ================= SEO ================= -->
 <title>沖縄県立高校入試ナビ｜日程・内申点計算・合格判定・学校別データ</title>
-<meta name="description" content="沖縄県立高校入試の情報サイト。新制度（特色選抜・一般選抜）を図解し、通知表の評定から内申点（165点満点）を自動計算。プレ入試追跡調査にもとづく学校別の合格基準・倍率・合否データで合格可能性を判定。入試日程のカウントダウン・学力検査の平均点・自宅から高校までの通学経路検索・私立高校の基礎情報も。JUKEN CAMP（受験キャンプ）運営。">
+<meta name="description" content="沖縄県立高校入試の情報サイト。新制度（特色選抜・一般選抜）を図解し、通知表の評定から内申点（165点満点）を自動計算。追跡調査にもとづく学校別の合格基準・倍率・合否データで合格可能性を判定。入試日程のカウントダウン・学力検査の平均点・自宅から高校までの通学経路検索・私立高校の基礎情報も。JUKEN CAMP（受験キャンプ）運営。">
 <meta name="robots" content="index,follow">
 <!-- ★公開時にドメインへ差し替えてください -->
 <link rel="canonical" href="https://okinawa-nyushi.jp/">
@@ -306,19 +306,29 @@ strong{color:var(--sea-deep)}
 .hero h1{font-family:var(--fd);font-weight:900;font-size:clamp(1.65rem,5.6vw,2.5rem);line-height:1.42;margin:0 0 6px;letter-spacing:.01em}
 .hero h1 .accent{color:var(--sea);}
 .hero .sub{color:var(--ink-soft);font-size:.92rem;line-height:1.8;margin:18px 0 0}
-/* ---- トップ更新情報（コンパクト） ---- */
-.update-mini{margin:20px 0 0;background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:12px;padding:11px 13px;box-shadow:0 2px 10px rgba(17,42,62,.045)}
-.update-mini-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;line-height:1}
+/* ---- トップ更新情報（高さ固定・内部スクロール） ---- */
+.update-mini{margin:20px 0 0;background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:12px;padding:10px 12px 8px;box-shadow:0 2px 10px rgba(17,42,62,.045)}
+.update-mini-head{display:flex;align-items:center;gap:8px;margin-bottom:5px;line-height:1}
 .update-mini-head b{font-family:var(--fd);font-size:.78rem;color:var(--sea-deep)}
 .update-mini-head small{margin-left:auto;font-size:.62rem;font-weight:700;color:var(--ink-soft);line-height:1.4}
 .update-badge{display:inline-flex;align-items:center;justify-content:center;background:var(--coral);color:#fff;border-radius:99px;padding:3px 8px;font-family:var(--fm);font-size:.58rem;font-weight:800;letter-spacing:.08em}
-.update-mini ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
-.update-mini li{display:grid;grid-template-columns:6.7em minmax(0,1fr);gap:8px;padding:5px 0;border-top:1px dashed var(--line);font-size:.72rem;line-height:1.55}
+.update-mini ul{list-style:none;margin:0;padding:0 7px 0 0;display:grid;gap:0;max-height:150px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#b9ced8 transparent;-webkit-overflow-scrolling:touch}
+.update-mini ul::-webkit-scrollbar{width:5px}
+.update-mini ul::-webkit-scrollbar-thumb{background:#b9ced8;border-radius:99px}
+.update-mini ul::-webkit-scrollbar-track{background:transparent}
+.update-mini li{display:grid;grid-template-columns:6.7em minmax(0,1fr);gap:8px;padding:5px 0;border-top:1px dashed var(--line);font-size:.72rem;line-height:1.45}
 .update-mini li:first-child{border-top:0}
 .update-mini time{font-family:var(--fm);font-size:.66rem;font-weight:700;color:var(--ink-soft);white-space:nowrap}
 .update-mini a{color:var(--ink);text-decoration:none;font-weight:600}
 .update-mini a:hover{color:var(--sea);text-decoration:underline}
-@media(max-width:520px){.update-mini-head{flex-wrap:wrap}.update-mini-head small{width:100%;margin-left:0}.update-mini li{grid-template-columns:1fr;gap:1px}.update-mini time{font-size:.62rem}}
+@media(max-width:520px){
+  .update-mini{margin-top:14px;padding:9px 10px 7px}
+  .update-mini-head{margin-bottom:4px}
+  .update-mini-head small{display:none}
+  .update-mini ul{max-height:112px;padding-right:5px}
+  .update-mini li{grid-template-columns:5.8em minmax(0,1fr);gap:6px;padding:4px 0;font-size:.67rem;line-height:1.4}
+  .update-mini time{font-size:.6rem}
+}
 .year-tag-row{display:flex;justify-content:flex-start;margin:0 0 11px}
 .year-tag{display:inline-flex;align-items:center;border:1px solid #cfe3ee;background:var(--sea-tint);color:var(--sea-deep);border-radius:6px;padding:3px 9px;font-size:.66rem;font-weight:700;letter-spacing:.02em}
 .nb{white-space:nowrap}
@@ -1214,8 +1224,8 @@ body.has-cbar{padding-bottom:96px}
 
     <aside class="update-mini" aria-label="更新情報">
       <div class="update-mini-head"><span class="update-badge">NEW</span><b>更新情報</b><small>便利な機能を、随時アップデートしています。</small></div>
-      <ul>
-        <li><time datetime="2026-07-23">2026.07.23</time><a href="#schools">2026年度（令和8年度）のプレ入試追跡調査145件を反映しました</a></li>
+      <ul tabindex="0" aria-label="更新履歴。上下にスクロールできます">
+        <li><time datetime="2026-07-23">2026.07.23</time><a href="#schools">2026年度（令和8年度）の追跡調査データ145件を反映しました</a></li>
 <li><time datetime="2026-07-17">2026.07.17</time><a href="#schools">学校別データを再接続し、那覇国際・石川・前原・与勝・嘉手納・美里の実績ランク表を追加しました</a></li>
         <li><time datetime="2026-07-11">2026.07.11</time><a href="#schools">自宅から高校までの通学経路を、バス・ゆいレール・車・徒歩で検索できるようになりました</a></li>
         <li><time datetime="2026-07-08">2026.07.08</time><a href="#schools">特色選抜の出願要件や検査内容を、学校別に確認できるようになりました</a></li>
@@ -1375,10 +1385,10 @@ body.has-cbar{padding-bottom:96px}
     <div class="card rv" style="margin-top:14px">
       <h3 style="margin:0 0 12px;font-size:.98rem">中3の1年間（年間スケジュール）</h3>
       <ol class="stack" id="schedRows">
-        <li data-m="4,5,6,7,8"><span class="sw">夏まで（4〜8月）</span><p>学校説明会・体験入学のシーズン。<a href="https://www.pref.okinawa.jp/kyoiku/gakko/1008883/1008887/1039961.html" target="_blank" rel="noopener">令和8年度の一覧は県HPで公開済み</a>（5月26日掲載）。志望校を「見て」決める時期。<b>模試スタート</b>：プレ入試「チャレンジ」（4〜7月・腕試し）、県模試も7月号から。</p></li>
-        <li data-m="9,10"><span class="sw">秋（9〜10月）</span><p>実施要項と、特色選抜の校別の要項（求める生徒像・検査内容・募集枠）が公表され、<b>入試の正式日程もここで確定</b>します。配慮願いなどの事前申請も動き出す時期。<b>プレ入試 第1回（9/6）</b>。県模試も毎月。</p></li>
-        <li data-m="11,12"><span class="sw">11〜12月</span><p>三者面談で志望校をしぼる。<b>プレ入試 第2回（12/6）・県模試12月号</b>で総仕上げ。私立はこの時期に出願が始まります（沖縄尚学は推薦が11月・一般A方式が12月）。</p></li>
-        <li data-m="1"><span class="sw">1月</span><p>私立入試の本番（興南の前期は1/18、沖縄尚学のB方式は1月下旬 ほか）。県立はWeb出願の準備期間。<b>1月中旬ごろには、校内の面談で出願校を最終決定</b>することが多い（時期は学校により前後します）。<b>プレ入試 第3回（1/6）・ファイナル（1/31）、県模試1月号（最大規模）</b>。</p></li>
+        <li data-m="4,5,6,7,8"><span class="sw">夏まで（4〜8月）</span><p>学校説明会・体験入学のシーズン。<a href="https://www.pref.okinawa.jp/kyoiku/gakko/1008883/1008887/1039961.html" target="_blank" rel="noopener">令和8年度の一覧は県HPで公開済み</a>（5月26日掲載）。志望校を「見て」決める時期。夏から外部模試も活用し、県内での現在地を確認します。</p></li>
+        <li data-m="9,10"><span class="sw">秋（9〜10月）</span><p>実施要項と、特色選抜の校別の要項（求める生徒像・検査内容・募集枠）が公表され、<b>入試の正式日程もここで確定</b>します。配慮願いなどの事前申請も動き出す時期。外部模試で志望校との距離も確認します。</p></li>
+        <li data-m="11,12"><span class="sw">11〜12月</span><p>三者面談で志望校をしぼり、外部模試で仕上がりを確認します。私立はこの時期に出願が始まります（沖縄尚学は推薦が11月・一般A方式が12月）。</p></li>
+        <li data-m="1"><span class="sw">1月</span><p>私立入試の本番（興南の前期は1/18、沖縄尚学のB方式は1月下旬 ほか）。県立はWeb出願の準備期間。<b>1月中旬ごろには、校内の面談で出願校を最終決定</b>することが多い（時期は学校により前後します）。直前の模試結果も参考に、最終確認を行います。</p></li>
         <li data-m="2"><span class="sw">2月</span><p>県立の出願（特色＋一般をセット）。<b>初回の志願状況（倍率）が2月上旬</b>に公表され、<b>志願変更（一般選抜のみ・特色は変更不可）</b>を経て、<b>最終志願状況が2月中旬</b>に確定します。</p>
         <p><b>特色選抜の面接・実技・学校独自検査は、この2月ごろ・学校が定めた日に実施</b>されます（学力検査より前。例：令和8年度の那覇高校は2月17日）。私立は興南の中期（2/15）など。<span class="small" style="color:var(--ink-soft)">（令和8年度の実績：出願2月2〜3日 → 初回の倍率2月3日 → 最終志願状況2月17日）</span></p></li>
         <li data-m="3"><span class="sw">3月3日（水）・4日（木）</span><p><b>学力検査・面接（2日間）</b>。5教科の学力検査は、特色・一般とも<b>全員</b>が受けます。<span class="small" style="color:var(--ink-soft)">（特色選抜の面接・実技・学校独自検査は、これより前の2月ごろに別の日として実施されます。）</span></p></li>
@@ -1386,7 +1396,7 @@ body.has-cbar{padding-bottom:96px}
         <li data-m="3"><span class="sw">3月27日（土）</span><p>定員割れの学校で2次募集（出願→面接等）。この日に<b>合格発表</b>があり、入試はここで一区切りです。</p></li>
       </ol>
       <p class="note" style="margin-top:10px">上の<b>3月の日付は令和9年度の確定日程</b>です。出願・志願変更など2月までの日程は、毎年秋に県教育委員会が発表します（カッコ内の前年・令和8年度は参考の目安）。最新の日程は必ず<a href="https://www.pref.okinawa.lg.jp/kyoiku/gakko/1008883/1008887/1035054.html" target="_blank" rel="noopener">県の入試情報ページ</a>でご確認ください。</p>
-      <p class="note" style="margin-top:8px">上の<b>プレ入試の日付</b>は誠伸社（沖縄県統一プレ入試）2026年度の公表分（日曜中心）。<b>県模試</b>（教育開発出版）は7月号〜1月号の月号制で、<b>実施日は教室によって前後</b>します。日程の最新・申込は各模試の主催元やお近くの塾で確認を。<a href="#moshi">2つの模試のちがいはこちら →</a></p>
+      <p class="note" style="margin-top:8px">外部模試の日程・申込方法・会場は実施団体や教室によって異なります。最新情報は主催元やお近くの塾でご確認ください。<a href="#moshi">模試の活用方法はこちら →</a></p>
     </div>
 
     <div class="card rv" style="margin-top:14px">
@@ -1447,7 +1457,7 @@ body.has-cbar{padding-bottom:96px}
       </div>
       <div class="act rv">
         <span class="ag">中3・夏まで</span>
-        <p>説明会・体験入学で志望校を<b>「見て」</b>決める。プレ入試や模試で現在地を知り、基準との距離を測る時期。</p>
+        <p>説明会・体験入学で志望校を<b>「見て」</b>決める。外部模試で現在地を知り、基準との距離を測る時期。</p>
         <a href="#hantei">合格判定で距離を測る →</a>
       </div>
       <div class="act rv">
@@ -1772,41 +1782,14 @@ body.has-cbar{padding-bottom:96px}
     </div>
 
     <div class="moshi rv" style="margin-top:16px">
-      <h3 class="moshi-h" id="moshi">「偏差値」はどこで測る？──沖縄の2大模試</h3>
-      <p style="font-size:.86rem;margin:0 0 13px;color:var(--ink-soft)">学校の実力テストとは別に、<b>県内全体の中での現在地（偏差値）</b>がわかる模試があります。沖縄の中3向けには、大きく2つの定番模試があります。</p>
-
-      <div class="moshi-cards">
-        <div class="moshi-card">
-          <span class="moshi-tag">その1</span>
-          <h4>沖縄県統一プレ入試</h4>
-          <p class="moshi-by">主催：誠伸社（せいしんしゃ）｜通称「プレ入試」</p>
-          <ul class="check-list">
-            <li>30年をこえる蓄積データ。県内でも<b>最大級の母集団（受験者数）</b></li>
-            <li>本番は<b>秋〜冬に複数回</b>。2026年度の日程は<b>第1回9/6・第2回12/6・第3回1/6、総仕上げの「ファイナル」1/31</b>（いずれも日曜中心）。春〜夏には腕試しの「チャレンジ」（4〜7月）もあります</li>
-            <li><b>本サイトの合格基準・合否データは、このプレ入試の追跡調査がもと</b>。下の判定にいちばん正確に合います</li>
-          </ul>
-        </div>
-        <div class="moshi-card">
-          <span class="moshi-tag alt">その2</span>
-          <h4>おきなわ県模試</h4>
-          <p class="moshi-by">主催：教育開発出版｜通称「県模試」</p>
-          <ul class="check-list">
-            <li>こちらも受験者が多く、<b>受験生のおよそ3人に1人</b>が受けるとされる定番</li>
-            <li>本番は<b>7月号〜1月号の「月号」制</b>（夏〜冬に毎月）。<b>1月号が最大規模</b>です。1・2年範囲も計画的に出題され、入試と同じ形式（リスニングつき）で実戦練習できます。<b>実施日は教室によって前後</b>します</li>
-            <li>中部地区を中心に採用する塾が多い印象。プレ入試より平均点はやや低めの傾向といわれます</li>
-          </ul>
-        </div>
-      </div>
-
+      <h3 class="moshi-h" id="moshi">「偏差値」はどこで測る？──外部模試の活用</h3>
+      <p style="font-size:.86rem;margin:0 0 13px;color:var(--ink-soft)">学校の実力テストとは別に、<b>県内全体の中での現在地（偏差値）</b>を確認できる外部模試があります。定期的に受けると、志望校の基準までの距離や学力の変化を把握しやすくなります。</p>
       <div class="moshi-howto">
         <p class="mh-t">📍 どこで受ける？──まずは「お近くの塾」へ</p>
-        <p>どちらの模試も、申し込みの多くは<b>学習塾や学校を通じた団体受験</b>です。塾が窓口（代理店）となって、塾の生徒でなくても受けられる「外部受験」を受け付けていることがよくあります。</p>
-        <p>受けたい場合は、<b>お近くの学習塾に「外部受験できますか？どちらの模試を扱っていますか？」と問い合わせてみる</b>のがいちばん確実です。</p>
-      <p>塾によって扱う模試（プレ入試／県模試）がちがうので、両方の取り扱いを聞いてみるとよいでしょう。最新の日程・申込方法・会場は、各模試の主催元や塾の案内で必ず確認してください。</p>
-        <p class="mh-note">※ このサイトは特定の塾をすすめるものではありません。どの塾・どちらの模試であっても、<b>早めに一度受けて「いまの現在地」を知ること</b>が、受験生にとっていちばんの第一歩です。</p>
+        <p>外部模試の申し込みは、学習塾や学校を通じた団体受験が中心です。塾の生徒でなくても「外部受験」を受け付けている場合があります。</p>
+        <p>受験したい場合は、お近くの学習塾に<b>「外部受験できますか？」</b>と問い合わせてみてください。最新の日程・申込方法・会場は、各模試の主催元や塾の案内で必ずご確認ください。</p>
+        <p class="mh-note">※ 模試によって受験者の集団や問題の難易度が異なるため、同じ時期でも偏差値が少しずれることがあります。1回の結果だけでなく、複数回の変化を見ることが大切です。</p>
       </div>
-
-      <p class="note" style="margin-top:12px">本サイトの判定は<b>プレ入試の偏差値</b>に合わせて作っています。県模試の偏差値でもおおまかな目安になりますが、受験者の集団がちがうため数値が少しずれることがあります。どちらも信頼できる定番模試です。</p>
     </div>
 
     <!-- 行ける高校 -->
@@ -1874,7 +1857,7 @@ body.has-cbar{padding-bottom:96px}
     </div>
     <p class="tbl-count" id="tblCount"></p>
     <details class="fold" style="margin-top:10px"><summary>このデータの出典と注意点</summary><div class="fold-body">
-      <p class="note" id="dataNote" style="margin:0">基準の偏差値・内申点は<b>合格可能性80%ライン</b>、合否データは受験者の平均値です（出典：沖縄県統一プレ入試 2026年度〈令和8年度〉追跡調査結果）。得点は特色＝250点満点（記述式を除く）・一般＝300点満点、「—」は集計なし。<b>「準備中」の学科</b>は追跡調査データが未取得のため、基準値・倍率を「—」で表示しています（実データが届きしだい掲載します）。現行の学科・コースと2026年度資料の区分が一致しないデータは、詳細欄にクラス別の参考値として表示し、合格判定には使用していません。各学科の定員・特色選抜の募集枠・一般選抜の比重・学校別要件は、県教育委員会および各高校の令和8年度公式資料にもとづきます。令和9年度の学校別資料は2026年7月17日時点で未公表のため、前年度参考として表示しています。学校・学科を優劣や序列で分類する意図はなく、志望校選択の参考として整理しています。出願にあたっては必ず県教育委員会・各校の最新の公式発表をご確認ください。</p>
+      <p class="note" id="dataNote" style="margin:0">基準の偏差値・内申点は<b>合格可能性80%ライン</b>、合否データは2026年度（令和8年度）の追跡調査における受験者の平均値です。得点は特色＝250点満点（記述式を除く）・一般＝300点満点、「—」は集計なし。<b>「準備中」の学科</b>は追跡調査データが未取得のため、基準値・倍率を「—」で表示しています（実データが届きしだい掲載します）。現行の学科・コースと2026年度資料の区分が一致しないデータは、詳細欄にクラス別の参考値として表示し、合格判定には使用していません。各学科の定員・特色選抜の募集枠・一般選抜の比重・学校別要件は、県教育委員会および各高校の令和8年度公式資料にもとづきます。令和9年度の学校別資料は2026年7月17日時点で未公表のため、前年度参考として表示しています。学校・学科を優劣や序列で分類する意図はなく、志望校選択の参考として整理しています。出願にあたっては必ず県教育委員会・各校の最新の公式発表をご確認ください。</p>
     </div></details>
 
     <!-- 学校くらべ（比較結果の表示先） -->
@@ -1924,7 +1907,7 @@ body.has-cbar{padding-bottom:96px}
       <li><span class="nm">沖縄尚学高校</span><span class="pl">那覇市</span><br>国公立大・医学科や海外大を目指す進学校（中高一貫＋高校募集）。高校からは<b>5コース制</b>（難関大・国公立大医学科／尚学パイオニアα／尚学チャレンジャー／国際文化科学〔IB〕／尚学パイオニアβ〔旧体育〕）。
         <details class="pv-fold"><summary>入試のしくみ・科目</summary><div class="pv-sys">
           <p><span class="pv-tag">入試のしくみ</span><b>推薦入試</b>と<b>一般入試</b>があり、一般入試はさらに<b>A方式</b>と<b>B方式</b>（模試の成績を利用）に分かれます。日程の目安（令和8年度の出願期間）は、<b>推薦＝11月中旬（出願11/10〜15）</b>、<b>一般A方式＝12月中旬（出願12/15〜20）</b>、<b>一般B方式＝1月下旬（出願1/26〜31）</b>。試験は各出願期間の数日後です。一般は<b>専願</b>（合格したら入学）と<b>併願</b>（県立などと併願可）を選べます。Web出願。残念でも<b>「再受験」</b>のしくみあり。</p>
-          <p class="pv-sub2"><span class="pv-tag2">科目</span>推薦・一般A方式は<b>3教科（国語・数学・英語）</b>の筆記。県立の5教科とちがい3教科なのが特徴です。B方式は模試（プレ入試・県模試など）の成績を使います。面接の有無は方式・コースで異なるため募集要項で確認を。</p>
+          <p class="pv-sub2"><span class="pv-tag2">科目</span>推薦・一般A方式は<b>3教科（国語・数学・英語）</b>の筆記。県立の5教科とちがい3教科なのが特徴です。B方式は指定された模試の成績を使います。面接の有無は方式・コースで異なるため募集要項で確認を。</p>
           <p class="pv-mini">志望コースの基準に届かなくても、ほかのコースの基準に達していればそのコースで合格になる<b>スライド合格</b>あり。成績優秀者には入学金・授業料を給付する<b>奨学生（特待生）制度</b>も。最新の募集要項で必ず確認を。</p>
         </div></details></li>
       <li><span class="nm">興南高校</span><span class="pl">那覇市</span><br>甲子園春夏連覇でも知られる進学校（中高一貫＋高校募集）。高校からは<b>特別進学・総合進学</b>（2026年度は「スーパー特進」も新設）。フロンティアコースは中学入学のみ。
@@ -2203,7 +2186,6 @@ body.has-cbar{padding-bottom:96px}
         <li><a href="https://www.pref.okinawa.jp/kyoiku/gakko/1008883/1008887/1035054.html" target="_blank" rel="noopener">【令和7年度実施】県立高校入試 関連情報</a><small>今春（2026年3月）の要項・様式のアーカイブ</small></li>
         <li><a href="https://www.pref.okinawa.jp/kyoiku/gakko/1009425/index.html" target="_blank" rel="noopener">私立学校関連の情報（沖縄県）</a><small>県内私立に関する県の窓口・お知らせ</small></li>
         <li><a href="https://www.mext.go.jp/a_menu/shotou/mushouka/1342674.htm" target="_blank" rel="noopener">高等学校等就学支援金制度（文部科学省）</a><small>授業料支援（無償化）の公式説明</small></li>
-        <li><a href="https://www.e-seishin.jp/index.html" target="_blank" rel="noopener">誠伸社｜沖縄県統一プレ入試</a><small>本サイトの合格基準データ・平均点の出典元</small></li>
         <li><a href="https://www.pref.okinawa.lg.jp/_res/projects/default_project/_page_/001/029/395/07hiju2.pdf" target="_blank" rel="noopener">特色選抜の募集枠・比重の校別一覧（県教委・PDF）</a><small>本サイトの定員・特色枠・比重データの出典（令和7年度・2025年春実施分）</small></li>
       </ul>
     </details>
@@ -2393,7 +2375,7 @@ const SUBJECTS  = [...SUBJECTS5, ...SUBJECTS4];
 /* =====================================================================
    ★ 学校データ（2025・2026年度実データ）
    ---------------------------------------------------------------------
-   出典：沖縄県統一プレ入試 2025年度（令和7年度）・2026年度（令和8年度）追跡調査結果
+   2025年度（令和7年度）・2026年度（令和8年度）の追跡調査結果
    1学科（コース）＝1オブジェクト。年度データは
    y の中に年度キーごとに保存しています。
 
@@ -3202,7 +3184,7 @@ function legacyReferenceGroup(s, rows, year){
     ? "令和7年度追跡調査は旧学科名です。北部農林は令和8年度から全日制5学科を4学科へ改編しているため、新学科へ自動変換せず、合格判定には使用しない参考値として表示しています。"
     : (isKaihoArt ? "芸術科全体のデータで、音楽・美術別の数値ではありません。両コースへ共通の参考値として表示しています。" : "現在の学校一覧では独立した募集学科・コースとして扱っていない区分です。合格判定には使用せず参考表示のみとしています。")}</p>`;
   rows.forEach(x => {
-    h += `<div class="legacy-ref-item"><p><b>${esc(x.department)}</b>（プレ入試コード <span class="mono">${esc(x.examCode)}</span>）　基準偏差値 <b class="mono">${fmtPt(x.dev)}</b> ／ 基準内申 <b class="mono">${fmtPt(x.nai)}</b>　倍率：特色 <b class="${rateCls(x.rT)}">${fmtRate(x.rT)}</b> ／ 一般 <b class="${rateCls(x.rI)}">${fmtRate(x.rI)}</b></p><div class="tscroll">${recordsTable(x.rec)}</div>${trackingDetailDisclosure(x)}</div>`;
+    h += `<div class="legacy-ref-item"><p><b>${esc(x.department)}</b>　基準偏差値 <b class="mono">${fmtPt(x.dev)}</b> ／ 基準内申 <b class="mono">${fmtPt(x.nai)}</b>　倍率：特色 <b class="${rateCls(x.rT)}">${fmtRate(x.rT)}</b> ／ 一般 <b class="${rateCls(x.rI)}">${fmtRate(x.rI)}</b></p><div class="tscroll">${recordsTable(x.rec)}</div>${trackingDetailDisclosure(x)}</div>`;
   });
   h += `</div>`;
   return h;
@@ -3838,7 +3820,7 @@ function judge(){
     } else { hs.hidden = true; }
 
     $("#judgeNote").innerHTML =
-      `※判定は、<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）との差をもとに算出した「めやす」です。` +
+      `※判定は、<b>合格可能性80%ライン</b>（${yr}年度の追跡調査）との差をもとに算出した「めやす」です。` +
       (hasBoth ? `内申・偏差値それぞれ独立に判定し、低い方を総合判定としています。` : `偏差値のみで算出した学力判定です。内申点を入力すると総合判定も表示されます。`) +
       `合否を保証するものではありません。` +
       (d.dummy ? `<br><b>※この学科の基準値は追跡調査データ未取得のため「仮の目安」です。</b>実データが届きしだい差し替えます。` : "");
@@ -3901,7 +3883,7 @@ function judge(){
     } else { hs.hidden = true; }
 
     $("#judgeNote").innerHTML =
-      `※内申判定は、<b>合格可能性80%ライン</b>（沖縄県統一プレ入試 ${yr}年度 追跡調査）の基準内申点との比較にもとづく「めやす」です。模試の偏差値を入れると学力判定・総合判定も表示されます。合否を保証するものではありません。` +
+      `※内申判定は、<b>合格可能性80%ライン</b>（${yr}年度の追跡調査）の基準内申点との比較にもとづく「めやす」です。模試の偏差値を入れると学力判定・総合判定も表示されます。合否を保証するものではありません。` +
       (d.dummy ? `<br><b>※この学科の基準値・倍率は一部が「仮の目安」です。</b>実データが届きしだい差し替えます。` : "");
   }
 
@@ -4253,7 +4235,7 @@ function detailRow(s){
     h += `<div class="ychips">` + years.slice().reverse().map(y =>
       `<button type="button" data-yc="${y}" class="${y===ySel?"on":""}">${y}年度</button>`).join("") + `</div>`;
   }
-  h += `<div class="small" style="margin-bottom:9px"><b>${ySel}年度</b>${d.dummy?'<span class="kari">準備中</span>':''}${d.sourceExamCode?`　プレ入試コード <b class="mono">${esc(d.sourceExamCode)}</b>`:""}　基準偏差値 <b class="mono">${dval(d,'dev')}</b> ／ 基準内申 <b class="mono">${dval(d,'nai')}</b>　　倍率：特色 <b class="${rateCls(d.rT)}">${fmtRate(d.rT)}</b> ／ 一般 <b class="${rateCls(d.rI)}">${fmtRate(d.rI)}</b></div>`;
+  h += `<div class="small" style="margin-bottom:9px"><b>${ySel}年度</b>${d.dummy?'<span class="kari">準備中</span>':''}　基準偏差値 <b class="mono">${dval(d,'dev')}</b> ／ 基準内申 <b class="mono">${dval(d,'nai')}</b>　　倍率：特色 <b class="${rateCls(d.rT)}">${fmtRate(d.rT)}</b> ／ 一般 <b class="${rateCls(d.rI)}">${fmtRate(d.rI)}</b></div>`;
   h += applicationStatusDisclosure(d);
   h += `<div class="tscroll" style="margin-top:12px">${recordsTable(d.rec)}</div>`;
   h += trackingDetailDisclosure(d);
@@ -4713,7 +4695,7 @@ function renderNowWhere(){
   function phase3(){
     if(m>=4 && m<=8)   return {now:"いまの時期：夏まで（〜8月）", msg:"<b>夏は、努力より先に「差の測定」から。</b>基準の偏差値・内申は合格可能性80%ライン。模試といまの内申で志望校との距離を数字にすると、夏休みにどの教科を何点分伸ばすかが決まります。説明会・体験入学で高校を「見る」のもこの時期。", href:"#hantei", label:"合格判定で距離を測る"};
     if(m>=9 && m<=10)  return {now:"いまの時期：秋（9〜10月）", msg:"<b>特色選抜を使えるかは、この時期に出る校別要項で決まります。</b>平均評定などの出願要件と実績ランク表を照らして、「特色で2回勝負」か「一般に集中」かを先に決めると、残り時間の配分が変わります。配慮願いなどの事前申請もこの時期。", href:"#schools", label:"学校データ・倍率を見る"};
-    if(m>=11 && m<=12) return {now:"いまの時期：11〜12月", msg:"<b>プレ入試は、合格判定の“物差し”そのものです。</b>このサイトの基準値も、プレ入試の追跡調査から作られています。結果が出たら三者面談の前に判定を更新し、志望校を数字で話せる状態に。私立は出願開始——延納・返還の条件も確認を。", href:"#shiritsu", label:"私立の選択肢を見る"};
+    if(m>=11 && m<=12) return {now:"いまの時期：11〜12月", msg:"<b>外部模試で、志望校との距離を確認する時期です。</b>結果が出たら三者面談の前に判定を更新し、志望校を数字で話せる状態に。私立は出願開始——延納・返還の条件も確認を。", href:"#shiritsu", label:"私立の選択肢を見る"};
     if(m===1)          return {now:"いまの時期：1月", msg:"<b>私立の結果は、県立の攻め方を変えるカードです。</b>進学できる合格をひとつ持てるかで、県立を「挑戦」で出せるかが決まります。県立はWeb出願の準備期間。第2志望まで決めておくと、2月の倍率発表で迷いません。", href:"#schools", label:"学校データを見る"};
     if(m===2)          return {now:"いまの時期：2月", msg:"<b>初回倍率は、まだ最終形ではありません。</b>志願変更で動けるのは倍率1.0超の学科に出願した人だけ——しかも1回、特色選抜は変更不可。数字に一喜一憂せず、変更期間後の最終倍率まで見て構えましょう。", href:"#shikumi", label:"仕組み・志願変更を確認"};
     return {now:"いまの時期：3月（本番）", msg:"<b>学力検査は3/3・4。直後の自己採点が保険になります。</b>万一のとき、2次募集に出すかを自分の得点感で判断できるからです。合格発表は3/17、2次募集の発表は3/27——最後まで、動ける道は残っています。", href:"#faq-selfscore", label:"自己採点について見る"};
@@ -4758,7 +4740,7 @@ renderNowWhere();
     {t:"合否の仕組み（特色・一般・実績点）",sec:"3",h:"#shikumi",kw:"仕組み 合否 決まり方 比重 特色選抜 一般選抜 流れ チャンス 実績点 英検 漢検 数検 検定 資格"},
     {t:"内申点を計算する",sec:"4",h:"#naishin",kw:"内申 計算 通知表 評定 シミュレーター 165 実技 1.5倍 持ち点"},
     {t:"合格判定（偏差値で見る）",sec:"5",h:"#hantei",kw:"判定 合格 可能性 偏差値 模試 ライン 80%"},
-    {t:"沖縄の2大模試（プレ入試・県模試）",sec:"5",h:"#moshi",kw:"判定 模試 プレ入試 県模試 誠伸社 偏差値 受ける どこ 外部受験"},
+    {t:"外部模試の活用",sec:"5",h:"#moshi",kw:"判定 模試 偏差値 受ける どこ 外部受験"},
     {t:"学校データ・倍率一覧",sec:"6",h:"#schools",kw:"学校 データ 倍率 偏差値 基準 高校 一覧 定員割れ 比較 くらべ"},
     {t:"校区（通学区域）チェッカー",sec:"6",h:"#kuikiBlock",kw:"学校データ 校区 学区 通学区域 住所 市町村 普通科 区域外"},
     {t:"私立高校（沖尚・興南・カトリック）",sec:"7",h:"#shiritsu",kw:"私立 沖縄尚学 興南 カトリック 昭和薬科 専願 併願 3教科"},
@@ -4873,7 +4855,6 @@ renderNowWhere();
       {t:"偏差値", d:"テストでの自分の位置を示す数字。50がちょうど真ん中。", p:"その日の難易度で動く「点数」より、立ち位置を安定して見られる。"},
       {t:"合格判定", d:"過去のデータから合格の可能性をめやすで示すこと。本番の得点で決まるわけではない。", p:"あくまで目安。学校や塾の進路指導と合わせて使う。"},
       {t:"倍率", d:"志願者数÷募集人員。1.00より大きいと定員より人が多い。", p:"平均では1倍を下回ることが多く、「全員がふるい落とされる」わけではない。初回より最終倍率を見る。"},
-      {t:"プレ入試", d:"誠伸社が行う県内統一の模試。本番に近い形式で力だめしができる。", p:"早い時期から本番の形式・時間配分に慣れておけるのが大きい。"},
       {t:"県模試", d:"教育開発出版が毎月行う模試。月号制で、広く受けられている。", p:"継続して受けると、偏差値の伸びで手応えが見える。"}
     ]},
     {g:"出願・日程", items:[
