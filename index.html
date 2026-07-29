@@ -730,6 +730,17 @@ td .tag{display:inline-block;background:var(--sea-tint);color:var(--sea-deep);fo
   border:1.5px solid var(--line);background:#fff;color:var(--ink-soft);
 }
 .filterbar .chip.on{background:var(--sea);border-color:var(--sea);color:#fff}
+.school-open-guide{
+  display:flex;align-items:center;gap:10px;margin:0 0 10px;padding:10px 13px;
+  border:1px solid #b9d9e5;border-radius:11px;background:var(--sea-tint);
+  color:var(--sea-deep);font-size:.8rem;font-weight:700;line-height:1.65;
+}
+.school-open-guide .sog-ico{
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+  width:30px;height:30px;border-radius:9px;background:#fff;color:var(--sea-deep);
+  box-shadow:0 1px 3px rgba(11,42,62,.08);font-size:1rem;
+}
+.school-open-guide b{font-weight:900}
 #schoolTable tbody tr{cursor:pointer}
 #schoolTable tbody tr:hover{background:#f4f9fc}
 #schoolTable td.num,#schoolTable th.num{text-align:right;font-family:var(--fm);white-space:nowrap}
@@ -1844,6 +1855,8 @@ body.has-cbar{padding-bottom:96px}
       <button class="chip" data-area="北部">北部</button>
       <button class="chip" data-area="宮古・八重山">宮古・八重山</button>
     </div>
+
+    <p class="school-open-guide"><span class="sog-ico" aria-hidden="true">☝️</span><span><b>学校名・学科名をタップすると、学校別の詳しいデータが開きます。</b><br>選抜方法・配点・出願要件・通学経路などを確認できます。</span></p>
 
     <p class="small" style="margin:0 0 10px;color:var(--ink-soft)">倍率＝志願者数÷募集人員。<span class="rate-hot">1.00以上＝募集人員より志願者が多い</span>／<span class="rate-low">1.00未満＝定員割れ</span>。数値の見出しをタップすると並び替えできます。</p>
 
