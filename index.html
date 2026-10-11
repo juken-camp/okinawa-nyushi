@@ -1353,11 +1353,11 @@ body.has-cbar{padding-bottom:96px}
     <aside class="update-mini" aria-label="更新情報">
       <div class="update-mini-head"><span class="update-badge">NEW</span><b>更新情報</b><small>便利な機能を、随時アップデートしています。</small></div>
       <ul tabindex="0" aria-label="更新履歴。上下にスクロールできます">
+        <li><time datetime="2026-10-12">2026.10.12</time><a href="#schools">53校・149学科／課程の特色選抜ガイドを追加。配点・出願条件・検査内容・提出書類をまとめ、詳細欄との重複を整理しました</a></li>
         <li><time datetime="2026-09-29">2026.09.29</time><a href="#schedule">令和9年度の正式日程・全59校の募集枠、私立3校の入試情報、2026年平均点・学費支援を更新しました</a></li>
         <li><time datetime="2026-07-23">2026.07.23</time><a href="#schools">2026年度（令和8年度）の追跡調査データ145件を反映しました</a></li>
-<li><time datetime="2026-07-17">2026.07.17</time><a href="#schools">学校別データを再接続し、那覇国際・石川・前原・与勝・嘉手納・美里の実績ランク表を追加しました</a></li>
+        <li><time datetime="2026-07-17">2026.07.17</time><a href="#schools">学校別データを再接続し、那覇国際・石川・前原・与勝・嘉手納・美里の実績ランク表を追加しました</a></li>
         <li><time datetime="2026-07-11">2026.07.11</time><a href="#schools">自宅から高校までの通学経路を、バス・ゆいレール・車・徒歩で検索できるようになりました</a></li>
-        <li><time datetime="2026-10-12">2026.10.12</time><a href="#schools">53校・149学科／課程に、特色選抜の配点・検査内容・公式出典を追加しました</a></li>
         <li><time datetime="2026-07-08">2026.07.08</time><a href="#schools">特色選抜の出願要件や検査内容を、学校別に確認できるようになりました</a></li>
         <li><time datetime="2026-07-05">2026.07.05</time><a href="#schedule">令和9年度入試の日程を、カウントダウンで確認できるようになりました</a></li>
       </ul>
@@ -3222,15 +3222,7 @@ function odRanks(r){
     if(achievementStatus === "confirmed_none"){
       return `<p class="od-empty">学校独自の実績ランク表は、公表資料では確認できませんでした。</p>${officialLinks}`;
     }
-    const fields=(r.specialSelection&&r.specialSelection.activityFields)||[];
-    const requirements=(r.specialSelection&&r.specialSelection.applicationRequirements)||[];
-    let summary="";
-    if(fields.length){
-      summary+=`<div class="od-sub">公式資料で確認できる評価対象</div><ul class="od-list">${fields.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
-    }
-    if(requirements.length){
-      summary+=`<div class="od-sub">出願・評価条件</div><ul class="od-list">${requirements.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
-    }
+    const summary="";
     if(officialLinks){
       return `${summary}<p class="od-empty">ランクの細目は、下の学校公式資料で確認できます。</p>${officialLinks}`;
     }
@@ -3290,12 +3282,39 @@ function preparationGuideHtml(s){
  <div class="prep-heading"><span class="prep-year ${current?'is-current':''}">${pending?'資料の再確認待ち':current?'2027年入学・令和9年度確認済み':'2026年入学・令和8年度参考'}</span><small>確認日 ${esc(g.checked)}</small></div>
  <p class="prep-intro">${pending?'検査詳細の確認状況':current?'以下は新年度の公式資料で確認した内容です。':'以下は前年度の試験内容です。2027年入学の条件は、新年度資料の確認が必要です。'}</p>
  <ul class="prep-points">${g.points.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
- ${!pending&&r.specialSelection.scoring?.length?`<details class="od-section" ${isYomei?'open':''}><summary>配点表・換算方法を見る</summary><div class="od-inner">${odScoring(r.specialSelection.scoring)}${odScoringOptions(r.specialSelection.scoringOptions)}${r.specialSelection.specialFrame?.scoring?.length?`<div class="od-sub">特別枠の配点</div>${odScoring(r.specialSelection.specialFrame.scoring)}`:''}<p class="note">実績・発表・面接などの得点は学校が評価します。満点や例示から本人の得点・合否は確定できません。</p></div></details>`:''}
+ ${specialPreparationDetailsHtml(r,pending,isYomei)}
  ${isYomei?yomeiGradeHtml():''}
- ${!pending&&r.specialSelection.applicationRequirements?.length?`<details class="od-section"><summary>出願条件を確認する</summary><div class="od-inner">${odList('学校の条件',r.specialSelection.applicationRequirements)}</div></details>`:''}
  <div class="prep-sources">${pageLinks}${extras}${src?.link_status==='moved'?'<p>旧資料のリンクは学校トップへ移動する場合があります。</p>':''}${pending?`<a target="_blank" rel="noopener" href="${esc(r.r9Audit?.sourceUrl||r.schoolOfficialSiteUrl)}">学校公式・更新情報を確認</a>`:''}</div>
  </div></section>`;
 }
+function specialPreparationDetailsHtml(r,pending,isYomei){
+ const sp=r.specialSelection||{},b=r.basic||{},sf=sp.specialFrame||b.specialFrame||{};
+ const unique=xs=>[...new Set((xs||[]).filter(Boolean))];
+ const section=(title,body,open=false)=>body?`<details class="od-section" ${open?'open':''}><summary>${esc(title)}</summary><div class="od-inner">${body}</div></details>`:'';
+ const sfText=sf.officialText||(sf.available===false?'特別枠なし':sf.available===true?(sf.applicationCheckRequired?'特別枠あり（Web出願のチェック必要）':'特別枠あり（Web出願のチェック不要）'):'特別枠の扱いは未確認');
+ const tests=[['interview','面接'],['essay','作文'],['shortEssay','小論文'],['presentation','プレゼン'],['practicalTest','実技'],['schoolIndependentTest','学校独自検査']].filter(([key])=>sp[key]).map(([key,label])=>`${label}：${odTestText(sp[key])}`);
+ const listed=(sp.tests||[]).map(x=>`${x.name||'検査'}：${odTestText(x)}`);
+ const points=r.preparationGuide?.points||[];
+ const methods=unique([sp.summary,sp.selectionMethod]).filter(x=>!points.includes(x));
+ const scoring=section('配点表・換算方法を見る',
+   odList('選抜方法',methods)+odScoring(sp.scoring)+
+   (sp.scoringOptions||[]).map(x=>`<div class="od-sub">${esc(x.name||'区分')}</div>${odScoring(x.items||[])}`).join('')+
+   (sf.scoring?.length?`<div class="od-sub">特別枠の配点</div>${odScoring(sf.scoring)}`:'')+
+   (!sp.scoring?.length?odList('評価項目',sp.evaluationItems):'')+
+   (sp.scoringPublicationStatus==='partial'?'<p class="note">具体的な配点は一部のみ確認できています。</p>':'')+
+   '<p class="note">実績・発表・面接などの得点は学校が評価します。満点や例示から本人の得点・合否は確定できません。</p>',isYomei);
+ const conditions=section('出願条件・特別枠を確認する',
+   odList('出願条件',unique([...(sp.eligibility||[]),...(sp.applicationRequirements||[])]))+
+   `<p><b>特別枠：</b>${esc(sfText)}</p>`+odList('特別枠の対象活動',sf.activityFields)+
+   odList('求める生徒像',sp.desiredStudentProfile)+odList('評価する活動・実績',sp.activityFields));
+ const exams=section('面接・実技などの検査内容',odList('学力検査・検査一覧',unique(listed))+odList('面接・独自検査の詳細',unique(tests)));
+ const evidence=sp.activityEvidenceRequired===true?'<p><b>活動実績等の証明資料：</b>必要（対象・提出方法は以下の記載と公式資料を確認してください）</p>':sp.activityEvidenceRequired===false?'<p><b>活動実績等の証明資料：</b>不要</p>':'';
+ const documents=section('提出書類・注意事項',odList('提出・証明資料',unique(odDocumentItems(sp)))+evidence+odList('補足',unique(sp.notes)));
+ const body=scoring+conditions+exams+documents;
+ return pending?`<details class="od-section"><summary>保存済みの特色選抜情報（再確認待ち・${esc(sp.referenceYear||r.referenceYear||'前年度')}）</summary><div class="od-inner"><p class="od-warn">以下は保存済みの参考情報です。今回の点検では公式資料本文との再照合が完了していません。</p>${body}</div></details>`:body;
+}
+
+
 function yomeiGradeHtml(){
  return `<details class="od-section"><summary>陽明の内申点を計算する（令和8年度方式）</summary><div class="od-inner">
  <p class="note">各学年の評定を、主要5教科と実技4教科に分けて合計して入力します。未入力の場合は計算しません。</p>
@@ -3331,27 +3350,16 @@ function officialAdmissionsHtml(s){
   const status=r.dataCompleteness==="school_detail_partial"?"一部要確認":`${r.referenceYear}資料確認済み`;
   const review=(r.reviewReasons||[]).filter(x=>!String(x).includes("令和9年度学校別資料が未公表")&&!String(x).includes("前年度参考"));
   const genTests=[g.interview&&["面接",odTestText(g.interview)],g.essay&&["作文",odTestText(g.essay)],g.shortEssay&&["小論文",odTestText(g.shortEssay)],g.practicalTest&&["実技",odTestText(g.practicalTest)],g.schoolIndependentTest&&["学校独自検査",odTestText(g.schoolIndependentTest)]].filter(Boolean);
-  const spTests=[sp.interview&&["面接",odTestText(sp.interview)],sp.essay&&["作文",odTestText(sp.essay)],sp.shortEssay&&["小論文",odTestText(sp.shortEssay)],sp.presentation&&["プレゼン",odTestText(sp.presentation)],sp.practicalTest&&["実技",odTestText(sp.practicalTest)],sp.schoolIndependentTest&&["学校独自検査",odTestText(sp.schoolIndependentTest)]].filter(Boolean);
-  const listedTests=(sp.tests||[]).map(x=>`${x.name||"検査"}：${odTestText(x)}`);
-  const documentItems=odDocumentItems(sp);
-  const sf=sp.specialFrame||b.specialFrame||{};
-  const sfText=sf.officialText||(!sf.available?"特別枠なし":(sf.applicationCheckRequired?"特別枠あり（希望者に特別な検査あり）":"特別枠あり"));
-  let h=`<div class="official-detail"><div class="od-head"><span class="od-title">学校別公式入試情報</span><span class="od-badge">${esc(r.referenceYear)}${current?"確認済み":"参考"}</span><span class="od-badge ${r.dataCompleteness==="school_detail_partial"?"partial":""}">${status}</span></div><div class="od-body">`;
+  let h=`<div class="official-detail"><div class="od-head"><span class="od-title">一般選抜・追加情報</span><span class="od-badge">${esc(r.referenceYear)}${current?"確認済み":"参考"}</span><span class="od-badge ${r.dataCompleteness==="school_detail_partial"?"partial":""}">${status}</span></div><div class="od-body">`;
   if(r.preparationGuide?.status==="needs_source")h+=`<p class="od-warn"><b>資料の再確認待ち：</b>以下の保存データは、今回の点検で公式資料本文と再照合できていません。</p>`;
-  h+=`<div class="od-grid"><div class="od-stat"><span>課程</span><b>${fmtOfficial(r.track)}</b></div><div class="od-stat"><span>募集定員</span><b>${fmtOfficial(b.capacity)}人</b></div><div class="od-stat"><span>特色選抜</span><b>${fmtOfficial(sp.quotaOfficialText||b.specialQuotaOfficialText)}${sp.quotaNumber!=null?`・最大${esc(sp.quotaNumber)}人`:""}</b></div><div class="od-stat"><span>一般選抜比重</span><b>${fmtOfficial(g.officialRatio)}</b></div></div>`;
+  h+=`<div class="od-grid"><div class="od-stat"><span>課程</span><b>${fmtOfficial(r.track)}</b></div><div class="od-stat"><span>募集定員</span><b>${fmtOfficial(b.capacity)}人</b></div><div class="od-stat"><span>一般選抜比重</span><b>${fmtOfficial(g.officialRatio)}</b></div></div>`;
   h+=`<details class="od-section" open><summary>一般選抜（${esc(r.referenceYear||"前年度参考")}）</summary><div class="od-inner"><p><b>${fmtOfficial(g.summary)}</b></p><p class="od-method"><b>選抜方法：</b>${fmtOfficial(g.selectionMethod)}</p><p><b>一般選抜の募集人員：</b>${b.generalQuotaNumber!=null?`${esc(b.generalQuotaNumber)}人`:fmtOfficial(b.generalQuotaFormula)}${b.generalQuotaNumberIfMaxSpecial!=null?`（特色選抜が上限まで合格した場合の目安：${esc(b.generalQuotaNumberIfMaxSpecial)}人）`:""}</p>${genTests.length?`<div class="od-sub">検査</div><ul class="od-list">${genTests.map(x=>`<li><b>${esc(x[0])}</b>：${esc(x[1])}</li>`).join("")}</ul>`:""}${odScoring(g.scoring)}${odList("補足",g.notes)}</div></details>`;
-  const scoringStatus = sp.scoringPublicationStatus==="not_published"
-    ? `<p class="od-empty"><b>配点：</b>収録資料では確認できていません</p>`
-    : (sp.scoringPublicationStatus==="partial" ? `<p class="od-empty"><b>配点：</b>一部のみ公表・確認</p>` : "");
-  const evidenceStatus = sp.activityEvidenceRequired===true ? `<p><b>活動実績等の証明資料：</b>必要</p>` : (sp.activityEvidenceRequired===false ? `<p><b>活動実績等の証明資料：</b>不要</p>` : "");
-  const specialFrameScoring = Array.isArray(sf.scoring)&&sf.scoring.length ? `<div class="od-sub">特別枠専用の配点</div>${odScoring(sf.scoring)}` : "";
-  h+=`<details class="od-section" open><summary>特色選抜（${esc(sp.referenceYear||r.referenceYear||"前年度参考")}）</summary><div class="od-inner"><p><b>${fmtOfficial(sp.summary)}</b></p><p><b>特別枠：</b>${fmtOfficial(sfText)}</p><p class="od-method"><b>選抜方法：</b>${fmtOfficial(sp.selectionMethod)}</p>${odList("特別枠の対象活動",sf.activityFields)}${specialFrameScoring}${odList("出願要件",sp.eligibility)}${odList("追加条件",sp.applicationRequirements)}${odList("求める生徒像",sp.desiredStudentProfile)}${odList("評価する活動・実績",sp.activityFields)}${odList("評価項目",sp.evaluationItems)}${listedTests.length?`<div class="od-sub">検査一覧</div><ul class="od-list">${listedTests.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}${spTests.length?`<div class="od-sub">面接・独自検査の詳細</div><ul class="od-list">${spTests.map(x=>`<li><b>${esc(x[0])}</b>：${esc(x[1])}</li>`).join("")}</ul>`:""}${scoringStatus}${odScoring(sp.scoring)}${odScoringOptions(sp.scoringOptions)}${evidenceStatus}${odList("提出・証明資料",documentItems)}${odList("補足",sp.notes)}</div></details>`;
   h+=`<details class="od-section"><summary>実績・資格のランク表</summary><div class="od-inner">${odRanks(r)}</div></details>`;
   h+=`<details class="od-section"><summary>第2志望・通学区域</summary><div class="od-inner"><p><b>通学区域：</b>${fmtOfficial(b.attendanceArea)}</p>${b.outsideAreaNotes?`<p>${esc(b.outsideAreaNotes)}</p>`:""}<p><b>第2志望：</b>${b.secondChoice&&b.secondChoice.available?"設定可能":"設定なし／候補なし"}</p>${b.secondChoice&&b.secondChoice.combinations&&b.secondChoice.combinations.length?`<ul class="od-list">${b.secondChoice.combinations.map(x=>`<li>${esc(x.department||"")}${x.course?`（${esc(x.course)}）`:""}${x.track?`・${esc(x.track)}`:""}</li>`).join("")}</ul>`:""}${b.secondChoice&&b.secondChoice.notes?`<p>${esc(b.secondChoice.notes)}</p>`:""}</div></details>`;
   h+=`<details class="od-section"><summary>公式出典</summary><div class="od-inner">${odSources(r)}</div></details>`;
-  h+=`<div class="od-warn">${current?"この欄は令和9年度の学校公式募集要項・合否判定基準を確認して表示しています。":"一般選抜と実績ランクは各見出しの年度を参照しています。特色選抜の年度は受験準備ガイドと特色選抜の見出しで確認してください。令和9年度の募集枠・特別枠等は上の最新欄を優先してください。"}${review.length?`<br><b>追加確認事項：</b>${review.map(esc).join("／")}`:""}</div>`;
+  h+=`<div class="od-warn">${current?"この欄は令和9年度の学校公式募集要項・合否判定基準を確認して表示しています。":"一般選抜と実績ランクは各見出しの年度を参照しています。特色選抜の説明・配点・出願条件は上の受験準備ガイドにまとめています。令和9年度の募集枠・特別枠等は上の最新欄を優先してください。"}${review.length?`<br><b>追加確認事項：</b>${review.map(esc).join("／")}`:""}</div>`;
   h+=`</div></div>`;
-  return currentAdmissionsHtml(s)+preparationGuideHtml(s)+`<details class="fold"><summary>出願要件・配点・実績ランクの詳細（各欄の年度を確認）</summary><div class="fold-body">${h}</div></details>`;
+  return currentAdmissionsHtml(s)+preparationGuideHtml(s)+`<details class="fold"><summary>一般選抜・実績ランク・通学区域の詳細（各欄の年度を確認）</summary><div class="fold-body">${h}</div></details>`;
 }
 
 function legacyReferenceGroup(s, rows, year){
