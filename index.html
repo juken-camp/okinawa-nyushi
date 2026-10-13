@@ -1317,9 +1317,15 @@ body.has-cbar{padding-bottom:96px}
 
 
 /* 港川教室の案内：閲覧を止めない、閉じられる画像バナー */
-#minatogawaBanner{position:fixed;left:50%;bottom:calc(12px + env(safe-area-inset-bottom));transform:translateX(-50%);width:calc(100% - 32px);max-width:420px;z-index:57;line-height:0}
+#minatogawaBanner{position:fixed;left:50%;bottom:calc(12px + env(safe-area-inset-bottom));transform:translateX(-50%);width:calc(100% - 32px);max-width:420px;z-index:57;line-height:0;animation:minatogawa-float 4s ease-in-out infinite}
 #minatogawaBanner[hidden]{display:none}
-.minatogawa-banner-link{display:block;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 5px 24px rgba(8,40,60,.22)}
+/* 画像と閉じるボタンを一緒に、4pxだけゆっくり浮かせる */
+@keyframes minatogawa-float{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-4px)}}
+#minatogawaBanner:focus-within{animation-play-state:paused}
+@media(hover:hover){#minatogawaBanner:hover{animation-play-state:paused}}
+@media(prefers-reduced-motion:reduce){#minatogawaBanner{animation:none}}
+
+.minatogawa-banner-link{display:block;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 28px rgba(8,40,60,.18)}
 .minatogawa-banner-link img{display:block;width:100%;height:auto;aspect-ratio:3/1}
 .minatogawa-banner-close{position:absolute;right:-8px;top:-20px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid #cfe0ea;border-radius:50%;background:#fff;color:#15344f;font:700 26px/1 sans-serif;box-shadow:0 2px 10px rgba(8,40,60,.2);cursor:pointer}
 .minatogawa-banner-link:focus-visible,.minatogawa-banner-close:focus-visible{outline:3px solid var(--sea);outline-offset:4px}
