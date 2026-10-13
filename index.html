@@ -1321,12 +1321,11 @@ body.has-cbar{padding-bottom:96px}
 #minatogawaBanner[hidden]{display:none}
 .minatogawa-banner-link{display:block;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 5px 24px rgba(8,40,60,.22)}
 .minatogawa-banner-link img{display:block;width:100%;height:auto;aspect-ratio:3/1}
-.minatogawa-banner-close{position:absolute;right:-8px;top:-20px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid #cfe0ea;border-radius:50%;background:#fff;color:#15344f;font:700 26px/1 sans-serif;box-shadow:0 2px 10px rgba(8,40,60,.2);cursor:pointer}
+.minatogawa-banner-close{position:absolute;left:-8px;top:-20px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid #cfe0ea;border-radius:50%;background:#fff;color:#15344f;font:700 26px/1 sans-serif;box-shadow:0 2px 10px rgba(8,40,60,.2);cursor:pointer}
 .minatogawa-banner-link:focus-visible,.minatogawa-banner-close:focus-visible{outline:3px solid var(--sea);outline-offset:4px}
 body.has-minatogawa-banner{padding-bottom:calc(var(--minatogawa-banner-space) + env(safe-area-inset-bottom))}
-body.has-minatogawa-banner #findFab{bottom:calc(18px + var(--minatogawa-banner-space) + env(safe-area-inset-bottom))}
-body.has-minatogawa-banner #readTools{bottom:calc(64px + var(--minatogawa-banner-space) + env(safe-area-inset-bottom))}
-body.has-minatogawa-banner #toTop{bottom:calc(156px + var(--minatogawa-banner-space) + env(safe-area-inset-bottom))}
+/* 既存の3ボタンは元の位置のまま、案内画像より手前に表示する */
+body.has-minatogawa-banner #findFab,body.has-minatogawa-banner #readTools,body.has-minatogawa-banner #toTop{z-index:58}
 @media(max-height:480px){#minatogawaBanner{max-width:300px}}
 @media print{#minatogawaBanner{display:none!important}body.has-minatogawa-banner{padding-bottom:0}}
 </style>
